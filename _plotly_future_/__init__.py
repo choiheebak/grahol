@@ -15,8 +15,8 @@ _future_flags = {
 }
 
 
-# def _assert_plotly_not_imported():
-#     import sys
+def _assert_plotly_not_imported():
+    import sys
 
 #     if "plotly" in sys.modules:
 #         raise ImportError(
@@ -39,7 +39,7 @@ def _chart_studio_warning(submodule):
     )
 
 
-# def _chart_studio_error(submodule):
+def _chart_studio_error(submodule):
 #     raise ImportError(
 #         """
 # The plotly.{submodule} module is deprecated,
