@@ -2,3 +2,6 @@ pandas
 plotly
 streamlit
 numpy
+streamlit_option_menu
+streamlit_navigation_bar
+sqlite3
