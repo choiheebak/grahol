@@ -15,14 +15,14 @@ _future_flags = {
 }
 
 
-def _assert_plotly_not_imported():
-    import sys
+# def _assert_plotly_not_imported():
+#     import sys
 
-    if "plotly" in sys.modules:
-        raise ImportError(
-            """\
-The _plotly_future_ module must be imported before the plotly module"""
-        )
+#     if "plotly" in sys.modules:
+#         raise ImportError(
+#             """\
+# The _plotly_future_ module must be imported before the plotly module"""
+#         )
 
 
 warnings.filterwarnings(
@@ -39,16 +39,16 @@ def _chart_studio_warning(submodule):
     )
 
 
-def _chart_studio_error(submodule):
-    raise ImportError(
-        """
-The plotly.{submodule} module is deprecated,
-please install the chart-studio package and use the
-chart_studio.{submodule} module instead. 
-""".format(
-            submodule=submodule
-        )
-    )
+# def _chart_studio_error(submodule):
+#     raise ImportError(
+#         """
+# The plotly.{submodule} module is deprecated,
+# please install the chart-studio package and use the
+# chart_studio.{submodule} module instead. 
+# """.format(
+#             submodule=submodule
+#         )
+#     )
 
 
 def _chart_studio_deprecation(fn):
