@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import sqlite3
-import pages as pg
 import m_ma_1all
 import m_so_1all
 import m_bb_1all
