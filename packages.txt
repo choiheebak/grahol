@@ -1,3 +1,0 @@
-plotly 
-option_menu
-st_navbar
