@@ -1,6 +1,5 @@
+Python==3.8
 streamlit
 pandas>=2.0.3
 numpy
 plotly 
-option_menu
-st_navbar
