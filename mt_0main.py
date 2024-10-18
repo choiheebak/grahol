@@ -90,8 +90,8 @@ if choice == "회차 조회":
 
 elif choice == "축구 승무패":
 
-    fr = open('D:/datagithub/soccer_wdl.txt', 'r', encoding='UTF8')
-    # fr = open('soccer_wdl.txt', 'r', encoding='UTF8')
+    # fr = open('D:/datagithub/soccer_wdl.txt', 'r', encoding='UTF8')
+    fr = open('soccer_wdl.txt', 'r', encoding='UTF8')
 
     rdr1 = fr.readlines()
     year = 0
