@@ -1299,12 +1299,10 @@ def Crawler(yearc,countc,gyungi):
                     s = r+1
                     saoffside.append(team_read[q][s:])
 
-    if len(shplay) == 0:
+    if len(shplay) == 0 & len(saplay) == 0:
         pass
     else:
         st.markdown(":soccer: :blue[**선수**]")
-        # st.markdown("홈팀 : "+home+"("+str(len(shplay))+"명)")
-        st.markdown("홈팀 : "+home)
 
         data = {"선수":[shplay],"포지션":[shpos],"득점":[shduk],"어시스트":[shassist],"공격포인트":[shpoint],"경기수":[shtotal],
                 "슈팅":[shshoot],"유효슈팅":[shyshoot],"경고":[shyellow],"퇴장":[shred],"오프사이드":[shoffside]}
@@ -1312,43 +1310,27 @@ def Crawler(yearc,countc,gyungi):
         df = pd.DataFrame(data,
                 columns=["선수","포지션","득점","어시스트","공격포인트","경기수","슈팅","유효슈팅","경고","퇴장","오프사이드"]) 
         
-        fig = go.Figure(data=[go.Table(
+        figq = go.Figure(data=[go.Table(
             header=dict(values=list(df.columns),
                         # fill_color='paleturquoise',
                         align='center'),
             cells=dict(values=[shplay,shpos,shduk,shassist,shpoint,shtotal,shshoot,shyshoot,shyellow,shred,shoffside],
                     #    fill_color='lavender',
-                    align='left'))
-        ])
-
-        fig.update_layout(height=500)
-
-        st.plotly_chart(fig)
-
-    if len(saplay) == 0:
-        pass
-    else:
-        if len(shplay) == 0:
-            st.markdown(":soccer: :blue[**선수**]")
-        # st.markdown("원정팀 : "+away+"("+str(len(saplay))+"명)")
-        st.markdown("원정팀 : "+away)
-    
-        data = {"선수":[saplay],"포지션":[sapos],"득점":[saduk],"어시스트":[saassist],"공격포인트":[sapoint],"경기수":[satotal],
-                "슈팅":[sashoot],"유효슈팅":[sayshoot],"경고":[sayellow],"퇴장":[sared],"오프사이드":[saoffside]}
-        
-        df = pd.DataFrame(data,
-                columns=["선수","포지션","득점","어시스트","공격포인트","경기수","슈팅","유효슈팅","경고","퇴장","오프사이드"]) 
-        
-        fig = go.Figure(data=[go.Table(
+                    align='left'))])
+     
+        figr = go.Figure(data=[go.Table(
             header=dict(values=list(df.columns),
                         # fill_color='paleturquoise',
                         align='center'),
             cells=dict(values=[saplay,sapos,saduk,saassist,sapoint,satotal,sashoot,sayshoot,sayellow,sared,saoffside],
                     #    fill_color='lavender',
-                    align='left'))
-        ])
+                    align='left'))])
 
-        fig.update_layout(height=500)
-
-        st.plotly_chart(fig)
-
+        figq.update_layout(height=500)
+        figr.update_layout(height=500)
+        
+        tab1, tab2 = st.tabs(["홈팀", "원정팀"])
+        with tab1:
+            st.plotly_chart(figq, theme="streamlit")
+        with tab2:
+            st.plotly_chart(figr, theme="streamlit")
