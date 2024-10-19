@@ -462,12 +462,12 @@ def Crawler(yearc,countc,gyungi):
 
     colors = ['#FFA07A', '#F0E68C', '#87CEFA']
     labels = ['승','무','패']
-    values1 = [int(hwin), int(hdraw), int(hlose)]
+    values1 = [hwin, hdraw, hlose]
 
     figh = go.Figure(data=[go.Pie(labels=labels, values=values1)])
     figh.update_traces(textfont_size=18,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
 
-    values2 = [int(awin), int(adraw), int(alose)]
+    values2 = [awin, adraw, alose]
 
     figa = go.Figure(data=[go.Pie(labels=labels, values=values2)])
     figa.update_traces(textfont_size=18,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
@@ -477,9 +477,9 @@ def Crawler(yearc,countc,gyungi):
     else:
         tab1, tab2 = st.tabs(["홈팀 전적", "원정팀 전적"])
         with tab1:
-            st.plotly_chart(figh, theme="Streamlit")
+            st.plotly_chart(figh)
         with tab2:
-            st.plotly_chart(figa, theme="Streamlit")
+            st.plotly_chart(figa)
      
     if l_hgubun == "A" or l_hgubun == "W":
         if wgaw == "1":
