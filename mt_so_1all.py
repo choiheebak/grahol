@@ -698,7 +698,7 @@ def Crawler(yearc,countc,gyungi):
         with tab1:
             st.plotly_chart(fig1, theme="streamlit")
         with tab2:
-            st.plotly_chart(fig2, theme=None)
+            st.plotly_chart(fig2, theme="streamlit")
 
     # 최근 7경기
       
