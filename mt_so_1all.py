@@ -479,7 +479,7 @@ def Crawler(yearc,countc,gyungi):
         with tab1:
             st.plotly_chart(figh, theme="Streamlit")
         with tab2:
-            st.plotly_chart(figa, theme=None)
+            st.plotly_chart(figa, theme="Streamlit")
      
     if l_hgubun == "A" or l_hgubun == "W":
         if wgaw == "1":
