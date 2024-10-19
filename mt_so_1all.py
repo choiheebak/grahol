@@ -857,8 +857,8 @@ def Crawler(yearc,countc,gyungi):
     with tab1:
         st.plotly_chart(fig3, theme="streamlit")
     with tab2:
-        st.plotly_chart(fig4, theme=None)
-        # st.plotly_chart(fig4, theme="streamlit")
+        # st.plotly_chart(fig4, theme=None)
+        st.plotly_chart(fig4, theme="streamlit")
 
     def gaein_home(gamesu):
 
