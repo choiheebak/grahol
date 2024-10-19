@@ -483,7 +483,7 @@ def Crawler(yearc,countc,gyungi):
         with tab1:
             st.plotly_chart(figh, theme="streamlit")
         with tab2:
-            st.plotly_chart(figa, theme=None)
+            st.plotly_chart(figa, theme="streamlit")
      
     if l_hgubun == "A" or l_hgubun == "W":
         if wgaw == "1":
@@ -512,7 +512,7 @@ def Crawler(yearc,countc,gyungi):
                 with tab1:
                     st.plotly_chart(figwh, theme="streamlit")
                 with tab2:
-                    st.plotly_chart(figwa, theme=None)
+                    st.plotly_chart(figwa, theme="streamlit")
 
     st.markdown(":soccer: :blue[**투표 현황**]")
     df = pd.DataFrame(data=np.array([[home,away,win,draw,lose,fwin,fdraw,flose,result]]), 
@@ -1282,7 +1282,7 @@ def Crawler(yearc,countc,gyungi):
                     align='center'))
         ])
 
-        fig.update_layout(height=500)
+        fig.update_layout(height=1000, width=500)
 
         st.plotly_chart(fig)
 
@@ -1348,7 +1348,7 @@ def Crawler(yearc,countc,gyungi):
                     align='center'))
         ])
 
-        fig.update_layout(height=500)
-
+        fig.update_layout(height=1000, width=500)
+        
         st.plotly_chart(fig)
 
