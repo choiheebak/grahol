@@ -1313,18 +1313,18 @@ def Crawler(yearc,countc,gyungi):
         figq = go.Figure(data=[go.Table(
             header=dict(values=list(df.columns),
                         # fill_color='paleturquoise',
-                        align='left'),
+                        align='left', size=12),
             cells=dict(values=[shplay,shpos,shduk,shassist,shpoint,shtotal,shshoot,shyshoot],
                     #    fill_color='lavender',
-                    align='left'))])
+                    align='left', size=12))])
      
         figr = go.Figure(data=[go.Table(
             header=dict(values=list(df.columns),
                         # fill_color='paleturquoise',
-                        align='left'),
+                        align='left', size=15),
             cells=dict(values=[saplay,sapos,saduk,saassist,sapoint,satotal,sashoot,sayshoot],
                     #    fill_color='lavender',
-                    align='left'))])
+                    align='left', size=15))])
 
         figq.update_layout(height=500)
         figr.update_layout(height=500)
