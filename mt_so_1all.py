@@ -479,7 +479,7 @@ def Crawler(yearc,countc,gyungi):
         with tab1:
             st.plotly_chart(figh, theme="Streamlit")
         with tab2:
-            st.plotly_chart(figa, theme="Streamlit")
+            st.plotly_chart(figa, theme=None)
      
     if l_hgubun == "A" or l_hgubun == "W":
         if wgaw == "1":
@@ -703,7 +703,7 @@ def Crawler(yearc,countc,gyungi):
         with tab1:
             st.plotly_chart(fig1, theme="Streamlit")
         with tab2:
-            st.plotly_chart(fig2, theme=None)
+            st.plotly_chart(fig2, theme="Streamlit")
 
     # 최근 7경기
       
@@ -858,7 +858,7 @@ def Crawler(yearc,countc,gyungi):
     with tab1:
         st.plotly_chart(fig3, theme="Streamlit")
     with tab2:
-        st.plotly_chart(fig4, theme="Streamlit")
+        st.plotly_chart(fig4, theme=None)
 
     def gaein_home(gamesu):
 
