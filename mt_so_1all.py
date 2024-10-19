@@ -467,10 +467,6 @@ def Crawler(yearc,countc,gyungi):
     figh = go.Figure(data=[go.Pie(labels=labels, values=values1)])
     figh.update_traces(textfont_size=18,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
 
-    awin = int(awin) * 10
-    adraw = int(adraw) * 10
-    alose = int(alose) * 10
-
     values2 = [awin, adraw, alose]
 
     figa = go.Figure(data=[go.Pie(labels=labels, values=values2)])
@@ -495,18 +491,10 @@ def Crawler(yearc,countc,gyungi):
 
             st.dataframe(df)
 
-            whwin = int(whwin) * 100
-            whdraw = int(whdraw) * 100
-            whlose = int(whlose) * 100
-        
             values3 = [whwin, whdraw, whlose]
 
             figwh = go.Figure(data=[go.Pie(labels=labels, values=values3)])
             figwh.update_traces(textfont_size=18,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
-
-            wawin = int(wawin) * 1000
-            wadraw = int(wadraw) * 1000
-            walose = int(walose) * 1000
 
             values4 = [wawin, wadraw, walose]
 
@@ -698,18 +686,10 @@ def Crawler(yearc,countc,gyungi):
  
     gyungi_m(len(hwdl_list))
 
-    cntw = int(cntw) * 100000
-    cntd = int(cntd) * 100000
-    cntl = int(cntl) * 100000
-
     values6 = [cntw, cntd, cntl]
 
     fig1 = go.Figure(data=[go.Pie(labels=labels, values=values6)])
     fig1.update_traces(textfont_size=18,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
-
-    cntwm = int(cntwm) * 1000000
-    cntdm = int(cntdm) * 1000000
-    cntlm = int(cntlm) * 1000000
 
     values7 = [cntwm, cntdm, cntlm]
 
@@ -723,7 +703,7 @@ def Crawler(yearc,countc,gyungi):
         with tab1:
             st.plotly_chart(fig1, theme="Streamlit")
         with tab2:
-            st.plotly_chart(fig2, theme="Streamlit")
+            st.plotly_chart(fig2, theme=None)
 
     # 최근 7경기
       
@@ -866,18 +846,10 @@ def Crawler(yearc,countc,gyungi):
     
     gyungi_c(len(hwdl_list))
 
-    cntwmh = int(cntwmh) * 10000000
-    cntdmh = int(cntdmh) * 10000000
-    cntlmh = int(cntlmh) * 10000000
-
     values8 = [cntwmh, cntdmh, cntlmh]
     fig3 = go.Figure(data=[go.Pie(labels=labels, values=values8)])
     fig3.update_traces(textfont_size=18,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
   
-    cntwma = int(cntwma) * 100000000
-    cntdma = int(cntdma) * 100000000
-    cntlma = int(cntlma) * 100000000
-
     values9 = [cntwma, cntdma, cntlma]
     fig4 = go.Figure(data=[go.Pie(labels=labels, values=values9)])
     fig4.update_traces(textfont_size=18,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
