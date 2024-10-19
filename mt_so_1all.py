@@ -1,10 +1,6 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import random
-import m_subteam
-import m_subscgrass
-import m_subscgrai
 from streamlit_option_menu import option_menu
 from streamlit_navigation_bar import st_navbar
 import plotly.graph_objects as go
