@@ -522,10 +522,6 @@ def Crawler(yearc,countc,gyungi):
     draw = draw.replace('%','')
     lose = lose.replace('%','')
 
-    win = int(win) * 10000
-    draw = int(draw) * 10000
-    lose = int(lose) * 10000
-
     values5 = [win, draw, lose]
 
     fig = go.Figure(data=[go.Pie(labels=labels, values=values5)])
