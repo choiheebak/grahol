@@ -1305,24 +1305,24 @@ def Crawler(yearc,countc,gyungi):
         st.markdown(":soccer: :blue[**선수**]")
 
         data = {"선수":[shplay],"포지션":[shpos],"득점":[shduk],"어시스트":[shassist],"공격포인트":[shpoint],"경기수":[shtotal],
-                "슈팅":[shshoot],"유효슈팅":[shyshoot],"경고":[shyellow],"퇴장":[shred],"오프사이드":[shoffside]}
+                "슈팅":[shshoot],"유효슈팅":[shyshoot],"경고":[shyellow],"퇴장":[shred]}
         
         df = pd.DataFrame(data,
-                columns=["선수","포지션","득점","어시스트","공격포인트","경기수","슈팅","유효슈팅","경고","퇴장","오프사이드"]) 
+                columns=["선수","포지션","득점","어시스트","공격포인트","경기수","슈팅","유효슈팅","경고","퇴장"]) 
         
         figq = go.Figure(data=[go.Table(
             header=dict(values=list(df.columns),
                         # fill_color='paleturquoise',
-                        align='center'),
-            cells=dict(values=[shplay,shpos,shduk,shassist,shpoint,shtotal,shshoot,shyshoot,shyellow,shred,shoffside],
+                        align='left'),
+            cells=dict(values=[shplay,shpos,shduk,shassist,shpoint,shtotal,shshoot,shyshoot,shyellow,shred],
                     #    fill_color='lavender',
                     align='left'))])
      
         figr = go.Figure(data=[go.Table(
             header=dict(values=list(df.columns),
                         # fill_color='paleturquoise',
-                        align='center'),
-            cells=dict(values=[saplay,sapos,saduk,saassist,sapoint,satotal,sashoot,sayshoot,sayellow,sared,saoffside],
+                        align='left'),
+            cells=dict(values=[saplay,sapos,saduk,saassist,sapoint,satotal,sashoot,sayshoot,sayellow,sared],
                     #    fill_color='lavender',
                     align='left'))])
 
