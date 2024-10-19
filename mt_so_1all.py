@@ -479,7 +479,7 @@ def Crawler(yearc,countc,gyungi):
         with tab1:
             st.plotly_chart(figh, use_container_width=True,theme="streamlit")
         with tab2:
-            st.plotly_chart(figa, use_container_width=True,theme="streamlit")
+            st.plotly_chart(figa, use_container_width=True,theme=None)
      
     if l_hgubun == "A" or l_hgubun == "W":
         if wgaw == "1":
@@ -508,7 +508,7 @@ def Crawler(yearc,countc,gyungi):
                 with tab1:
                     st.plotly_chart(figwh, use_container_width=True,theme="streamlit")
                 with tab2:
-                    st.plotly_chart(figwa, use_container_width=True,theme="streamlit")
+                    st.plotly_chart(figwa, use_container_width=True,theme=None)
 
     st.markdown(":soccer: :blue[**투표 현황**]")
     df = pd.DataFrame(data=np.array([[home,away,win,draw,lose,fwin,fdraw,flose,result]]), 
@@ -698,7 +698,7 @@ def Crawler(yearc,countc,gyungi):
         with tab1:
             st.plotly_chart(fig1, use_container_width=True,theme="streamlit")
         with tab2:
-            st.plotly_chart(fig2, use_container_width=True,theme="streamlit")
+            st.plotly_chart(fig2, use_container_width=True,theme=None)
 
     # 최근 7경기
       
@@ -853,7 +853,7 @@ def Crawler(yearc,countc,gyungi):
     with tab1:
         st.plotly_chart(fig3, use_container_width=True, theme="streamlit")
     with tab2:
-        st.plotly_chart(fig4, use_container_width=True,theme="streamlit")
+        st.plotly_chart(fig4, use_container_width=True,theme=None)
 
     def gaein_home(gamesu):
 
