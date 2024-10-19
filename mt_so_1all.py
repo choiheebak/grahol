@@ -467,6 +467,10 @@ def Crawler(yearc,countc,gyungi):
     figh = go.Figure(data=[go.Pie(labels=labels, values=values1)])
     figh.update_traces(textfont_size=18,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
 
+    awin = int(awin) * 10
+    adraw = int(adraw) * 10
+    alose = int(alose) * 10
+
     values2 = [awin, adraw, alose]
 
     figa = go.Figure(data=[go.Pie(labels=labels, values=values2)])
@@ -491,10 +495,18 @@ def Crawler(yearc,countc,gyungi):
 
             st.dataframe(df)
 
+            whwin = int(whwin) * 100
+            whdraw = int(whdraw) * 100
+            whlose = int(whlose) * 100
+        
             values3 = [whwin, whdraw, whlose]
 
             figwh = go.Figure(data=[go.Pie(labels=labels, values=values3)])
             figwh.update_traces(textfont_size=18,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
+
+            wawin = int(wawin) * 1000
+            wadraw = int(wadraw) * 1000
+            walose = int(walose) * 1000
 
             values4 = [wawin, wadraw, walose]
 
@@ -521,6 +533,11 @@ def Crawler(yearc,countc,gyungi):
     win = win.replace('%','')
     draw = draw.replace('%','')
     lose = lose.replace('%','')
+
+    wawin = int(wawin) * 10000
+    wadraw = int(wadraw) * 10000
+    walose = int(walose) * 10000
+
     values5 = [win, draw, lose]
 
     fig = go.Figure(data=[go.Pie(labels=labels, values=values5)])
