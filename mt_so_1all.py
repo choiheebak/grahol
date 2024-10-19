@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import sqlite3
+import random
 import m_subteam
 import m_subscgrass
 import m_subscgrai
@@ -1316,7 +1316,7 @@ def Crawler(yearc,countc,gyungi):
                         align='left'),
             cells=dict(values=[shplay,shpos,shduk,shassist,shpoint,shtotal,shshoot,shyshoot],
                     #    fill_color='lavender',
-                    align='left', a = np.random.randint(size=15)))])
+                    align='left'))])
      
         figr = go.Figure(data=[go.Table(
             header=dict(values=list(df.columns),
@@ -1324,13 +1324,13 @@ def Crawler(yearc,countc,gyungi):
                         align='left'),
             cells=dict(values=[saplay,sapos,saduk,saassist,sapoint,satotal,sashoot,sayshoot],
                     #    fill_color='lavender',
-                    align='left', a = np.random.randint(size=12)))])
+                    align='left'))])
 
         figq.update_layout(height=500)
         figr.update_layout(height=500)
         
         tab1, tab2 = st.tabs(["홈팀", "원정팀"])
         with tab1:
-            st.plotly_chart(figq, theme="streamlit")
+            st.plotly_chart(figq, use_container_width=True,theme="streamlit")
         with tab2:
-            st.plotly_chart(figr, theme="streamlit")
+            st.plotly_chart(figr, use_container_width=True,theme="streamlit")
