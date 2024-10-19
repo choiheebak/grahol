@@ -477,7 +477,7 @@ def Crawler(yearc,countc,gyungi):
     else:
         tab1, tab2 = st.tabs(["홈팀 전적", "원정팀 전적"])
         with tab1:
-            st.plotly_chart(figh, theme="streamlit")
+            st.plotly_chart(figh, theme=None)
         with tab2:
             st.plotly_chart(figa, theme=None)
      
@@ -506,7 +506,7 @@ def Crawler(yearc,countc,gyungi):
             else:
                 tab1, tab2 = st.tabs(["홈팀 전적", "원정팀 전적"])
                 with tab1:
-                    st.plotly_chart(figwh, theme="streamlit")
+                    st.plotly_chart(figwh, theme=None)
                 with tab2:
                     st.plotly_chart(figwa, theme=None)
 
@@ -696,9 +696,9 @@ def Crawler(yearc,countc,gyungi):
     else:
         tab1, tab2 = st.tabs(["맞대결 전체", "맞대결 최근7경기"])
         with tab1:
-            st.plotly_chart(fig1, theme="streamlit")
+            st.plotly_chart(fig1, theme=None)
         with tab2:
-            st.plotly_chart(fig2, theme="streamlit")
+            st.plotly_chart(fig2, theme=None)
 
     # 최근 7경기
       
@@ -851,7 +851,7 @@ def Crawler(yearc,countc,gyungi):
 
     tab1, tab2 = st.tabs(["홈팀 최근7경기", "원정팀 최근7경기"])
     with tab1:
-        st.plotly_chart(fig3, theme="streamlit")
+        st.plotly_chart(fig3, theme=None)
     with tab2:
         st.plotly_chart(fig4, theme=None)
 
