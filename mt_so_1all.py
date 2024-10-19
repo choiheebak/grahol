@@ -462,12 +462,12 @@ def Crawler(yearc,countc,gyungi):
 
     colors = ['#FFA07A', '#F0E68C', '#87CEFA']
     labels = ['승','무','패']
-    values1 = [hwin, hdraw, hlose]
+    values1 = [int(hwin), int(hdraw), int(hlose)]
 
     figh = go.Figure(data=[go.Pie(labels=labels, values=values1)])
     figh.update_traces(textfont_size=18,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
 
-    values2 = [awin, adraw, alose]
+    values2 = [int(awin), int(adraw), int(alose)]
 
     figa = go.Figure(data=[go.Pie(labels=labels, values=values2)])
     figa.update_traces(textfont_size=18,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
