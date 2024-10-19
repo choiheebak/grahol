@@ -462,24 +462,24 @@ def Crawler(yearc,countc,gyungi):
 
     colors = ['#FFA07A', '#F0E68C', '#87CEFA']
     labels = ['승','무','패']
-    values = [hwin, hdraw, hlose]
+    values1 = [hwin, hdraw, hlose]
 
-    figh = go.Figure(data=[go.Pie(labels=labels, values=values)])
-    figh.update_traces(textfont_size=20,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
+    figh = go.Figure(data=[go.Pie(labels=labels, values=values1)])
+    figh.update_traces(textfont_size=18,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
 
-    values = [awin, adraw, alose]
+    values2 = [awin, adraw, alose]
 
-    figa = go.Figure(data=[go.Pie(labels=labels, values=values)])
-    figa.update_traces(textfont_size=20,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
+    figa = go.Figure(data=[go.Pie(labels=labels, values=values2)])
+    figa.update_traces(textfont_size=18,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
      
     if hwin == "" and hdraw == "" and hlose == "":
         pass
     else:
         tab1, tab2 = st.tabs(["홈팀 전적", "원정팀 전적"])
         with tab1:
-            st.plotly_chart(figh, theme=None)
+            st.plotly_chart(figh, theme="Streamlit")
         with tab2:
-            st.plotly_chart(figa, theme=None)
+            st.plotly_chart(figa, theme="Streamlit")
      
     if l_hgubun == "A" or l_hgubun == "W":
         if wgaw == "1":
@@ -491,24 +491,24 @@ def Crawler(yearc,countc,gyungi):
 
             st.dataframe(df)
 
-            values = [whwin, whdraw, whlose]
+            values3 = [whwin, whdraw, whlose]
 
-            figwh = go.Figure(data=[go.Pie(labels=labels, values=values)])
-            figwh.update_traces(textfont_size=20,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
+            figwh = go.Figure(data=[go.Pie(labels=labels, values=values3)])
+            figwh.update_traces(textfont_size=18,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
 
-            values = [wawin, wadraw, walose]
+            values4 = [wawin, wadraw, walose]
 
-            figwa = go.Figure(data=[go.Pie(labels=labels, values=values)])
-            figwa.update_traces(textfont_size=20,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
+            figwa = go.Figure(data=[go.Pie(labels=labels, values=values4)])
+            figwa.update_traces(textfont_size=18,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
 
             if whwin == "" and whdraw == "" and whlose == "":
                 pass
             else:
                 tab1, tab2 = st.tabs(["홈팀 전적", "원정팀 전적"])
                 with tab1:
-                    st.plotly_chart(figwh, theme=None)
+                    st.plotly_chart(figwh, theme="Streamlit")
                 with tab2:
-                    st.plotly_chart(figwa, theme=None)
+                    st.plotly_chart(figwa, theme="Streamlit")
 
     st.markdown(":soccer: :blue[**투표 현황**]")
     df = pd.DataFrame(data=np.array([[home,away,win,draw,lose,fwin,fdraw,flose,result]]), 
@@ -521,10 +521,10 @@ def Crawler(yearc,countc,gyungi):
     win = win.replace('%','')
     draw = draw.replace('%','')
     lose = lose.replace('%','')
-    values = [win, draw, lose]
+    values5 = [win, draw, lose]
 
-    fig = go.Figure(data=[go.Pie(labels=labels, values=values)])
-    fig.update_traces(textfont_size=20,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
+    fig = go.Figure(data=[go.Pie(labels=labels, values=values5)])
+    fig.update_traces(textfont_size=18,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
     st.plotly_chart(fig)
 
     
@@ -681,24 +681,24 @@ def Crawler(yearc,countc,gyungi):
  
     gyungi_m(len(hwdl_list))
 
-    values = [cntw, cntd, cntl]
+    values6 = [cntw, cntd, cntl]
 
-    fig1 = go.Figure(data=[go.Pie(labels=labels, values=values)])
-    fig1.update_traces(textfont_size=20,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
+    fig1 = go.Figure(data=[go.Pie(labels=labels, values=values6)])
+    fig1.update_traces(textfont_size=18,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
 
-    values = [cntwm, cntdm, cntlm]
+    values7 = [cntwm, cntdm, cntlm]
 
-    fig2 = go.Figure(data=[go.Pie(labels=labels, values=values)])
-    fig2.update_traces(textfont_size=20,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
+    fig2 = go.Figure(data=[go.Pie(labels=labels, values=values7)])
+    fig2.update_traces(textfont_size=18,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
 
     if cntw == 0 and cntd == 0 and cntl == 0:
         pass
     else:
         tab1, tab2 = st.tabs(["맞대결 전체", "맞대결 최근7경기"])
         with tab1:
-            st.plotly_chart(fig1, theme=None)
+            st.plotly_chart(fig1, theme="Streamlit")
         with tab2:
-            st.plotly_chart(fig2, theme=None)
+            st.plotly_chart(fig2, theme="Streamlit")
 
     # 최근 7경기
       
@@ -841,19 +841,19 @@ def Crawler(yearc,countc,gyungi):
     
     gyungi_c(len(hwdl_list))
 
-    values = [cntwmh, cntdmh, cntlmh]
-    fig3 = go.Figure(data=[go.Pie(labels=labels, values=values)])
-    fig3.update_traces(textfont_size=20,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
+    values8 = [cntwmh, cntdmh, cntlmh]
+    fig3 = go.Figure(data=[go.Pie(labels=labels, values=values8)])
+    fig3.update_traces(textfont_size=18,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
   
-    values = [cntwma, cntdma, cntlma]
-    fig4 = go.Figure(data=[go.Pie(labels=labels, values=values)])
-    fig4.update_traces(textfont_size=20,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
+    values9 = [cntwma, cntdma, cntlma]
+    fig4 = go.Figure(data=[go.Pie(labels=labels, values=values9)])
+    fig4.update_traces(textfont_size=18,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
 
     tab1, tab2 = st.tabs(["홈팀 최근7경기", "원정팀 최근7경기"])
     with tab1:
-        st.plotly_chart(fig3, theme=None)
+        st.plotly_chart(fig3, theme="Streamlit")
     with tab2:
-        st.plotly_chart(fig4, theme=None)
+        st.plotly_chart(fig4, theme="Streamlit")
 
     def gaein_home(gamesu):
 
