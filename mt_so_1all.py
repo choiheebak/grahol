@@ -857,7 +857,8 @@ def Crawler(yearc,countc,gyungi):
     with tab1:
         st.plotly_chart(fig3, theme="streamlit")
     with tab2:
-        st.plotly_chart(fig4, theme="streamlit")
+        st.plotly_chart(fig4, theme=None)
+        # st.plotly_chart(fig4, theme="streamlit")
 
     def gaein_home(gamesu):
 
@@ -985,7 +986,9 @@ def Crawler(yearc,countc,gyungi):
 
                     index= ["1"], 
                     columns=["순위","선수","득점","어시스트","공격포인트","경기수","슈팅","유효슈팅","경고","퇴장","오프사이드"]) 
-            st.dataframe(df)
+            st.dataframe(df)  
+        elif gamesu == 0:
+            pass
      
     team_read = read_all_txt('15',k)
     
@@ -1161,7 +1164,9 @@ def Crawler(yearc,countc,gyungi):
 
                     index= ["1"], 
                     columns=["순위","선수","득점","어시스트","공격포인트","경기수","슈팅","유효슈팅","경고","퇴장","오프사이드"]) 
-            st.dataframe(df)
+            st.dataframe(df)    
+        elif gamesu == 0:
+            pass
          
     team_read = read_all_txt('16',k)
     
