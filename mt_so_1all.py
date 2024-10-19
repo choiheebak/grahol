@@ -1326,8 +1326,8 @@ def Crawler(yearc,countc,gyungi):
                     #    fill_color='lavender',
                     align='left'))])
 
-        figq.update_layout(height=500)
-        figr.update_layout(height=500)
+        # figq.update_layout(height=500)
+        # figr.update_layout(height=500)
         
         tab1, tab2 = st.tabs(["홈팀", "원정팀"])
         with tab1:
