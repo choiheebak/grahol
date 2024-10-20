@@ -1202,36 +1202,35 @@ def Crawler(yearc,countc,gyungi):
 
     st.markdown(":baseball: :blue[**선수**]")  
     st.markdown("홈팀 : "+home)
-    
-    data1 = {"선수":[shplay],"포지션":[shpos],"홈런":[shhomerun],"타율":[shtayul],"타점":[shtajum],
-            "안타":[shhit],"득점":[shduk],"도루":[shdoru],"볼넷":[shfball]}
+                
+    data1 = {"선수":[thplay],"포지션":[thpos],"평균자책":[thjachek],"승":[thwin],"패":[thlose],
+            "세이브":[thsave],"홀드":[thhold],"이닝":[thinning],"탈삼진":[thtalsam]}
     
     df1 = pd.DataFrame(data1,
-                columns=["선수","포지션","홈런","타율","타점","안타","득점","도루","볼넷"]) 
+                columns=["선수","포지션","평균자책","승","패","세이브","홀드","이닝","탈삼진"]) 
     
     fig1 = go.Figure(data=[go.Table(
         header=dict(values=list(df1.columns),
                     align='center'),
-        cells=dict(values=[shplay,shpos,shhomerun,shtayul,shtajum,shhit,shduk,shdoru,shfball],
+        cells=dict(values=[thplay,thpos,thjachek,thwin,thlose,thsave,thhold,thinning,thtalsam],
                 align='center'))])
-                
-    data2 = {"선수":[thplay],"포지션":[thpos],"평균자책":[thjachek],"승":[thwin],"패":[thlose],
-            "세이브":[thsave],"홀드":[thhold],"이닝":[thinning],"탈삼진":[thtalsam]}
+
+    data2 = {"선수":[shplay],"포지션":[shpos],"홈런":[shhomerun],"타율":[shtayul],"타점":[shtajum],
+            "안타":[shhit],"득점":[shduk],"도루":[shdoru],"볼넷":[shfball]}
     
     df2 = pd.DataFrame(data2,
-                columns=["선수","포지션","평균자책","승","패","세이브","홀드","이닝","탈삼진"]) 
+                columns=["선수","포지션","홈런","타율","타점","안타","득점","도루","볼넷"]) 
     
     fig2 = go.Figure(data=[go.Table(
         header=dict(values=list(df2.columns),
                     align='center'),
-        cells=dict(values=[thplay,thpos,thjachek,thwin,thlose,thsave,thhold,thinning,thtalsam],
-                align='center'))
-    ])
+        cells=dict(values=[shplay,shpos,shhomerun,shtayul,shtajum,shhit,shduk,shdoru,shfball],
+                align='center'))])
 
     fig1.update_layout(height=500)
     fig2.update_layout(height=500)
 
-    tab1, tab2 = st.tabs(["타자", "투수"])
+    tab1, tab2 = st.tabs(["투수", "타자"])
     with tab1:
         st.plotly_chart(fig1, use_container_width=True)
     with tab2:
@@ -1305,35 +1304,34 @@ def Crawler(yearc,countc,gyungi):
 
     st.markdown("원정팀 : "+away)
     
-    data3 = {"선수":[saplay],"포지션":[sapos],"홈런":[sahomerun],"타율":[satayul],"타점":[satajum],
-            "안타":[sahit],"득점":[saduk],"도루":[sadoru],"볼넷":[safball]}
+    data3 = {"선수":[taplay],"포지션":[tapos],"평균자책":[tajachek],"승":[tawin],"패":[talose],
+            "세이브":[tasave],"홀드":[tahold],"이닝":[tainning],"탈삼진":[tatalsam]}
     
     df3 = pd.DataFrame(data3,
-                columns=["선수","포지션","홈런","타율","타점","안타","득점","도루","볼넷"]) 
+                columns=["선수","포지션","평균자책","승","패","세이브","홀드","이닝","탈삼진"]) 
     
     fig3 = go.Figure(data=[go.Table(
         header=dict(values=list(df3.columns),
                     align='center'),
-        cells=dict(values=[saplay,sapos,sahomerun,satayul,satajum,sahit,saduk,sadoru,safball],
+        cells=dict(values=[taplay,tapos,tajachek,tawin,talose,tasave,tahold,tainning,tatalsam],
                 align='center'))])
 
-    data4 = {"선수":[taplay],"포지션":[tapos],"평균자책":[tajachek],"승":[tawin],"패":[talose],
-            "세이브":[tasave],"홀드":[tahold],"이닝":[tainning],"탈삼진":[tatalsam]}
+    data4 = {"선수":[saplay],"포지션":[sapos],"홈런":[sahomerun],"타율":[satayul],"타점":[satajum],
+            "안타":[sahit],"득점":[saduk],"도루":[sadoru],"볼넷":[safball]}
     
     df4 = pd.DataFrame(data4,
-                columns=["선수","포지션","평균자책","승","패","세이브","홀드","이닝","탈삼진"]) 
+                columns=["선수","포지션","홈런","타율","타점","안타","득점","도루","볼넷"]) 
     
     fig4 = go.Figure(data=[go.Table(
         header=dict(values=list(df4.columns),
                     align='center'),
-        cells=dict(values=[taplay,tapos,tajachek,tawin,talose,tasave,tahold,tainning,tatalsam],
-                align='center'))
-    ])
+        cells=dict(values=[saplay,sapos,sahomerun,satayul,satajum,sahit,saduk,sadoru,safball],
+                align='center'))])
 
     fig3.update_layout(height=500)
     fig4.update_layout(height=500)
 
-    tab1, tab2 = st.tabs(["타자", "투수"])
+    tab1, tab2 = st.tabs(["투수", "타자"])
     with tab1:
         st.plotly_chart(fig3, use_container_width=True)
     with tab2:
