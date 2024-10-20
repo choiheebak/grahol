@@ -13,7 +13,7 @@ from streamlit_navigation_bar import st_navbar
 # 1. as sidebar menu
 with st.sidebar:
     choice = option_menu("그래홀", ["회차 조회","축구 승무패", '야구 승1패', "농구 승5패", "경기 통계", "조합기"], 
-        menu_icon="cast", default_index=1,
+        menu_icon="cast", default_index=0,
         icons=['tablet', 'life-preserver', 'shadows','dribbble','graph-up-arrow','fan'], 
                          styles={
         "container": {"padding": "4!important", "background-color": "#fafafa"},
@@ -283,8 +283,6 @@ elif choice == "조합기":
                     year = line[:j]  
                     count = line[j+1:]
                     break
-
-            con.close() 
 
         mt_jo_1all.Crawler(year,count,'k')
 
