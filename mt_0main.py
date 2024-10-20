@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import sqlite3
-# import m_ma_1all
+import mt_ma_1all
 import mt_so_1all
 import mt_bb_1all
 import mt_bk_1all
@@ -19,7 +19,7 @@ from streamlit_navigation_bar import st_navbar
 # 1. as sidebar menu
 with st.sidebar:
     choice = option_menu("그래홀", ["회차 조회","축구 승무패", '야구 승1패', "농구 승5패", "경기 통계", "조합기"], 
-        menu_icon="cast", default_index=1,
+        menu_icon="cast", default_index=0,
         icons=['tablet', 'life-preserver', 'shadows','dribbble','graph-up-arrow','fan'], 
                          styles={
         "container": {"padding": "4!important", "background-color": "#fafafa"},
@@ -35,7 +35,6 @@ if choice == "회차 조회":
 
     if pagema == "축구 승무패":
         
-        # fr = open('D:/datagithub/soccer/soccer_wdl_all.txt', 'r', encoding='UTF8')
         fr = open('soccer_wdl_all.txt', 'r', encoding='UTF8')
 
         rdr1 = fr.readlines()
@@ -44,49 +43,44 @@ if choice == "회차 조회":
         for line in rdr1:
             for j in range(len(line)):
                 if line[j] == ";":
-                    year.apend(line[:j])  
+                    year.append(line[:j])  
                     count.append(line[j+1:])
                     break
-        fr.close
 
-        # m_ma_1all.Crawler(year,count,'s') 
+        mt_ma_1all.Crawler(year,count,'s') 
 
     elif pagema == "야구 승1패": 
 
-        con = sqlite3.connect("c:/Users/iendo/baseball.db")
-        cur = con.cursor()
-        cur.execute("SELECT 년도, 회차 FROM 승1패_일정결과 GROUP by 년도,회차 order by 년도 desc ,회차 desc ")
+        fr = open('baseball_wdl_all.txt', 'r', encoding='UTF8')
 
+        rdr1 = fr.readlines()
         year = []
         count = []
-        rows = cur.fetchall()
-        for row in rows:
-            p1 = row[0] 
-            p2 = row[1]
-            year.append(p1)
-            count.append(p2)
+        for line in rdr1:
+            for j in range(len(line)):
+                if line[j] == ";":
+                    year.append(line[:j])  
+                    count.append(line[j+1:])
+                    break
 
-        con.close()    
-        # m_ma_1all.Crawler(year,count,'b')
+        mt_ma_1all.Crawler(year,count,'b')
+
 
     elif pagema == "농구 승5패": 
 
-        con = sqlite3.connect("c:/Users/iendo/basketball.db")
-        cur = con.cursor()
-        cur.execute("SELECT 년도, 회차 FROM 승5패_일정결과 GROUP by 년도,회차 order by 년도 desc ,회차 desc ")
+        fr = open('basketball_wdl_all.txt', 'r', encoding='UTF8')
 
+        rdr1 = fr.readlines()
         year = []
         count = []
-        rows = cur.fetchall()
-        for row in rows:
-            p1 = row[0] 
-            p2 = row[1]
-            year.append(p1)
-            count.append(p2)
+        for line in rdr1:
+            for j in range(len(line)):
+                if line[j] == ";":
+                    year.append(line[:j])  
+                    count.append(line[j+1:])
+                    break
 
-        con.close()  
-
-        # m_ma_1all.Crawler(year,count,'k')
+        mt_ma_1all.Crawler(year,count,'k')
 
 elif choice == "축구 승무패":
 
