@@ -165,33 +165,75 @@ def Crawler(gubun):
         tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10, tab11, tab12, tab13, tab14 \
            = st.tabs(["1경기","2경기","3경기","4경기","5경기","6경기","7경기","8경기","9경기","10경기","11경기","12경기","13경기","14경기"])
         with tab1:
-            st.plotly_chart(fig0, theme="streamlit")
+            try:
+                st.plotly_chart(fig0)
+            except:
+                st.plotly_chart(fig0, theme=None)
         with tab2:
-            st.plotly_chart(fig1, theme="streamlit")
+            try:
+                st.plotly_chart(fig1)
+            except:
+                st.plotly_chart(fig1, theme=None)
         with tab3:
-            st.plotly_chart(fig2, theme="streamlit")
+            try:
+                st.plotly_chart(fig2)
+            except:
+                st.plotly_chart(fig2, theme=None)
         with tab4:
-            st.plotly_chart(fig3, theme="streamlit")
+            try:
+                st.plotly_chart(fig3)
+            except:
+                st.plotly_chart(fig3, theme=None)
         with tab5:
-            st.plotly_chart(fig4, theme="streamlit")
+            try:
+                st.plotly_chart(fig4)
+            except:
+                st.plotly_chart(fig4, theme=None)
         with tab6:
-            st.plotly_chart(fig5, theme="streamlit")
+            try:
+                st.plotly_chart(fig5)
+            except:
+                st.plotly_chart(fig5, theme=None)
         with tab7:
-            st.plotly_chart(fig6, theme="streamlit")
+            try:
+                st.plotly_chart(fig6)
+            except:
+                st.plotly_chart(fig6, theme=None)
         with tab8:
-            st.plotly_chart(fig7, theme="streamlit")
+            try:
+                st.plotly_chart(fig7)
+            except:
+                st.plotly_chart(fig7, theme=None)
         with tab9:
-            st.plotly_chart(fig8, theme="streamlit")
+            try:
+                st.plotly_chart(fig8)
+            except:
+                st.plotly_chart(fig8, theme=None)
         with tab10:
-            st.plotly_chart(fig9, theme="streamlit")
+            try:
+                st.plotly_chart(fig9)
+            except:
+                st.plotly_chart(fig9, theme=None)
         with tab11:
-            st.plotly_chart(fig10, theme="streamlit")
+            try:
+                st.plotly_chart(fig10)
+            except:
+                st.plotly_chart(fig10, theme=None)
         with tab12:
-            st.plotly_chart(fig11, theme="streamlit")
+            try:
+                st.plotly_chart(fig11)
+            except:
+                st.plotly_chart(fig11, theme=None)
         with tab13:
-            st.plotly_chart(fig12, theme="streamlit")
+            try:
+                st.plotly_chart(fig12)
+            except:
+                st.plotly_chart(fig12, theme=None)
         with tab14:
-            st.plotly_chart(fig13, theme="streamlit")
+            try:
+                st.plotly_chart(fig13)
+            except:
+                st.plotly_chart(fig13, theme=None)
 
         st.markdown(":soccer: :violet[**최근 30 회차 승무패 경기통계**]")
         df = pd.DataFrame(data=np.array([tcntw30,tcntd30,tcntl30]), 
@@ -248,33 +290,75 @@ def Crawler(gubun):
         tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10, tab11, tab12, tab13, tab14 \
            = st.tabs(["1경기","2경기","3경기","4경기","5경기","6경기","7경기","8경기","9경기","10경기","11경기","12경기","13경기","14경기"])
         with tab1:
-            st.plotly_chart(fig0, theme="streamlit")
+            try:
+                st.plotly_chart(fig0)
+            except:
+                st.plotly_chart(fig0, theme=None)
         with tab2:
-            st.plotly_chart(fig1, theme="streamlit")
+            try:
+                st.plotly_chart(fig1)
+            except:
+                st.plotly_chart(fig1, theme=None)
         with tab3:
-            st.plotly_chart(fig2, theme="streamlit")
+            try:
+                st.plotly_chart(fig2)
+            except:
+                st.plotly_chart(fig2, theme=None)
         with tab4:
-            st.plotly_chart(fig3, theme="streamlit")
+            try:
+                st.plotly_chart(fig3)
+            except:
+                st.plotly_chart(fig3, theme=None)
         with tab5:
-            st.plotly_chart(fig4, theme="streamlit")
+            try:
+                st.plotly_chart(fig4)
+            except:
+                st.plotly_chart(fig4, theme=None)
         with tab6:
-            st.plotly_chart(fig5, theme="streamlit")
+            try:
+                st.plotly_chart(fig5)
+            except:
+                st.plotly_chart(fig5, theme=None)
         with tab7:
-            st.plotly_chart(fig6, theme="streamlit")
+            try:
+                st.plotly_chart(fig6)
+            except:
+                st.plotly_chart(fig6, theme=None)
         with tab8:
-            st.plotly_chart(fig7, theme="streamlit")
+            try:
+                st.plotly_chart(fig7)
+            except:
+                st.plotly_chart(fig7, theme=None)
         with tab9:
-            st.plotly_chart(fig8, theme="streamlit")
+            try:
+                st.plotly_chart(fig8)
+            except:
+                st.plotly_chart(fig8, theme=None)
         with tab10:
-            st.plotly_chart(fig9, theme="streamlit")
+            try:
+                st.plotly_chart(fig9)
+            except:
+                st.plotly_chart(fig9, theme=None)
         with tab11:
-            st.plotly_chart(fig10, theme="streamlit")
+            try:
+                st.plotly_chart(fig10)
+            except:
+                st.plotly_chart(fig10, theme=None)
         with tab12:
-            st.plotly_chart(fig11, theme="streamlit")
+            try:
+                st.plotly_chart(fig11)
+            except:
+                st.plotly_chart(fig11, theme=None)
         with tab13:
-            st.plotly_chart(fig12, theme="streamlit")
+            try:
+                st.plotly_chart(fig12)
+            except:
+                st.plotly_chart(fig12, theme=None)
         with tab14:
-            st.plotly_chart(fig13, theme="streamlit")
+            try:
+                st.plotly_chart(fig13)
+            except:
+                st.plotly_chart(fig13, theme=None)
 
         # st.markdown(":soccer: :violet[**최근 10회차 결과**]")
 
@@ -396,33 +480,75 @@ def Crawler(gubun):
         tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10, tab11, tab12, tab13, tab14 \
            = st.tabs(["1경기","2경기","3경기","4경기","5경기","6경기","7경기","8경기","9경기","10경기","11경기","12경기","13경기","14경기"])
         with tab1:
-            st.plotly_chart(fig0, theme="streamlit")
+            try:
+                st.plotly_chart(fig0)
+            except:
+                st.plotly_chart(fig0, theme=None)
         with tab2:
-            st.plotly_chart(fig1, theme="streamlit")
+            try:
+                st.plotly_chart(fig1)
+            except:
+                st.plotly_chart(fig1, theme=None)
         with tab3:
-            st.plotly_chart(fig2, theme="streamlit")
+            try:
+                st.plotly_chart(fig2)
+            except:
+                st.plotly_chart(fig2, theme=None)
         with tab4:
-            st.plotly_chart(fig3, theme="streamlit")
+            try:
+                st.plotly_chart(fig3)
+            except:
+                st.plotly_chart(fig3, theme=None)
         with tab5:
-            st.plotly_chart(fig4, theme="streamlit")
+            try:
+                st.plotly_chart(fig4)
+            except:
+                st.plotly_chart(fig4, theme=None)
         with tab6:
-            st.plotly_chart(fig5, theme="streamlit")
+            try:
+                st.plotly_chart(fig5)
+            except:
+                st.plotly_chart(fig5, theme=None)
         with tab7:
-            st.plotly_chart(fig6, theme="streamlit")
+            try:
+                st.plotly_chart(fig6)
+            except:
+                st.plotly_chart(fig6, theme=None)
         with tab8:
-            st.plotly_chart(fig7, theme="streamlit")
+            try:
+                st.plotly_chart(fig7)
+            except:
+                st.plotly_chart(fig7, theme=None)
         with tab9:
-            st.plotly_chart(fig8, theme="streamlit")
+            try:
+                st.plotly_chart(fig8)
+            except:
+                st.plotly_chart(fig8, theme=None)
         with tab10:
-            st.plotly_chart(fig9, theme="streamlit")
+            try:
+                st.plotly_chart(fig9)
+            except:
+                st.plotly_chart(fig9, theme=None)
         with tab11:
-            st.plotly_chart(fig10, theme="streamlit")
+            try:
+                st.plotly_chart(fig10)
+            except:
+                st.plotly_chart(fig10, theme=None)
         with tab12:
-            st.plotly_chart(fig11, theme="streamlit")
+            try:
+                st.plotly_chart(fig11)
+            except:
+                st.plotly_chart(fig11, theme=None)
         with tab13:
-            st.plotly_chart(fig12, theme="streamlit")
+            try:
+                st.plotly_chart(fig12)
+            except:
+                st.plotly_chart(fig12, theme=None)
         with tab14:
-            st.plotly_chart(fig13, theme="streamlit")
+            try:
+                st.plotly_chart(fig13)
+            except:
+                st.plotly_chart(fig13, theme=None)
 
         st.markdown(":baseball: :violet[**최근 30 회차 승①패 경기통계**]")
         df = pd.DataFrame(data=np.array([tcntw30,tcntd30,tcntl30]), 
@@ -480,33 +606,75 @@ def Crawler(gubun):
         tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10, tab11, tab12, tab13, tab14 \
            = st.tabs(["1경기","2경기","3경기","4경기","5경기","6경기","7경기","8경기","9경기","10경기","11경기","12경기","13경기","14경기"])
         with tab1:
-            st.plotly_chart(fig0, theme="streamlit")
+            try:
+                st.plotly_chart(fig0)
+            except:
+                st.plotly_chart(fig0, theme=None)
         with tab2:
-            st.plotly_chart(fig1, theme="streamlit")
+            try:
+                st.plotly_chart(fig1)
+            except:
+                st.plotly_chart(fig1, theme=None)
         with tab3:
-            st.plotly_chart(fig2, theme="streamlit")
+            try:
+                st.plotly_chart(fig2)
+            except:
+                st.plotly_chart(fig2, theme=None)
         with tab4:
-            st.plotly_chart(fig3, theme="streamlit")
+            try:
+                st.plotly_chart(fig3)
+            except:
+                st.plotly_chart(fig3, theme=None)
         with tab5:
-            st.plotly_chart(fig4, theme="streamlit")
+            try:
+                st.plotly_chart(fig4)
+            except:
+                st.plotly_chart(fig4, theme=None)
         with tab6:
-            st.plotly_chart(fig5, theme="streamlit")
+            try:
+                st.plotly_chart(fig5)
+            except:
+                st.plotly_chart(fig5, theme=None)
         with tab7:
-            st.plotly_chart(fig6, theme="streamlit")
+            try:
+                st.plotly_chart(fig6)
+            except:
+                st.plotly_chart(fig6, theme=None)
         with tab8:
-            st.plotly_chart(fig7, theme="streamlit")
+            try:
+                st.plotly_chart(fig7)
+            except:
+                st.plotly_chart(fig7, theme=None)
         with tab9:
-            st.plotly_chart(fig8, theme="streamlit")
+            try:
+                st.plotly_chart(fig8)
+            except:
+                st.plotly_chart(fig8, theme=None)
         with tab10:
-            st.plotly_chart(fig9, theme="streamlit")
+            try:
+                st.plotly_chart(fig9)
+            except:
+                st.plotly_chart(fig9, theme=None)
         with tab11:
-            st.plotly_chart(fig10, theme="streamlit")
+            try:
+                st.plotly_chart(fig10)
+            except:
+                st.plotly_chart(fig10, theme=None)
         with tab12:
-            st.plotly_chart(fig11, theme="streamlit")
+            try:
+                st.plotly_chart(fig11)
+            except:
+                st.plotly_chart(fig11, theme=None)
         with tab13:
-            st.plotly_chart(fig12, theme="streamlit")
+            try:
+                st.plotly_chart(fig12)
+            except:
+                st.plotly_chart(fig12, theme=None)
         with tab14:
-            st.plotly_chart(fig13, theme="streamlit")
+            try:
+                st.plotly_chart(fig13)
+            except:
+                st.plotly_chart(fig13, theme=None)
 
         # st.markdown(":baseball: :violet[**최근 10회차 결과**]")
 
@@ -632,33 +800,75 @@ def Crawler(gubun):
         tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10, tab11, tab12, tab13, tab14 \
            = st.tabs(["1경기","2경기","3경기","4경기","5경기","6경기","7경기","8경기","9경기","10경기","11경기","12경기","13경기","14경기"])
         with tab1:
-            st.plotly_chart(fig0, theme="streamlit")
+            try:
+                st.plotly_chart(fig0)
+            except:
+                st.plotly_chart(fig0, theme=None)
         with tab2:
-            st.plotly_chart(fig1, theme="streamlit")
+            try:
+                st.plotly_chart(fig1)
+            except:
+                st.plotly_chart(fig1, theme=None)
         with tab3:
-            st.plotly_chart(fig2, theme="streamlit")
+            try:
+                st.plotly_chart(fig2)
+            except:
+                st.plotly_chart(fig2, theme=None)
         with tab4:
-            st.plotly_chart(fig3, theme="streamlit")
+            try:
+                st.plotly_chart(fig3)
+            except:
+                st.plotly_chart(fig3, theme=None)
         with tab5:
-            st.plotly_chart(fig4, theme="streamlit")
+            try:
+                st.plotly_chart(fig4)
+            except:
+                st.plotly_chart(fig4, theme=None)
         with tab6:
-            st.plotly_chart(fig5, theme="streamlit")
+            try:
+                st.plotly_chart(fig5)
+            except:
+                st.plotly_chart(fig5, theme=None)
         with tab7:
-            st.plotly_chart(fig6, theme="streamlit")
+            try:
+                st.plotly_chart(fig6)
+            except:
+                st.plotly_chart(fig6, theme=None)
         with tab8:
-            st.plotly_chart(fig7, theme="streamlit")
+            try:
+                st.plotly_chart(fig7)
+            except:
+                st.plotly_chart(fig7, theme=None)
         with tab9:
-            st.plotly_chart(fig8, theme="streamlit")
+            try:
+                st.plotly_chart(fig8)
+            except:
+                st.plotly_chart(fig8, theme=None)
         with tab10:
-            st.plotly_chart(fig9, theme="streamlit")
+            try:
+                st.plotly_chart(fig9)
+            except:
+                st.plotly_chart(fig9, theme=None)
         with tab11:
-            st.plotly_chart(fig10, theme="streamlit")
+            try:
+                st.plotly_chart(fig10)
+            except:
+                st.plotly_chart(fig10, theme=None)
         with tab12:
-            st.plotly_chart(fig11, theme="streamlit")
+            try:
+                st.plotly_chart(fig11)
+            except:
+                st.plotly_chart(fig11, theme=None)
         with tab13:
-            st.plotly_chart(fig12, theme="streamlit")
+            try:
+                st.plotly_chart(fig12)
+            except:
+                st.plotly_chart(fig12, theme=None)
         with tab14:
-            st.plotly_chart(fig13, theme="streamlit")
+            try:
+                st.plotly_chart(fig13)
+            except:
+                st.plotly_chart(fig13, theme=None)
 
         st.markdown(":basketball: :violet[**최근 30 회차 승⑤패 경기통계**]")
         df = pd.DataFrame(data=np.array([tcntw30,tcntd30,tcntl30]), 
@@ -715,33 +925,75 @@ def Crawler(gubun):
         tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10, tab11, tab12, tab13, tab14 \
            = st.tabs(["1경기","2경기","3경기","4경기","5경기","6경기","7경기","8경기","9경기","10경기","11경기","12경기","13경기","14경기"])
         with tab1:
-            st.plotly_chart(fig0, theme="streamlit")
+            try:
+                st.plotly_chart(fig0)
+            except:
+                st.plotly_chart(fig0, theme=None)
         with tab2:
-            st.plotly_chart(fig1, theme="streamlit")
+            try:
+                st.plotly_chart(fig1)
+            except:
+                st.plotly_chart(fig1, theme=None)
         with tab3:
-            st.plotly_chart(fig2, theme="streamlit")
+            try:
+                st.plotly_chart(fig2)
+            except:
+                st.plotly_chart(fig2, theme=None)
         with tab4:
-            st.plotly_chart(fig3, theme="streamlit")
+            try:
+                st.plotly_chart(fig3)
+            except:
+                st.plotly_chart(fig3, theme=None)
         with tab5:
-            st.plotly_chart(fig4, theme="streamlit")
+            try:
+                st.plotly_chart(fig4)
+            except:
+                st.plotly_chart(fig4, theme=None)
         with tab6:
-            st.plotly_chart(fig5, theme="streamlit")
+            try:
+                st.plotly_chart(fig5)
+            except:
+                st.plotly_chart(fig5, theme=None)
         with tab7:
-            st.plotly_chart(fig6, theme="streamlit")
+            try:
+                st.plotly_chart(fig6)
+            except:
+                st.plotly_chart(fig6, theme=None)
         with tab8:
-            st.plotly_chart(fig7, theme="streamlit")
+            try:
+                st.plotly_chart(fig7)
+            except:
+                st.plotly_chart(fig7, theme=None)
         with tab9:
-            st.plotly_chart(fig8, theme="streamlit")
+            try:
+                st.plotly_chart(fig8)
+            except:
+                st.plotly_chart(fig8, theme=None)
         with tab10:
-            st.plotly_chart(fig9, theme="streamlit")
+            try:
+                st.plotly_chart(fig9)
+            except:
+                st.plotly_chart(fig9, theme=None)
         with tab11:
-            st.plotly_chart(fig10, theme="streamlit")
+            try:
+                st.plotly_chart(fig10)
+            except:
+                st.plotly_chart(fig10, theme=None)
         with tab12:
-            st.plotly_chart(fig11, theme="streamlit")
+            try:
+                st.plotly_chart(fig11)
+            except:
+                st.plotly_chart(fig11, theme=None)
         with tab13:
-            st.plotly_chart(fig12, theme="streamlit")
+            try:
+                st.plotly_chart(fig12)
+            except:
+                st.plotly_chart(fig12, theme=None)
         with tab14:
-            st.plotly_chart(fig13, theme="streamlit")
+            try:
+                st.plotly_chart(fig13)
+            except:
+                st.plotly_chart(fig13, theme=None)
 
         # st.markdown(":basketball: :violet[**최근 10회차 결과**]")
 
@@ -870,33 +1122,75 @@ def Crawler(gubun):
         tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10, tab11, tab12, tab13, tab14 \
            = st.tabs(["1경기","2경기","3경기","4경기","5경기","6경기","7경기","8경기","9경기","10경기","11경기","12경기","13경기","14경기"])
         with tab1:
-            st.plotly_chart(fig0, theme="streamlit")
+            try:
+                st.plotly_chart(fig0)
+            except:
+                st.plotly_chart(fig0, theme=None)
         with tab2:
-            st.plotly_chart(fig1, theme="streamlit")
+            try:
+                st.plotly_chart(fig1)
+            except:
+                st.plotly_chart(fig1, theme=None)
         with tab3:
-            st.plotly_chart(fig2, theme="streamlit")
+            try:
+                st.plotly_chart(fig2)
+            except:
+                st.plotly_chart(fig2, theme=None)
         with tab4:
-            st.plotly_chart(fig3, theme="streamlit")
+            try:
+                st.plotly_chart(fig3)
+            except:
+                st.plotly_chart(fig3, theme=None)
         with tab5:
-            st.plotly_chart(fig4, theme="streamlit")
+            try:
+                st.plotly_chart(fig4)
+            except:
+                st.plotly_chart(fig4, theme=None)
         with tab6:
-            st.plotly_chart(fig5, theme="streamlit")
+            try:
+                st.plotly_chart(fig5)
+            except:
+                st.plotly_chart(fig5, theme=None)
         with tab7:
-            st.plotly_chart(fig6, theme="streamlit")
+            try:
+                st.plotly_chart(fig6)
+            except:
+                st.plotly_chart(fig6, theme=None)
         with tab8:
-            st.plotly_chart(fig7, theme="streamlit")
+            try:
+                st.plotly_chart(fig7)
+            except:
+                st.plotly_chart(fig7, theme=None)
         with tab9:
-            st.plotly_chart(fig8, theme="streamlit")
+            try:
+                st.plotly_chart(fig8)
+            except:
+                st.plotly_chart(fig8, theme=None)
         with tab10:
-            st.plotly_chart(fig9, theme="streamlit")
+            try:
+                st.plotly_chart(fig9)
+            except:
+                st.plotly_chart(fig9, theme=None)
         with tab11:
-            st.plotly_chart(fig10, theme="streamlit")
+            try:
+                st.plotly_chart(fig10)
+            except:
+                st.plotly_chart(fig10, theme=None)
         with tab12:
-            st.plotly_chart(fig11, theme="streamlit")
+            try:
+                st.plotly_chart(fig11)
+            except:
+                st.plotly_chart(fig11, theme=None)
         with tab13:
-            st.plotly_chart(fig12, theme="streamlit")
+            try:
+                st.plotly_chart(fig12)
+            except:
+                st.plotly_chart(fig12, theme=None)
         with tab14:
-            st.plotly_chart(fig13, theme="streamlit")
+            try:
+                st.plotly_chart(fig13)
+            except:
+                st.plotly_chart(fig13, theme=None)
 
         st.markdown(":soccer: :violet[**최근 30 회차 고중저 경기통계**]")
         df = pd.DataFrame(data=np.array([tcntw30,tcntd30,tcntl30]), 
@@ -953,33 +1247,75 @@ def Crawler(gubun):
         tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10, tab11, tab12, tab13, tab14 \
            = st.tabs(["1경기","2경기","3경기","4경기","5경기","6경기","7경기","8경기","9경기","10경기","11경기","12경기","13경기","14경기"])
         with tab1:
-            st.plotly_chart(fig0, theme="streamlit")
+            try:
+                st.plotly_chart(fig0)
+            except:
+                st.plotly_chart(fig0, theme=None)
         with tab2:
-            st.plotly_chart(fig1, theme="streamlit")
+            try:
+                st.plotly_chart(fig1)
+            except:
+                st.plotly_chart(fig1, theme=None)
         with tab3:
-            st.plotly_chart(fig2, theme="streamlit")
+            try:
+                st.plotly_chart(fig2)
+            except:
+                st.plotly_chart(fig2, theme=None)
         with tab4:
-            st.plotly_chart(fig3, theme="streamlit")
+            try:
+                st.plotly_chart(fig3)
+            except:
+                st.plotly_chart(fig3, theme=None)
         with tab5:
-            st.plotly_chart(fig4, theme="streamlit")
+            try:
+                st.plotly_chart(fig4)
+            except:
+                st.plotly_chart(fig4, theme=None)
         with tab6:
-            st.plotly_chart(fig5, theme="streamlit")
+            try:
+                st.plotly_chart(fig5)
+            except:
+                st.plotly_chart(fig5, theme=None)
         with tab7:
-            st.plotly_chart(fig6, theme="streamlit")
+            try:
+                st.plotly_chart(fig6)
+            except:
+                st.plotly_chart(fig6, theme=None)
         with tab8:
-            st.plotly_chart(fig7, theme="streamlit")
+            try:
+                st.plotly_chart(fig7)
+            except:
+                st.plotly_chart(fig7, theme=None)
         with tab9:
-            st.plotly_chart(fig8, theme="streamlit")
+            try:
+                st.plotly_chart(fig8)
+            except:
+                st.plotly_chart(fig8, theme=None)
         with tab10:
-            st.plotly_chart(fig9, theme="streamlit")
+            try:
+                st.plotly_chart(fig9)
+            except:
+                st.plotly_chart(fig9, theme=None)
         with tab11:
-            st.plotly_chart(fig10, theme="streamlit")
+            try:
+                st.plotly_chart(fig10)
+            except:
+                st.plotly_chart(fig10, theme=None)
         with tab12:
-            st.plotly_chart(fig11, theme="streamlit")
+            try:
+                st.plotly_chart(fig11)
+            except:
+                st.plotly_chart(fig11, theme=None)
         with tab13:
-            st.plotly_chart(fig12, theme="streamlit")
+            try:
+                st.plotly_chart(fig12)
+            except:
+                st.plotly_chart(fig12, theme=None)
         with tab14:
-            st.plotly_chart(fig13, theme="streamlit")
+            try:
+                st.plotly_chart(fig13)
+            except:
+                st.plotly_chart(fig13, theme=None)
 
         # st.markdown(":soccer: :violet[**최근 10회차 결과**]")
 
@@ -1104,33 +1440,75 @@ def Crawler(gubun):
         tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10, tab11, tab12, tab13, tab14 \
            = st.tabs(["1경기","2경기","3경기","4경기","5경기","6경기","7경기","8경기","9경기","10경기","11경기","12경기","13경기","14경기"])
         with tab1:
-            st.plotly_chart(fig0, theme="streamlit")
+            try:
+                st.plotly_chart(fig0)
+            except:
+                st.plotly_chart(fig0, theme=None)
         with tab2:
-            st.plotly_chart(fig1, theme="streamlit")
+            try:
+                st.plotly_chart(fig1)
+            except:
+                st.plotly_chart(fig1, theme=None)
         with tab3:
-            st.plotly_chart(fig2, theme="streamlit")
+            try:
+                st.plotly_chart(fig2)
+            except:
+                st.plotly_chart(fig2, theme=None)
         with tab4:
-            st.plotly_chart(fig3, theme="streamlit")
+            try:
+                st.plotly_chart(fig3)
+            except:
+                st.plotly_chart(fig3, theme=None)
         with tab5:
-            st.plotly_chart(fig4, theme="streamlit")
+            try:
+                st.plotly_chart(fig4)
+            except:
+                st.plotly_chart(fig4, theme=None)
         with tab6:
-            st.plotly_chart(fig5, theme="streamlit")
+            try:
+                st.plotly_chart(fig5)
+            except:
+                st.plotly_chart(fig5, theme=None)
         with tab7:
-            st.plotly_chart(fig6, theme="streamlit")
+            try:
+                st.plotly_chart(fig6)
+            except:
+                st.plotly_chart(fig6, theme=None)
         with tab8:
-            st.plotly_chart(fig7, theme="streamlit")
+            try:
+                st.plotly_chart(fig7)
+            except:
+                st.plotly_chart(fig7, theme=None)
         with tab9:
-            st.plotly_chart(fig8, theme="streamlit")
+            try:
+                st.plotly_chart(fig8)
+            except:
+                st.plotly_chart(fig8, theme=None)
         with tab10:
-            st.plotly_chart(fig9, theme="streamlit")
+            try:
+                st.plotly_chart(fig9)
+            except:
+                st.plotly_chart(fig9, theme=None)
         with tab11:
-            st.plotly_chart(fig10, theme="streamlit")
+            try:
+                st.plotly_chart(fig10)
+            except:
+                st.plotly_chart(fig10, theme=None)
         with tab12:
-            st.plotly_chart(fig11, theme="streamlit")
+            try:
+                st.plotly_chart(fig11)
+            except:
+                st.plotly_chart(fig11, theme=None)
         with tab13:
-            st.plotly_chart(fig12, theme="streamlit")
+            try:
+                st.plotly_chart(fig12)
+            except:
+                st.plotly_chart(fig12, theme=None)
         with tab14:
-            st.plotly_chart(fig13, theme="streamlit")
+            try:
+                st.plotly_chart(fig13)
+            except:
+                st.plotly_chart(fig13, theme=None)
 
         st.markdown(":baseball: :violet[**최근 30 회차 고중저 경기통계**]")
         df = pd.DataFrame(data=np.array([tcntw30,tcntd30,tcntl30]), 
@@ -1187,33 +1565,75 @@ def Crawler(gubun):
         tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10, tab11, tab12, tab13, tab14 \
            = st.tabs(["1경기","2경기","3경기","4경기","5경기","6경기","7경기","8경기","9경기","10경기","11경기","12경기","13경기","14경기"])
         with tab1:
-            st.plotly_chart(fig0, theme="streamlit")
+            try:
+                st.plotly_chart(fig0)
+            except:
+                st.plotly_chart(fig0, theme=None)
         with tab2:
-            st.plotly_chart(fig1, theme="streamlit")
+            try:
+                st.plotly_chart(fig1)
+            except:
+                st.plotly_chart(fig1, theme=None)
         with tab3:
-            st.plotly_chart(fig2, theme="streamlit")
+            try:
+                st.plotly_chart(fig2)
+            except:
+                st.plotly_chart(fig2, theme=None)
         with tab4:
-            st.plotly_chart(fig3, theme="streamlit")
+            try:
+                st.plotly_chart(fig3)
+            except:
+                st.plotly_chart(fig3, theme=None)
         with tab5:
-            st.plotly_chart(fig4, theme="streamlit")
+            try:
+                st.plotly_chart(fig4)
+            except:
+                st.plotly_chart(fig4, theme=None)
         with tab6:
-            st.plotly_chart(fig5, theme="streamlit")
+            try:
+                st.plotly_chart(fig5)
+            except:
+                st.plotly_chart(fig5, theme=None)
         with tab7:
-            st.plotly_chart(fig6, theme="streamlit")
+            try:
+                st.plotly_chart(fig6)
+            except:
+                st.plotly_chart(fig6, theme=None)
         with tab8:
-            st.plotly_chart(fig7, theme="streamlit")
+            try:
+                st.plotly_chart(fig7)
+            except:
+                st.plotly_chart(fig7, theme=None)
         with tab9:
-            st.plotly_chart(fig8, theme="streamlit")
+            try:
+                st.plotly_chart(fig8)
+            except:
+                st.plotly_chart(fig8, theme=None)
         with tab10:
-            st.plotly_chart(fig9, theme="streamlit")
+            try:
+                st.plotly_chart(fig9)
+            except:
+                st.plotly_chart(fig9, theme=None)
         with tab11:
-            st.plotly_chart(fig10, theme="streamlit")
+            try:
+                st.plotly_chart(fig10)
+            except:
+                st.plotly_chart(fig10, theme=None)
         with tab12:
-            st.plotly_chart(fig11, theme="streamlit")
+            try:
+                st.plotly_chart(fig11)
+            except:
+                st.plotly_chart(fig11, theme=None)
         with tab13:
-            st.plotly_chart(fig12, theme="streamlit")
+            try:
+                st.plotly_chart(fig12)
+            except:
+                st.plotly_chart(fig12, theme=None)
         with tab14:
-            st.plotly_chart(fig13, theme="streamlit")
+            try:
+                st.plotly_chart(fig13)
+            except:
+                st.plotly_chart(fig13, theme=None)
 
         # st.markdown(":baseball: :violet[**최근 10회차 결과**]")
        
@@ -1338,33 +1758,75 @@ def Crawler(gubun):
         tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10, tab11, tab12, tab13, tab14 \
            = st.tabs(["1경기","2경기","3경기","4경기","5경기","6경기","7경기","8경기","9경기","10경기","11경기","12경기","13경기","14경기"])
         with tab1:
-            st.plotly_chart(fig0, theme="streamlit")
+            try:
+                st.plotly_chart(fig0)
+            except:
+                st.plotly_chart(fig0, theme=None)
         with tab2:
-            st.plotly_chart(fig1, theme="streamlit")
+            try:
+                st.plotly_chart(fig1)
+            except:
+                st.plotly_chart(fig1, theme=None)
         with tab3:
-            st.plotly_chart(fig2, theme="streamlit")
+            try:
+                st.plotly_chart(fig2)
+            except:
+                st.plotly_chart(fig2, theme=None)
         with tab4:
-            st.plotly_chart(fig3, theme="streamlit")
+            try:
+                st.plotly_chart(fig3)
+            except:
+                st.plotly_chart(fig3, theme=None)
         with tab5:
-            st.plotly_chart(fig4, theme="streamlit")
+            try:
+                st.plotly_chart(fig4)
+            except:
+                st.plotly_chart(fig4, theme=None)
         with tab6:
-            st.plotly_chart(fig5, theme="streamlit")
+            try:
+                st.plotly_chart(fig5)
+            except:
+                st.plotly_chart(fig5, theme=None)
         with tab7:
-            st.plotly_chart(fig6, theme="streamlit")
+            try:
+                st.plotly_chart(fig6)
+            except:
+                st.plotly_chart(fig6, theme=None)
         with tab8:
-            st.plotly_chart(fig7, theme="streamlit")
+            try:
+                st.plotly_chart(fig7)
+            except:
+                st.plotly_chart(fig7, theme=None)
         with tab9:
-            st.plotly_chart(fig8, theme="streamlit")
+            try:
+                st.plotly_chart(fig8)
+            except:
+                st.plotly_chart(fig8, theme=None)
         with tab10:
-            st.plotly_chart(fig9, theme="streamlit")
+            try:
+                st.plotly_chart(fig9)
+            except:
+                st.plotly_chart(fig9, theme=None)
         with tab11:
-            st.plotly_chart(fig10, theme="streamlit")
+            try:
+                st.plotly_chart(fig10)
+            except:
+                st.plotly_chart(fig10, theme=None)
         with tab12:
-            st.plotly_chart(fig11, theme="streamlit")
+            try:
+                st.plotly_chart(fig11)
+            except:
+                st.plotly_chart(fig11, theme=None)
         with tab13:
-            st.plotly_chart(fig12, theme="streamlit")
+            try:
+                st.plotly_chart(fig12)
+            except:
+                st.plotly_chart(fig12, theme=None)
         with tab14:
-            st.plotly_chart(fig13, theme="streamlit")
+            try:
+                st.plotly_chart(fig13)
+            except:
+                st.plotly_chart(fig13, theme=None)
 
         st.markdown(":basketball: :violet[**최근 30 회차 고중저 경기통계**]")
         df = pd.DataFrame(data=np.array([tcntw30,tcntd30,tcntl30]), 
@@ -1421,33 +1883,75 @@ def Crawler(gubun):
         tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10, tab11, tab12, tab13, tab14 \
            = st.tabs(["1경기","2경기","3경기","4경기","5경기","6경기","7경기","8경기","9경기","10경기","11경기","12경기","13경기","14경기"])
         with tab1:
-            st.plotly_chart(fig0, theme="streamlit")
+            try:
+                st.plotly_chart(fig0)
+            except:
+                st.plotly_chart(fig0, theme=None)
         with tab2:
-            st.plotly_chart(fig1, theme="streamlit")
+            try:
+                st.plotly_chart(fig1)
+            except:
+                st.plotly_chart(fig1, theme=None)
         with tab3:
-            st.plotly_chart(fig2, theme="streamlit")
+            try:
+                st.plotly_chart(fig2)
+            except:
+                st.plotly_chart(fig2, theme=None)
         with tab4:
-            st.plotly_chart(fig3, theme="streamlit")
+            try:
+                st.plotly_chart(fig3)
+            except:
+                st.plotly_chart(fig3, theme=None)
         with tab5:
-            st.plotly_chart(fig4, theme="streamlit")
+            try:
+                st.plotly_chart(fig4)
+            except:
+                st.plotly_chart(fig4, theme=None)
         with tab6:
-            st.plotly_chart(fig5, theme="streamlit")
+            try:
+                st.plotly_chart(fig5)
+            except:
+                st.plotly_chart(fig5, theme=None)
         with tab7:
-            st.plotly_chart(fig6, theme="streamlit")
+            try:
+                st.plotly_chart(fig6)
+            except:
+                st.plotly_chart(fig6, theme=None)
         with tab8:
-            st.plotly_chart(fig7, theme="streamlit")
+            try:
+                st.plotly_chart(fig7)
+            except:
+                st.plotly_chart(fig7, theme=None)
         with tab9:
-            st.plotly_chart(fig8, theme="streamlit")
+            try:
+                st.plotly_chart(fig8)
+            except:
+                st.plotly_chart(fig8, theme=None)
         with tab10:
-            st.plotly_chart(fig9, theme="streamlit")
+            try:
+                st.plotly_chart(fig9)
+            except:
+                st.plotly_chart(fig9, theme=None)
         with tab11:
-            st.plotly_chart(fig10, theme="streamlit")
+            try:
+                st.plotly_chart(fig10)
+            except:
+                st.plotly_chart(fig10, theme=None)
         with tab12:
-            st.plotly_chart(fig11, theme="streamlit")
+            try:
+                st.plotly_chart(fig11)
+            except:
+                st.plotly_chart(fig11, theme=None)
         with tab13:
-            st.plotly_chart(fig12, theme="streamlit")
+            try:
+                st.plotly_chart(fig12)
+            except:
+                st.plotly_chart(fig12, theme=None)
         with tab14:
-            st.plotly_chart(fig13, theme="streamlit")
+            try:
+                st.plotly_chart(fig13)
+            except:
+                st.plotly_chart(fig13, theme=None)
 
         # st.markdown(":basketball: :violet[**최근 10회차 결과**]")
 
