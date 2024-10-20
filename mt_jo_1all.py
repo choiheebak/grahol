@@ -418,13 +418,13 @@ def Crawler(yearc,countc,gubun):
                 "승":[win[0],win[1],win[2],win[3],win[4],win[5],win[6],win[7],win[8],win[9],win[10],win[11],win[12],win[13]],
                 "5":[draw[0],draw[1],draw[2],draw[3],draw[4],draw[5],draw[6],draw[7],draw[8],draw[9],draw[10],draw[11],draw[12],draw[13]],
                 "패":[lose[0],lose[1],lose[2],lose[3],lose[4],lose[5],lose[6],lose[7],lose[8],lose[9],lose[10],lose[11],lose[12],lose[13]],  
-                "결과":[result[0],result[1],result[2],result[3],result[4],result[5],result[6],result[7],result[8],result[9],result[10],result[11],result[12],result[13]],
+                # "결과":[result[0],result[1],result[2],result[3],result[4],result[5],result[6],result[7],result[8],result[9],result[10],result[11],result[12],result[13]],
                 "조합":[johap[0],johap[1],johap[2],johap[3],johap[4],johap[5],johap[6],johap[7],johap[8],johap[9],johap[10],johap[11],johap[12],johap[13]]}
      
         df = pd.DataFrame(data, 
 
                 index = ["1경기","2경기","3경기","4경기","5경기","6경기","7경기","8경기","9경기","10경기","11경기","12경기","13경기","14경기"],
-                columns=["홈팀", "원정팀","승","5","패","결과","조합"]) 
+                columns=["홈팀", "원정팀","승","5","패","조합"]) 
 
         st.table(df)
              
