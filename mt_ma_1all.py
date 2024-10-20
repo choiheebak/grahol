@@ -32,7 +32,7 @@ def Crawler(yearc,countc,gubun):
         else:
             k = str(count)
 
-        f = open('D:/datagithub/soccer/soccer_so0_master.txt', 'r', encoding='UTF8')
+        f = open('soccer_so0_master.txt', 'r', encoding='UTF8')
        
         rdr1 = f.readlines()    
 
@@ -169,7 +169,7 @@ def Crawler(yearc,countc,gubun):
         else:
             k = str(count)
 
-        f = open('D:/datagithub/baseball/baseball_bb0_master.txt', 'r', encoding='UTF8')
+        f = open('baseball_bb0_master.txt', 'r', encoding='UTF8')
        
         rdr1 = f.readlines()    
 
@@ -305,7 +305,7 @@ def Crawler(yearc,countc,gubun):
         else:
             k = str(count)
 
-        f = open('D:/datagithub/basketball/basketball_bk0_master.txt', 'r', encoding='UTF8')
+        f = open('basketball_bk0_master.txt', 'r', encoding='UTF8')
        
         rdr1 = f.readlines()    
 
