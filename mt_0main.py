@@ -5,16 +5,16 @@ import mt_ma_1all
 import mt_so_1all
 import mt_bb_1all
 import mt_bk_1all
-# import mt_so_1all
+import mt_dt_1all
 import mt_jo_1all
 from streamlit_option_menu import option_menu
 from streamlit_navigation_bar import st_navbar
 
 # 1. as sidebar menu
 with st.sidebar:
-    choice = option_menu("그래홀", ["조합기", "축구 승무패", '야구 승1패', "농구 승5패", "경기 통계", "회차 조회"], 
+    choice = option_menu("그래홀", ["축구 승무패", '야구 승1패', "농구 승5패", "조합기", "회차 조회", "경기 통계"], 
         menu_icon="cast", default_index=0,
-        icons=['tablet', 'life-preserver', 'shadows','dribbble','graph-up-arrow','fan'], 
+        icons=['life-preserver', 'shadows','dribbble','fan','tablet','graph-up-arrow'], 
                          styles={
         "container": {"padding": "4!important", "background-color": "#fafafa"},
         "icon": {"color": "#A52A2A", "font-size": "25px"},
@@ -219,19 +219,18 @@ elif choice == "경기 통계":
     pagedt = st.sidebar.radio("경기통계", ["승무패 경기통계", "승무패 배당통계", "승1패 경기통계", "승1패 배당통계", 
                                          "승5패 경기통계", "승5패 배당통계"])
     
-    indegree = 30
     if pagedt == "승무패 경기통계":
-        mt_so_1all.Crawler("so1",indegree) 
+        mt_dt_1all.Crawler("so1") 
     elif pagedt == "승무패 배당통계":   
-        mt_so_1all.Crawler("so2",indegree)
+        mt_dt_1all.Crawler("so2")
     elif pagedt == "승1패 경기통계": 
-        mt_so_1all.Crawler("bb1",indegree)
+        mt_dt_1all.Crawler("bb1")
     elif pagedt == "승1패 배당통계": 
-        mt_so_1all.Crawler("bb2",indegree)
+        mt_dt_1all.Crawler("bb2")
     elif pagedt == "승5패 경기통계": 
-        mt_so_1all.Crawler("bk1",indegree)
+        mt_dt_1all.Crawler("bk1")
     elif pagedt == "승5패 배당통계": 
-        mt_so_1all.Crawler("bk2",indegree)
+        mt_dt_1all.Crawler("bk2")
         
 elif choice == "조합기": 
 
