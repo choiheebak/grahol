@@ -1,0 +1,14 @@
+01;N;N;샬럿;샬럿;%샬럿%;Charlotte 
+02;N;N;애틀랜타;애틀랜타;%애틀랜타%;Atlanta 
+03;N;N;토론토;토론토;%토론%;Toronto 
+04;N;N;시카고;시카고;%시카고%;Chicago 
+05;N;N;밀워키;밀워키;%밀워키%;Milwaukee 
+06;N;N;브루클린;브루클린;%브루%;Brooklyn 
+07;N;N;덴버;덴버;%덴버%;Denver 
+08;N;N;피닉스;피닉스;%피닉%;Phoenix 
+09;N;N;LAL;LA레이커스;%레이커스%;Los Angeles 
+10;N;N;댈러스;댈러스;%댈러스%;Dallas 
+11;N;N;디트로이트;디트로이트;%디트로%;Detroit 
+12;N;N;유타;유타재즈;%유타%;Utah 
+13;N;N;휴스턴;휴스턴;%휴스%;Houston 
+14;N;N;포틀랜드;포틀랜드;%포틀%;Portland 
