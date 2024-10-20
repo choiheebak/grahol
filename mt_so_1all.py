@@ -4,12 +4,6 @@ import numpy as np
 from streamlit_option_menu import option_menu
 from streamlit_navigation_bar import st_navbar
 import plotly.graph_objects as go
-# 한글폰트
-# from matplotlib import font_manager, rc
-# font_path = "C:/Windows/Fonts/NanumBarunGothic.TTF"
-# font = font_manager.FontProperties(fname=font_path).get_name()
-# rc('font', family=font)
-# @st.experimental_memo
 
 def Crawler(yearc,countc,gyungi):
     
@@ -148,19 +142,19 @@ def Crawler(yearc,countc,gyungi):
         elif g == '07':
             f = open('soccer_so1_hyunhwang.txt', 'r', encoding='UTF8')
         # if g == '01':
-        #     f = open('D:/datagithub/soccer_so1_teamhome.txt', 'r', encoding='UTF8')
+        #     f = open('D:/datagithub/soccer/soccer_so1_teamhome.txt', 'r', encoding='UTF8')
         # elif g == '02':
-        #     f = open('D:/datagithub/soccer_so1_teamaway.txt', 'r', encoding='UTF8')
+        #     f = open('D:/datagithub/soccer/soccer_so1_teamaway.txt', 'r', encoding='UTF8')
         # elif g == '03':
-        #     f = open('D:/datagithub/soccer_so1_onehome.txt', 'r', encoding='UTF8')
+        #     f = open('D:/datagithub/soccer/soccer_so1_onehome.txt', 'r', encoding='UTF8')
         # elif g == '04':
-        #     f = open('D:/datagithub/soccer_so1_oneaway.txt', 'r', encoding='UTF8')
+        #     f = open('D:/datagithub/soccer/soccer_so1_oneaway.txt', 'r', encoding='UTF8')
         # elif g == '05':
-        #     f = open('D:/datagithub/soccer_so1_onetwohome.txt', 'r', encoding='UTF8')
+        #     f = open('D:/datagithub/soccer/soccer_so1_onetwohome.txt', 'r', encoding='UTF8')
         # elif g == '06':
-        #     f = open('D:/datagithub/soccer_so1_onetwoaway.txt', 'r', encoding='UTF8')
+        #     f = open('D:/datagithub/soccer/soccer_so1_onetwoaway.txt', 'r', encoding='UTF8')
         # elif g == '07':
-        #     f = open('D:/datagithub/soccer_so1_hyunhwang.txt', 'r', encoding='UTF8')
+        #     f = open('D:/datagithub/soccer/soccer_so1_hyunhwang.txt', 'r', encoding='UTF8')
 
         rdr1 = f.readlines()    
 
@@ -192,21 +186,21 @@ def Crawler(yearc,countc,gyungi):
         elif g == '18':
             f = open('soccer_so1_playeraway.txt', 'r', encoding='UTF8')
         # if g == '11':
-        #     f = open('D:/datagithub/soccer_so1_vstotal.txt', 'r', encoding='UTF8')
+        #     f = open('D:/datagithub/soccer/soccer_so1_vstotal.txt', 'r', encoding='UTF8')
         # elif g == '12':
-        #     f = open('D:/datagithub/soccer_so1_vsseven.txt', 'r', encoding='UTF8')
+        #     f = open('D:/datagithub/soccer/soccer_so1_vsseven.txt', 'r', encoding='UTF8')
         # elif g == '13':
-        #     f = open('D:/datagithub/soccer_so1_sevenhome.txt', 'r', encoding='UTF8')
+        #     f = open('D:/datagithub/soccer/soccer_so1_sevenhome.txt', 'r', encoding='UTF8')
         # elif g == '14':
-        #     f = open('D:/datagithub/soccer_so1_sevenaway.txt', 'r', encoding='UTF8')
+        #     f = open('D:/datagithub/soccer/soccer_so1_sevenaway.txt', 'r', encoding='UTF8')
         # elif g == '15':
-        #     f = open('D:/datagithub/soccer_so1_dukhome.txt', 'r', encoding='UTF8')
+        #     f = open('D:/datagithub/soccer/soccer_so1_dukhome.txt', 'r', encoding='UTF8')
         # elif g == '16':
-        #     f = open('D:/datagithub/soccer_so1_dukaway.txt', 'r', encoding='UTF8')
+        #     f = open('D:/datagithub/soccer/soccer_so1_dukaway.txt', 'r', encoding='UTF8')
         # elif g == '17':
-        #     f = open('D:/datagithub/soccer_so1_playerhome.txt', 'r', encoding='UTF8')
+        #     f = open('D:/datagithub/soccer/soccer_so1_playerhome.txt', 'r', encoding='UTF8')
         # elif g == '18':
-        #     f = open('D:/datagithub/soccer_so1_playeraway.txt', 'r', encoding='UTF8')
+        #     f = open('D:/datagithub/soccer/soccer_so1_playeraway.txt', 'r', encoding='UTF8')
 
         rdr1 = f.readlines()    
 
@@ -532,7 +526,10 @@ def Crawler(yearc,countc,gyungi):
 
     fig = go.Figure(data=[go.Pie(labels=labels, values=values5)])
     fig.update_traces(textfont_size=18,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
-    st.plotly_chart(fig)
+    try:
+        st.plotly_chart(fig)
+    except:
+        st.plotly_chart(fig, theme=None)
 
     
     team_read = read_all_txt('11',k)

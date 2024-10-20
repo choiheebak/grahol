@@ -4,8 +4,8 @@ import numpy as np
 import sqlite3
 # import m_ma_1all
 import mt_so_1all
-# import mt_so_1all
-# import mt_so_1all
+import mt_bb_1all
+import mt_bk_1all
 # import mt_so_1all
 # import mt_so_1all
 from streamlit_option_menu import option_menu
@@ -35,7 +35,7 @@ if choice == "회차 조회":
 
     if pagema == "축구 승무패":
         
-        # fr = open('D:/datagithub/soccer_wdl_all.txt', 'r', encoding='UTF8')
+        # fr = open('D:/datagithub/soccer/soccer_wdl_all.txt', 'r', encoding='UTF8')
         fr = open('soccer_wdl_all.txt', 'r', encoding='UTF8')
 
         rdr1 = fr.readlines()
@@ -90,7 +90,6 @@ if choice == "회차 조회":
 
 elif choice == "축구 승무패":
 
-    # fr = open('D:/datagithub/soccer_wdl.txt', 'r', encoding='UTF8')
     fr = open('soccer_wdl.txt', 'r', encoding='UTF8')
 
     rdr1 = fr.readlines()
@@ -141,89 +140,92 @@ elif choice == "야구 승1패":
     pagebb = st.sidebar.radio("야구 승1패", ["1경기", "2경기", "3경기", "4경기", "5경기", "6경기", "7경기",
                                     "8경기", "9경기", "10경기", "11경기", "12경기", "13경기", "14경기"])
     
-    con = sqlite3.connect("c:/Users/iendo/baseball.db")
-    cur = con.cursor()
-    cur.execute("SELECT 년도, 회차 FROM 승1패_일정결과 GROUP by 년도,회차 order by 년도 desc ,회차 desc ")
+    fr = open('baseball_wdl.txt', 'r', encoding='UTF8')
 
-    row = cur.fetchone()
-    year = row[0] 
-    count = row[1]  
-    # print(year, count)
-
-    con.close()  
+    rdr1 = fr.readlines()
+    year = 0
+    count = 0
+    for line in rdr1:
+        for j in range(len(line)):
+            if line[j] == ";":
+                year = line[:j]  
+                count = line[j+1:]
+                break
+    # fr.close
 
     if pagebb == "1경기":
-        mt_so_1all.Crawler(year,count,1) 
+        mt_bb_1all.Crawler(year,count,1) 
     elif pagebb == "2경기":   
-        mt_so_1all.Crawler(year,count,2)
+        mt_bb_1all.Crawler(year,count,2)
     elif pagebb == "3경기": 
-        mt_so_1all.Crawler(year,count,3)
+        mt_bb_1all.Crawler(year,count,3)
     elif pagebb == "4경기": 
-        mt_so_1all.Crawler(year,count,4)
+        mt_bb_1all.Crawler(year,count,4)
     elif pagebb == "5경기": 
-        mt_so_1all.Crawler(year,count,5)
+        mt_bb_1all.Crawler(year,count,5)
     elif pagebb == "6경기": 
-        mt_so_1all.Crawler(year,count,6)
+        mt_bb_1all.Crawler(year,count,6)
     elif pagebb == "7경기": 
-        mt_so_1all.Crawler(year,count,7)
+        mt_bb_1all.Crawler(year,count,7)
     elif pagebb == "8경기": 
-        mt_so_1all.Crawler(year,count,8)
+        mt_bb_1all.Crawler(year,count,8)
     elif pagebb == "9경기": 
-        mt_so_1all.Crawler(year,count,9)
+        mt_bb_1all.Crawler(year,count,9)
     elif pagebb == "10경기": 
-        mt_so_1all.Crawler(year,count,10)
+        mt_bb_1all.Crawler(year,count,10)
     elif pagebb == "11경기": 
-        mt_so_1all.Crawler(year,count,11)
+        mt_bb_1all.Crawler(year,count,11)
     elif pagebb == "12경기": 
-        mt_so_1all.Crawler(year,count,12)
+        mt_bb_1all.Crawler(year,count,12)
     elif pagebb == "13경기": 
-        mt_so_1all.Crawler(year,count,13)
+        mt_bb_1all.Crawler(year,count,13)
     elif pagebb == "14경기": 
-        mt_so_1all.Crawler(year,count,14)
+        mt_bb_1all.Crawler(year,count,14)
         
 elif choice == "농구 승5패":
     pagebk = st.sidebar.radio("농구 승5패", ["1경기", "2경기", "3경기", "4경기", "5경기", "6경기", "7경기",
                                     "8경기", "9경기", "10경기", "11경기", "12경기", "13경기", "14경기"])
-    
-    con = sqlite3.connect("c:/Users/iendo/basketball.db")
-    cur = con.cursor()
-    cur.execute("SELECT 년도, 회차 FROM 승5패_일정결과 GROUP by 년도,회차 order by 년도 desc ,회차 desc ")
+     
+    fr = open('basketball_wdl.txt', 'r', encoding='UTF8')
 
-    row = cur.fetchone()
-    year = row[0] 
-    count = row[1]  
-    # print(year, count)
-
-    con.close()  
+    rdr1 = fr.readlines()
+    year = 0
+    count = 0
+    for line in rdr1:
+        for j in range(len(line)):
+            if line[j] == ";":
+                year = line[:j]  
+                count = line[j+1:]
+                break
 
     if pagebk == "1경기":
-        mt_so_1all.Crawler(year,count,1) 
+        mt_bk_1all.Crawler(year,count,1) 
     elif pagebk == "2경기":   
-        mt_so_1all.Crawler(year,count,2)
+        mt_bk_1all.Crawler(year,count,2)
     elif pagebk == "3경기": 
-        mt_so_1all.Crawler(year,count,3)
+        mt_bk_1all.Crawler(year,count,3)
     elif pagebk == "4경기": 
-        mt_so_1all.Crawler(year,count,4)
+        mt_bk_1all.Crawler(year,count,4)
     elif pagebk == "5경기": 
-        mt_so_1all.Crawler(year,count,5)
+        mt_bk_1all.Crawler(year,count,5)
     elif pagebk == "6경기": 
-        mt_so_1all.Crawler(year,count,6)
+        mt_bk_1all.Crawler(year,count,6)
     elif pagebk == "7경기": 
-        mt_so_1all.Crawler(year,count,7)
+        mt_bk_1all.Crawler(year,count,7)
     elif pagebk == "8경기": 
-        mt_so_1all.Crawler(year,count,8)
+        mt_bk_1all.Crawler(year,count,8)
     elif pagebk == "9경기": 
-        mt_so_1all.Crawler(year,count,9)
+        mt_bk_1all.Crawler(year,count,9)
     elif pagebk == "10경기": 
-        mt_so_1all.Crawler(year,count,10)
+        mt_bk_1all.Crawler(year,count,10)
     elif pagebk == "11경기": 
-        mt_so_1all.Crawler(year,count,11)
+        mt_bk_1all.Crawler(year,count,11)
     elif pagebk == "12경기": 
-        mt_so_1all.Crawler(year,count,12)
+        mt_bk_1all.Crawler(year,count,12)
     elif pagebk == "13경기": 
-        mt_so_1all.Crawler(year,count,13)
+        mt_bk_1all.Crawler(year,count,13)
     elif pagebk == "14경기": 
-        mt_so_1all.Crawler(year,count,14)
+        mt_bk_1all.Crawler(year,count,14)
         
 elif choice == "경기 통계":
     pagedt = st.sidebar.radio("경기통계", ["승무패 경기통계", "승무패 배당통계", "승1패 경기통계", "승1패 배당통계", 
