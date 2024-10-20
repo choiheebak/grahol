@@ -1,25 +1,19 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import sqlite3
 import mt_ma_1all
 import mt_so_1all
 import mt_bb_1all
 import mt_bk_1all
 # import mt_so_1all
-# import mt_so_1all
+import mt_jo_1all
 from streamlit_option_menu import option_menu
 from streamlit_navigation_bar import st_navbar
-# 한글폰트
-# from matplotlib import font_manager, rc
-# font_path = "C:/Windows/Fonts/NanumBarunGothic.TTF"
-# font = font_manager.FontProperties(fname=font_path).get_name()
-# rc('font', family=font)
 
 # 1. as sidebar menu
 with st.sidebar:
     choice = option_menu("그래홀", ["회차 조회","축구 승무패", '야구 승1패', "농구 승5패", "경기 통계", "조합기"], 
-        menu_icon="cast", default_index=0,
+        menu_icon="cast", default_index=1,
         icons=['tablet', 'life-preserver', 'shadows','dribbble','graph-up-arrow','fan'], 
                          styles={
         "container": {"padding": "4!important", "background-color": "#fafafa"},
@@ -246,48 +240,53 @@ elif choice == "조합기":
 
     if pagejo == "축구 승무패":
 
-        con = sqlite3.connect("c:/Users/iendo/soccer.db")
-        cur = con.cursor()
-        cur.execute("SELECT 년도, 회차 FROM 승무패_일정결과 GROUP by 년도,회차 order by 년도 desc ,회차 desc ")
+        fr = open('soccer_wdl.txt', 'r', encoding='UTF8')
 
-        row = cur.fetchone()
-        year = row[0] 
-        count = row[1]  
-        # print(year, count)
+        rdr1 = fr.readlines()
+        year = 0
+        count = 0
+        for line in rdr1:
+            for j in range(len(line)):
+                if line[j] == ";":
+                    year = line[:j]  
+                    count = line[j+1:]
+                    break
 
-        con.close() 
-
-        mt_so_1all.Crawler(year,count,'s') 
+        mt_jo_1all.Crawler(year,count,'s') 
 
     elif pagejo == "야구 승1패": 
+  
+        fr = open('baseball_wdl.txt', 'r', encoding='UTF8')
 
-        con = sqlite3.connect("c:/Users/iendo/baseball.db")
-        cur = con.cursor()
-        cur.execute("SELECT 년도, 회차 FROM 승1패_일정결과 GROUP by 년도,회차 order by 년도 desc ,회차 desc ")
+        rdr1 = fr.readlines()
+        year = 0
+        count = 0
+        for line in rdr1:
+            for j in range(len(line)):
+                if line[j] == ";":
+                    year = line[:j]  
+                    count = line[j+1:]
+                    break
 
-        row = cur.fetchone()
-        year = row[0] 
-        count = row[1]  
-        # print(year, count)
-
-        con.close()  
-
-        mt_so_1all.Crawler(year,count,'b')
+        mt_jo_1all.Crawler(year,count,'b')
 
     elif pagejo == "농구 승5패": 
+ 
+        fr = open('basketball_wdl.txt', 'r', encoding='UTF8')
 
-        con = sqlite3.connect("c:/Users/iendo/basketball.db")
-        cur = con.cursor()
-        cur.execute("SELECT 년도, 회차 FROM 승5패_일정결과 GROUP by 년도,회차 order by 년도 desc ,회차 desc ")
+        rdr1 = fr.readlines()
+        year = 0
+        count = 0
+        for line in rdr1:
+            for j in range(len(line)):
+                if line[j] == ";":
+                    year = line[:j]  
+                    count = line[j+1:]
+                    break
 
-        row = cur.fetchone()
-        year = row[0] 
-        count = row[1]  
-        # print(year, count)
+            con.close() 
 
-        con.close() 
-
-        mt_so_1all.Crawler(year,count,'k')
+        mt_jo_1all.Crawler(year,count,'k')
 
 else:
     st.write("메뉴를 선택하세요")
