@@ -261,9 +261,6 @@ def Crawler(yearc,countc,gyungi):
                 s = r+1
                 seq1_ateam = team_read[s:]
 
-    ssh = str(year) + "년 " + str(count) + "회차"
-    st.subheader(ssh)
-
     team_read = read_txt('03',k)
 
     rcnt = 0
@@ -444,8 +441,12 @@ def Crawler(yearc,countc,gyungi):
                 s = r+1
                 result = team_read[s:]
    
+    ssh = str(year) + "년 축구 승무패 " + str(count) + "회차"
+    st.subheader(ssh)
+
     sh = str(i) + "경기"
     st.subheader(sh)
+
     df = pd.DataFrame(data=np.array([[home,hseq,hsjum,htotal,hwin,hdraw,hlose,hduk,hsil,hcha,hpduk],
                                      [away,aseq,asjum,atotal,awin,adraw,alose,aduk,asil,acha,apduk]]), 
 
