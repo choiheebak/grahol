@@ -277,7 +277,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig8, theme=None)
                 except:
                     if int(r8) == 0:
-                        st.plotly_chart(fig8)
+                        pass
                     else:
                         st.plotly_chart(r8, theme=None)
         with tab10:
@@ -288,7 +288,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig9, theme=None)
                 except:
                     if int(r9) == 0:
-                        st.plotly_chart(fig9)
+                        pass
                     else:
                         st.plotly_chart(r9, theme=None)
         with tab11:
@@ -299,7 +299,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig10, theme=None)
                 except:
                     if int(r10) == 0:
-                        st.plotly_chart(fig10)
+                        pass
                     else:
                         st.plotly_chart(r10, theme=None)
         with tab12:
@@ -310,7 +310,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig11, theme=None)
                 except:
                     if int(r11) == 0:
-                        st.plotly_chart(fig11)
+                        pass
                     else:
                         st.plotly_chart(r11, theme=None)
         with tab13:
@@ -321,7 +321,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig12, theme=None)
                 except:
                     if int(r12) == 0:
-                        st.plotly_chart(fig12)
+                        pass
                     else:
                         st.plotly_chart(r12, theme=None)
         with tab14:
@@ -331,8 +331,8 @@ def Crawler(gubun):
                 try:
                     st.plotly_chart(fig13, theme=None)
                 except:
-                    if int(r10) == 0:
-                        st.plotly_chart(fig13)
+                    if int(r13) == 0:
+                        pass
                     else:
                         st.plotly_chart(r13, theme=None)
 
@@ -440,7 +440,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig8, theme=None)
                 except:
                     if int(r8) == 0:
-                        st.plotly_chart(fig8)
+                        pass
                     else:
                         st.plotly_chart(r8, theme=None)
         with tab10:
@@ -451,7 +451,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig9, theme=None)
                 except:
                     if int(r9) == 0:
-                        st.plotly_chart(fig9)
+                        pass
                     else:
                         st.plotly_chart(r9, theme=None)
         with tab11:
@@ -462,7 +462,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig10, theme=None)
                 except:
                     if int(r10) == 0:
-                        st.plotly_chart(fig10)
+                        pass
                     else:
                         st.plotly_chart(r10, theme=None)
         with tab12:
@@ -473,7 +473,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig11, theme=None)
                 except:
                     if int(r11) == 0:
-                        st.plotly_chart(fig11)
+                        pass
                     else:
                         st.plotly_chart(r11, theme=None)
         with tab13:
@@ -484,7 +484,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig12, theme=None)
                 except:
                     if int(r12) == 0:
-                        st.plotly_chart(fig12)
+                        pass
                     else:
                         st.plotly_chart(r12, theme=None)
         with tab14:
@@ -494,8 +494,8 @@ def Crawler(gubun):
                 try:
                     st.plotly_chart(fig13, theme=None)
                 except:
-                    if int(r10) == 0:
-                        st.plotly_chart(fig13)
+                    if int(r13) == 0:
+                        pass
                     else:
                         st.plotly_chart(r13, theme=None)
 
@@ -668,7 +668,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig8, theme=None)
                 except:
                     if int(r8) == 0:
-                        st.plotly_chart(fig8)
+                        pass
                     else:
                         st.plotly_chart(r8, theme=None)
         with tab10:
@@ -679,7 +679,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig9, theme=None)
                 except:
                     if int(r9) == 0:
-                        st.plotly_chart(fig9)
+                        pass
                     else:
                         st.plotly_chart(r9, theme=None)
         with tab11:
@@ -690,7 +690,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig10, theme=None)
                 except:
                     if int(r10) == 0:
-                        st.plotly_chart(fig10)
+                        pass
                     else:
                         st.plotly_chart(r10, theme=None)
         with tab12:
@@ -701,7 +701,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig11, theme=None)
                 except:
                     if int(r11) == 0:
-                        st.plotly_chart(fig11)
+                        pass
                     else:
                         st.plotly_chart(r11, theme=None)
         with tab13:
@@ -712,7 +712,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig12, theme=None)
                 except:
                     if int(r12) == 0:
-                        st.plotly_chart(fig12)
+                        pass
                     else:
                         st.plotly_chart(r12, theme=None)
         with tab14:
@@ -722,8 +722,8 @@ def Crawler(gubun):
                 try:
                     st.plotly_chart(fig13, theme=None)
                 except:
-                    if int(r10) == 0:
-                        st.plotly_chart(fig13)
+                    if int(r13) == 0:
+                        pass
                     else:
                         st.plotly_chart(r13, theme=None)
 
@@ -832,7 +832,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig8, theme=None)
                 except:
                     if int(r8) == 0:
-                        st.plotly_chart(fig8)
+                        pass
                     else:
                         st.plotly_chart(r8, theme=None)
         with tab10:
@@ -843,7 +843,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig9, theme=None)
                 except:
                     if int(r9) == 0:
-                        st.plotly_chart(fig9)
+                        pass
                     else:
                         st.plotly_chart(r9, theme=None)
         with tab11:
@@ -854,7 +854,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig10, theme=None)
                 except:
                     if int(r10) == 0:
-                        st.plotly_chart(fig10)
+                        pass
                     else:
                         st.plotly_chart(r10, theme=None)
         with tab12:
@@ -865,7 +865,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig11, theme=None)
                 except:
                     if int(r11) == 0:
-                        st.plotly_chart(fig11)
+                        pass
                     else:
                         st.plotly_chart(r11, theme=None)
         with tab13:
@@ -876,7 +876,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig12, theme=None)
                 except:
                     if int(r12) == 0:
-                        st.plotly_chart(fig12)
+                        pass
                     else:
                         st.plotly_chart(r12, theme=None)
         with tab14:
@@ -886,8 +886,8 @@ def Crawler(gubun):
                 try:
                     st.plotly_chart(fig13, theme=None)
                 except:
-                    if int(r10) == 0:
-                        st.plotly_chart(fig13)
+                    if int(r13) == 0:
+                        pass
                     else:
                         st.plotly_chart(r13, theme=None)
 
@@ -1064,7 +1064,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig8, theme=None)
                 except:
                     if int(r8) == 0:
-                        st.plotly_chart(fig8)
+                        pass
                     else:
                         st.plotly_chart(r8, theme=None)
         with tab10:
@@ -1075,7 +1075,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig9, theme=None)
                 except:
                     if int(r9) == 0:
-                        st.plotly_chart(fig9)
+                        pass
                     else:
                         st.plotly_chart(r9, theme=None)
         with tab11:
@@ -1086,7 +1086,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig10, theme=None)
                 except:
                     if int(r10) == 0:
-                        st.plotly_chart(fig10)
+                        pass
                     else:
                         st.plotly_chart(r10, theme=None)
         with tab12:
@@ -1097,7 +1097,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig11, theme=None)
                 except:
                     if int(r11) == 0:
-                        st.plotly_chart(fig11)
+                        pass
                     else:
                         st.plotly_chart(r11, theme=None)
         with tab13:
@@ -1108,7 +1108,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig12, theme=None)
                 except:
                     if int(r12) == 0:
-                        st.plotly_chart(fig12)
+                        pass
                     else:
                         st.plotly_chart(r12, theme=None)
         with tab14:
@@ -1118,8 +1118,8 @@ def Crawler(gubun):
                 try:
                     st.plotly_chart(fig13, theme=None)
                 except:
-                    if int(r10) == 0:
-                        st.plotly_chart(fig13)
+                    if int(r13) == 0:
+                        pass
                     else:
                         st.plotly_chart(r13, theme=None)
 
@@ -1227,7 +1227,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig8, theme=None)
                 except:
                     if int(r8) == 0:
-                        st.plotly_chart(fig8)
+                        pass
                     else:
                         st.plotly_chart(r8, theme=None)
         with tab10:
@@ -1238,7 +1238,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig9, theme=None)
                 except:
                     if int(r9) == 0:
-                        st.plotly_chart(fig9)
+                        pass
                     else:
                         st.plotly_chart(r9, theme=None)
         with tab11:
@@ -1249,7 +1249,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig10, theme=None)
                 except:
                     if int(r10) == 0:
-                        st.plotly_chart(fig10)
+                        pass
                     else:
                         st.plotly_chart(r10, theme=None)
         with tab12:
@@ -1260,7 +1260,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig11, theme=None)
                 except:
                     if int(r11) == 0:
-                        st.plotly_chart(fig11)
+                        pass
                     else:
                         st.plotly_chart(r11, theme=None)
         with tab13:
@@ -1271,7 +1271,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig12, theme=None)
                 except:
                     if int(r12) == 0:
-                        st.plotly_chart(fig12)
+                        pass
                     else:
                         st.plotly_chart(r12, theme=None)
         with tab14:
@@ -1281,8 +1281,8 @@ def Crawler(gubun):
                 try:
                     st.plotly_chart(fig13, theme=None)
                 except:
-                    if int(r10) == 0:
-                        st.plotly_chart(fig13)
+                    if int(r13) == 0:
+                        pass
                     else:
                         st.plotly_chart(r13, theme=None)
 
@@ -1486,7 +1486,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig8, theme=None)
                 except:
                     if int(r8) == 0:
-                        st.plotly_chart(fig8)
+                        pass
                     else:
                         st.plotly_chart(r8, theme=None)
         with tab10:
@@ -1497,7 +1497,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig9, theme=None)
                 except:
                     if int(r9) == 0:
-                        st.plotly_chart(fig9)
+                        pass
                     else:
                         st.plotly_chart(r9, theme=None)
         with tab11:
@@ -1508,7 +1508,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig10, theme=None)
                 except:
                     if int(r10) == 0:
-                        st.plotly_chart(fig10)
+                        pass
                     else:
                         st.plotly_chart(r10, theme=None)
         with tab12:
@@ -1519,7 +1519,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig11, theme=None)
                 except:
                     if int(r11) == 0:
-                        st.plotly_chart(fig11)
+                        pass
                     else:
                         st.plotly_chart(r11, theme=None)
         with tab13:
@@ -1530,7 +1530,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig12, theme=None)
                 except:
                     if int(r12) == 0:
-                        st.plotly_chart(fig12)
+                        pass
                     else:
                         st.plotly_chart(r12, theme=None)
         with tab14:
@@ -1540,8 +1540,8 @@ def Crawler(gubun):
                 try:
                     st.plotly_chart(fig13, theme=None)
                 except:
-                    if int(r10) == 0:
-                        st.plotly_chart(fig13)
+                    if int(r13) == 0:
+                        pass
                     else:
                         st.plotly_chart(r13, theme=None)
 
@@ -1649,7 +1649,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig8, theme=None)
                 except:
                     if int(r8) == 0:
-                        st.plotly_chart(fig8)
+                        pass
                     else:
                         st.plotly_chart(r8, theme=None)
         with tab10:
@@ -1660,7 +1660,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig9, theme=None)
                 except:
                     if int(r9) == 0:
-                        st.plotly_chart(fig9)
+                        pass
                     else:
                         st.plotly_chart(r9, theme=None)
         with tab11:
@@ -1671,7 +1671,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig10, theme=None)
                 except:
                     if int(r10) == 0:
-                        st.plotly_chart(fig10)
+                        pass
                     else:
                         st.plotly_chart(r10, theme=None)
         with tab12:
@@ -1682,7 +1682,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig11, theme=None)
                 except:
                     if int(r11) == 0:
-                        st.plotly_chart(fig11)
+                        pass
                     else:
                         st.plotly_chart(r11, theme=None)
         with tab13:
@@ -1693,7 +1693,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig12, theme=None)
                 except:
                     if int(r12) == 0:
-                        st.plotly_chart(fig12)
+                        pass
                     else:
                         st.plotly_chart(r12, theme=None)
         with tab14:
@@ -1703,8 +1703,8 @@ def Crawler(gubun):
                 try:
                     st.plotly_chart(fig13, theme=None)
                 except:
-                    if int(r10) == 0:
-                        st.plotly_chart(fig13)
+                    if int(r13) == 0:
+                        pass
                     else:
                         st.plotly_chart(r13, theme=None)
 
@@ -1880,7 +1880,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig8, theme=None)
                 except:
                     if int(r8) == 0:
-                        st.plotly_chart(fig8)
+                        pass
                     else:
                         st.plotly_chart(r8, theme=None)
         with tab10:
@@ -1891,7 +1891,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig9, theme=None)
                 except:
                     if int(r9) == 0:
-                        st.plotly_chart(fig9)
+                        pass
                     else:
                         st.plotly_chart(r9, theme=None)
         with tab11:
@@ -1902,7 +1902,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig10, theme=None)
                 except:
                     if int(r10) == 0:
-                        st.plotly_chart(fig10)
+                        pass
                     else:
                         st.plotly_chart(r10, theme=None)
         with tab12:
@@ -1913,7 +1913,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig11, theme=None)
                 except:
                     if int(r11) == 0:
-                        st.plotly_chart(fig11)
+                        pass
                     else:
                         st.plotly_chart(r11, theme=None)
         with tab13:
@@ -1924,7 +1924,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig12, theme=None)
                 except:
                     if int(r12) == 0:
-                        st.plotly_chart(fig12)
+                        pass
                     else:
                         st.plotly_chart(r12, theme=None)
         with tab14:
@@ -1934,8 +1934,8 @@ def Crawler(gubun):
                 try:
                     st.plotly_chart(fig13, theme=None)
                 except:
-                    if int(r10) == 0:
-                        st.plotly_chart(fig13)
+                    if int(r13) == 0:
+                        pass
                     else:
                         st.plotly_chart(r13, theme=None)
 
@@ -2043,7 +2043,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig8, theme=None)
                 except:
                     if int(r8) == 0:
-                        st.plotly_chart(fig8)
+                        pass
                     else:
                         st.plotly_chart(r8, theme=None)
         with tab10:
@@ -2054,7 +2054,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig9, theme=None)
                 except:
                     if int(r9) == 0:
-                        st.plotly_chart(fig9)
+                        pass
                     else:
                         st.plotly_chart(r9, theme=None)
         with tab11:
@@ -2065,7 +2065,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig10, theme=None)
                 except:
                     if int(r10) == 0:
-                        st.plotly_chart(fig10)
+                        pass
                     else:
                         st.plotly_chart(r10, theme=None)
         with tab12:
@@ -2076,7 +2076,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig11, theme=None)
                 except:
                     if int(r11) == 0:
-                        st.plotly_chart(fig11)
+                        pass
                     else:
                         st.plotly_chart(r11, theme=None)
         with tab13:
@@ -2087,7 +2087,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig12, theme=None)
                 except:
                     if int(r12) == 0:
-                        st.plotly_chart(fig12)
+                        pass
                     else:
                         st.plotly_chart(r12, theme=None)
         with tab14:
@@ -2097,8 +2097,8 @@ def Crawler(gubun):
                 try:
                     st.plotly_chart(fig13, theme=None)
                 except:
-                    if int(r10) == 0:
-                        st.plotly_chart(fig13)
+                    if int(r13) == 0:
+                        pass
                     else:
                         st.plotly_chart(r13, theme=None)
 
@@ -2274,7 +2274,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig8, theme=None)
                 except:
                     if int(r8) == 0:
-                        st.plotly_chart(fig8)
+                        pass
                     else:
                         st.plotly_chart(r8, theme=None)
         with tab10:
@@ -2285,7 +2285,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig9, theme=None)
                 except:
                     if int(r9) == 0:
-                        st.plotly_chart(fig9)
+                        pass
                     else:
                         st.plotly_chart(r9, theme=None)
         with tab11:
@@ -2296,7 +2296,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig10, theme=None)
                 except:
                     if int(r10) == 0:
-                        st.plotly_chart(fig10)
+                        pass
                     else:
                         st.plotly_chart(r10, theme=None)
         with tab12:
@@ -2307,7 +2307,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig11, theme=None)
                 except:
                     if int(r11) == 0:
-                        st.plotly_chart(fig11)
+                        pass
                     else:
                         st.plotly_chart(r11, theme=None)
         with tab13:
@@ -2318,7 +2318,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig12, theme=None)
                 except:
                     if int(r12) == 0:
-                        st.plotly_chart(fig12)
+                        pass
                     else:
                         st.plotly_chart(r12, theme=None)
         with tab14:
@@ -2328,8 +2328,8 @@ def Crawler(gubun):
                 try:
                     st.plotly_chart(fig13, theme=None)
                 except:
-                    if int(r10) == 0:
-                        st.plotly_chart(fig13)
+                    if int(r13) == 0:
+                        pass
                     else:
                         st.plotly_chart(r13, theme=None)
 
@@ -2437,7 +2437,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig8, theme=None)
                 except:
                     if int(r8) == 0:
-                        st.plotly_chart(fig8)
+                        pass
                     else:
                         st.plotly_chart(r8, theme=None)
         with tab10:
@@ -2448,7 +2448,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig9, theme=None)
                 except:
                     if int(r9) == 0:
-                        st.plotly_chart(fig9)
+                        pass
                     else:
                         st.plotly_chart(r9, theme=None)
         with tab11:
@@ -2459,7 +2459,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig10, theme=None)
                 except:
                     if int(r10) == 0:
-                        st.plotly_chart(fig10)
+                        pass
                     else:
                         st.plotly_chart(r10, theme=None)
         with tab12:
@@ -2470,7 +2470,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig11, theme=None)
                 except:
                     if int(r11) == 0:
-                        st.plotly_chart(fig11)
+                        pass
                     else:
                         st.plotly_chart(r11, theme=None)
         with tab13:
@@ -2481,7 +2481,7 @@ def Crawler(gubun):
                     st.plotly_chart(fig12, theme=None)
                 except:
                     if int(r12) == 0:
-                        st.plotly_chart(fig12)
+                        pass
                     else:
                         st.plotly_chart(r12, theme=None)
         with tab14:
@@ -2491,8 +2491,8 @@ def Crawler(gubun):
                 try:
                     st.plotly_chart(fig13, theme=None)
                 except:
-                    if int(r10) == 0:
-                        st.plotly_chart(fig13)
+                    if int(r13) == 0:
+                        pass
                     else:
                         st.plotly_chart(r13, theme=None)
 
