@@ -1306,9 +1306,6 @@ def Crawler(yearc,countc,gyungi):
                     s = r+1
                     saoffside.append(team_read[q][s:])
 
-    # if len(shplay) == 0 & len(saplay) == 0:
-    #     pass
-    # else:
     st.markdown(":soccer: :blue[**선수**]")
 
     dataq = {"선수":[shplay],"포지션":[shpos],"득점":[shduk],"어시스트":[shassist],"공격포인트":[shpoint],"경기수":[shtotal],
@@ -1343,7 +1340,7 @@ def Crawler(yearc,countc,gyungi):
     figr.update_layout(height=500)
     
     
-    if len(shplay) == 0 & len(saplay) == 0:
+    if len(shplay) == 0 and len(saplay) == 0:
         tab1, tab2 = st.tabs(["홈팀", "원정팀"])
         with tab1:
             pass
