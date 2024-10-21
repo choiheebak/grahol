@@ -265,9 +265,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig8, theme=None)
                 except:
                     if w1 == 'fig8':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig8':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab10:
             try:
                 st.plotly_chart(fig9)
@@ -276,9 +276,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig9, theme=None)
                 except:
                     if w1 == 'fig9':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig9':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab11:
             try:
                 st.plotly_chart(fig10)
@@ -287,9 +287,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig10, theme=None)
                 except:
                     if w1 == 'fig10':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig10':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab12:
             try:
                 st.plotly_chart(fig11)
@@ -298,9 +298,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig11, theme=None)
                 except:
                     if w1 == 'fig11':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig11':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab13:
             try:
                 st.plotly_chart(fig12)
@@ -309,9 +309,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig12, theme=None)
                 except:
                     if w1 == 'fig12':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig12':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab14:
             try:
                 st.plotly_chart(fig13)
@@ -320,9 +320,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig13, theme=None)
                 except:
                     if w1 == 'fig13':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig13':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
 
         st.markdown(":soccer: :violet[**최근 30 회차 승무패 경기통계**]")
         df = pd.DataFrame(data=np.array([tcntw30,tcntd30,tcntl30]), 
@@ -428,9 +428,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig8, theme=None)
                 except:
                     if w1 == 'fig8':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig8':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab10:
             try:
                 st.plotly_chart(fig9)
@@ -439,9 +439,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig9, theme=None)
                 except:
                     if w1 == 'fig9':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig9':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab11:
             try:
                 st.plotly_chart(fig10)
@@ -450,9 +450,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig10, theme=None)
                 except:
                     if w1 == 'fig10':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig10':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab12:
             try:
                 st.plotly_chart(fig11)
@@ -461,9 +461,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig11, theme=None)
                 except:
                     if w1 == 'fig11':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig11':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab13:
             try:
                 st.plotly_chart(fig12)
@@ -472,9 +472,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig12, theme=None)
                 except:
                     if w1 == 'fig12':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig12':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab14:
             try:
                 st.plotly_chart(fig13)
@@ -483,9 +483,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig13, theme=None)
                 except:
                     if w1 == 'fig13':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig13':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
 
         # st.markdown(":soccer: :violet[**최근 10회차 결과**]")
 
@@ -656,9 +656,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig8, theme=None)
                 except:
                     if w1 == 'fig8':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig8':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab10:
             try:
                 st.plotly_chart(fig9)
@@ -667,9 +667,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig9, theme=None)
                 except:
                     if w1 == 'fig9':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig9':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab11:
             try:
                 st.plotly_chart(fig10)
@@ -678,9 +678,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig10, theme=None)
                 except:
                     if w1 == 'fig10':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig10':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab12:
             try:
                 st.plotly_chart(fig11)
@@ -689,9 +689,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig11, theme=None)
                 except:
                     if w1 == 'fig11':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig11':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab13:
             try:
                 st.plotly_chart(fig12)
@@ -700,9 +700,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig12, theme=None)
                 except:
                     if w1 == 'fig12':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig12':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab14:
             try:
                 st.plotly_chart(fig13)
@@ -711,9 +711,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig13, theme=None)
                 except:
                     if w1 == 'fig13':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig13':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
 
         st.markdown(":baseball: :violet[**최근 30 회차 승①패 경기통계**]")
         df = pd.DataFrame(data=np.array([tcntw30,tcntd30,tcntl30]), 
@@ -820,9 +820,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig8, theme=None)
                 except:
                     if w1 == 'fig8':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig8':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab10:
             try:
                 st.plotly_chart(fig9)
@@ -831,9 +831,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig9, theme=None)
                 except:
                     if w1 == 'fig9':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig9':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab11:
             try:
                 st.plotly_chart(fig10)
@@ -842,9 +842,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig10, theme=None)
                 except:
                     if w1 == 'fig10':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig10':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab12:
             try:
                 st.plotly_chart(fig11)
@@ -853,9 +853,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig11, theme=None)
                 except:
                     if w1 == 'fig11':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig11':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab13:
             try:
                 st.plotly_chart(fig12)
@@ -864,9 +864,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig12, theme=None)
                 except:
                     if w1 == 'fig12':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig12':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab14:
             try:
                 st.plotly_chart(fig13)
@@ -875,9 +875,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig13, theme=None)
                 except:
                     if w1 == 'fig13':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig13':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
 
         # st.markdown(":baseball: :violet[**최근 10회차 결과**]")
 
@@ -1052,9 +1052,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig8, theme=None)
                 except:
                     if w1 == 'fig8':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig8':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab10:
             try:
                 st.plotly_chart(fig9)
@@ -1063,9 +1063,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig9, theme=None)
                 except:
                     if w1 == 'fig9':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig9':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab11:
             try:
                 st.plotly_chart(fig10)
@@ -1074,9 +1074,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig10, theme=None)
                 except:
                     if w1 == 'fig10':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig10':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab12:
             try:
                 st.plotly_chart(fig11)
@@ -1085,9 +1085,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig11, theme=None)
                 except:
                     if w1 == 'fig11':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig11':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab13:
             try:
                 st.plotly_chart(fig12)
@@ -1096,9 +1096,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig12, theme=None)
                 except:
                     if w1 == 'fig12':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig12':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab14:
             try:
                 st.plotly_chart(fig13)
@@ -1107,9 +1107,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig13, theme=None)
                 except:
                     if w1 == 'fig13':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig13':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
 
         st.markdown(":basketball: :violet[**최근 30 회차 승⑤패 경기통계**]")
         df = pd.DataFrame(data=np.array([tcntw30,tcntd30,tcntl30]), 
@@ -1215,9 +1215,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig8, theme=None)
                 except:
                     if w1 == 'fig8':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig8':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab10:
             try:
                 st.plotly_chart(fig9)
@@ -1226,9 +1226,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig9, theme=None)
                 except:
                     if w1 == 'fig9':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig9':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab11:
             try:
                 st.plotly_chart(fig10)
@@ -1237,9 +1237,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig10, theme=None)
                 except:
                     if w1 == 'fig10':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig10':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab12:
             try:
                 st.plotly_chart(fig11)
@@ -1248,9 +1248,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig11, theme=None)
                 except:
                     if w1 == 'fig11':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig11':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab13:
             try:
                 st.plotly_chart(fig12)
@@ -1259,9 +1259,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig12, theme=None)
                 except:
                     if w1 == 'fig12':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig12':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab14:
             try:
                 st.plotly_chart(fig13)
@@ -1270,9 +1270,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig13, theme=None)
                 except:
                     if w1 == 'fig13':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig13':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
 
         # st.markdown(":basketball: :violet[**최근 10회차 결과**]")
 
@@ -1474,9 +1474,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig8, theme=None)
                 except:
                     if w1 == 'fig8':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig8':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab10:
             try:
                 st.plotly_chart(fig9)
@@ -1485,9 +1485,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig9, theme=None)
                 except:
                     if w1 == 'fig9':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig9':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab11:
             try:
                 st.plotly_chart(fig10)
@@ -1496,9 +1496,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig10, theme=None)
                 except:
                     if w1 == 'fig10':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig10':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab12:
             try:
                 st.plotly_chart(fig11)
@@ -1507,9 +1507,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig11, theme=None)
                 except:
                     if w1 == 'fig11':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig11':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab13:
             try:
                 st.plotly_chart(fig12)
@@ -1518,9 +1518,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig12, theme=None)
                 except:
                     if w1 == 'fig12':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig12':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab14:
             try:
                 st.plotly_chart(fig13)
@@ -1529,9 +1529,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig13, theme=None)
                 except:
                     if w1 == 'fig13':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig13':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
 
         st.markdown(":soccer: :violet[**최근 30 회차 고중저 경기통계**]")
         df = pd.DataFrame(data=np.array([tcntw30,tcntd30,tcntl30]), 
@@ -1637,9 +1637,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig8, theme=None)
                 except:
                     if w1 == 'fig8':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig8':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab10:
             try:
                 st.plotly_chart(fig9)
@@ -1648,9 +1648,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig9, theme=None)
                 except:
                     if w1 == 'fig9':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig9':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab11:
             try:
                 st.plotly_chart(fig10)
@@ -1659,9 +1659,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig10, theme=None)
                 except:
                     if w1 == 'fig10':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig10':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab12:
             try:
                 st.plotly_chart(fig11)
@@ -1670,9 +1670,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig11, theme=None)
                 except:
                     if w1 == 'fig11':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig11':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab13:
             try:
                 st.plotly_chart(fig12)
@@ -1681,9 +1681,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig12, theme=None)
                 except:
                     if w1 == 'fig12':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig12':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab14:
             try:
                 st.plotly_chart(fig13)
@@ -1692,9 +1692,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig13, theme=None)
                 except:
                     if w1 == 'fig13':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig13':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
 
         # st.markdown(":soccer: :violet[**최근 10회차 결과**]")
 
@@ -1868,9 +1868,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig8, theme=None)
                 except:
                     if w1 == 'fig8':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig8':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab10:
             try:
                 st.plotly_chart(fig9)
@@ -1879,9 +1879,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig9, theme=None)
                 except:
                     if w1 == 'fig9':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig9':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab11:
             try:
                 st.plotly_chart(fig10)
@@ -1890,9 +1890,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig10, theme=None)
                 except:
                     if w1 == 'fig10':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig10':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab12:
             try:
                 st.plotly_chart(fig11)
@@ -1901,9 +1901,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig11, theme=None)
                 except:
                     if w1 == 'fig11':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig11':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab13:
             try:
                 st.plotly_chart(fig12)
@@ -1912,9 +1912,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig12, theme=None)
                 except:
                     if w1 == 'fig12':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig12':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab14:
             try:
                 st.plotly_chart(fig13)
@@ -1923,9 +1923,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig13, theme=None)
                 except:
                     if w1 == 'fig13':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig13':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
 
         st.markdown(":baseball: :violet[**최근 30 회차 고중저 경기통계**]")
         df = pd.DataFrame(data=np.array([tcntw30,tcntd30,tcntl30]), 
@@ -2031,9 +2031,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig8, theme=None)
                 except:
                     if w1 == 'fig8':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig8':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab10:
             try:
                 st.plotly_chart(fig9)
@@ -2042,9 +2042,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig9, theme=None)
                 except:
                     if w1 == 'fig9':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig9':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab11:
             try:
                 st.plotly_chart(fig10)
@@ -2053,9 +2053,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig10, theme=None)
                 except:
                     if w1 == 'fig10':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig10':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab12:
             try:
                 st.plotly_chart(fig11)
@@ -2064,9 +2064,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig11, theme=None)
                 except:
                     if w1 == 'fig11':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig11':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab13:
             try:
                 st.plotly_chart(fig12)
@@ -2075,9 +2075,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig12, theme=None)
                 except:
                     if w1 == 'fig12':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig12':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab14:
             try:
                 st.plotly_chart(fig13)
@@ -2086,9 +2086,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig13, theme=None)
                 except:
                     if w1 == 'fig13':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig13':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
 
         # st.markdown(":baseball: :violet[**최근 10회차 결과**]")
        
@@ -2262,9 +2262,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig8, theme=None)
                 except:
                     if w1 == 'fig8':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig8':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab10:
             try:
                 st.plotly_chart(fig9)
@@ -2273,9 +2273,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig9, theme=None)
                 except:
                     if w1 == 'fig9':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig9':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab11:
             try:
                 st.plotly_chart(fig10)
@@ -2284,9 +2284,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig10, theme=None)
                 except:
                     if w1 == 'fig10':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig10':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab12:
             try:
                 st.plotly_chart(fig11)
@@ -2295,9 +2295,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig11, theme=None)
                 except:
                     if w1 == 'fig11':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig11':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab13:
             try:
                 st.plotly_chart(fig12)
@@ -2306,9 +2306,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig12, theme=None)
                 except:
                     if w1 == 'fig12':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig12':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab14:
             try:
                 st.plotly_chart(fig13)
@@ -2317,9 +2317,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig13, theme=None)
                 except:
                     if w1 == 'fig13':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig13':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
 
         st.markdown(":basketball: :violet[**최근 30 회차 고중저 경기통계**]")
         df = pd.DataFrame(data=np.array([tcntw30,tcntd30,tcntl30]), 
@@ -2425,9 +2425,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig8, theme=None)
                 except:
                     if w1 == 'fig8':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig8':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab10:
             try:
                 st.plotly_chart(fig9)
@@ -2436,9 +2436,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig9, theme=None)
                 except:
                     if w1 == 'fig9':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig9':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab11:
             try:
                 st.plotly_chart(fig10)
@@ -2447,9 +2447,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig10, theme=None)
                 except:
                     if w1 == 'fig10':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig10':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab12:
             try:
                 st.plotly_chart(fig11)
@@ -2458,9 +2458,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig11, theme=None)
                 except:
                     if w1 == 'fig11':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig11':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab13:
             try:
                 st.plotly_chart(fig12)
@@ -2469,9 +2469,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig12, theme=None)
                 except:
                     if w1 == 'fig12':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig12':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
         with tab14:
             try:
                 st.plotly_chart(fig13)
@@ -2480,9 +2480,9 @@ def Crawler(gubun):
                     st.plotly_chart(fig13, theme=None)
                 except:
                     if w1 == 'fig13':
-                        st.plotly_chart(x1, theme=None)
+                        st.plotly_chart(str(x1), theme=None)
                     if w2 == 'fig13':
-                        st.plotly_chart(x2, theme=None)
+                        st.plotly_chart(str(x2), theme=None)
 
         # st.markdown(":basketball: :violet[**최근 10회차 결과**]")
 
