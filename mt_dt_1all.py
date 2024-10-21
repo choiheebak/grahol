@@ -1128,7 +1128,7 @@ def Crawler(gubun):
                 try:
                     st.plotly_chart(fig0, theme=None)
                 except:
-                    st.plotly_chart(fig0, theme="streamlit")
+                    st.plotly_chart(fig0)
         with tab2:
             try:
                 st.plotly_chart(fig1)
@@ -1136,7 +1136,7 @@ def Crawler(gubun):
                 try:
                     st.plotly_chart(fig1, theme=None)
                 except:
-                    st.plotly_chart(fig1, theme="streamlit")
+                    st.plotly_chart(fig1)
         with tab3:
             try:
                 st.plotly_chart(fig2)
@@ -1144,7 +1144,7 @@ def Crawler(gubun):
                 try:
                     st.plotly_chart(fig2, theme=None)
                 except:
-                    st.plotly_chart(fig2, theme="streamlit")
+                    st.plotly_chart(fig2)
         with tab4:
             try:
                 st.plotly_chart(fig3)
@@ -1152,7 +1152,7 @@ def Crawler(gubun):
                 try:
                     st.plotly_chart(fig3, theme=None)
                 except:
-                    st.plotly_chart(fig3, theme="streamlit")
+                    st.plotly_chart(fig3)
         with tab5:
             try:
                 st.plotly_chart(fig4)
@@ -1160,7 +1160,7 @@ def Crawler(gubun):
                 try:
                     st.plotly_chart(fig4, theme=None)
                 except:
-                    st.plotly_chart(fig4, theme="streamlit")
+                    st.plotly_chart(fig4)
         with tab6:
             try:
                 st.plotly_chart(fig5)
@@ -1168,7 +1168,7 @@ def Crawler(gubun):
                 try:
                     st.plotly_chart(fig5, theme=None)
                 except:
-                    st.plotly_chart(fig5, theme="streamlit")
+                    st.plotly_chart(fig5)
         with tab7:
             try:
                 st.plotly_chart(fig6)
@@ -1176,7 +1176,7 @@ def Crawler(gubun):
                 try:
                     st.plotly_chart(fig6, theme=None)
                 except:
-                    st.plotly_chart(fig6, theme="streamlit")
+                    st.plotly_chart(fig6)
         with tab8:
             try:
                 st.plotly_chart(fig7)
@@ -1184,7 +1184,7 @@ def Crawler(gubun):
                 try:
                     st.plotly_chart(fig7, theme=None)
                 except:
-                    st.plotly_chart(fig7, theme="streamlit")
+                    st.plotly_chart(fig7)
         with tab9:
             try:
                 st.plotly_chart(fig8)
@@ -1192,7 +1192,7 @@ def Crawler(gubun):
                 try:
                     st.plotly_chart(fig8, theme=None)
                 except:
-                    st.plotly_chart(fig8, theme="streamlit")
+                    st.plotly_chart(fig8)
         with tab10:
             try:
                 st.plotly_chart(fig9)
@@ -1200,7 +1200,7 @@ def Crawler(gubun):
                 try:
                     st.plotly_chart(fig9, theme=None)
                 except:
-                    st.plotly_chart(fig9, theme="streamlit")
+                    st.plotly_chart(fig9)
         with tab11:
             try:
                 st.plotly_chart(fig10)
@@ -1208,7 +1208,7 @@ def Crawler(gubun):
                 try:
                     st.plotly_chart(fig10, theme=None)
                 except:
-                    st.plotly_chart(fig10, theme="streamlit")
+                    st.plotly_chart(fig10)
         with tab12:
             try:
                 st.plotly_chart(fig11)
@@ -1216,7 +1216,7 @@ def Crawler(gubun):
                 try:
                     st.plotly_chart(fig11, theme=None)
                 except:
-                    st.plotly_chart(fig11, theme="streamlit")
+                    st.plotly_chart(fig11)
         with tab13:
             try:
                 st.plotly_chart(fig12)
@@ -1224,7 +1224,7 @@ def Crawler(gubun):
                 try:
                     st.plotly_chart(fig12, theme=None)
                 except:
-                    st.plotly_chart(fig12, theme="streamlit")
+                    st.plotly_chart(fig12)
         with tab14:
             try:
                 st.plotly_chart(fig13)
@@ -1232,7 +1232,7 @@ def Crawler(gubun):
                 try:
                     st.plotly_chart(fig13, theme=None)
                 except:
-                    st.plotly_chart(fig13, theme="streamlit")
+                    st.plotly_chart(fig13)
 
         st.markdown(":soccer: :violet[**최근 30 회차 고중저 경기통계**]")
         df = pd.DataFrame(data=np.array([tcntw30,tcntd30,tcntl30]), 
