@@ -1317,7 +1317,7 @@ def Crawler(yearc,countc,gyungi):
         dfq = pd.DataFrame(dataq,
                 columns=["선수","포지션","득점","어시스트","공격포인트","경기수","슈팅","유효슈팅"]) 
         
-        figq = go.Figure(data=[go.Table(
+        figq = go.Figure(dataq=[go.Table(
             header=dict(values=list(dfq.columns),
                         # fill_color='paleturquoise',
                         align='left'),
@@ -1331,7 +1331,7 @@ def Crawler(yearc,countc,gyungi):
         dfr = pd.DataFrame(datar,
                 columns=["선수","포지션","득점","어시스트","공격포인트","경기수","슈팅","유효슈팅"]) 
         
-        figr = go.Figure(data=[go.Table(
+        figr = go.Figure(datar=[go.Table(
             header=dict(values=list(dfr.columns),
                         # fill_color='paleturquoise',
                         align='left'),
