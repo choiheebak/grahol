@@ -62,30 +62,30 @@ def Crawler(gubun):
         return w1,w2,x1,x2
         
     def read_all_txt(g,k):
-        # if g == '01':
-        #     f = open('soccer_so4_wdltong.txt', 'r', encoding='UTF8')
-        # elif g == '02':
-        #     f = open('baseball_bb4_wdltong.txt', 'r', encoding='UTF8')
-        # elif g == '03':
-        #     f = open('basketball_bk4_wdltong.txt', 'r', encoding='UTF8')
-        # elif g == '04':
-        #     f = open('soccer_so4_hmltong.txt', 'r', encoding='UTF8')
-        # elif g == '05':
-        #     f = open('baseball_bb4_hmltong.txt', 'r', encoding='UTF8')
-        # elif g == '06':
-        #     f = open('basketball_bk4_hmltong.txt', 'r', encoding='UTF8')
         if g == '01':
-            f = open('D:/datagithub/soccer/soccer_so4_wdltong.txt', 'r', encoding='UTF8')
+            f = open('soccer_so4_wdltong.txt', 'r', encoding='UTF8')
         elif g == '02':
-            f = open('D:/datagithub/baseball/baseball_bb4_wdltong.txt', 'r', encoding='UTF8')
+            f = open('baseball_bb4_wdltong.txt', 'r', encoding='UTF8')
         elif g == '03':
-            f = open('D:/datagithub/basketball/basketball_bk4_wdltong.txt', 'r', encoding='UTF8')
+            f = open('basketball_bk4_wdltong.txt', 'r', encoding='UTF8')
         elif g == '04':
-            f = open('D:/datagithub/soccer/soccer_so4_hmltong.txt', 'r', encoding='UTF8')
+            f = open('soccer_so4_hmltong.txt', 'r', encoding='UTF8')
         elif g == '05':
-            f = open('D:/datagithub/baseball/baseball_bb4_hmltong.txt', 'r', encoding='UTF8')
+            f = open('baseball_bb4_hmltong.txt', 'r', encoding='UTF8')
         elif g == '06':
-            f = open('D:/datagithub/basketball/basketball_bk4_hmltong.txt', 'r', encoding='UTF8')
+            f = open('basketball_bk4_hmltong.txt', 'r', encoding='UTF8')
+        # if g == '01':
+        #     f = open('D:/datagithub/soccer/soccer_so4_wdltong.txt', 'r', encoding='UTF8')
+        # elif g == '02':
+        #     f = open('D:/datagithub/baseball/baseball_bb4_wdltong.txt', 'r', encoding='UTF8')
+        # elif g == '03':
+        #     f = open('D:/datagithub/basketball/basketball_bk4_wdltong.txt', 'r', encoding='UTF8')
+        # elif g == '04':
+        #     f = open('D:/datagithub/soccer/soccer_so4_hmltong.txt', 'r', encoding='UTF8')
+        # elif g == '05':
+        #     f = open('D:/datagithub/baseball/baseball_bb4_hmltong.txt', 'r', encoding='UTF8')
+        # elif g == '06':
+        #     f = open('D:/datagithub/basketball/basketball_bk4_hmltong.txt', 'r', encoding='UTF8')
 
         rdr1 = f.readlines()    
 
