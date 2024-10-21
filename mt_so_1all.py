@@ -1344,7 +1344,11 @@ def Crawler(yearc,countc,gyungi):
     
     
     if len(shplay) == 0 & len(saplay) == 0:
-        pass
+        tab1, tab2 = st.tabs(["홈팀", "원정팀"])
+        with tab1:
+            pass
+        with tab2:
+            pass
     else:
         tab1, tab2 = st.tabs(["홈팀", "원정팀"])
         with tab1:
