@@ -1311,22 +1311,28 @@ def Crawler(yearc,countc,gyungi):
     else:
         st.markdown(":soccer: :blue[**선수**]")
 
-        data = {"선수":[shplay],"포지션":[shpos],"득점":[shduk],"어시스트":[shassist],"공격포인트":[shpoint],"경기수":[shtotal],
+        dataq = {"선수":[shplay],"포지션":[shpos],"득점":[shduk],"어시스트":[shassist],"공격포인트":[shpoint],"경기수":[shtotal],
                 "슈팅":[shshoot],"유효슈팅":[shyshoot]}
         
-        df = pd.DataFrame(data,
+        dfq = pd.DataFrame(dataq,
                 columns=["선수","포지션","득점","어시스트","공격포인트","경기수","슈팅","유효슈팅"]) 
         
         figq = go.Figure(data=[go.Table(
-            header=dict(values=list(df.columns),
+            header=dict(values=list(dfq.columns),
                         # fill_color='paleturquoise',
                         align='left'),
             cells=dict(values=[shplay,shpos,shduk,shassist,shpoint,shtotal,shshoot,shyshoot],
                     #    fill_color='lavender',
                     align='left'))])
      
+        datar = {"선수":[saplay],"포지션":[sapos],"득점":[saduk],"어시스트":[saassist],"공격포인트":[sapoint],"경기수":[satotal],
+                "슈팅":[sashoot],"유효슈팅":[sayshoot]}
+        
+        dfr = pd.DataFrame(datar,
+                columns=["선수","포지션","득점","어시스트","공격포인트","경기수","슈팅","유효슈팅"]) 
+        
         figr = go.Figure(data=[go.Table(
-            header=dict(values=list(df.columns),
+            header=dict(values=list(dfr.columns),
                         # fill_color='paleturquoise',
                         align='left'),
             cells=dict(values=[saplay,sapos,saduk,saassist,sapoint,satotal,sashoot,sayshoot],
