@@ -9,7 +9,70 @@ import plotly.graph_objects as go
 def Crawler(gubun):
 
     # print(gubun,indegree)
-    
+
+    def jun_dan(a,b,c):
+
+        whml = [''] * 14
+        for i in range(len(a)):
+            whml[i] = a[i] + b[i] + c[i] 
+
+        dan = []
+        c = 0
+        r8 = 0
+        r9 = 0
+        r10 = 0
+        r11 = 0
+        r12 = 0
+        r13 = 0
+        for j in whml:
+            if j not in dan:
+                dan.append(j)
+                cnt = 0
+                if c == 8:
+                    r8 = 0
+                if c == 9:
+                    r9 = 0
+                if c == 10:
+                    r10 = 0
+                if c == 11:
+                    r11 = 0
+                if c == 12:
+                    r12 = 0
+                if c == 13:
+                    r13 = 0
+            else:
+                cnt += 1
+                if cnt > 1:  
+                    if c == 8:
+                        r8 = 'fig'+str(len(j))
+                    if c == 9:
+                        r9 = 'fig'+str(len(j))
+                    if c == 10:
+                        r10 = 'fig'+str(len(j))
+                    if c == 11:
+                        r11 = 'fig'+str(len(j))
+                    if c == 12:
+                        r12 = 'fig'+str(len(j))
+                    if c == 13:
+                        r13 = 'fig'+str(len(j))
+                else:
+                    if c == 8:
+                        r8 = 0
+                    if c == 9:
+                        r9 = 0
+                    if c == 10:
+                        r10 = 0
+                    if c == 11:
+                        r11 = 0
+                    if c == 12:
+                        r12 = 0
+                    if c == 13:
+                        r13 = 0                
+            
+            c += 1
+
+        return r8,r9,r10,r11,r12,r13
+        
     def read_all_txt(g,k):
         if g == '01':
             f = open('soccer_so4_wdltong.txt', 'r', encoding='UTF8')
@@ -162,6 +225,8 @@ def Crawler(gubun):
         fig13 = go.Figure(data=[go.Pie(labels=labels, values=values13)])
         fig13.update_traces(textfont_size=20,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
 
+        r8,r9,r10,r11,r12,r13 = jun_dan(tcntw, tcntd, tcntl)
+
         tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10, tab11, tab12, tab13, tab14 \
            = st.tabs(["1경기","2경기","3경기","4경기","5경기","6경기","7경기","8경기","9경기","10경기","11경기","12경기","13경기","14경기"])
         with tab1:
@@ -208,32 +273,68 @@ def Crawler(gubun):
             try:
                 st.plotly_chart(fig8)
             except:
-                st.plotly_chart(fig8, theme=None)
+                try:
+                    st.plotly_chart(fig8, theme=None)
+                except:
+                    if int(r8) == 0:
+                        st.plotly_chart(fig8)
+                    else:
+                        st.plotly_chart(r8, theme=None)
         with tab10:
             try:
                 st.plotly_chart(fig9)
             except:
-                st.plotly_chart(fig9, theme=None)
+                try:
+                    st.plotly_chart(fig9, theme=None)
+                except:
+                    if int(r9) == 0:
+                        st.plotly_chart(fig9)
+                    else:
+                        st.plotly_chart(r9, theme=None)
         with tab11:
             try:
                 st.plotly_chart(fig10)
             except:
-                st.plotly_chart(fig10, theme=None)
+                try:
+                    st.plotly_chart(fig10, theme=None)
+                except:
+                    if int(r10) == 0:
+                        st.plotly_chart(fig10)
+                    else:
+                        st.plotly_chart(r10, theme=None)
         with tab12:
             try:
                 st.plotly_chart(fig11)
             except:
-                st.plotly_chart(fig11, theme=None)
+                try:
+                    st.plotly_chart(fig11, theme=None)
+                except:
+                    if int(r11) == 0:
+                        st.plotly_chart(fig11)
+                    else:
+                        st.plotly_chart(r11, theme=None)
         with tab13:
             try:
                 st.plotly_chart(fig12)
             except:
-                st.plotly_chart(fig12, theme=None)
+                try:
+                    st.plotly_chart(fig12, theme=None)
+                except:
+                    if int(r12) == 0:
+                        st.plotly_chart(fig12)
+                    else:
+                        st.plotly_chart(r12, theme=None)
         with tab14:
             try:
                 st.plotly_chart(fig13)
             except:
-                st.plotly_chart(fig13, theme=None)
+                try:
+                    st.plotly_chart(fig13, theme=None)
+                except:
+                    if int(r10) == 0:
+                        st.plotly_chart(fig13)
+                    else:
+                        st.plotly_chart(r13, theme=None)
 
         st.markdown(":soccer: :violet[**최근 30 회차 승무패 경기통계**]")
         df = pd.DataFrame(data=np.array([tcntw30,tcntd30,tcntl30]), 
@@ -287,6 +388,8 @@ def Crawler(gubun):
         fig13 = go.Figure(data=[go.Pie(labels=labels, values=values13)])
         fig13.update_traces(textfont_size=20,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
 
+        r8,r9,r10,r11,r12,r13 = jun_dan(tcntw30, tcntd30, tcntl30)
+
         tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10, tab11, tab12, tab13, tab14 \
            = st.tabs(["1경기","2경기","3경기","4경기","5경기","6경기","7경기","8경기","9경기","10경기","11경기","12경기","13경기","14경기"])
         with tab1:
@@ -333,32 +436,68 @@ def Crawler(gubun):
             try:
                 st.plotly_chart(fig8)
             except:
-                st.plotly_chart(fig8, theme=None)
+                try:
+                    st.plotly_chart(fig8, theme=None)
+                except:
+                    if int(r8) == 0:
+                        st.plotly_chart(fig8)
+                    else:
+                        st.plotly_chart(r8, theme=None)
         with tab10:
             try:
                 st.plotly_chart(fig9)
             except:
-                st.plotly_chart(fig9, theme=None)
+                try:
+                    st.plotly_chart(fig9, theme=None)
+                except:
+                    if int(r9) == 0:
+                        st.plotly_chart(fig9)
+                    else:
+                        st.plotly_chart(r9, theme=None)
         with tab11:
             try:
                 st.plotly_chart(fig10)
             except:
-                st.plotly_chart(fig10, theme=None)
+                try:
+                    st.plotly_chart(fig10, theme=None)
+                except:
+                    if int(r10) == 0:
+                        st.plotly_chart(fig10)
+                    else:
+                        st.plotly_chart(r10, theme=None)
         with tab12:
             try:
                 st.plotly_chart(fig11)
             except:
-                st.plotly_chart(fig11, theme=None)
+                try:
+                    st.plotly_chart(fig11, theme=None)
+                except:
+                    if int(r11) == 0:
+                        st.plotly_chart(fig11)
+                    else:
+                        st.plotly_chart(r11, theme=None)
         with tab13:
             try:
                 st.plotly_chart(fig12)
             except:
-                st.plotly_chart(fig12, theme=None)
+                try:
+                    st.plotly_chart(fig12, theme=None)
+                except:
+                    if int(r12) == 0:
+                        st.plotly_chart(fig12)
+                    else:
+                        st.plotly_chart(r12, theme=None)
         with tab14:
             try:
                 st.plotly_chart(fig13)
             except:
-                st.plotly_chart(fig13, theme=None)
+                try:
+                    st.plotly_chart(fig13, theme=None)
+                except:
+                    if int(r10) == 0:
+                        st.plotly_chart(fig13)
+                    else:
+                        st.plotly_chart(r13, theme=None)
 
         # st.markdown(":soccer: :violet[**최근 10회차 결과**]")
 
@@ -477,6 +616,8 @@ def Crawler(gubun):
         fig13 = go.Figure(data=[go.Pie(labels=labels, values=values13)])
         fig13.update_traces(textfont_size=20,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
 
+        r8,r9,r10,r11,r12,r13 = jun_dan(tcntw, tcntd, tcntl)
+
         tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10, tab11, tab12, tab13, tab14 \
            = st.tabs(["1경기","2경기","3경기","4경기","5경기","6경기","7경기","8경기","9경기","10경기","11경기","12경기","13경기","14경기"])
         with tab1:
@@ -523,32 +664,68 @@ def Crawler(gubun):
             try:
                 st.plotly_chart(fig8)
             except:
-                st.plotly_chart(fig8, theme=None)
+                try:
+                    st.plotly_chart(fig8, theme=None)
+                except:
+                    if int(r8) == 0:
+                        st.plotly_chart(fig8)
+                    else:
+                        st.plotly_chart(r8, theme=None)
         with tab10:
             try:
                 st.plotly_chart(fig9)
             except:
-                st.plotly_chart(fig9, theme=None)
+                try:
+                    st.plotly_chart(fig9, theme=None)
+                except:
+                    if int(r9) == 0:
+                        st.plotly_chart(fig9)
+                    else:
+                        st.plotly_chart(r9, theme=None)
         with tab11:
             try:
                 st.plotly_chart(fig10)
             except:
-                st.plotly_chart(fig10, theme=None)
+                try:
+                    st.plotly_chart(fig10, theme=None)
+                except:
+                    if int(r10) == 0:
+                        st.plotly_chart(fig10)
+                    else:
+                        st.plotly_chart(r10, theme=None)
         with tab12:
             try:
                 st.plotly_chart(fig11)
             except:
-                st.plotly_chart(fig11, theme=None)
+                try:
+                    st.plotly_chart(fig11, theme=None)
+                except:
+                    if int(r11) == 0:
+                        st.plotly_chart(fig11)
+                    else:
+                        st.plotly_chart(r11, theme=None)
         with tab13:
             try:
                 st.plotly_chart(fig12)
             except:
-                st.plotly_chart(fig12, theme=None)
+                try:
+                    st.plotly_chart(fig12, theme=None)
+                except:
+                    if int(r12) == 0:
+                        st.plotly_chart(fig12)
+                    else:
+                        st.plotly_chart(r12, theme=None)
         with tab14:
             try:
                 st.plotly_chart(fig13)
             except:
-                st.plotly_chart(fig13, theme=None)
+                try:
+                    st.plotly_chart(fig13, theme=None)
+                except:
+                    if int(r10) == 0:
+                        st.plotly_chart(fig13)
+                    else:
+                        st.plotly_chart(r13, theme=None)
 
         st.markdown(":baseball: :violet[**최근 30 회차 승①패 경기통계**]")
         df = pd.DataFrame(data=np.array([tcntw30,tcntd30,tcntl30]), 
@@ -603,6 +780,8 @@ def Crawler(gubun):
         fig13 = go.Figure(data=[go.Pie(labels=labels, values=values13)])
         fig13.update_traces(textfont_size=20,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
 
+        r8,r9,r10,r11,r12,r13 = jun_dan(tcntw30, tcntd30, tcntl30)
+
         tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10, tab11, tab12, tab13, tab14 \
            = st.tabs(["1경기","2경기","3경기","4경기","5경기","6경기","7경기","8경기","9경기","10경기","11경기","12경기","13경기","14경기"])
         with tab1:
@@ -649,32 +828,68 @@ def Crawler(gubun):
             try:
                 st.plotly_chart(fig8)
             except:
-                st.plotly_chart(fig8, theme=None)
+                try:
+                    st.plotly_chart(fig8, theme=None)
+                except:
+                    if int(r8) == 0:
+                        st.plotly_chart(fig8)
+                    else:
+                        st.plotly_chart(r8, theme=None)
         with tab10:
             try:
                 st.plotly_chart(fig9)
             except:
-                st.plotly_chart(fig9, theme=None)
+                try:
+                    st.plotly_chart(fig9, theme=None)
+                except:
+                    if int(r9) == 0:
+                        st.plotly_chart(fig9)
+                    else:
+                        st.plotly_chart(r9, theme=None)
         with tab11:
             try:
                 st.plotly_chart(fig10)
             except:
-                st.plotly_chart(fig10, theme=None)
+                try:
+                    st.plotly_chart(fig10, theme=None)
+                except:
+                    if int(r10) == 0:
+                        st.plotly_chart(fig10)
+                    else:
+                        st.plotly_chart(r10, theme=None)
         with tab12:
             try:
                 st.plotly_chart(fig11)
             except:
-                st.plotly_chart(fig11, theme=None)
+                try:
+                    st.plotly_chart(fig11, theme=None)
+                except:
+                    if int(r11) == 0:
+                        st.plotly_chart(fig11)
+                    else:
+                        st.plotly_chart(r11, theme=None)
         with tab13:
             try:
                 st.plotly_chart(fig12)
             except:
-                st.plotly_chart(fig12, theme=None)
+                try:
+                    st.plotly_chart(fig12, theme=None)
+                except:
+                    if int(r12) == 0:
+                        st.plotly_chart(fig12)
+                    else:
+                        st.plotly_chart(r12, theme=None)
         with tab14:
             try:
                 st.plotly_chart(fig13)
             except:
-                st.plotly_chart(fig13, theme=None)
+                try:
+                    st.plotly_chart(fig13, theme=None)
+                except:
+                    if int(r10) == 0:
+                        st.plotly_chart(fig13)
+                    else:
+                        st.plotly_chart(r13, theme=None)
 
         # st.markdown(":baseball: :violet[**최근 10회차 결과**]")
 
@@ -797,6 +1012,8 @@ def Crawler(gubun):
         fig13 = go.Figure(data=[go.Pie(labels=labels, values=values13)])
         fig13.update_traces(textfont_size=20,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
 
+        r8,r9,r10,r11,r12,r13 = jun_dan(tcntw, tcntd, tcntl)
+
         tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10, tab11, tab12, tab13, tab14 \
            = st.tabs(["1경기","2경기","3경기","4경기","5경기","6경기","7경기","8경기","9경기","10경기","11경기","12경기","13경기","14경기"])
         with tab1:
@@ -843,32 +1060,68 @@ def Crawler(gubun):
             try:
                 st.plotly_chart(fig8)
             except:
-                st.plotly_chart(fig8, theme=None)
+                try:
+                    st.plotly_chart(fig8, theme=None)
+                except:
+                    if int(r8) == 0:
+                        st.plotly_chart(fig8)
+                    else:
+                        st.plotly_chart(r8, theme=None)
         with tab10:
             try:
                 st.plotly_chart(fig9)
             except:
-                st.plotly_chart(fig9, theme=None)
+                try:
+                    st.plotly_chart(fig9, theme=None)
+                except:
+                    if int(r9) == 0:
+                        st.plotly_chart(fig9)
+                    else:
+                        st.plotly_chart(r9, theme=None)
         with tab11:
             try:
                 st.plotly_chart(fig10)
             except:
-                st.plotly_chart(fig10, theme=None)
+                try:
+                    st.plotly_chart(fig10, theme=None)
+                except:
+                    if int(r10) == 0:
+                        st.plotly_chart(fig10)
+                    else:
+                        st.plotly_chart(r10, theme=None)
         with tab12:
             try:
                 st.plotly_chart(fig11)
             except:
-                st.plotly_chart(fig11, theme=None)
+                try:
+                    st.plotly_chart(fig11, theme=None)
+                except:
+                    if int(r11) == 0:
+                        st.plotly_chart(fig11)
+                    else:
+                        st.plotly_chart(r11, theme=None)
         with tab13:
             try:
                 st.plotly_chart(fig12)
             except:
-                st.plotly_chart(fig12, theme=None)
+                try:
+                    st.plotly_chart(fig12, theme=None)
+                except:
+                    if int(r12) == 0:
+                        st.plotly_chart(fig12)
+                    else:
+                        st.plotly_chart(r12, theme=None)
         with tab14:
             try:
                 st.plotly_chart(fig13)
             except:
-                st.plotly_chart(fig13, theme=None)
+                try:
+                    st.plotly_chart(fig13, theme=None)
+                except:
+                    if int(r10) == 0:
+                        st.plotly_chart(fig13)
+                    else:
+                        st.plotly_chart(r13, theme=None)
 
         st.markdown(":basketball: :violet[**최근 30 회차 승⑤패 경기통계**]")
         df = pd.DataFrame(data=np.array([tcntw30,tcntd30,tcntl30]), 
@@ -922,6 +1175,8 @@ def Crawler(gubun):
         fig13 = go.Figure(data=[go.Pie(labels=labels, values=values13)])
         fig13.update_traces(textfont_size=20,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
 
+        r8,r9,r10,r11,r12,r13 = jun_dan(tcntw30, tcntd30, tcntl30)
+
         tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10, tab11, tab12, tab13, tab14 \
            = st.tabs(["1경기","2경기","3경기","4경기","5경기","6경기","7경기","8경기","9경기","10경기","11경기","12경기","13경기","14경기"])
         with tab1:
@@ -968,32 +1223,68 @@ def Crawler(gubun):
             try:
                 st.plotly_chart(fig8)
             except:
-                st.plotly_chart(fig8, theme=None)
+                try:
+                    st.plotly_chart(fig8, theme=None)
+                except:
+                    if int(r8) == 0:
+                        st.plotly_chart(fig8)
+                    else:
+                        st.plotly_chart(r8, theme=None)
         with tab10:
             try:
                 st.plotly_chart(fig9)
             except:
-                st.plotly_chart(fig9, theme=None)
+                try:
+                    st.plotly_chart(fig9, theme=None)
+                except:
+                    if int(r9) == 0:
+                        st.plotly_chart(fig9)
+                    else:
+                        st.plotly_chart(r9, theme=None)
         with tab11:
             try:
                 st.plotly_chart(fig10)
             except:
-                st.plotly_chart(fig10, theme=None)
+                try:
+                    st.plotly_chart(fig10, theme=None)
+                except:
+                    if int(r10) == 0:
+                        st.plotly_chart(fig10)
+                    else:
+                        st.plotly_chart(r10, theme=None)
         with tab12:
             try:
                 st.plotly_chart(fig11)
             except:
-                st.plotly_chart(fig11, theme=None)
+                try:
+                    st.plotly_chart(fig11, theme=None)
+                except:
+                    if int(r11) == 0:
+                        st.plotly_chart(fig11)
+                    else:
+                        st.plotly_chart(r11, theme=None)
         with tab13:
             try:
                 st.plotly_chart(fig12)
             except:
-                st.plotly_chart(fig12, theme=None)
+                try:
+                    st.plotly_chart(fig12, theme=None)
+                except:
+                    if int(r12) == 0:
+                        st.plotly_chart(fig12)
+                    else:
+                        st.plotly_chart(r12, theme=None)
         with tab14:
             try:
                 st.plotly_chart(fig13)
             except:
-                st.plotly_chart(fig13, theme=None)
+                try:
+                    st.plotly_chart(fig13, theme=None)
+                except:
+                    if int(r10) == 0:
+                        st.plotly_chart(fig13)
+                    else:
+                        st.plotly_chart(r13, theme=None)
 
         # st.markdown(":basketball: :violet[**최근 10회차 결과**]")
 
@@ -1119,6 +1410,8 @@ def Crawler(gubun):
         fig13 = go.Figure(data=[go.Pie(labels=labels, values=values13)])
         fig13.update_traces(textfont_size=20,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
 
+        r8,r9,r10,r11,r12,r13 = jun_dan(tcntw, tcntd, tcntl)
+
         tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10, tab11, tab12, tab13, tab14 \
            = st.tabs(["1경기","2경기","3경기","4경기","5경기","6경기","7경기","8경기","9경기","10경기","11경기","12경기","13경기","14경기"])
         with tab1:
@@ -1192,7 +1485,10 @@ def Crawler(gubun):
                 try:
                     st.plotly_chart(fig8, theme=None)
                 except:
-                    st.plotly_chart(fig8)
+                    if int(r8) == 0:
+                        st.plotly_chart(fig8)
+                    else:
+                        st.plotly_chart(r8, theme=None)
         with tab10:
             try:
                 st.plotly_chart(fig9)
@@ -1200,7 +1496,10 @@ def Crawler(gubun):
                 try:
                     st.plotly_chart(fig9, theme=None)
                 except:
-                    st.plotly_chart(fig9)
+                    if int(r9) == 0:
+                        st.plotly_chart(fig9)
+                    else:
+                        st.plotly_chart(r9, theme=None)
         with tab11:
             try:
                 st.plotly_chart(fig10)
@@ -1208,7 +1507,10 @@ def Crawler(gubun):
                 try:
                     st.plotly_chart(fig10, theme=None)
                 except:
-                    st.plotly_chart(fig10)
+                    if int(r10) == 0:
+                        st.plotly_chart(fig10)
+                    else:
+                        st.plotly_chart(r10, theme=None)
         with tab12:
             try:
                 st.plotly_chart(fig11)
@@ -1216,7 +1518,10 @@ def Crawler(gubun):
                 try:
                     st.plotly_chart(fig11, theme=None)
                 except:
-                    st.plotly_chart(fig11)
+                    if int(r11) == 0:
+                        st.plotly_chart(fig11)
+                    else:
+                        st.plotly_chart(r11, theme=None)
         with tab13:
             try:
                 st.plotly_chart(fig12)
@@ -1224,7 +1529,10 @@ def Crawler(gubun):
                 try:
                     st.plotly_chart(fig12, theme=None)
                 except:
-                    st.plotly_chart(fig12)
+                    if int(r12) == 0:
+                        st.plotly_chart(fig12)
+                    else:
+                        st.plotly_chart(r12, theme=None)
         with tab14:
             try:
                 st.plotly_chart(fig13)
@@ -1232,7 +1540,10 @@ def Crawler(gubun):
                 try:
                     st.plotly_chart(fig13, theme=None)
                 except:
-                    st.plotly_chart(fig13)
+                    if int(r10) == 0:
+                        st.plotly_chart(fig13)
+                    else:
+                        st.plotly_chart(r13, theme=None)
 
         st.markdown(":soccer: :violet[**최근 30 회차 고중저 경기통계**]")
         df = pd.DataFrame(data=np.array([tcntw30,tcntd30,tcntl30]), 
@@ -1286,6 +1597,8 @@ def Crawler(gubun):
         fig13 = go.Figure(data=[go.Pie(labels=labels, values=values13)])
         fig13.update_traces(textfont_size=20,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
 
+        r8,r9,r10,r11,r12,r13 = jun_dan(tcntw30, tcntd30, tcntl30)
+
         tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10, tab11, tab12, tab13, tab14 \
            = st.tabs(["1경기","2경기","3경기","4경기","5경기","6경기","7경기","8경기","9경기","10경기","11경기","12경기","13경기","14경기"])
         with tab1:
@@ -1332,32 +1645,68 @@ def Crawler(gubun):
             try:
                 st.plotly_chart(fig8)
             except:
-                st.plotly_chart(fig8, theme=None)
+                try:
+                    st.plotly_chart(fig8, theme=None)
+                except:
+                    if int(r8) == 0:
+                        st.plotly_chart(fig8)
+                    else:
+                        st.plotly_chart(r8, theme=None)
         with tab10:
             try:
                 st.plotly_chart(fig9)
             except:
-                st.plotly_chart(fig9, theme=None)
+                try:
+                    st.plotly_chart(fig9, theme=None)
+                except:
+                    if int(r9) == 0:
+                        st.plotly_chart(fig9)
+                    else:
+                        st.plotly_chart(r9, theme=None)
         with tab11:
             try:
                 st.plotly_chart(fig10)
             except:
-                st.plotly_chart(fig10, theme=None)
+                try:
+                    st.plotly_chart(fig10, theme=None)
+                except:
+                    if int(r10) == 0:
+                        st.plotly_chart(fig10)
+                    else:
+                        st.plotly_chart(r10, theme=None)
         with tab12:
             try:
                 st.plotly_chart(fig11)
             except:
-                st.plotly_chart(fig11, theme=None)
+                try:
+                    st.plotly_chart(fig11, theme=None)
+                except:
+                    if int(r11) == 0:
+                        st.plotly_chart(fig11)
+                    else:
+                        st.plotly_chart(r11, theme=None)
         with tab13:
             try:
                 st.plotly_chart(fig12)
             except:
-                st.plotly_chart(fig12, theme=None)
+                try:
+                    st.plotly_chart(fig12, theme=None)
+                except:
+                    if int(r12) == 0:
+                        st.plotly_chart(fig12)
+                    else:
+                        st.plotly_chart(r12, theme=None)
         with tab14:
             try:
                 st.plotly_chart(fig13)
             except:
-                st.plotly_chart(fig13, theme=None)
+                try:
+                    st.plotly_chart(fig13, theme=None)
+                except:
+                    if int(r10) == 0:
+                        st.plotly_chart(fig13)
+                    else:
+                        st.plotly_chart(r13, theme=None)
 
         # st.markdown(":soccer: :violet[**최근 10회차 결과**]")
 
@@ -1479,6 +1828,8 @@ def Crawler(gubun):
         fig13 = go.Figure(data=[go.Pie(labels=labels, values=values13)])
         fig13.update_traces(textfont_size=20,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
 
+        r8,r9,r10,r11,r12,r13 = jun_dan(tcntw, tcntd, tcntl)
+
         tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10, tab11, tab12, tab13, tab14 \
            = st.tabs(["1경기","2경기","3경기","4경기","5경기","6경기","7경기","8경기","9경기","10경기","11경기","12경기","13경기","14경기"])
         with tab1:
@@ -1525,32 +1876,68 @@ def Crawler(gubun):
             try:
                 st.plotly_chart(fig8)
             except:
-                st.plotly_chart(fig8, theme=None)
+                try:
+                    st.plotly_chart(fig8, theme=None)
+                except:
+                    if int(r8) == 0:
+                        st.plotly_chart(fig8)
+                    else:
+                        st.plotly_chart(r8, theme=None)
         with tab10:
             try:
                 st.plotly_chart(fig9)
             except:
-                st.plotly_chart(fig9, theme=None)
+                try:
+                    st.plotly_chart(fig9, theme=None)
+                except:
+                    if int(r9) == 0:
+                        st.plotly_chart(fig9)
+                    else:
+                        st.plotly_chart(r9, theme=None)
         with tab11:
             try:
                 st.plotly_chart(fig10)
             except:
-                st.plotly_chart(fig10, theme=None)
+                try:
+                    st.plotly_chart(fig10, theme=None)
+                except:
+                    if int(r10) == 0:
+                        st.plotly_chart(fig10)
+                    else:
+                        st.plotly_chart(r10, theme=None)
         with tab12:
             try:
                 st.plotly_chart(fig11)
             except:
-                st.plotly_chart(fig11, theme=None)
+                try:
+                    st.plotly_chart(fig11, theme=None)
+                except:
+                    if int(r11) == 0:
+                        st.plotly_chart(fig11)
+                    else:
+                        st.plotly_chart(r11, theme=None)
         with tab13:
             try:
                 st.plotly_chart(fig12)
             except:
-                st.plotly_chart(fig12, theme=None)
+                try:
+                    st.plotly_chart(fig12, theme=None)
+                except:
+                    if int(r12) == 0:
+                        st.plotly_chart(fig12)
+                    else:
+                        st.plotly_chart(r12, theme=None)
         with tab14:
             try:
                 st.plotly_chart(fig13)
             except:
-                st.plotly_chart(fig13, theme=None)
+                try:
+                    st.plotly_chart(fig13, theme=None)
+                except:
+                    if int(r10) == 0:
+                        st.plotly_chart(fig13)
+                    else:
+                        st.plotly_chart(r13, theme=None)
 
         st.markdown(":baseball: :violet[**최근 30 회차 고중저 경기통계**]")
         df = pd.DataFrame(data=np.array([tcntw30,tcntd30,tcntl30]), 
@@ -1604,6 +1991,8 @@ def Crawler(gubun):
         fig13 = go.Figure(data=[go.Pie(labels=labels, values=values13)])
         fig13.update_traces(textfont_size=20,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
 
+        r8,r9,r10,r11,r12,r13 = jun_dan(tcntw30, tcntd30, tcntl30)
+
         tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10, tab11, tab12, tab13, tab14 \
            = st.tabs(["1경기","2경기","3경기","4경기","5경기","6경기","7경기","8경기","9경기","10경기","11경기","12경기","13경기","14경기"])
         with tab1:
@@ -1650,32 +2039,68 @@ def Crawler(gubun):
             try:
                 st.plotly_chart(fig8)
             except:
-                st.plotly_chart(fig8, theme=None)
+                try:
+                    st.plotly_chart(fig8, theme=None)
+                except:
+                    if int(r8) == 0:
+                        st.plotly_chart(fig8)
+                    else:
+                        st.plotly_chart(r8, theme=None)
         with tab10:
             try:
                 st.plotly_chart(fig9)
             except:
-                st.plotly_chart(fig9, theme=None)
+                try:
+                    st.plotly_chart(fig9, theme=None)
+                except:
+                    if int(r9) == 0:
+                        st.plotly_chart(fig9)
+                    else:
+                        st.plotly_chart(r9, theme=None)
         with tab11:
             try:
                 st.plotly_chart(fig10)
             except:
-                st.plotly_chart(fig10, theme=None)
+                try:
+                    st.plotly_chart(fig10, theme=None)
+                except:
+                    if int(r10) == 0:
+                        st.plotly_chart(fig10)
+                    else:
+                        st.plotly_chart(r10, theme=None)
         with tab12:
             try:
                 st.plotly_chart(fig11)
             except:
-                st.plotly_chart(fig11, theme=None)
+                try:
+                    st.plotly_chart(fig11, theme=None)
+                except:
+                    if int(r11) == 0:
+                        st.plotly_chart(fig11)
+                    else:
+                        st.plotly_chart(r11, theme=None)
         with tab13:
             try:
                 st.plotly_chart(fig12)
             except:
-                st.plotly_chart(fig12, theme=None)
+                try:
+                    st.plotly_chart(fig12, theme=None)
+                except:
+                    if int(r12) == 0:
+                        st.plotly_chart(fig12)
+                    else:
+                        st.plotly_chart(r12, theme=None)
         with tab14:
             try:
                 st.plotly_chart(fig13)
             except:
-                st.plotly_chart(fig13, theme=None)
+                try:
+                    st.plotly_chart(fig13, theme=None)
+                except:
+                    if int(r10) == 0:
+                        st.plotly_chart(fig13)
+                    else:
+                        st.plotly_chart(r13, theme=None)
 
         # st.markdown(":baseball: :violet[**최근 10회차 결과**]")
        
@@ -1797,6 +2222,8 @@ def Crawler(gubun):
         fig13 = go.Figure(data=[go.Pie(labels=labels, values=values13)])
         fig13.update_traces(textfont_size=20,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
 
+        r8,r9,r10,r11,r12,r13 = jun_dan(tcntw, tcntd, tcntl)
+
         tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10, tab11, tab12, tab13, tab14 \
            = st.tabs(["1경기","2경기","3경기","4경기","5경기","6경기","7경기","8경기","9경기","10경기","11경기","12경기","13경기","14경기"])
         with tab1:
@@ -1843,32 +2270,68 @@ def Crawler(gubun):
             try:
                 st.plotly_chart(fig8)
             except:
-                st.plotly_chart(fig8, theme=None)
+                try:
+                    st.plotly_chart(fig8, theme=None)
+                except:
+                    if int(r8) == 0:
+                        st.plotly_chart(fig8)
+                    else:
+                        st.plotly_chart(r8, theme=None)
         with tab10:
             try:
                 st.plotly_chart(fig9)
             except:
-                st.plotly_chart(fig9, theme=None)
+                try:
+                    st.plotly_chart(fig9, theme=None)
+                except:
+                    if int(r9) == 0:
+                        st.plotly_chart(fig9)
+                    else:
+                        st.plotly_chart(r9, theme=None)
         with tab11:
             try:
                 st.plotly_chart(fig10)
             except:
-                st.plotly_chart(fig10, theme=None)
+                try:
+                    st.plotly_chart(fig10, theme=None)
+                except:
+                    if int(r10) == 0:
+                        st.plotly_chart(fig10)
+                    else:
+                        st.plotly_chart(r10, theme=None)
         with tab12:
             try:
                 st.plotly_chart(fig11)
             except:
-                st.plotly_chart(fig11, theme=None)
+                try:
+                    st.plotly_chart(fig11, theme=None)
+                except:
+                    if int(r11) == 0:
+                        st.plotly_chart(fig11)
+                    else:
+                        st.plotly_chart(r11, theme=None)
         with tab13:
             try:
                 st.plotly_chart(fig12)
             except:
-                st.plotly_chart(fig12, theme=None)
+                try:
+                    st.plotly_chart(fig12, theme=None)
+                except:
+                    if int(r12) == 0:
+                        st.plotly_chart(fig12)
+                    else:
+                        st.plotly_chart(r12, theme=None)
         with tab14:
             try:
                 st.plotly_chart(fig13)
             except:
-                st.plotly_chart(fig13, theme=None)
+                try:
+                    st.plotly_chart(fig13, theme=None)
+                except:
+                    if int(r10) == 0:
+                        st.plotly_chart(fig13)
+                    else:
+                        st.plotly_chart(r13, theme=None)
 
         st.markdown(":basketball: :violet[**최근 30 회차 고중저 경기통계**]")
         df = pd.DataFrame(data=np.array([tcntw30,tcntd30,tcntl30]), 
@@ -1922,6 +2385,8 @@ def Crawler(gubun):
         fig13 = go.Figure(data=[go.Pie(labels=labels, values=values13)])
         fig13.update_traces(textfont_size=20,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
 
+        r8,r9,r10,r11,r12,r13 = jun_dan(tcntw30, tcntd30, tcntl30)
+
         tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10, tab11, tab12, tab13, tab14 \
            = st.tabs(["1경기","2경기","3경기","4경기","5경기","6경기","7경기","8경기","9경기","10경기","11경기","12경기","13경기","14경기"])
         with tab1:
@@ -1968,32 +2433,68 @@ def Crawler(gubun):
             try:
                 st.plotly_chart(fig8)
             except:
-                st.plotly_chart(fig8, theme=None)
+                try:
+                    st.plotly_chart(fig8, theme=None)
+                except:
+                    if int(r8) == 0:
+                        st.plotly_chart(fig8)
+                    else:
+                        st.plotly_chart(r8, theme=None)
         with tab10:
             try:
                 st.plotly_chart(fig9)
             except:
-                st.plotly_chart(fig9, theme=None)
+                try:
+                    st.plotly_chart(fig9, theme=None)
+                except:
+                    if int(r9) == 0:
+                        st.plotly_chart(fig9)
+                    else:
+                        st.plotly_chart(r9, theme=None)
         with tab11:
             try:
                 st.plotly_chart(fig10)
             except:
-                st.plotly_chart(fig10, theme=None)
+                try:
+                    st.plotly_chart(fig10, theme=None)
+                except:
+                    if int(r10) == 0:
+                        st.plotly_chart(fig10)
+                    else:
+                        st.plotly_chart(r10, theme=None)
         with tab12:
             try:
                 st.plotly_chart(fig11)
             except:
-                st.plotly_chart(fig11, theme=None)
+                try:
+                    st.plotly_chart(fig11, theme=None)
+                except:
+                    if int(r11) == 0:
+                        st.plotly_chart(fig11)
+                    else:
+                        st.plotly_chart(r11, theme=None)
         with tab13:
             try:
                 st.plotly_chart(fig12)
             except:
-                st.plotly_chart(fig12, theme=None)
+                try:
+                    st.plotly_chart(fig12, theme=None)
+                except:
+                    if int(r12) == 0:
+                        st.plotly_chart(fig12)
+                    else:
+                        st.plotly_chart(r12, theme=None)
         with tab14:
             try:
                 st.plotly_chart(fig13)
             except:
-                st.plotly_chart(fig13, theme=None)
+                try:
+                    st.plotly_chart(fig13, theme=None)
+                except:
+                    if int(r10) == 0:
+                        st.plotly_chart(fig13)
+                    else:
+                        st.plotly_chart(r13, theme=None)
 
         # st.markdown(":basketball: :violet[**최근 10회차 결과**]")
 
