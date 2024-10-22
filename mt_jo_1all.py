@@ -4,7 +4,6 @@ import numpy as np
 import random
 from streamlit_option_menu import option_menu
 from streamlit_navigation_bar import st_navbar
-from annotated_text import annotated_text
 
 def Crawler(yearc,countc,gubun):
     
