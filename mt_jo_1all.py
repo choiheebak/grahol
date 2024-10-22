@@ -158,8 +158,8 @@ def Crawler(yearc,countc,gubun):
                 index = ["1경기","2경기","3경기","4경기","5경기","6경기","7경기","8경기","9경기","10경기","11경기","12경기","13경기","14경기"],
                 columns=["홈팀", "원정팀","승","무","패","조합"]) 
 
-        # st.table(df)
-        st.dataframe(df.style.applymap(color_vowel, subset=["승","무","패"]),use_container_width=True)
+        st.table(df)
+        # st.dataframe(df.style.applymap(color_vowel, subset=["승","무","패"]),use_container_width=True)
 
     elif gubun == 'b':
      
@@ -296,8 +296,8 @@ def Crawler(yearc,countc,gubun):
                 index = ["1경기","2경기","3경기","4경기","5경기","6경기","7경기","8경기","9경기","10경기","11경기","12경기","13경기","14경기"],
                 columns=["홈팀", "원정팀","승","①","패","조합"]) 
 
-        # st.table(df)
-        st.dataframe(df.style.applymap(color_vowel, subset=["승","무","패"]),use_container_width=True)
+        st.table(df)
+        # st.dataframe(df.style.applymap(color_vowel, subset=["승","무","패"]),use_container_width=True)
   
     elif gubun == 'k':
      
@@ -434,8 +434,8 @@ def Crawler(yearc,countc,gubun):
                 index = ["1경기","2경기","3경기","4경기","5경기","6경기","7경기","8경기","9경기","10경기","11경기","12경기","13경기","14경기"],
                 columns=["홈팀", "원정팀","승","5","패","조합"]) 
 
-        # st.table(df)
-        st.dataframe(df.style.applymap(color_vowel, subset=["승","무","패"]),use_container_width=True)
+        st.table(df)
+        # st.dataframe(df.style.applymap(color_vowel, subset=["승","무","패"]),use_container_width=True)
              
 def johap_def(gubun, option, biga, big):
    
