@@ -1,14 +1,19 @@
 import streamlit as st
 import pandas as pd
+import numpy as np
 import random
 from streamlit_option_menu import option_menu
 from streamlit_navigation_bar import st_navbar
+from annotated_text import annotated_text
 
 def Crawler(yearc,countc,gubun):
     
     year = int(yearc)
     count = int(countc)
 
+    def color_vowel(value):
+        return f"background-color: pink;" if value in [*""] else None
+        
     if gubun == 's':
       
         st.subheader("축구 승무패") 
@@ -27,7 +32,7 @@ def Crawler(yearc,countc,gubun):
         # )
 
         # st.write(option) 
-    
+
         # f = open('D:/datagithub/soccer/soccer_so5_johap.txt', 'r', encoding='UTF8')
         f = open('soccer_so5_johap.txt', 'r', encoding='UTF8')
       
@@ -136,7 +141,9 @@ def Crawler(yearc,countc,gubun):
 
         # print(biga)
         # print(big)
-        
+        # df = pd.DataFrame(np.arange(10).reshape(2,5) + 1)
+        # st.table(df.style.highlight_quantile(axis=1, q_left=0.8, color="red"))
+
         johap = johap_def('s',option,biga,big)
 
         data = {"홈팀":[home[0],home[1],home[2],home[3],home[4],home[5],home[6],home[7],home[8],home[9],home[10],home[11],home[12],home[13]],
@@ -146,14 +153,15 @@ def Crawler(yearc,countc,gubun):
                 "패":[lose[0],lose[1],lose[2],lose[3],lose[4],lose[5],lose[6],lose[7],lose[8],lose[9],lose[10],lose[11],lose[12],lose[13]],  
                 # "결과":[result[0],result[1],result[2],result[3],result[4],result[5],result[6],result[7],result[8],result[9],result[10],result[11],result[12],result[13]],
                 "조합":[johap[0],johap[1],johap[2],johap[3],johap[4],johap[5],johap[6],johap[7],johap[8],johap[9],johap[10],johap[11],johap[12],johap[13]]}
-     
+
         df = pd.DataFrame(data, 
 
                 index = ["1경기","2경기","3경기","4경기","5경기","6경기","7경기","8경기","9경기","10경기","11경기","12경기","13경기","14경기"],
                 columns=["홈팀", "원정팀","승","무","패","조합"]) 
 
-        st.table(df)
-   
+        # st.table(df)
+        st.dataframe(df.style.applymap(color_vowel, subset=["승","무","패"]),use_container_width=True)
+
     elif gubun == 'b':
      
         st.subheader("야구 승1패")
@@ -289,7 +297,8 @@ def Crawler(yearc,countc,gubun):
                 index = ["1경기","2경기","3경기","4경기","5경기","6경기","7경기","8경기","9경기","10경기","11경기","12경기","13경기","14경기"],
                 columns=["홈팀", "원정팀","승","①","패","조합"]) 
 
-        st.table(df)
+        # st.table(df)
+        st.dataframe(df.style.applymap(color_vowel, subset=["승","무","패"]),use_container_width=True)
   
     elif gubun == 'k':
      
@@ -426,7 +435,8 @@ def Crawler(yearc,countc,gubun):
                 index = ["1경기","2경기","3경기","4경기","5경기","6경기","7경기","8경기","9경기","10경기","11경기","12경기","13경기","14경기"],
                 columns=["홈팀", "원정팀","승","5","패","조합"]) 
 
-        st.table(df)
+        # st.table(df)
+        st.dataframe(df.style.applymap(color_vowel, subset=["승","무","패"]),use_container_width=True)
              
 def johap_def(gubun, option, biga, big):
    
