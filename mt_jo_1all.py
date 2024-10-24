@@ -138,28 +138,41 @@ def Crawler(yearc,countc,gubun):
             for b in range(len(big2)):
                 big.append(bigai[b])
 
-        # print(biga)
-        # print(big)
-        # df = pd.DataFrame(np.arange(10).reshape(2,5) + 1)
-        # st.table(df.style.highlight_quantile(axis=1, q_left=0.8, color="red"))
-
         johap = johap_def('s',option,biga,big)
 
-        data = {"홈팀":[home[0],home[1],home[2],home[3],home[4],home[5],home[6],home[7],home[8],home[9],home[10],home[11],home[12],home[13]],
-                "원정팀":[away[0],away[1],away[2],away[3],away[4],away[5],away[6],away[7],away[8],away[9],away[10],away[11],away[12],away[13]],
-                "승":[win[0],win[1],win[2],win[3],win[4],win[5],win[6],win[7],win[8],win[9],win[10],win[11],win[12],win[13]],
-                "무":[draw[0],draw[1],draw[2],draw[3],draw[4],draw[5],draw[6],draw[7],draw[8],draw[9],draw[10],draw[11],draw[12],draw[13]],
-                "패":[lose[0],lose[1],lose[2],lose[3],lose[4],lose[5],lose[6],lose[7],lose[8],lose[9],lose[10],lose[11],lose[12],lose[13]],  
-                # "결과":[result[0],result[1],result[2],result[3],result[4],result[5],result[6],result[7],result[8],result[9],result[10],result[11],result[12],result[13]],
-                "조합":[johap[0],johap[1],johap[2],johap[3],johap[4],johap[5],johap[6],johap[7],johap[8],johap[9],johap[10],johap[11],johap[12],johap[13]]}
+        home = [home[0],home[1],home[2],home[3],home[4],home[5],home[6],home[7],home[8],home[9],home[10],home[11],home[12],home[13]]
+        away = [away[0],away[1],away[2],away[3],away[4],away[5],away[6],away[7],away[8],away[9],away[10],away[11],away[12],away[13]]
+        win = [win[0],win[1],win[2],win[3],win[4],win[5],win[6],win[7],win[8],win[9],win[10],win[11],win[12],win[13]]
+        draw = [draw[0],draw[1],draw[2],draw[3],draw[4],draw[5],draw[6],draw[7],draw[8],draw[9],draw[10],draw[11],draw[12],draw[13]] 
+        lose = [lose[0],lose[1],lose[2],lose[3],lose[4],lose[5],lose[6],lose[7],lose[8],lose[9],lose[10],lose[11],lose[12],lose[13]] 
 
-        df = pd.DataFrame(data, 
+        # index 생성
+        index = [f"{i}경기" for i in range(1, 15)]
 
-                index = ["1경기","2경기","3경기","4경기","5경기","6경기","7경기","8경기","9경기","10경기","11경기","12경기","13경기","14경기"],
-                columns=["홈팀", "원정팀","승","무","패","조합"]) 
-
-        st.table(df)
-        # st.dataframe(df.style.applymap(color_vowel, subset=["승","무","패"]),use_container_width=True)
+        # DataFrame 생성 (index 포함)
+        df = pd.DataFrame({
+            '홈팀': home,
+            '원정팀': away,
+            '승': win,
+            '무': draw,
+            '패': lose
+        }, index=index)
+        
+        # 스타일 적용 함수
+        def highlight_cells(row):
+            result = [''] * len(row)
+            johap_item = johap[index.index(row.name)]
+            highlight_style = 'background-color: #2E8B57; color: white;'
+            if '승' in johap_item:
+                result[2] = highlight_style
+            if '무' in johap_item:
+                result[3] = highlight_style
+            if '패' in johap_item:
+                result[4] = highlight_style
+            return result
+        # DataFrame 표시
+        styled_df = df.style.apply(highlight_cells, axis=1)
+        st.table(styled_df)
 
     elif gubun == 'b':
      
@@ -283,22 +296,56 @@ def Crawler(yearc,countc,gubun):
 
         # print(johap)
       
-        data = {"홈팀":[home[0],home[1],home[2],home[3],home[4],home[5],home[6],home[7],home[8],home[9],home[10],home[11],home[12],home[13]],
-                "원정팀":[away[0],away[1],away[2],away[3],away[4],away[5],away[6],away[7],away[8],away[9],away[10],away[11],away[12],away[13]],
-                "승":[win[0],win[1],win[2],win[3],win[4],win[5],win[6],win[7],win[8],win[9],win[10],win[11],win[12],win[13]],
-                "①":[draw[0],draw[1],draw[2],draw[3],draw[4],draw[5],draw[6],draw[7],draw[8],draw[9],draw[10],draw[11],draw[12],draw[13]],
-                "패":[lose[0],lose[1],lose[2],lose[3],lose[4],lose[5],lose[6],lose[7],lose[8],lose[9],lose[10],lose[11],lose[12],lose[13]],  
-                # "결과":[result[0],result[1],result[2],result[3],result[4],result[5],result[6],result[7],result[8],result[9],result[10],result[11],result[12],result[13]],
-                "조합":[johap[0],johap[1],johap[2],johap[3],johap[4],johap[5],johap[6],johap[7],johap[8],johap[9],johap[10],johap[11],johap[12],johap[13]]}
+        # data = {"홈팀":[home[0],home[1],home[2],home[3],home[4],home[5],home[6],home[7],home[8],home[9],home[10],home[11],home[12],home[13]],
+        #         "원정팀":[away[0],away[1],away[2],away[3],away[4],away[5],away[6],away[7],away[8],away[9],away[10],away[11],away[12],away[13]],
+        #         "승":[win[0],win[1],win[2],win[3],win[4],win[5],win[6],win[7],win[8],win[9],win[10],win[11],win[12],win[13]],
+        #         "①":[draw[0],draw[1],draw[2],draw[3],draw[4],draw[5],draw[6],draw[7],draw[8],draw[9],draw[10],draw[11],draw[12],draw[13]],
+        #         "패":[lose[0],lose[1],lose[2],lose[3],lose[4],lose[5],lose[6],lose[7],lose[8],lose[9],lose[10],lose[11],lose[12],lose[13]],  
+        #         # "결과":[result[0],result[1],result[2],result[3],result[4],result[5],result[6],result[7],result[8],result[9],result[10],result[11],result[12],result[13]],
+        #         "조합":[johap[0],johap[1],johap[2],johap[3],johap[4],johap[5],johap[6],johap[7],johap[8],johap[9],johap[10],johap[11],johap[12],johap[13]]}
      
-        df = pd.DataFrame(data, 
+        # df = pd.DataFrame(data, 
 
-                index = ["1경기","2경기","3경기","4경기","5경기","6경기","7경기","8경기","9경기","10경기","11경기","12경기","13경기","14경기"],
-                columns=["홈팀", "원정팀","승","①","패","조합"]) 
+        #         index = ["1경기","2경기","3경기","4경기","5경기","6경기","7경기","8경기","9경기","10경기","11경기","12경기","13경기","14경기"],
+        #         columns=["홈팀", "원정팀","승","①","패","조합"]) 
 
-        st.table(df)
+        # st.table(df)
         # st.dataframe(df.style.applymap(color_vowel, subset=["승","무","패"]),use_container_width=True)
   
+        home = [home[0],home[1],home[2],home[3],home[4],home[5],home[6],home[7],home[8],home[9],home[10],home[11],home[12],home[13]]
+        away = [away[0],away[1],away[2],away[3],away[4],away[5],away[6],away[7],away[8],away[9],away[10],away[11],away[12],away[13]]
+        win = [win[0],win[1],win[2],win[3],win[4],win[5],win[6],win[7],win[8],win[9],win[10],win[11],win[12],win[13]]
+        draw = [draw[0],draw[1],draw[2],draw[3],draw[4],draw[5],draw[6],draw[7],draw[8],draw[9],draw[10],draw[11],draw[12],draw[13]] 
+        lose = [lose[0],lose[1],lose[2],lose[3],lose[4],lose[5],lose[6],lose[7],lose[8],lose[9],lose[10],lose[11],lose[12],lose[13]] 
+
+        # index 생성
+        index = [f"{i}경기" for i in range(1, 15)]
+
+        # DataFrame 생성 (index 포함)
+        df = pd.DataFrame({
+            '홈팀': home,
+            '원정팀': away,
+            '승': win,
+            '1': draw,
+            '패': lose
+        }, index=index)
+        
+        # 스타일 적용 함수
+        def highlight_cells(row):
+            result = [''] * len(row)
+            johap_item = johap[index.index(row.name)]
+            highlight_style = 'background-color: #2E8B57; color: white;'
+            if '승' in johap_item:
+                result[2] = highlight_style
+            if '1' in johap_item:
+                result[3] = highlight_style
+            if '패' in johap_item:
+                result[4] = highlight_style
+            return result
+        # DataFrame 표시
+        styled_df = df.style.apply(highlight_cells, axis=1)
+        st.table(styled_df)
+
     elif gubun == 'k':
      
         st.subheader("농구 승5패")
@@ -419,24 +466,40 @@ def Crawler(yearc,countc,gubun):
 
         johap = johap_def('k',option,biga,big)
 
-        # print(johap)
- 
-        data = {"홈팀":[home[0],home[1],home[2],home[3],home[4],home[5],home[6],home[7],home[8],home[9],home[10],home[11],home[12],home[13]],
-                "원정팀":[away[0],away[1],away[2],away[3],away[4],away[5],away[6],away[7],away[8],away[9],away[10],away[11],away[12],away[13]],
-                "승":[win[0],win[1],win[2],win[3],win[4],win[5],win[6],win[7],win[8],win[9],win[10],win[11],win[12],win[13]],
-                "5":[draw[0],draw[1],draw[2],draw[3],draw[4],draw[5],draw[6],draw[7],draw[8],draw[9],draw[10],draw[11],draw[12],draw[13]],
-                "패":[lose[0],lose[1],lose[2],lose[3],lose[4],lose[5],lose[6],lose[7],lose[8],lose[9],lose[10],lose[11],lose[12],lose[13]],  
-                # "결과":[result[0],result[1],result[2],result[3],result[4],result[5],result[6],result[7],result[8],result[9],result[10],result[11],result[12],result[13]],
-                "조합":[johap[0],johap[1],johap[2],johap[3],johap[4],johap[5],johap[6],johap[7],johap[8],johap[9],johap[10],johap[11],johap[12],johap[13]]}
-     
-        df = pd.DataFrame(data, 
+        home = [home[0],home[1],home[2],home[3],home[4],home[5],home[6],home[7],home[8],home[9],home[10],home[11],home[12],home[13]]
+        away = [away[0],away[1],away[2],away[3],away[4],away[5],away[6],away[7],away[8],away[9],away[10],away[11],away[12],away[13]]
+        win = [win[0],win[1],win[2],win[3],win[4],win[5],win[6],win[7],win[8],win[9],win[10],win[11],win[12],win[13]]
+        draw = [draw[0],draw[1],draw[2],draw[3],draw[4],draw[5],draw[6],draw[7],draw[8],draw[9],draw[10],draw[11],draw[12],draw[13]] 
+        lose = [lose[0],lose[1],lose[2],lose[3],lose[4],lose[5],lose[6],lose[7],lose[8],lose[9],lose[10],lose[11],lose[12],lose[13]] 
 
-                index = ["1경기","2경기","3경기","4경기","5경기","6경기","7경기","8경기","9경기","10경기","11경기","12경기","13경기","14경기"],
-                columns=["홈팀", "원정팀","승","5","패","조합"]) 
+        # index 생성
+        index = [f"{i}경기" for i in range(1, 15)]
 
-        st.table(df)
-        # st.dataframe(df.style.applymap(color_vowel, subset=["승","무","패"]),use_container_width=True)
-             
+        # DataFrame 생성 (index 포함)
+        df = pd.DataFrame({
+            '홈팀': home,
+            '원정팀': away,
+            '승': win,
+            '5': draw,
+            '패': lose
+        }, index=index)
+        
+        # 스타일 적용 함수
+        def highlight_cells(row):
+            result = [''] * len(row)
+            johap_item = johap[index.index(row.name)]
+            highlight_style = 'background-color: #2E8B57; color: white;'
+            if '승' in johap_item:
+                result[2] = highlight_style
+            if '5' in johap_item:
+                result[3] = highlight_style
+            if '패' in johap_item:
+                result[4] = highlight_style
+            return result
+        # DataFrame 표시
+        styled_df = df.style.apply(highlight_cells, axis=1)
+        st.table(styled_df)
+
 def johap_def(gubun, option, biga, big):
    
     list_johap = []
@@ -664,5 +727,7 @@ def johap_def(gubun, option, biga, big):
                 
             list_johap.append(a)
 
-    return list_johap
+    list_j = [''.join(item) for item in list_johap]
+
+    return list_j
 
