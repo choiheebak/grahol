@@ -132,7 +132,7 @@ def Crawler(yearc,countc,gubun):
             bigai[i] = w+d+l
 
         big = []  
-        if len(big2) == 0:
+        if big2[0] == "":
             big = biga
         else:
             for b in range(len(big2)):
@@ -283,7 +283,7 @@ def Crawler(yearc,countc,gubun):
             bigai[i] = w+d+l
 
         big = []  
-        if len(big2) == 0:
+        if big2[0] == "":
             big = biga
         else:
             for b in range(len(big2)):
@@ -455,7 +455,7 @@ def Crawler(yearc,countc,gubun):
             bigai[i] = w+d+l
 
         big = []  
-        if len(big2) == 0:
+        if big2[0] == "":
             big = biga
         else:
             for b in range(len(big2)):
@@ -463,7 +463,7 @@ def Crawler(yearc,countc,gubun):
 
         # print(biga)
         # print(big)
-
+        print(biga, big, bigai)
         johap = johap_def('k',option,biga,big)
 
         home = [home[0],home[1],home[2],home[3],home[4],home[5],home[6],home[7],home[8],home[9],home[10],home[11],home[12],home[13]]
