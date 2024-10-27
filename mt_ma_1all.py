@@ -60,6 +60,7 @@ def Crawler(yearc,countc,gubun):
         f4su = []
         f4amt = []
         bal = []
+        jumsu = []
 
         for q in range(len(team_read)):
             rcnt = 0
@@ -108,7 +109,10 @@ def Crawler(yearc,countc,gubun):
                     elif rcnt == 14:
                         f4amt.append(team_read[q][s:r])
                         s = r+1
-                        bal.append(team_read[q][s:])
+                    elif rcnt == 15:
+                        bal.append(team_read[q][s:r])
+                        s = r+1
+                        jumsu.append(team_read[q][s:])
 
 
         if famt[0] == "":
@@ -138,12 +142,13 @@ def Crawler(yearc,countc,gubun):
                 "승":[win[0],win[1],win[2],win[3],win[4],win[5],win[6],win[7],win[8],win[9],win[10],win[11],win[12],win[13]],
                 "무":[draw[0],draw[1],draw[2],draw[3],draw[4],draw[5],draw[6],draw[7],draw[8],draw[9],draw[10],draw[11],draw[12],draw[13]],
                 "패":[lose[0],lose[1],lose[2],lose[3],lose[4],lose[5],lose[6],lose[7],lose[8],lose[9],lose[10],lose[11],lose[12],lose[13]], 
-                "결과":[result[0],result[1],result[2],result[3],result[4],result[5],result[6],result[7],result[8],result[9],result[10],result[11],result[12],result[13]]}
+                "결과":[result[0],result[1],result[2],result[3],result[4],result[5],result[6],result[7],result[8],result[9],result[10],result[11],result[12],result[13]],
+                "점수":[jumsu[0],jumsu[1],jumsu[2],jumsu[3],jumsu[4],jumsu[5],jumsu[6],jumsu[7],jumsu[8],jumsu[9],jumsu[10],jumsu[11],jumsu[12],jumsu[13]]}
      
         df = pd.DataFrame(data, 
 
                 index = ["1경기","2경기","3경기","4경기","5경기","6경기","7경기","8경기","9경기","10경기","11경기","12경기","13경기","14경기"],
-                columns=["홈팀", "원정팀","승","무","패","결과"]) 
+                columns=["홈팀", "원정팀","승","무","패","결과","점수"]) 
 
         st.table(df)
          
@@ -197,6 +202,7 @@ def Crawler(yearc,countc,gubun):
         f4su = []
         f4amt = []
         bal = []
+        jumsu = []
 
         for q in range(len(team_read)):
             rcnt = 0
@@ -245,8 +251,10 @@ def Crawler(yearc,countc,gubun):
                     elif rcnt == 14:
                         f4amt.append(team_read[q][s:r])
                         s = r+1
-                        bal.append(team_read[q][s:])
-
+                    elif rcnt == 15:
+                        bal.append(team_read[q][s:r])
+                        s = r+1
+                        jumsu.append(team_read[q][s:])
 
         if famt[0] == "":
             st.markdown(str(bal[0]))
@@ -272,14 +280,16 @@ def Crawler(yearc,countc,gubun):
         data = {"홈팀":[home[0],home[1],home[2],home[3],home[4],home[5],home[6],home[7],home[8],home[9],home[10],home[11],home[12],home[13]],
                 "원정팀":[away[0],away[1],away[2],away[3],away[4],away[5],away[6],away[7],away[8],away[9],away[10],away[11],away[12],away[13]],
                 "승":[win[0],win[1],win[2],win[3],win[4],win[5],win[6],win[7],win[8],win[9],win[10],win[11],win[12],win[13]],
-                "①":[draw[0],draw[1],draw[2],draw[3],draw[4],draw[5],draw[6],draw[7],draw[8],draw[9],draw[10],draw[11],draw[12],draw[13]],
+                "1":[draw[0],draw[1],draw[2],draw[3],draw[4],draw[5],draw[6],draw[7],draw[8],draw[9],draw[10],draw[11],draw[12],draw[13]],
                 "패":[lose[0],lose[1],lose[2],lose[3],lose[4],lose[5],lose[6],lose[7],lose[8],lose[9],lose[10],lose[11],lose[12],lose[13]], 
-                "결과":[result[0],result[1],result[2],result[3],result[4],result[5],result[6],result[7],result[8],result[9],result[10],result[11],result[12],result[13]]}
+                "결과":[result[0],result[1],result[2],result[3],result[4],result[5],result[6],result[7],result[8],result[9],result[10],result[11],result[12],result[13]],
+                "점수":[jumsu[0],jumsu[1],jumsu[2],jumsu[3],jumsu[4],jumsu[5],jumsu[6],jumsu[7],jumsu[8],jumsu[9],jumsu[10],jumsu[11],jumsu[12],jumsu[13]]}
      
         df = pd.DataFrame(data, 
 
                 index = ["1경기","2경기","3경기","4경기","5경기","6경기","7경기","8경기","9경기","10경기","11경기","12경기","13경기","14경기"],
-                columns=["홈팀", "원정팀","승","①","패","결과"]) 
+                columns=["홈팀", "원정팀","승","1","패","결과","점수"]) 
+
 
         st.table(df)
          
@@ -333,6 +343,7 @@ def Crawler(yearc,countc,gubun):
         f4su = []
         f4amt = []
         bal = []
+        jumsu = []
 
         for q in range(len(team_read)):
             rcnt = 0
@@ -381,7 +392,10 @@ def Crawler(yearc,countc,gubun):
                     elif rcnt == 14:
                         f4amt.append(team_read[q][s:r])
                         s = r+1
-                        bal.append(team_read[q][s:])
+                    elif rcnt == 15:
+                        bal.append(team_read[q][s:r])
+                        s = r+1
+                        jumsu.append(team_read[q][s:])
 
 
         if famt[0] == "":
@@ -410,12 +424,14 @@ def Crawler(yearc,countc,gubun):
                 "승":[win[0],win[1],win[2],win[3],win[4],win[5],win[6],win[7],win[8],win[9],win[10],win[11],win[12],win[13]],
                 "5":[draw[0],draw[1],draw[2],draw[3],draw[4],draw[5],draw[6],draw[7],draw[8],draw[9],draw[10],draw[11],draw[12],draw[13]],
                 "패":[lose[0],lose[1],lose[2],lose[3],lose[4],lose[5],lose[6],lose[7],lose[8],lose[9],lose[10],lose[11],lose[12],lose[13]], 
-                "결과":[result[0],result[1],result[2],result[3],result[4],result[5],result[6],result[7],result[8],result[9],result[10],result[11],result[12],result[13]]}
+                "결과":[result[0],result[1],result[2],result[3],result[4],result[5],result[6],result[7],result[8],result[9],result[10],result[11],result[12],result[13]],
+                "점수":[jumsu[0],jumsu[1],jumsu[2],jumsu[3],jumsu[4],jumsu[5],jumsu[6],jumsu[7],jumsu[8],jumsu[9],jumsu[10],jumsu[11],jumsu[12],jumsu[13]]}
      
         df = pd.DataFrame(data, 
 
                 index = ["1경기","2경기","3경기","4경기","5경기","6경기","7경기","8경기","9경기","10경기","11경기","12경기","13경기","14경기"],
-                columns=["홈팀", "원정팀","승","5","패","결과"]) 
+                columns=["홈팀", "원정팀","승","5","패","결과","점수"]) 
+
 
         st.table(df)
 
