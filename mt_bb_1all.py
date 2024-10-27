@@ -171,20 +171,6 @@ def Crawler(yearc,countc,gyungi):
             f = open('baseball_bb1_pitcheraway.txt', 'r', encoding='UTF8')
         elif g == '07':
             f = open('baseball_bb1_hyunhwang.txt', 'r', encoding='UTF8')
-        # if g == '01':
-        #     f = open('D:/datagithub/baseball/baseball_bb1_teamhome.txt', 'r', encoding='UTF8')
-        # elif g == '02':
-        #     f = open('D:/datagithub/baseball/baseball_bb1_teamaway.txt', 'r', encoding='UTF8')
-        # elif g == '03':
-        #     f = open('D:/datagithub/baseball/baseball_bb1_onehome.txt', 'r', encoding='UTF8')
-        # elif g == '04':
-        #     f = open('D:/datagithub/baseball/baseball_bb1_oneaway.txt', 'r', encoding='UTF8')
-        # elif g == '05':
-        #     f = open('D:/datagithub/baseball/baseball_bb1_pitcherhome.txt', 'r', encoding='UTF8')
-        # elif g == '06':
-        #     f = open('D:/datagithub/baseball/baseball_bb1_pitcheraway.txt', 'r', encoding='UTF8')
-        # elif g == '07':
-        #     f = open('D:/datagithub/baseball/baseball_bb1_hyunhwang.txt', 'r', encoding='UTF8')
 
         rdr1 = f.readlines()    
 
@@ -219,27 +205,6 @@ def Crawler(yearc,countc,gyungi):
             f = open('baseball_bb1_playerhaway.txt', 'r', encoding='UTF8')
         elif g == '20':
             f = open('baseball_bb1_playerpaway.txt', 'r', encoding='UTF8')
-        # if g == '11':
-        #     f = open('D:/datagithub/baseball/baseball_bb1_vstotal.txt', 'r', encoding='UTF8')
-        # elif g == '12':
-        #     f = open('D:/datagithub/baseball/baseball_bb1_vsseven.txt', 'r', encoding='UTF8')
-        # elif g == '13':
-        #     f = open('D:/datagithub/baseball/baseball_bb1_sevenhome.txt', 'r', encoding='UTF8')
-        # elif g == '14':
-        #     f = open('D:/datagithub/baseball/baseball_bb1_sevenaway.txt', 'r', encoding='UTF8')
-        # elif g == '15':
-        #     f = open('D:/datagithub/baseball/baseball_bb1_tayulhome.txt', 'r', encoding='UTF8')
-        # elif g == '16':
-        #     f = open('D:/datagithub/baseball/baseball_bb1_tayulaway.txt', 'r', encoding='UTF8')
-        # elif g == '17':
-        #     f = open('D:/datagithub/baseball/baseball_bb1_playerhhome.txt', 'r', encoding='UTF8')
-        # elif g == '18':
-        #     f = open('D:/datagithub/baseball/baseball_bb1_playerphome.txt', 'r', encoding='UTF8')
-        # elif g == '19':
-        #     f = open('D:/datagithub/baseball/baseball_bb1_playerhaway.txt', 'r', encoding='UTF8')
-        # elif g == '20':
-        #     f = open('D:/datagithub/baseball/baseball_bb1_playerphome.txt', 'r', encoding='UTF8')
-
         rdr1 = f.readlines()    
 
         team_read = []
@@ -696,14 +661,23 @@ def Crawler(yearc,countc,gyungi):
     fig2 = go.Figure(data=[go.Pie(labels=labels, values=values)])
     fig2.update_traces(textfont_size=20,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
 
-    tab1, tab2 = st.tabs(["맞대결 전체", "맞대결 최근7경기"])
+    tab1, tab2 = st.tabs(["맞대결 전체", "맞대결 최근7경기"])    
     with tab1:
-        st.plotly_chart(fig1)
+        try:
+            st.plotly_chart(fig1)
+        except:
+            try:
+                st.plotly_chart(fig1, theme=None)
+            except:
+                pass
     with tab2:
         try:
             st.plotly_chart(fig2)
         except:
-            st.plotly_chart(fig2, theme=None)
+            try:
+                st.plotly_chart(fig2, theme=None)
+            except:
+                pass
 
     # 최근 7경기
     team_read = read_all_txt('13',k)
@@ -809,12 +783,21 @@ def Crawler(yearc,countc,gyungi):
 
     tab1, tab2 = st.tabs(["홈팀 최근7경기", "원정팀 최근7경기"])
     with tab1:
-        st.plotly_chart(fig3)
+        try:
+            st.plotly_chart(fig3)
+        except:
+            try:
+                st.plotly_chart(fig3, theme=None)
+            except:
+                pass
     with tab2:
         try:
             st.plotly_chart(fig4)
         except:
-            st.plotly_chart(fig4, theme=None)
+            try:
+                st.plotly_chart(fig4, theme=None)
+            except:
+                pass
 
     def gaein_home(gamesu):
 

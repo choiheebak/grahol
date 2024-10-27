@@ -141,21 +141,6 @@ def Crawler(yearc,countc,gyungi):
             f = open('soccer_so1_onetwoaway.txt', 'r', encoding='UTF8')
         elif g == '07':
             f = open('soccer_so1_hyunhwang.txt', 'r', encoding='UTF8')
-        # if g == '01':
-        #     f = open('D:/datagithub/soccer/soccer_so1_teamhome.txt', 'r', encoding='UTF8')
-        # elif g == '02':
-        #     f = open('D:/datagithub/soccer/soccer_so1_teamaway.txt', 'r', encoding='UTF8')
-        # elif g == '03':
-        #     f = open('D:/datagithub/soccer/soccer_so1_onehome.txt', 'r', encoding='UTF8')
-        # elif g == '04':
-        #     f = open('D:/datagithub/soccer/soccer_so1_oneaway.txt', 'r', encoding='UTF8')
-        # elif g == '05':
-        #     f = open('D:/datagithub/soccer/soccer_so1_onetwohome.txt', 'r', encoding='UTF8')
-        # elif g == '06':
-        #     f = open('D:/datagithub/soccer/soccer_so1_onetwoaway.txt', 'r', encoding='UTF8')
-        # elif g == '07':
-        #     f = open('D:/datagithub/soccer/soccer_so1_hyunhwang.txt', 'r', encoding='UTF8')
-
         rdr1 = f.readlines()    
 
         team_read = '' 
@@ -185,22 +170,6 @@ def Crawler(yearc,countc,gyungi):
             f = open('soccer_so1_playerhome.txt', 'r', encoding='UTF8')
         elif g == '18':
             f = open('soccer_so1_playeraway.txt', 'r', encoding='UTF8')
-        # if g == '11':
-        #     f = open('D:/datagithub/soccer/soccer_so1_vstotal.txt', 'r', encoding='UTF8')
-        # elif g == '12':
-        #     f = open('D:/datagithub/soccer/soccer_so1_vsseven.txt', 'r', encoding='UTF8')
-        # elif g == '13':
-        #     f = open('D:/datagithub/soccer/soccer_so1_sevenhome.txt', 'r', encoding='UTF8')
-        # elif g == '14':
-        #     f = open('D:/datagithub/soccer/soccer_so1_sevenaway.txt', 'r', encoding='UTF8')
-        # elif g == '15':
-        #     f = open('D:/datagithub/soccer/soccer_so1_dukhome.txt', 'r', encoding='UTF8')
-        # elif g == '16':
-        #     f = open('D:/datagithub/soccer/soccer_so1_dukaway.txt', 'r', encoding='UTF8')
-        # elif g == '17':
-        #     f = open('D:/datagithub/soccer/soccer_so1_playerhome.txt', 'r', encoding='UTF8')
-        # elif g == '18':
-        #     f = open('D:/datagithub/soccer/soccer_so1_playeraway.txt', 'r', encoding='UTF8')
 
         rdr1 = f.readlines()    
 
@@ -701,12 +670,21 @@ def Crawler(yearc,countc,gyungi):
     else:
         tab1, tab2 = st.tabs(["맞대결 전체", "맞대결 최근7경기"])
         with tab1:
-            st.plotly_chart(fig1)
+            try:
+                st.plotly_chart(fig1)
+            except:
+                try:
+                    st.plotly_chart(fig1, theme=None)
+                except:
+                    pass
         with tab2:
             try:
                 st.plotly_chart(fig2)
             except:
-                st.plotly_chart(fig2, theme=None)
+                try:
+                    st.plotly_chart(fig2, theme=None)
+                except:
+                    pass
 
     # 최근 7경기
       
@@ -859,12 +837,21 @@ def Crawler(yearc,countc,gyungi):
 
     tab1, tab2 = st.tabs(["홈팀 최근7경기", "원정팀 최근7경기"])
     with tab1:
-        st.plotly_chart(fig3)
+        try:
+            st.plotly_chart(fig3)
+        except:
+            try:
+                st.plotly_chart(fig3, theme=None)
+            except:
+                pass
     with tab2:
         try:
             st.plotly_chart(fig4)
         except:
-            st.plotly_chart(fig4, theme=None)
+            try:
+                st.plotly_chart(fig4, theme=None)
+            except:
+                pass
 
     def gaein_home(gamesu):
 
