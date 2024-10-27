@@ -578,13 +578,16 @@ def Crawler(yearc,countc,gyungi):
 
     tab1, tab2 = st.tabs(["맞대결 전체", "맞대결 최근7경기"])
     with tab1:
-        st.plotly_chart(fig1)
+        try:
+            st.plotly_chart(fig1)
+        except:
+            st.plotly_chart(fig1, theme=None)
     with tab2:
         try:
             st.plotly_chart(fig2)
         except:
             try:
-                st.plotly_chart(fig4, theme=None)
+                st.plotly_chart(fig2, theme=None)
             except:
                 pass
 
@@ -692,7 +695,10 @@ def Crawler(yearc,countc,gyungi):
 
     tab1, tab2 = st.tabs(["홈팀 최근7경기", "원정팀 최근7경기"])
     with tab1:
-        st.plotly_chart(fig3)
+        try:
+            st.plotly_chart(fig3)
+        except:
+            st.plotly_chart(fig3, theme=None)
     with tab2:
         try:
             st.plotly_chart(fig4)
