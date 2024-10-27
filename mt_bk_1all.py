@@ -129,16 +129,6 @@ def Crawler(yearc,countc,gyungi):
             f = open('basketball_bk1_oneaway.txt', 'r', encoding='UTF8')
         elif g == '05':
             f = open('basketball_bk1_hyunhwang.txt', 'r', encoding='UTF8')
-        # if g == '01':
-        #     f = open('D:/datagithub/basketball/basketball_bk1_teamhome.txt', 'r', encoding='UTF8')
-        # elif g == '02':
-        #     f = open('D:/datagithub/basketball/basketball_bk1_teamaway.txt', 'r', encoding='UTF8')
-        # elif g == '03':
-        #     f = open('D:/datagithub/basketball/basketball_bk1_onehome.txt', 'r', encoding='UTF8')
-        # elif g == '04':
-        #     f = open('D:/datagithub/basketball/basketball_bk1_oneaway.txt', 'r', encoding='UTF8')
-        # elif g == '05':
-        #     f = open('D:/datagithub/basketball/basketball_bk1_hyunhwang.txt', 'r', encoding='UTF8')
 
         rdr1 = f.readlines()    
 
@@ -165,18 +155,6 @@ def Crawler(yearc,countc,gyungi):
             f = open('basketball_bk1_dukhome.txt', 'r', encoding='UTF8')
         elif g == '16':
             f = open('basketball_bk1_dukaway.txt', 'r', encoding='UTF8')
-        # if g == '11':
-        #     f = open('D:/datagithub/basketball/basketball_bk1_vstotal.txt', 'r', encoding='UTF8')
-        # elif g == '12':
-        #     f = open('D:/datagithub/basketball/basketball_bk1_vsseven.txt', 'r', encoding='UTF8')
-        # elif g == '13':
-        #     f = open('D:/datagithub/basketball/basketball_bk1_sevenhome.txt', 'r', encoding='UTF8')
-        # elif g == '14':
-        #     f = open('D:/datagithub/basketball/basketball_bk1_sevenaway.txt', 'r', encoding='UTF8')
-        # elif g == '15':
-        #     f = open('D:/datagithub/basketball/basketball_bk1_dukhome.txt', 'r', encoding='UTF8')
-        # elif g == '16':
-        #     f = open('D:/datagithub/basketball/basketball_bk1_dukaway.txt', 'r', encoding='UTF8')
 
         rdr1 = f.readlines()    
 
@@ -605,7 +583,10 @@ def Crawler(yearc,countc,gyungi):
         try:
             st.plotly_chart(fig2)
         except:
-            st.plotly_chart(fig2, theme=None)
+            try:
+                st.plotly_chart(fig4, theme=None)
+            except:
+                pass
 
     # 최근 7경기
     team_read = read_all_txt('13',k)
@@ -716,7 +697,10 @@ def Crawler(yearc,countc,gyungi):
         try:
             st.plotly_chart(fig4)
         except:
-            st.plotly_chart(fig4, theme=None)
+            try:
+                st.plotly_chart(fig4, theme=None)
+            except:
+                pass
 
     def gaein_home(gamesu):
 
