@@ -852,137 +852,42 @@ def Crawler(yearc,countc,gyungi):
                 st.plotly_chart(fig4, theme=None)
             except:
                 pass
+ 
+    def gaein_home(num_rows):
+  
+        index = [f"{i}" for i in range(1, (num_rows+1))] 
 
-    def gaein_home(gamesu):
+        순위 = [ghseq[i] for i in range(num_rows)]
+        선수 = [ghplay[i] for i in range(num_rows)]
+        경기수 = [ghtotal[i] for i in range(num_rows)]
+        득점 = [ghduk[i] for i in range(num_rows)]
+        어시스트 = [ghassist[i] for i in range(num_rows)]
+        공격포인트 = [ghpoint[i] for i in range(num_rows)]
+        슈팅 = [ghshoot[i] for i in range(num_rows)]
+        유효슈팅 = [ghyshoot[i] for i in range(num_rows)]
+        경고 = [ghyellow[i] for i in range(num_rows)]
+        퇴장 = [ghred[i] for i in range(num_rows)]
+        오프사이드 = [ghoffside[i] for i in range(num_rows)]
 
-        if gamesu == 7:
-            data = {"순위":[ghseq[0],ghseq[1],ghseq[2],ghseq[3],ghseq[4],ghseq[5],ghseq[6]],
-                    "선수":[ghplay[0],ghplay[1],ghplay[2],ghplay[3],ghplay[4],ghplay[5],ghplay[6]],
-                    "득점":[ghduk[0],ghduk[1],ghduk[2],ghduk[3],ghduk[4],ghduk[5],ghduk[6]],
-                    "어시스트":[ghassist[0],ghassist[1],ghassist[2],ghassist[3],ghassist[4],ghassist[5],ghassist[6]],
-                    "공격포인트":[ghpoint[0],ghpoint[1],ghpoint[2],ghpoint[3],ghpoint[4],ghpoint[5],ghpoint[6]],
-                    "경기수":[ghtotal[0],ghtotal[1],ghtotal[2],ghtotal[3],ghtotal[4],ghtotal[5],ghtotal[6]],
-                    "슈팅":[ghshoot[0],ghshoot[1],ghshoot[2],ghshoot[3],ghshoot[4],ghshoot[5],ghshoot[6]],
-                    "유효슈팅":[ghyshoot[0],ghyshoot[1],ghyshoot[2],ghyshoot[3],ghyshoot[4],ghyshoot[5],ghyshoot[6]],
-                    "경고":[ghyellow[0],ghyellow[1],ghyellow[2],ghyellow[3],ghyellow[4],ghyellow[5],ghyellow[6]],
-                    "퇴장":[ghred[0],ghred[1],ghred[2],ghred[3],ghred[4],ghred[5],ghred[6]],
-                    "오프사이드":[ghoffside[0],ghoffside[1],ghoffside[2],ghoffside[3],ghoffside[4],ghoffside[5],ghoffside[6]]}
-            df = pd.DataFrame(data,
+        # 딕셔너리로 데이터 구성
+        data = {
+            "순위": 순위,
+            "선수": 선수,
+            "경기수": 경기수,
+            "득점": 득점,
+            "어시스트": 어시스트,
+            "공격포인트": 공격포인트,
+            "슈팅": 슈팅,
+            "유효슈팅": 유효슈팅,
+            "경고": 경고,
+            "퇴장": 퇴장,
+            "오프사이드": 오프사이드
+        }
 
-                    index= ["1","2","3","4","5","6","7"], 
-                    columns=["순위","선수","득점","어시스트","공격포인트","경기수","슈팅","유효슈팅","경고","퇴장","오프사이드"]) 
-            st.dataframe(df)
-
-        elif gamesu == 6:
-            data = {"순위":[ghseq[0],ghseq[1],ghseq[2],ghseq[3],ghseq[4],ghseq[5]],
-                    "선수":[ghplay[0],ghplay[1],ghplay[2],ghplay[3],ghplay[4],ghplay[5]],
-                    "득점":[ghduk[0],ghduk[1],ghduk[2],ghduk[3],ghduk[4],ghduk[5]],
-                    "어시스트":[ghassist[0],ghassist[1],ghassist[2],ghassist[3],ghassist[4],ghassist[5]],
-                    "공격포인트":[ghpoint[0],ghpoint[1],ghpoint[2],ghpoint[3],ghpoint[4],ghpoint[5]],
-                    "경기수":[ghtotal[0],ghtotal[1],ghtotal[2],ghtotal[3],ghtotal[4],ghtotal[5]],
-                    "슈팅":[ghshoot[0],ghshoot[1],ghshoot[2],ghshoot[3],ghshoot[4],ghshoot[5]],
-                    "유효슈팅":[ghyshoot[0],ghyshoot[1],ghyshoot[2],ghyshoot[3],ghyshoot[4],ghyshoot[5]],
-                    "경고":[ghyellow[0],ghyellow[1],ghyellow[2],ghyellow[3],ghyellow[4],ghyellow[5]],
-                    "퇴장":[ghred[0],ghred[1],ghred[2],ghred[3],ghred[4],ghred[5]],
-                    "오프사이드":[ghoffside[0],ghoffside[1],ghoffside[2],ghoffside[3],ghoffside[4],ghoffside[5]]}
-            df = pd.DataFrame(data,
-
-                    index= ["1","2","3","4","5","6"], 
-                    columns=["순위","선수","득점","어시스트","공격포인트","경기수","슈팅","유효슈팅","경고","퇴장","오프사이드"]) 
-            st.dataframe(df)
-
-        elif gamesu == 5:
-            data = {"순위":[ghseq[0],ghseq[1],ghseq[2],ghseq[3],ghseq[4]],
-                    "선수":[ghplay[0],ghplay[1],ghplay[2],ghplay[3],ghplay[4]],
-                    "득점":[ghduk[0],ghduk[1],ghduk[2],ghduk[3],ghduk[4]],
-                    "어시스트":[ghassist[0],ghassist[1],ghassist[2],ghassist[3],ghassist[4]],
-                    "공격포인트":[ghpoint[0],ghpoint[1],ghpoint[2],ghpoint[3],ghpoint[4]],
-                    "경기수":[ghtotal[0],ghtotal[1],ghtotal[2],ghtotal[3],ghtotal[4]],
-                    "슈팅":[ghshoot[0],ghshoot[1],ghshoot[2],ghshoot[3],ghshoot[4]],
-                    "유효슈팅":[ghyshoot[0],ghyshoot[1],ghyshoot[2],ghyshoot[3],ghyshoot[4]],
-                    "경고":[ghyellow[0],ghyellow[1],ghyellow[2],ghyellow[3],ghyellow[4]],
-                    "퇴장":[ghred[0],ghred[1],ghred[2],ghred[3],ghred[4]],
-                    "오프사이드":[ghoffside[0],ghoffside[1],ghoffside[2],ghoffside[3],ghoffside[4]]}
-            df = pd.DataFrame(data,
-
-                    index= ["1","2","3","4","5"], 
-                    columns=["순위","선수","득점","어시스트","공격포인트","경기수","슈팅","유효슈팅","경고","퇴장","오프사이드"]) 
-            st.dataframe(df)
-
-        elif gamesu == 4:
-            data = {"순위":[ghseq[0],ghseq[1],ghseq[2],ghseq[3]],
-                    "선수":[ghplay[0],ghplay[1],ghplay[2],ghplay[3]],
-                    "득점":[ghduk[0],ghduk[1],ghduk[2],ghduk[3]],
-                    "어시스트":[ghassist[0],ghassist[1],ghassist[2],ghassist[3]],
-                    "공격포인트":[ghpoint[0],ghpoint[1],ghpoint[2],ghpoint[3]],
-                    "경기수":[ghtotal[0],ghtotal[1],ghtotal[2],ghtotal[3]],
-                    "슈팅":[ghshoot[0],ghshoot[1],ghshoot[2],ghshoot[3]],
-                    "유효슈팅":[ghyshoot[0],ghyshoot[1],ghyshoot[2],ghyshoot[3]],
-                    "경고":[ghyellow[0],ghyellow[1],ghyellow[2],ghyellow[3]],
-                    "퇴장":[ghred[0],ghred[1],ghred[2],ghred[3]],
-                    "오프사이드":[ghoffside[0],ghoffside[1],ghoffside[2],ghoffside[3]]}
-            df = pd.DataFrame(data,
-
-                    index= ["1","2","3","4"], 
-                    columns=["순위","선수","득점","어시스트","공격포인트","경기수","슈팅","유효슈팅","경고","퇴장","오프사이드"]) 
-            st.dataframe(df)
-            
-        elif gamesu == 3:
-            data = {"순위":[ghseq[0],ghseq[1],ghseq[2]],
-                    "선수":[ghplay[0],ghplay[1],ghplay[2]],
-                    "득점":[ghduk[0],ghduk[1],ghduk[2]],
-                    "어시스트":[ghassist[0],ghassist[1],ghassist[2]],
-                    "공격포인트":[ghpoint[0],ghpoint[1],ghpoint[2]],
-                    "경기수":[ghtotal[0],ghtotal[1],ghtotal[2]],
-                    "슈팅":[ghshoot[0],ghshoot[1],ghshoot[2]],
-                    "유효슈팅":[ghyshoot[0],ghyshoot[1],ghyshoot[2]],
-                    "경고":[ghyellow[0],ghyellow[1],ghyellow[2]],
-                    "퇴장":[ghred[0],ghred[1],ghred[2]],
-                    "오프사이드":[ghoffside[0],ghoffside[1],ghoffside[2]]}
-            df = pd.DataFrame(data,
-
-                    index= ["1","2","3"], 
-                    columns=["순위","선수","득점","어시스트","공격포인트","경기수","슈팅","유효슈팅","경고","퇴장","오프사이드"]) 
-            st.dataframe(df)
-            
-        elif gamesu == 2:
-            data = {"순위":[ghseq[0],ghseq[1]],
-                    "선수":[ghplay[0],ghplay[1]],
-                    "득점":[ghduk[0],ghduk[1]],
-                    "어시스트":[ghassist[0],ghassist[1]],
-                    "공격포인트":[ghpoint[0],ghpoint[1]],
-                    "경기수":[ghtotal[0],ghtotal[1]],
-                    "슈팅":[ghshoot[0],ghshoot[1]],
-                    "유효슈팅":[ghyshoot[0],ghyshoot[1]],
-                    "경고":[ghyellow[0],ghyellow[1]],
-                    "퇴장":[ghred[0],ghred[1]],
-                    "오프사이드":[ghoffside[0],ghoffside[1]]}
-            df = pd.DataFrame(data,
-
-                    index= ["1","2"], 
-                    columns=["순위","선수","득점","어시스트","공격포인트","경기수","슈팅","유효슈팅","경고","퇴장","오프사이드"]) 
-            st.dataframe(df)
-            
-        elif gamesu == 1:
-            data = {"순위":[ghseq[0]],
-                    "선수":[ghplay[0]],
-                    "득점":[ghduk[0]],
-                    "어시스트":[ghassist[0]],
-                    "공격포인트":[ghpoint[0]],
-                    "경기수":[ghtotal[0]],
-                    "슈팅":[ghshoot[0]],
-                    "유효슈팅":[ghyshoot[0]],
-                    "경고":[ghyellow[0]],
-                    "퇴장":[ghred[0]],
-                    "오프사이드":[ghoffside[0]]}
-            df = pd.DataFrame(data,
-
-                    index= ["1"], 
-                    columns=["순위","선수","득점","어시스트","공격포인트","경기수","슈팅","유효슈팅","경고","퇴장","오프사이드"]) 
-            st.dataframe(df)  
-        elif gamesu == 0:
-            pass
-     
+        # DataFrame 생성
+        df = pd.DataFrame(data, index= index)
+        st.dataframe(df)
+          
     team_read = read_all_txt('15',k)
     
     for q in range(len(team_read)):
@@ -1031,136 +936,41 @@ def Crawler(yearc,countc,gyungi):
     
         gaein_home(len(ghplay))
 
-    def gaein_away(gamesu):
+    def gaein_away(num_rows):
+  
+        index = [f"{i}" for i in range(1, (num_rows+1))] 
 
-        if gamesu == 7:
-            data = {"순위":[gaseq[0],gaseq[1],gaseq[2],gaseq[3],gaseq[4],gaseq[5],gaseq[6]],
-                    "선수":[gaplay[0],gaplay[1],gaplay[2],gaplay[3],gaplay[4],gaplay[5],gaplay[6]],
-                    "득점":[gaduk[0],gaduk[1],gaduk[2],gaduk[3],gaduk[4],gaduk[5],gaduk[6]],
-                    "어시스트":[gaassist[0],gaassist[1],gaassist[2],gaassist[3],gaassist[4],gaassist[5],gaassist[6]],
-                    "공격포인트":[gapoint[0],gapoint[1],gapoint[2],gapoint[3],gapoint[4],gapoint[5],gapoint[6]],
-                    "경기수":[gatotal[0],gatotal[1],gatotal[2],gatotal[3],gatotal[4],gatotal[5],gatotal[6]],
-                    "슈팅":[gashoot[0],gashoot[1],gashoot[2],gashoot[3],gashoot[4],gashoot[5],gashoot[6]],
-                    "유효슈팅":[gayshoot[0],gayshoot[1],gayshoot[2],gayshoot[3],gayshoot[4],gayshoot[5],gayshoot[6]],
-                    "경고":[gayellow[0],gayellow[1],gayellow[2],gayellow[3],gayellow[4],gayellow[5],gayellow[6]],
-                    "퇴장":[gared[0],gared[1],gared[2],gared[3],gared[4],gared[5],gared[6]],
-                    "오프사이드":[gaoffside[0],gaoffside[1],gaoffside[2],gaoffside[3],gaoffside[4],gaoffside[5],gaoffside[6]]}
-            df = pd.DataFrame(data,
+        순위 = [gaseq[i] for i in range(num_rows)]
+        선수 = [gaplay[i] for i in range(num_rows)]
+        경기수 = [gatotal[i] for i in range(num_rows)]
+        득점 = [gaduk[i] for i in range(num_rows)]
+        어시스트 = [gaassist[i] for i in range(num_rows)]
+        공격포인트 = [gapoint[i] for i in range(num_rows)]
+        슈팅 = [gashoot[i] for i in range(num_rows)]
+        유효슈팅 = [gayshoot[i] for i in range(num_rows)]
+        경고 = [gayellow[i] for i in range(num_rows)]
+        퇴장 = [gared[i] for i in range(num_rows)]
+        오프사이드 = [gaoffside[i] for i in range(num_rows)]
 
-                    index= ["1","2","3","4","5","6","7"], 
-                    columns=["순위","선수","득점","어시스트","공격포인트","경기수","슈팅","유효슈팅","경고","퇴장","오프사이드"]) 
-            st.dataframe(df)
+        # 딕셔너리로 데이터 구성
+        data = {
+            "순위": 순위,
+            "선수": 선수,
+            "경기수": 경기수,
+            "득점": 득점,
+            "어시스트": 어시스트,
+            "공격포인트": 공격포인트,
+            "슈팅": 슈팅,
+            "유효슈팅": 유효슈팅,
+            "경고": 경고,
+            "퇴장": 퇴장,
+            "오프사이드": 오프사이드
+        }
 
-        elif gamesu == 6:
-            data = {"순위":[gaseq[0],gaseq[1],gaseq[2],gaseq[3],gaseq[4],gaseq[5]],
-                    "선수":[gaplay[0],gaplay[1],gaplay[2],gaplay[3],gaplay[4],gaplay[5]],
-                    "득점":[gaduk[0],gaduk[1],gaduk[2],gaduk[3],gaduk[4],gaduk[5]],
-                    "어시스트":[gaassist[0],gaassist[1],gaassist[2],gaassist[3],gaassist[4],gaassist[5]],
-                    "공격포인트":[gapoint[0],gapoint[1],gapoint[2],gapoint[3],gapoint[4],gapoint[5]],
-                    "경기수":[gatotal[0],gatotal[1],gatotal[2],gatotal[3],gatotal[4],gatotal[5]],
-                    "슈팅":[gashoot[0],gashoot[1],gashoot[2],gashoot[3],gashoot[4],gashoot[5]],
-                    "유효슈팅":[gayshoot[0],gayshoot[1],gayshoot[2],gayshoot[3],gayshoot[4],gayshoot[5]],
-                    "경고":[gayellow[0],gayellow[1],gayellow[2],gayellow[3],gayellow[4],gayellow[5]],
-                    "퇴장":[gared[0],gared[1],gared[2],gared[3],gared[4],gared[5]],
-                    "오프사이드":[gaoffside[0],gaoffside[1],gaoffside[2],gaoffside[3],gaoffside[4],gaoffside[5]]}
-            df = pd.DataFrame(data,
-
-                    index= ["1","2","3","4","5","6"], 
-                    columns=["순위","선수","득점","어시스트","공격포인트","경기수","슈팅","유효슈팅","경고","퇴장","오프사이드"]) 
-            st.dataframe(df)
-
-        elif gamesu == 5:
-            data = {"순위":[gaseq[0],gaseq[1],gaseq[2],gaseq[3],gaseq[4]],
-                    "선수":[gaplay[0],gaplay[1],gaplay[2],gaplay[3],gaplay[4]],
-                    "득점":[gaduk[0],gaduk[1],gaduk[2],gaduk[3],gaduk[4]],
-                    "어시스트":[gaassist[0],gaassist[1],gaassist[2],gaassist[3],gaassist[4]],
-                    "공격포인트":[gapoint[0],gapoint[1],gapoint[2],gapoint[3],gapoint[4]],
-                    "경기수":[gatotal[0],gatotal[1],gatotal[2],gatotal[3],gatotal[4]],
-                    "슈팅":[gashoot[0],gashoot[1],gashoot[2],gashoot[3],gashoot[4]],
-                    "유효슈팅":[gayshoot[0],gayshoot[1],gayshoot[2],gayshoot[3],gayshoot[4]],
-                    "경고":[gayellow[0],gayellow[1],gayellow[2],gayellow[3],gayellow[4]],
-                    "퇴장":[gared[0],gared[1],gared[2],gared[3],gared[4]],
-                    "오프사이드":[gaoffside[0],gaoffside[1],gaoffside[2],gaoffside[3],gaoffside[4]]}
-            df = pd.DataFrame(data,
-
-                    index= ["1","2","3","4","5"], 
-                    columns=["순위","선수","득점","어시스트","공격포인트","경기수","슈팅","유효슈팅","경고","퇴장","오프사이드"]) 
-            st.dataframe(df)
-
-        elif gamesu == 4:
-            data = {"순위":[gaseq[0],gaseq[1],gaseq[2],gaseq[3]],
-                    "선수":[gaplay[0],gaplay[1],gaplay[2],gaplay[3]],
-                    "득점":[gaduk[0],gaduk[1],gaduk[2],gaduk[3]],
-                    "어시스트":[gaassist[0],gaassist[1],gaassist[2],gaassist[3]],
-                    "공격포인트":[gapoint[0],gapoint[1],gapoint[2],gapoint[3]],
-                    "경기수":[gatotal[0],gatotal[1],gatotal[2],gatotal[3]],
-                    "슈팅":[gashoot[0],gashoot[1],gashoot[2],gashoot[3]],
-                    "유효슈팅":[gayshoot[0],gayshoot[1],gayshoot[2],gayshoot[3]],
-                    "경고":[gayellow[0],gayellow[1],gayellow[2],gayellow[3]],
-                    "퇴장":[gared[0],gared[1],gared[2],gared[3]],
-                    "오프사이드":[gaoffside[0],gaoffside[1],gaoffside[2],gaoffside[3]]}
-            df = pd.DataFrame(data,
-
-                    index= ["1","2","3","4"], 
-                    columns=["순위","선수","득점","어시스트","공격포인트","경기수","슈팅","유효슈팅","경고","퇴장","오프사이드"]) 
-            st.dataframe(df)
-            
-        elif gamesu == 3:
-            data = {"순위":[gaseq[0],gaseq[1],gaseq[2]],
-                    "선수":[gaplay[0],gaplay[1],gaplay[2]],
-                    "득점":[gaduk[0],gaduk[1],gaduk[2]],
-                    "어시스트":[gaassist[0],gaassist[1],gaassist[2]],
-                    "공격포인트":[gapoint[0],gapoint[1],gapoint[2]],
-                    "경기수":[gatotal[0],gatotal[1],gatotal[2]],
-                    "슈팅":[gashoot[0],gashoot[1],gashoot[2]],
-                    "유효슈팅":[gayshoot[0],gayshoot[1],gayshoot[2]],
-                    "경고":[gayellow[0],gayellow[1],gayellow[2]],
-                    "퇴장":[gared[0],gared[1],gared[2]],
-                    "오프사이드":[gaoffside[0],gaoffside[1],gaoffside[2]]}
-            df = pd.DataFrame(data,
-
-                    index= ["1","2","3"], 
-                    columns=["순위","선수","득점","어시스트","공격포인트","경기수","슈팅","유효슈팅","경고","퇴장","오프사이드"]) 
-            st.dataframe(df)
-            
-        elif gamesu == 2:
-            data = {"순위":[gaseq[0],gaseq[1]],
-                    "선수":[gaplay[0],gaplay[1]],
-                    "득점":[gaduk[0],gaduk[1]],
-                    "어시스트":[gaassist[0],gaassist[1]],
-                    "공격포인트":[gapoint[0],gapoint[1]],
-                    "경기수":[gatotal[0],gatotal[1]],
-                    "슈팅":[gashoot[0],gashoot[1]],
-                    "유효슈팅":[gayshoot[0],gayshoot[1]],
-                    "경고":[gayellow[0],gayellow[1]],
-                    "퇴장":[gared[0],gared[1]],
-                    "오프사이드":[gaoffside[0],gaoffside[1]]}
-            df = pd.DataFrame(data,
-
-                    index= ["1","2"], 
-                    columns=["순위","선수","득점","어시스트","공격포인트","경기수","슈팅","유효슈팅","경고","퇴장","오프사이드"]) 
-            st.dataframe(df)
-            
-        elif gamesu == 1:
-            data = {"순위":[gaseq[0]],
-                    "선수":[gaplay[0]],
-                    "득점":[gaduk[0]],
-                    "어시스트":[gaassist[0]],
-                    "공격포인트":[gapoint[0]],
-                    "경기수":[gatotal[0]],
-                    "슈팅":[gashoot[0]],
-                    "유효슈팅":[gayshoot[0]],
-                    "경고":[gayellow[0]],
-                    "퇴장":[gared[0]],
-                    "오프사이드":[gaoffside[0]]}
-            df = pd.DataFrame(data,
-
-                    index= ["1"], 
-                    columns=["순위","선수","득점","어시스트","공격포인트","경기수","슈팅","유효슈팅","경고","퇴장","오프사이드"]) 
-            st.dataframe(df)    
-        elif gamesu == 0:
-            pass
-         
+        # DataFrame 생성
+        df = pd.DataFrame(data, index= index)
+        st.dataframe(df)
+              
     team_read = read_all_txt('16',k)
     
     for q in range(len(team_read)):
@@ -1295,38 +1105,81 @@ def Crawler(yearc,countc,gyungi):
 
     st.markdown(":soccer: :blue[**선수**]")
 
-    dataq = {"선수":[shplay],"포지션":[shpos],"득점":[shduk],"어시스트":[shassist],"공격포인트":[shpoint],"경기수":[shtotal],
-            "슈팅":[shshoot],"유효슈팅":[shyshoot]}
-    
-    dfq = pd.DataFrame(dataq,
-            columns=["선수","포지션","득점","어시스트","공격포인트","경기수","슈팅","유효슈팅"]) 
-    
-    figq = go.Figure(data=[go.Table(
-        header=dict(values=list(dfq.columns),
-                    # fill_color='paleturquoise',
-                    align='left'),
-        cells=dict(values=[shplay,shpos,shduk,shassist,shpoint,shtotal,shshoot,shyshoot],
-                #    fill_color='lavender',
-                align='left'))])
-    
-    datar = {"선수":[saplay],"포지션":[sapos],"득점":[saduk],"어시스트":[saassist],"공격포인트":[sapoint],"경기수":[satotal],
-            "슈팅":[sashoot],"유효슈팅":[sayshoot]}
-    
-    dfr = pd.DataFrame(datar,
-            columns=["선수","포지션","득점","어시스트","공격포인트","경기수","슈팅","유효슈팅"]) 
-    
-    figr = go.Figure(data=[go.Table(
-        header=dict(values=list(dfr.columns),
-                    # fill_color='paleturquoise',
-                    align='left'),
-        cells=dict(values=[saplay,sapos,saduk,saassist,sapoint,satotal,sashoot,sayshoot],
-                #    fill_color='lavender',
-                align='left'))])
+    def player_home(num_rows):
+  
+        index = [f"{i}" for i in range(1, (num_rows+1))] 
 
-    figq.update_layout(height=500)
-    figr.update_layout(height=500)
+        선수 = [shplay[i] for i in range(num_rows)]
+        포지션 = [shpos[i] for i in range(num_rows)]
+        경기수 = [shtotal[i] for i in range(num_rows)]
+        득점 = [shduk[i] for i in range(num_rows)]
+        어시스트 = [shassist[i] for i in range(num_rows)]
+        공격포인트 = [shpoint[i] for i in range(num_rows)]
+        슈팅 = [shshoot[i] for i in range(num_rows)]
+        유효슈팅 = [shyshoot[i] for i in range(num_rows)]
+        경고 = [shyellow[i] for i in range(num_rows)]
+        퇴장 = [shred[i] for i in range(num_rows)]
+        오프사이드 = [shoffside[i] for i in range(num_rows)]
+
+        # 딕셔너리로 데이터 구성
+        data = {
+            "선수": 선수,
+            "포지션": 포지션,
+            "경기수": 경기수,
+            "득점": 득점,
+            "어시스트": 어시스트,
+            "공격포인트": 공격포인트,
+            "슈팅": 슈팅,
+            "유효슈팅": 유효슈팅,
+            "경고": 경고,
+            "퇴장": 퇴장,
+            "오프사이드": 오프사이드
+        }
+
+        # DataFrame 생성
+        dfh = pd.DataFrame(data, index= index)
     
+        return dfh
+   
+    def player_away(num_rows):
+  
+        index = [f"{i}" for i in range(1, (num_rows+1))] 
+
+        선수 = [saplay[i] for i in range(num_rows)]
+        포지션 = [sapos[i] for i in range(num_rows)]
+        경기수 = [satotal[i] for i in range(num_rows)]
+        득점 = [saduk[i] for i in range(num_rows)]
+        어시스트 = [saassist[i] for i in range(num_rows)]
+        공격포인트 = [sapoint[i] for i in range(num_rows)]
+        슈팅 = [sashoot[i] for i in range(num_rows)]
+        유효슈팅 = [sayshoot[i] for i in range(num_rows)]
+        경고 = [sayellow[i] for i in range(num_rows)]
+        퇴장 = [sared[i] for i in range(num_rows)]
+        오프사이드 = [saoffside[i] for i in range(num_rows)]
+
+        # 딕셔너리로 데이터 구성
+        data = {
+            "선수": 선수,
+            "포지션": 포지션,
+            "경기수": 경기수,
+            "득점": 득점,
+            "어시스트": 어시스트,
+            "공격포인트": 공격포인트,
+            "슈팅": 슈팅,
+            "유효슈팅": 유효슈팅,
+            "경고": 경고,
+            "퇴장": 퇴장,
+            "오프사이드": 오프사이드
+        }
+
+        # DataFrame 생성
+        dfa = pd.DataFrame(data, index= index)
     
+        return dfa
+    
+    dfh = player_home(len(shplay))
+    dfa = player_away(len(saplay))
+        
     if len(shplay) == 0 and len(saplay) == 0:
         tab1, tab2 = st.tabs(["홈팀", "원정팀"])
         with tab1:
@@ -1336,7 +1189,8 @@ def Crawler(yearc,countc,gyungi):
     else:
         tab1, tab2 = st.tabs(["홈팀", "원정팀"])
         with tab1:
-            st.plotly_chart(figq, use_container_width=True)
+            st.text(home)
+            st.dataframe(dfh, use_container_width=True)          
         with tab2:
-            st.plotly_chart(figr, use_container_width=True)
-
+            st.text(away)
+            st.dataframe(dfa, use_container_width=True)   
