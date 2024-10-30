@@ -799,120 +799,34 @@ def Crawler(yearc,countc,gyungi):
             except:
                 pass
 
-    def gaein_home(gamesu):
+    def gaein_home(num_rows):
+  
+        index = [ghplay[i] for i in range(num_rows)]
+        순위 = [ghseq[i] for i in range(num_rows)]
+        타율 = [ghtayul[i] for i in range(num_rows)]
+        홈런 = [ghhomerun[i] for i in range(num_rows)]
+        타점 = [ghtajum[i] for i in range(num_rows)]
+        안타 = [ghhit[i] for i in range(num_rows)]
+        득점 = [ghduk[i] for i in range(num_rows)]
+        도루 = [ghdoru[i] for i in range(num_rows)]
+        볼넷 = [ghfball[i] for i in range(num_rows)]
 
-        if gamesu == 7:
-            data = {"순위":[ghseq[0],ghseq[1],ghseq[2],ghseq[3],ghseq[4],ghseq[5],ghseq[6]],
-                    "선수":[ghplay[0],ghplay[1],ghplay[2],ghplay[3],ghplay[4],ghplay[5],ghplay[6]],
-                    "타율":[ghtayul[0],ghtayul[1],ghtayul[2],ghtayul[3],ghtayul[4],ghtayul[5],ghtayul[6]],
-                    "홈런":[ghhomerun[0],ghhomerun[1],ghhomerun[2],ghhomerun[3],ghhomerun[4],ghhomerun[5],ghhomerun[6]],
-                    "타점":[ghtajum[0],ghtajum[1],ghtajum[2],ghtajum[3],ghtajum[4],ghtajum[5],ghtajum[6]],
-                    "안타":[ghhit[0],ghhit[1],ghhit[2],ghhit[3],ghhit[4],ghhit[5],ghhit[6]],
-                    "득점":[ghduk[0],ghduk[1],ghduk[2],ghduk[3],ghduk[4],ghduk[5],ghduk[6]],
-                    "도루":[ghdoru[0],ghdoru[1],ghdoru[2],ghdoru[3],ghdoru[4],ghdoru[5],ghdoru[6]],
-                    "볼넷":[ghfball[0],ghfball[1],ghfball[2],ghfball[3],ghfball[4],ghfball[5],ghfball[6]]}
-            df = pd.DataFrame(data,
+        # 딕셔너리로 데이터 구성
+        data = {
+            "순위": 순위,
+            "타율": 타율,
+            "홈런": 홈런,
+            "타점": 타점,
+            "안타": 안타,
+            "득점": 득점,
+            "도루": 도루,
+            "볼넷": 볼넷
+        }
 
-                    index= ["1","2","3","4","5","6","7"], 
-                    columns=["순위","선수","타율","홈런","타점","안타","득점","도루","볼넷"]) 
-            st.dataframe(df)
-
-        elif gamesu == 6:
-            data = {"순위":[ghseq[0],ghseq[1],ghseq[2],ghseq[3],ghseq[4],ghseq[5]],
-                    "선수":[ghplay[0],ghplay[1],ghplay[2],ghplay[3],ghplay[4],ghplay[5]],
-                    "타율":[ghtayul[0],ghtayul[1],ghtayul[2],ghtayul[3],ghtayul[4],ghtayul[5]],
-                    "홈런":[ghhomerun[0],ghhomerun[1],ghhomerun[2],ghhomerun[3],ghhomerun[4],ghhomerun[5]],
-                    "타점":[ghtajum[0],ghtajum[1],ghtajum[2],ghtajum[3],ghtajum[4],ghtajum[5]],
-                    "안타":[ghhit[0],ghhit[1],ghhit[2],ghhit[3],ghhit[4],ghhit[5]],
-                    "득점":[ghduk[0],ghduk[1],ghduk[2],ghduk[3],ghduk[4],ghduk[5]],
-                    "도루":[ghdoru[0],ghdoru[1],ghdoru[2],ghdoru[3],ghdoru[4],ghdoru[5]],
-                    "볼넷":[ghfball[0],ghfball[1],ghfball[2],ghfball[3],ghfball[4],ghfball[5]]}
-            df = pd.DataFrame(data,
-
-                    index= ["1","2","3","4","5","6"], 
-                    columns=["순위","선수","타율","홈런","타점","안타","득점","도루","볼넷"]) 
-            st.dataframe(df)
-
-        elif gamesu == 5:
-            data = {"순위":[ghseq[0],ghseq[1],ghseq[2],ghseq[3],ghseq[4]],
-                    "선수":[ghplay[0],ghplay[1],ghplay[2],ghplay[3],ghplay[4]],
-                    "타율":[ghtayul[0],ghtayul[1],ghtayul[2],ghtayul[3],ghtayul[4]],
-                    "홈런":[ghhomerun[0],ghhomerun[1],ghhomerun[2],ghhomerun[3],ghhomerun[4]],
-                    "타점":[ghtajum[0],ghtajum[1],ghtajum[2],ghtajum[3],ghtajum[4]],
-                    "안타":[ghhit[0],ghhit[1],ghhit[2],ghhit[3],ghhit[4]],
-                    "득점":[ghduk[0],ghduk[1],ghduk[2],ghduk[3],ghduk[4]],
-                    "도루":[ghdoru[0],ghdoru[1],ghdoru[2],ghdoru[3],ghdoru[4]],
-                    "볼넷":[ghfball[0],ghfball[1],ghfball[2],ghfball[3],ghfball[4]]}
-            df = pd.DataFrame(data,
-
-                    index= ["1","2","3","4","5"], 
-                    columns=["순위","선수","타율","홈런","타점","안타","득점","도루","볼넷"]) 
-            st.dataframe(df)
-
-        elif gamesu == 4:
-            data = {"순위":[ghseq[0],ghseq[1],ghseq[2],ghseq[3]],
-                    "선수":[ghplay[0],ghplay[1],ghplay[2],ghplay[3]],
-                    "타율":[ghtayul[0],ghtayul[1],ghtayul[2],ghtayul[3]],
-                    "홈런":[ghhomerun[0],ghhomerun[1],ghhomerun[2],ghhomerun[3]],
-                    "타점":[ghtajum[0],ghtajum[1],ghtajum[2],ghtajum[3]],
-                    "안타":[ghhit[0],ghhit[1],ghhit[2],ghhit[3]],
-                    "득점":[ghduk[0],ghduk[1],ghduk[2],ghduk[3]],
-                    "도루":[ghdoru[0],ghdoru[1],ghdoru[2],ghdoru[3]],
-                    "볼넷":[ghfball[0],ghfball[1],ghfball[2],ghfball[3]]}
-            df = pd.DataFrame(data,
-
-                    index= ["1","2","3","4"], 
-                    columns=["순위","선수","타율","홈런","타점","안타","득점","도루","볼넷"]) 
-            st.dataframe(df)
+        # DataFrame 생성
+        df = pd.DataFrame(data, index=pd.Index(index, name="선수명"))
+        st.dataframe(df)
             
-        elif gamesu == 3:
-            data = {"순위":[ghseq[0],ghseq[1],ghseq[2]],
-                    "선수":[ghplay[0],ghplay[1],ghplay[2]],
-                    "타율":[ghtayul[0],ghtayul[1],ghtayul[2]],
-                    "홈런":[ghhomerun[0],ghhomerun[1],ghhomerun[2]],
-                    "타점":[ghtajum[0],ghtajum[1],ghtajum[2]],
-                    "안타":[ghhit[0],ghhit[1],ghhit[2]],
-                    "득점":[ghduk[0],ghduk[1],ghduk[2]],
-                    "도루":[ghdoru[0],ghdoru[1],ghdoru[2]],
-                    "볼넷":[ghfball[0],ghfball[1],ghfball[2]]}
-            df = pd.DataFrame(data,
-
-                    index= ["1","2","3"], 
-                    columns=["순위","선수","타율","홈런","타점","안타","득점","도루","볼넷"]) 
-            st.dataframe(df)
-            
-        elif gamesu == 2:
-            data = {"순위":[ghseq[0],ghseq[1]],
-                    "선수":[ghplay[0],ghplay[1]],
-                    "타율":[ghtayul[0],ghtayul[1]],
-                    "홈런":[ghhomerun[0],ghhomerun[1]],
-                    "타점":[ghtajum[0],ghtajum[1]],
-                    "안타":[ghhit[0],ghhit[1]],
-                    "득점":[ghduk[0],ghduk[1]],
-                    "도루":[ghdoru[0],ghdoru[1]],
-                    "볼넷":[ghfball[0],ghfball[1]]}
-            df = pd.DataFrame(data,
-
-                    index= ["1","2"], 
-                    columns=["순위","선수","타율","홈런","타점","안타","득점","도루","볼넷"]) 
-            st.dataframe(df)
-            
-        elif gamesu == 1:
-            data = {"순위":[ghseq[0]],
-                    "선수":[ghplay[0]],
-                    "타율":[ghtayul[0]],
-                    "홈런":[ghhomerun[0]],
-                    "타점":[ghtajum[0]],
-                    "안타":[ghhit[0]],
-                    "득점":[ghduk[0]],
-                    "도루":[ghdoru[0]],
-                    "볼넷":[ghfball[0]]}
-            df = pd.DataFrame(data,
-
-                    index= ["1"], 
-                    columns=["순위","선수","타율","홈런","타점","안타","득점","도루","볼넷"]) 
-            st.dataframe(df)
-    
     team_read = read_all_txt('15',k)
     
     for q in range(len(team_read)):
@@ -954,121 +868,35 @@ def Crawler(yearc,countc,gyungi):
         st.markdown("홈팀 : "+home+"("+str(len(ghplay))+"명)")
 
         gaein_home(len(ghplay))
-      
-    def gaein_away(gamesu):
+     
+    def gaein_away(num_rows):
+  
+        index = [gaplay[i] for i in range(num_rows)]
+        순위 = [gaseq[i] for i in range(num_rows)]
+        타율 = [gatayul[i] for i in range(num_rows)]
+        홈런 = [gahomerun[i] for i in range(num_rows)]
+        타점 = [gatajum[i] for i in range(num_rows)]
+        안타 = [gahit[i] for i in range(num_rows)]
+        득점 = [gaduk[i] for i in range(num_rows)]
+        도루 = [gadoru[i] for i in range(num_rows)]
+        볼넷 = [gafball[i] for i in range(num_rows)]
 
-        if gamesu == 7:
-            data = {"순위":[gaseq[0],gaseq[1],gaseq[2],gaseq[3],gaseq[4],gaseq[5],gaseq[6]],
-                    "선수":[gaplay[0],gaplay[1],gaplay[2],gaplay[3],gaplay[4],gaplay[5],gaplay[6]],
-                    "타율":[gatayul[0],gatayul[1],gatayul[2],gatayul[3],gatayul[4],gatayul[5],gatayul[6]],
-                    "홈런":[gahomerun[0],gahomerun[1],gahomerun[2],gahomerun[3],gahomerun[4],gahomerun[5],gahomerun[6]],
-                    "타점":[gatajum[0],gatajum[1],gatajum[2],gatajum[3],gatajum[4],gatajum[5],gatajum[6]],
-                    "안타":[gahit[0],gahit[1],gahit[2],gahit[3],gahit[4],gahit[5],gahit[6]],
-                    "득점":[gaduk[0],gaduk[1],gaduk[2],gaduk[3],gaduk[4],gaduk[5],gaduk[6]],
-                    "도루":[gadoru[0],gadoru[1],gadoru[2],gadoru[3],gadoru[4],gadoru[5],gadoru[6]],
-                    "볼넷":[gafball[0],gafball[1],gafball[2],gafball[3],gafball[4],gafball[5],gafball[6]]}
-            df = pd.DataFrame(data,
+        # 딕셔너리로 데이터 구성
+        data = {
+            "순위": 순위,
+            "타율": 타율,
+            "홈런": 홈런,
+            "타점": 타점,
+            "안타": 안타,
+            "득점": 득점,
+            "도루": 도루,
+            "볼넷": 볼넷
+        }
 
-                    index= ["1","2","3","4","5","6","7"], 
-                    columns=["순위","선수","타율","홈런","타점","안타","득점","도루","볼넷"]) 
-            st.dataframe(df)
-
-        elif gamesu == 6:
-            data = {"순위":[gaseq[0],gaseq[1],gaseq[2],gaseq[3],gaseq[4],gaseq[5]],
-                    "선수":[gaplay[0],gaplay[1],gaplay[2],gaplay[3],gaplay[4],gaplay[5]],
-                    "타율":[gatayul[0],gatayul[1],gatayul[2],gatayul[3],gatayul[4],gatayul[5]],
-                    "홈런":[gahomerun[0],gahomerun[1],gahomerun[2],gahomerun[3],gahomerun[4],gahomerun[5]],
-                    "타점":[gatajum[0],gatajum[1],gatajum[2],gatajum[3],gatajum[4],gatajum[5]],
-                    "안타":[gahit[0],gahit[1],gahit[2],gahit[3],gahit[4],gahit[5]],
-                    "득점":[gaduk[0],gaduk[1],gaduk[2],gaduk[3],gaduk[4],gaduk[5]],
-                    "도루":[gadoru[0],gadoru[1],gadoru[2],gadoru[3],gadoru[4],gadoru[5]],
-                    "볼넷":[gafball[0],gafball[1],gafball[2],gafball[3],gafball[4],gafball[5]]}
-            df = pd.DataFrame(data,
-
-                    index= ["1","2","3","4","5","6"], 
-                    columns=["순위","선수","타율","홈런","타점","안타","득점","도루","볼넷"]) 
-            st.dataframe(df)
-
-        elif gamesu == 5:
-            data = {"순위":[gaseq[0],gaseq[1],gaseq[2],gaseq[3],gaseq[4]],
-                    "선수":[gaplay[0],gaplay[1],gaplay[2],gaplay[3],gaplay[4]],
-                    "타율":[gatayul[0],gatayul[1],gatayul[2],gatayul[3],gatayul[4]],
-                    "홈런":[gahomerun[0],gahomerun[1],gahomerun[2],gahomerun[3],gahomerun[4]],
-                    "타점":[gatajum[0],gatajum[1],gatajum[2],gatajum[3],gatajum[4]],
-                    "안타":[gahit[0],gahit[1],gahit[2],gahit[3],gahit[4]],
-                    "득점":[gaduk[0],gaduk[1],gaduk[2],gaduk[3],gaduk[4]],
-                    "도루":[gadoru[0],gadoru[1],gadoru[2],gadoru[3],gadoru[4]],
-                    "볼넷":[gafball[0],gafball[1],gafball[2],gafball[3],gafball[4]]}
-            df = pd.DataFrame(data,
-
-                    index= ["1","2","3","4","5"], 
-                    columns=["순위","선수","타율","홈런","타점","안타","득점","도루","볼넷"]) 
-            st.dataframe(df)
-
-        elif gamesu == 4:
-            data = {"순위":[gaseq[0],gaseq[1],gaseq[2],gaseq[3]],
-                    "선수":[gaplay[0],gaplay[1],gaplay[2],gaplay[3]],
-                    "타율":[gatayul[0],gatayul[1],gatayul[2],gatayul[3]],
-                    "홈런":[gahomerun[0],gahomerun[1],gahomerun[2],gahomerun[3]],
-                    "타점":[gatajum[0],gatajum[1],gatajum[2],gatajum[3]],
-                    "안타":[gahit[0],gahit[1],gahit[2],gahit[3]],
-                    "득점":[gaduk[0],gaduk[1],gaduk[2],gaduk[3]],
-                    "도루":[gadoru[0],gadoru[1],gadoru[2],gadoru[3]],
-                    "볼넷":[gafball[0],gafball[1],gafball[2],gafball[3]]}
-            df = pd.DataFrame(data,
-
-                    index= ["1","2","3","4"], 
-                    columns=["순위","선수","타율","홈런","타점","안타","득점","도루","볼넷"]) 
-            st.dataframe(df)
+        # DataFrame 생성
+        df = pd.DataFrame(data, index=pd.Index(index, name="선수명"))
+        st.dataframe(df)
             
-        elif gamesu == 3:
-            data = {"순위":[gaseq[0],gaseq[1],gaseq[2]],
-                    "선수":[gaplay[0],gaplay[1],gaplay[2]],
-                    "타율":[gatayul[0],gatayul[1],gatayul[2]],
-                    "홈런":[gahomerun[0],gahomerun[1],gahomerun[2]],
-                    "타점":[gatajum[0],gatajum[1],gatajum[2]],
-                    "안타":[gahit[0],gahit[1],gahit[2]],
-                    "득점":[gaduk[0],gaduk[1],gaduk[2]],
-                    "도루":[gadoru[0],gadoru[1],gadoru[2]],
-                    "볼넷":[gafball[0],gafball[1],gafball[2]]}
-            df = pd.DataFrame(data,
-
-                    index= ["1","2","3"], 
-                    columns=["순위","선수","타율","홈런","타점","안타","득점","도루","볼넷"]) 
-            st.dataframe(df)
-            
-        elif gamesu == 2:
-            data = {"순위":[gaseq[0],gaseq[1]],
-                    "선수":[gaplay[0],gaplay[1]],
-                    "타율":[gatayul[0],gatayul[1]],
-                    "홈런":[gahomerun[0],gahomerun[1]],
-                    "타점":[gatajum[0],gatajum[1]],
-                    "안타":[gahit[0],gahit[1]],
-                    "득점":[gaduk[0],gaduk[1]],
-                    "도루":[gadoru[0],gadoru[1]],
-                    "볼넷":[gafball[0],gafball[1]]}
-            df = pd.DataFrame(data,
-
-                    index= ["1","2"], 
-                    columns=["순위","선수","타율","홈런","타점","안타","득점","도루","볼넷"]) 
-            st.dataframe(df)
-            
-        elif gamesu == 1:
-            data = {"순위":[gaseq[0]],
-                    "선수":[gaplay[0]],
-                    "타율":[gatayul[0]],
-                    "홈런":[gahomerun[0]],
-                    "타점":[gatajum[0]],
-                    "안타":[gahit[0]],
-                    "득점":[gaduk[0]],
-                    "도루":[gadoru[0]],
-                    "볼넷":[gafball[0]]}
-            df = pd.DataFrame(data,
-
-                    index= ["1"], 
-                    columns=["순위","선수","타율","홈런","타점","안타","득점","도루","볼넷"]) 
-            st.dataframe(df)
-        
     team_read = read_all_txt('16',k)
     
     for q in range(len(team_read)):
@@ -1185,39 +1013,71 @@ def Crawler(yearc,countc,gyungi):
 
     st.markdown(":baseball: :blue[**선수**]")  
     st.markdown("홈팀 : "+home)
-                
-    data1 = {"선수":[thplay],"포지션":[thpos],"평균자책":[thjachek],"승":[thwin],"패":[thlose],
-            "세이브":[thsave],"홀드":[thhold],"이닝":[thinning],"탈삼진":[thtalsam]}
-    
-    df1 = pd.DataFrame(data1,
-                columns=["선수","포지션","평균자책","승","패","세이브","홀드","이닝","탈삼진"]) 
-    
-    fig1 = go.Figure(data=[go.Table(
-        header=dict(values=list(df1.columns),
-                    align='center'),
-        cells=dict(values=[thplay,thpos,thjachek,thwin,thlose,thsave,thhold,thinning,thtalsam],
-                align='center'))])
+     
+    def player_homep(num_rows):
+  
+        index = [thplay[i] for i in range(num_rows)]
+        평균자책 = [thjachek[i] for i in range(num_rows)]
+        승 = [thwin[i] for i in range(num_rows)]
+        패 = [thlose[i] for i in range(num_rows)]
+        세이브 = [thsave[i] for i in range(num_rows)]
+        홀드 = [thhold[i] for i in range(num_rows)]
+        이닝 = [thinning[i] for i in range(num_rows)]
+        탈삼진 = [thtalsam[i] for i in range(num_rows)]
 
-    data2 = {"선수":[shplay],"포지션":[shpos],"홈런":[shhomerun],"타율":[shtayul],"타점":[shtajum],
-            "안타":[shhit],"득점":[shduk],"도루":[shdoru],"볼넷":[shfball]}
-    
-    df2 = pd.DataFrame(data2,
-                columns=["선수","포지션","홈런","타율","타점","안타","득점","도루","볼넷"]) 
-    
-    fig2 = go.Figure(data=[go.Table(
-        header=dict(values=list(df2.columns),
-                    align='center'),
-        cells=dict(values=[shplay,shpos,shhomerun,shtayul,shtajum,shhit,shduk,shdoru,shfball],
-                align='center'))])
+        # 딕셔너리로 데이터 구성
+        data = {
+            "평균자책": 평균자책,
+            "승": 승,
+            "패": 패,
+            "세이브": 세이브,
+            "홀드": 홀드,
+            "이닝": 이닝,
+            "탈삼진": 탈삼진
+        }
 
-    fig1.update_layout(height=500)
-    fig2.update_layout(height=500)
+        # DataFrame 생성
+        dfhp = pd.DataFrame(data, index=pd.Index(index, name="투수명"))
+    
+        return dfhp   
+     
+    def player_homeh(num_rows):
+  
+        index = [shplay[i] for i in range(num_rows)]
+        포지션 = [shpos[i] for i in range(num_rows)]
+        홈런 = [shhomerun[i] for i in range(num_rows)]
+        타율 = [shtayul[i] for i in range(num_rows)]
+        타점 = [shtajum[i] for i in range(num_rows)]
+        안타 = [shhit[i] for i in range(num_rows)]
+        득점 = [shduk[i] for i in range(num_rows)]
+        도루 = [shdoru[i] for i in range(num_rows)]
+        볼넷 = [shfball[i] for i in range(num_rows)]
 
+        # 딕셔너리로 데이터 구성
+        data = {
+            "포지션": 포지션,
+            "홈런": 홈런,
+            "타율": 타율,
+            "타점": 타점,
+            "안타": 안타,
+            "득점": 득점,
+            "도루": 도루,
+            "볼넷": 볼넷
+        }
+
+        # DataFrame 생성
+        dfhh = pd.DataFrame(data, index=pd.Index(index, name="타자명"))
+    
+        return dfhh   
+    
+    dfhp = player_homep(len(thplay))  
+    dfhh = player_homeh(len(shplay))  
+    
     tab1, tab2 = st.tabs(["투수", "타자"])
     with tab1:
-        st.plotly_chart(fig1, use_container_width=True)
+        st.dataframe(dfhp, use_container_width=True)      
     with tab2:
-        st.plotly_chart(fig2, use_container_width=True)
+        st.dataframe(dfhh, use_container_width=True)   
 
     team_read = read_all_txt('19',k)
     
@@ -1286,36 +1146,68 @@ def Crawler(yearc,countc,gyungi):
                     tatalsam.append(team_read[q][s:])
 
     st.markdown("원정팀 : "+away)
-    
-    data3 = {"선수":[taplay],"포지션":[tapos],"평균자책":[tajachek],"승":[tawin],"패":[talose],
-            "세이브":[tasave],"홀드":[tahold],"이닝":[tainning],"탈삼진":[tatalsam]}
-    
-    df3 = pd.DataFrame(data3,
-                columns=["선수","포지션","평균자책","승","패","세이브","홀드","이닝","탈삼진"]) 
-    
-    fig3 = go.Figure(data=[go.Table(
-        header=dict(values=list(df3.columns),
-                    align='center'),
-        cells=dict(values=[taplay,tapos,tajachek,tawin,talose,tasave,tahold,tainning,tatalsam],
-                align='center'))])
+      
+    def player_awayp(num_rows):
+  
+        index = [taplay[i] for i in range(num_rows)]
+        평균자책 = [tajachek[i] for i in range(num_rows)]
+        승 = [tawin[i] for i in range(num_rows)]
+        패 = [talose[i] for i in range(num_rows)]
+        세이브 = [tasave[i] for i in range(num_rows)]
+        홀드 = [tahold[i] for i in range(num_rows)]
+        이닝 = [tainning[i] for i in range(num_rows)]
+        탈삼진 = [tatalsam[i] for i in range(num_rows)]
 
-    data4 = {"선수":[saplay],"포지션":[sapos],"홈런":[sahomerun],"타율":[satayul],"타점":[satajum],
-            "안타":[sahit],"득점":[saduk],"도루":[sadoru],"볼넷":[safball]}
-    
-    df4 = pd.DataFrame(data4,
-                columns=["선수","포지션","홈런","타율","타점","안타","득점","도루","볼넷"]) 
-    
-    fig4 = go.Figure(data=[go.Table(
-        header=dict(values=list(df4.columns),
-                    align='center'),
-        cells=dict(values=[saplay,sapos,sahomerun,satayul,satajum,sahit,saduk,sadoru,safball],
-                align='center'))])
+        # 딕셔너리로 데이터 구성
+        data = {
+            "평균자책": 평균자책,
+            "승": 승,
+            "패": 패,
+            "세이브": 세이브,
+            "홀드": 홀드,
+            "이닝": 이닝,
+            "탈삼진": 탈삼진
+        }
 
-    fig3.update_layout(height=500)
-    fig4.update_layout(height=500)
+        # DataFrame 생성
+        dfap = pd.DataFrame(data, index=pd.Index(index, name="투수명"))
+    
+        return dfap    
+    
+    def player_awayh(num_rows):
+  
+        index = [saplay[i] for i in range(num_rows)]
+        포지션 = [sapos[i] for i in range(num_rows)]
+        홈런 = [sahomerun[i] for i in range(num_rows)]
+        타율 = [satayul[i] for i in range(num_rows)]
+        타점 = [satajum[i] for i in range(num_rows)]
+        안타 = [sahit[i] for i in range(num_rows)]
+        득점 = [saduk[i] for i in range(num_rows)]
+        도루 = [sadoru[i] for i in range(num_rows)]
+        볼넷 = [safball[i] for i in range(num_rows)]
 
+        # 딕셔너리로 데이터 구성
+        data = {
+            "포지션": 포지션,
+            "홈런": 홈런,
+            "타율": 타율,
+            "타점": 타점,
+            "안타": 안타,
+            "득점": 득점,
+            "도루": 도루,
+            "볼넷": 볼넷
+        }
+
+        # DataFrame 생성
+        dfah = pd.DataFrame(data, index=pd.Index(index, name="타자명"))
+    
+        return dfah   
+    
+    dfap = player_awayp(len(taplay))  
+    dfah = player_awayh(len(saplay))  
+    
     tab1, tab2 = st.tabs(["투수", "타자"])
     with tab1:
-        st.plotly_chart(fig3, use_container_width=True)
+        st.dataframe(dfap, use_container_width=True)      
     with tab2:
-        st.plotly_chart(fig4, use_container_width=True)
+        st.dataframe(dfah, use_container_width=True)   
