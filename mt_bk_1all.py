@@ -716,10 +716,8 @@ def Crawler(yearc,countc,gyungi):
 
     def gaein_home(num_rows):
   
-        index = [f"{i}" for i in range(1, (num_rows+1))] 
-
+        index = [ghplay[i] for i in range(num_rows)]
         순위 = [ghseq[i] for i in range(num_rows)]
-        선수 = [ghplay[i] for i in range(num_rows)]
         출장시간 = [ghtotal[i] for i in range(num_rows)]
         득점 = [ghduk[i] for i in range(num_rows)]
         어시스트 = [ghassist[i] for i in range(num_rows)]
@@ -736,7 +734,6 @@ def Crawler(yearc,countc,gyungi):
         # 딕셔너리로 데이터 구성
         data = {
             "순위": 순위,
-            "선수": 선수,
             "출장시간": 출장시간,
             "득점": 득점,
             "어시스트": 어시스트,
@@ -752,7 +749,7 @@ def Crawler(yearc,countc,gyungi):
         }
 
         # DataFrame 생성
-        df = pd.DataFrame(data, index= index)
+        df = pd.DataFrame(data, index=pd.Index(index, name="선수명"))
         st.dataframe(df)
             
     team_read = read_all_txt('15',k)
@@ -814,10 +811,8 @@ def Crawler(yearc,countc,gyungi):
  
     def gaein_away(num_rows):
   
-        index = [f"{i}" for i in range(1, (num_rows+1))] 
-
+        index = [gaplay[i] for i in range(num_rows)]
         순위 = [gaseq[i] for i in range(num_rows)]
-        선수 = [gaplay[i] for i in range(num_rows)]
         출장시간 = [gatotal[i] for i in range(num_rows)]
         득점 = [gaduk[i] for i in range(num_rows)]
         어시스트 = [gaassist[i] for i in range(num_rows)]
@@ -834,7 +829,6 @@ def Crawler(yearc,countc,gyungi):
         # 딕셔너리로 데이터 구성
         data = {
             "순위": 순위,
-            "선수": 선수,
             "출장시간": 출장시간,
             "득점": 득점,
             "어시스트": 어시스트,
@@ -850,7 +844,8 @@ def Crawler(yearc,countc,gyungi):
         }
 
         # DataFrame 생성
-        df = pd.DataFrame(data, index= index)
+        df = pd.DataFrame(data, index=pd.Index(index, name="선수명"))
+        # stremlit 출력
         st.dataframe(df)
            
     team_read = read_all_txt('16',k)

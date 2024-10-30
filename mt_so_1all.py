@@ -855,10 +855,8 @@ def Crawler(yearc,countc,gyungi):
  
     def gaein_home(num_rows):
   
-        index = [f"{i}" for i in range(1, (num_rows+1))] 
-
+        index = [ghplay[i] for i in range(num_rows)]
         순위 = [ghseq[i] for i in range(num_rows)]
-        선수 = [ghplay[i] for i in range(num_rows)]
         경기수 = [ghtotal[i] for i in range(num_rows)]
         득점 = [ghduk[i] for i in range(num_rows)]
         어시스트 = [ghassist[i] for i in range(num_rows)]
@@ -872,7 +870,6 @@ def Crawler(yearc,countc,gyungi):
         # 딕셔너리로 데이터 구성
         data = {
             "순위": 순위,
-            "선수": 선수,
             "경기수": 경기수,
             "득점": 득점,
             "어시스트": 어시스트,
@@ -885,7 +882,7 @@ def Crawler(yearc,countc,gyungi):
         }
 
         # DataFrame 생성
-        df = pd.DataFrame(data, index= index)
+        df = pd.DataFrame(data, index=pd.Index(index, name="선수명"))
         st.dataframe(df)
           
     team_read = read_all_txt('15',k)
@@ -938,10 +935,8 @@ def Crawler(yearc,countc,gyungi):
 
     def gaein_away(num_rows):
   
-        index = [f"{i}" for i in range(1, (num_rows+1))] 
-
+        index = [gaplay[i] for i in range(num_rows)]
         순위 = [gaseq[i] for i in range(num_rows)]
-        선수 = [gaplay[i] for i in range(num_rows)]
         경기수 = [gatotal[i] for i in range(num_rows)]
         득점 = [gaduk[i] for i in range(num_rows)]
         어시스트 = [gaassist[i] for i in range(num_rows)]
@@ -955,7 +950,6 @@ def Crawler(yearc,countc,gyungi):
         # 딕셔너리로 데이터 구성
         data = {
             "순위": 순위,
-            "선수": 선수,
             "경기수": 경기수,
             "득점": 득점,
             "어시스트": 어시스트,
@@ -968,7 +962,7 @@ def Crawler(yearc,countc,gyungi):
         }
 
         # DataFrame 생성
-        df = pd.DataFrame(data, index= index)
+        df = pd.DataFrame(data, index=pd.Index(index, name="선수명"))
         st.dataframe(df)
               
     team_read = read_all_txt('16',k)
@@ -1107,9 +1101,7 @@ def Crawler(yearc,countc,gyungi):
 
     def player_home(num_rows):
   
-        index = [f"{i}" for i in range(1, (num_rows+1))] 
-
-        선수 = [shplay[i] for i in range(num_rows)]
+        index = [shplay[i] for i in range(num_rows)]
         포지션 = [shpos[i] for i in range(num_rows)]
         경기수 = [shtotal[i] for i in range(num_rows)]
         득점 = [shduk[i] for i in range(num_rows)]
@@ -1123,7 +1115,6 @@ def Crawler(yearc,countc,gyungi):
 
         # 딕셔너리로 데이터 구성
         data = {
-            "선수": 선수,
             "포지션": 포지션,
             "경기수": 경기수,
             "득점": 득점,
@@ -1137,15 +1128,14 @@ def Crawler(yearc,countc,gyungi):
         }
 
         # DataFrame 생성
-        dfh = pd.DataFrame(data, index= index)
+        dfh = pd.DataFrame(data, index=pd.Index(index, name="선수명"))
     
         return dfh
-   
+    
+
     def player_away(num_rows):
   
-        index = [f"{i}" for i in range(1, (num_rows+1))] 
-
-        선수 = [saplay[i] for i in range(num_rows)]
+        index = [saplay[i] for i in range(num_rows)]
         포지션 = [sapos[i] for i in range(num_rows)]
         경기수 = [satotal[i] for i in range(num_rows)]
         득점 = [saduk[i] for i in range(num_rows)]
@@ -1159,7 +1149,6 @@ def Crawler(yearc,countc,gyungi):
 
         # 딕셔너리로 데이터 구성
         data = {
-            "선수": 선수,
             "포지션": 포지션,
             "경기수": 경기수,
             "득점": 득점,
@@ -1173,7 +1162,7 @@ def Crawler(yearc,countc,gyungi):
         }
 
         # DataFrame 생성
-        dfa = pd.DataFrame(data, index= index)
+        dfa = pd.DataFrame(data, index=pd.Index(index, name="선수명"))
     
         return dfa
     
