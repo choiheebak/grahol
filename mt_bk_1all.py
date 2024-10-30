@@ -581,7 +581,10 @@ def Crawler(yearc,countc,gyungi):
         try:
             st.plotly_chart(fig1)
         except:
-            st.plotly_chart(fig1, theme=None)
+            try:
+                st.plotly_chart(fig1, theme=None)
+            except:
+                pass
     with tab2:
         try:
             st.plotly_chart(fig2)
@@ -698,7 +701,10 @@ def Crawler(yearc,countc,gyungi):
         try:
             st.plotly_chart(fig3)
         except:
-            st.plotly_chart(fig3, theme=None)
+            try:
+                st.plotly_chart(fig3, theme=None)
+            except:
+                pass
     with tab2:
         try:
             st.plotly_chart(fig4)
@@ -926,7 +932,7 @@ def Crawler(yearc,countc,gyungi):
         if gamesu == 7:
             data = {"순위":[gaseq[0],gaseq[1],gaseq[2],gaseq[3],gaseq[4],gaseq[5],gaseq[6]],
                     "선수":[gaplay[0],gaplay[1],gaplay[2],gaplay[3],gaplay[4],gaplay[5],gaplay[6]],
-                    "경기수":[gatotal[0],gatotal[1],gatotal[2],gatotal[3],gatotal[4],gatotal[5],gatotal[6]],
+                    "춮장시간":[gatotal[0],gatotal[1],gatotal[2],gatotal[3],gatotal[4],gatotal[5],gatotal[6]],
                     "득점":[gaduk[0],gaduk[1],gaduk[2],gaduk[3],gaduk[4],gaduk[5],gaduk[6]],
                     "어시스트":[gaassist[0],gaassist[1],gaassist[2],gaassist[3],gaassist[4],gaassist[5],gaassist[6]],
                     "리바운드":[garebound[0],garebound[1],garebound[2],garebound[3],garebound[4],garebound[5],garebound[6]],
@@ -941,14 +947,14 @@ def Crawler(yearc,countc,gyungi):
             df = pd.DataFrame(data,
 
                     index= ["1","2","3","4","5","6","7"], 
-                    columns=["순위","선수","경기수","득점","어시스트","리바운드","스틸","블락슛","야투","삼점슛","자유투",
+                    columns=["순위","선수","춮장시간","득점","어시스트","리바운드","스틸","블락슛","야투","삼점슛","자유투",
                              "야투성공","삼점슛성공","자유투성공"]) 
             st.dataframe(df)
 
         elif gamesu == 6:
             data = {"순위":[gaseq[0],gaseq[1],gaseq[2],gaseq[3],gaseq[4],gaseq[5]],
                     "선수":[gaplay[0],gaplay[1],gaplay[2],gaplay[3],gaplay[4],gaplay[5]],
-                    "경기수":[gatotal[0],gatotal[1],gatotal[2],gatotal[3],gatotal[4],gatotal[5]],
+                    "춮장시간":[gatotal[0],gatotal[1],gatotal[2],gatotal[3],gatotal[4],gatotal[5]],
                     "득점":[gaduk[0],gaduk[1],gaduk[2],gaduk[3],gaduk[4],gaduk[5]],
                     "어시스트":[gaassist[0],gaassist[1],gaassist[2],gaassist[3],gaassist[4],gaassist[5]],
                     "리바운드":[garebound[0],garebound[1],garebound[2],garebound[3],garebound[4],garebound[5]],
@@ -963,14 +969,14 @@ def Crawler(yearc,countc,gyungi):
             df = pd.DataFrame(data,
 
                     index= ["1","2","3","4","5","6"], 
-                    columns=["순위","선수","경기수","득점","어시스트","리바운드","스틸","블락슛","야투","삼점슛","자유투",
+                    columns=["순위","선수","춮장시간","득점","어시스트","리바운드","스틸","블락슛","야투","삼점슛","자유투",
                              "야투성공","삼점슛성공","자유투성공"]) 
             st.dataframe(df)
 
         elif gamesu == 5:
             data = {"순위":[gaseq[0],gaseq[1],gaseq[2],gaseq[3],gaseq[4]],
                     "선수":[gaplay[0],gaplay[1],gaplay[2],gaplay[3],gaplay[4]],
-                    "경기수":[gatotal[0],gatotal[1],gatotal[2],gatotal[3],gatotal[4]],
+                    "춮장시간":[gatotal[0],gatotal[1],gatotal[2],gatotal[3],gatotal[4]],
                     "득점":[gaduk[0],gaduk[1],gaduk[2],gaduk[3],gaduk[4]],
                     "어시스트":[gaassist[0],gaassist[1],gaassist[2],gaassist[3],gaassist[4]],
                     "리바운드":[garebound[0],garebound[1],garebound[2],garebound[3],garebound[4]],
@@ -985,14 +991,14 @@ def Crawler(yearc,countc,gyungi):
             df = pd.DataFrame(data,
 
                     index= ["1","2","3","4","5"], 
-                    columns=["순위","선수","경기수","득점","어시스트","리바운드","스틸","블락슛","야투","삼점슛","자유투",
+                    columns=["순위","선수","춮장시간","득점","어시스트","리바운드","스틸","블락슛","야투","삼점슛","자유투",
                              "야투성공","삼점슛성공","자유투성공"]) 
             st.dataframe(df)
 
         elif gamesu == 4:
             data = {"순위":[gaseq[0],gaseq[1],gaseq[2],gaseq[3]],
                     "선수":[gaplay[0],gaplay[1],gaplay[2],gaplay[3]],
-                    "경기수":[gatotal[0],gatotal[1],gatotal[2],gatotal[3]],
+                    "춮장시간":[gatotal[0],gatotal[1],gatotal[2],gatotal[3]],
                     "득점":[gaduk[0],gaduk[1],gaduk[2],gaduk[3]],
                     "어시스트":[gaassist[0],gaassist[1],gaassist[2],gaassist[3]],
                     "리바운드":[garebound[0],garebound[1],garebound[2],garebound[3]],
@@ -1007,14 +1013,14 @@ def Crawler(yearc,countc,gyungi):
             df = pd.DataFrame(data,
 
                     index= ["1","2","3","4"], 
-                    columns=["순위","선수","경기수","득점","어시스트","리바운드","스틸","블락슛","야투","삼점슛","자유투",
+                    columns=["순위","선수","춮장시간","득점","어시스트","리바운드","스틸","블락슛","야투","삼점슛","자유투",
                              "야투성공","삼점슛성공","자유투성공"]) 
             st.dataframe(df)
             
         elif gamesu == 3:
             data = {"순위":[gaseq[0],gaseq[1],gaseq[2]],
                     "선수":[gaplay[0],gaplay[1],gaplay[2]],
-                    "경기수":[gatotal[0],gatotal[1],gatotal[2]],
+                    "춮장시간":[gatotal[0],gatotal[1],gatotal[2]],
                     "득점":[gaduk[0],gaduk[1],gaduk[2]],
                     "어시스트":[gaassist[0],gaassist[1],gaassist[2]],
                     "리바운드":[garebound[0],garebound[1],garebound[2]],
@@ -1029,14 +1035,14 @@ def Crawler(yearc,countc,gyungi):
             df = pd.DataFrame(data,
 
                     index= ["1","2","3"], 
-                    columns=["순위","선수","경기수","득점","어시스트","리바운드","스틸","블락슛","야투","삼점슛","자유투",
+                    columns=["순위","선수","춮장시간","득점","어시스트","리바운드","스틸","블락슛","야투","삼점슛","자유투",
                              "야투성공","삼점슛성공","자유투성공"]) 
             st.dataframe(df)
             
         elif gamesu == 2:
             data = {"순위":[gaseq[0],gaseq[1]],
                     "선수":[gaplay[0],gaplay[1]],
-                    "경기수":[gatotal[0],gatotal[1]],
+                    "춮장시간":[gatotal[0],gatotal[1]],
                     "득점":[gaduk[0],gaduk[1]],
                     "어시스트":[gaassist[0],gaassist[1]],
                     "리바운드":[garebound[0],garebound[1]],
@@ -1051,14 +1057,14 @@ def Crawler(yearc,countc,gyungi):
             df = pd.DataFrame(data,
 
                     index= ["1","2"], 
-                    columns=["순위","선수","경기수","득점","어시스트","리바운드","스틸","블락슛","야투","삼점슛","자유투",
+                    columns=["순위","선수","춮장시간","득점","어시스트","리바운드","스틸","블락슛","야투","삼점슛","자유투",
                              "야투성공","삼점슛성공","자유투성공"]) 
             st.dataframe(df)
             
         elif gamesu == 1:
             data = {"순위":[gaseq[0]],
                     "선수":[gaplay[0]],
-                    "경기수":[gatotal[0]],
+                    "춮장시간":[gatotal[0]],
                     "득점":[gaduk[0]],
                     "어시스트":[gaassist[0]],
                     "리바운드":[garebound[0]],
@@ -1073,7 +1079,7 @@ def Crawler(yearc,countc,gyungi):
             df = pd.DataFrame(data,
 
                     index= ["1"], 
-                    columns=["순위","선수","경기수","득점","어시스트","리바운드","스틸","블락슛","야투","삼점슛","자유투",
+                    columns=["순위","선수","춮장시간","득점","어시스트","리바운드","스틸","블락슛","야투","삼점슛","자유투",
                              "야투성공","삼점슛성공","자유투성공"]) 
             st.dataframe(df)
      
