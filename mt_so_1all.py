@@ -422,7 +422,7 @@ def Crawler(yearc,countc,gyungi):
             index= ["홈팀", "원정팀"], 
             columns=["팀명","순위","승점","경기수","승","무","패","득점","실점","득실차","평균득점"]) 
 
-    st.dataframe(df)
+    st.dataframe(df, use_container_width=True)
 
     colors = ['#FFA07A', '#F0E68C', '#87CEFA']
     labels = ['승','무','패']
@@ -456,7 +456,7 @@ def Crawler(yearc,countc,gyungi):
                     index= ["홈팀", "원정팀"], 
                     columns=["팀명","조","순위","승점","승","무","패","득점","실점","득실차"]) 
 
-            st.dataframe(df)
+            st.dataframe(df, use_container_width=True)
 
             values3 = [whwin, whdraw, whlose]
 
@@ -486,7 +486,7 @@ def Crawler(yearc,countc,gyungi):
             index= ["현재"], 
             columns=["홈팀","원정팀","승","무","패","해외승","해외무","해외패","결과"]) 
 
-    st.dataframe(df)
+    st.dataframe(df, use_container_width=True)
 
     win = win.replace('%','')
     draw = draw.replace('%','')
@@ -562,49 +562,49 @@ def Crawler(yearc,countc,gyungi):
 
                     index= ["일자","점수","결과"], 
                     columns=["1","2","3","4","5","6","7"]) 
-            st.dataframe(df)
+            st.dataframe(df, use_container_width=True)
 
         elif gamesu == 6:
             df = pd.DataFrame(data=np.array([hil_list,jumsu_list,hwdl]),
 
                     index= ["일자","점수","결과"], 
                     columns=["1","2","3","4","5","6"]) 
-            st.dataframe(df)
+            st.dataframe(df, use_container_width=True)
 
         elif gamesu == 5:
             df = pd.DataFrame(data=np.array([hil_list,jumsu_list,hwdl]),
 
                     index= ["일자","점수","결과"], 
                     columns=["1","2","3","4","5"]) 
-            st.dataframe(df)
+            st.dataframe(df, use_container_width=True)
 
         elif gamesu == 4:
             df = pd.DataFrame(data=np.array([hil_list,jumsu_list,hwdl]),
 
                     index= ["일자","점수","결과"], 
                     columns=["1","2","3","4"]) 
-            st.dataframe(df)
+            st.dataframe(df, use_container_width=True)
             
         elif gamesu == 3:
             df = pd.DataFrame(data=np.array([hil_list,jumsu_list,hwdl]),
 
                     index= ["일자","점수","결과"], 
                     columns=["1","2","3"]) 
-            st.dataframe(df)
+            st.dataframe(df, use_container_width=True)
             
         elif gamesu == 2:
             df = pd.DataFrame(data=np.array([hil_list,jumsu_list,hwdl]),
 
                     index= ["일자","점수","결과"], 
                     columns=["1","2"]) 
-            st.dataframe(df)
+            st.dataframe(df, use_container_width=True)
             
         elif gamesu == 1:
             df = pd.DataFrame(data=np.array([hil_list,jumsu_list,hwdl]),
 
                     index= ["일자","점수","결과"], 
                     columns=["1"]) 
-            st.dataframe(df)
+            st.dataframe(df, use_container_width=True)
             
         elif gamesu == 0:
             st.markdown("")
@@ -731,49 +731,49 @@ def Crawler(yearc,countc,gyungi):
 
                     index= ["일자","상대","점수","결과"], 
                     columns=["1","2","3","4","5","6","7"]) 
-            st.dataframe(df)
+            st.dataframe(df, use_container_width=True)
 
         elif gamesu == 6:
             df = pd.DataFrame(data=np.array([hil_list,hateam_list,jumsu_list,hwdl]),
 
                     index= ["일자","상대","점수","결과"], 
                     columns=["1","2","3","4","5","6"]) 
-            st.dataframe(df)
+            st.dataframe(df, use_container_width=True)
 
         elif gamesu == 5:
             df = pd.DataFrame(data=np.array([hil_list,hateam_list,jumsu_list,hwdl]),
 
                     index= ["일자","상대","점수","결과"], 
                     columns=["1","2","3","4","5"]) 
-            st.dataframe(df)
+            st.dataframe(df, use_container_width=True)
 
         elif gamesu == 4:
             df = pd.DataFrame(data=np.array([hil_list,hateam_list,jumsu_list,hwdl]),
 
                     index= ["일자","상대","점수","결과"], 
                     columns=["1","2","3","4"]) 
-            st.dataframe(df)
+            st.dataframe(df, use_container_width=True)
             
         elif gamesu == 3:
             df = pd.DataFrame(data=np.array([hil_list,hateam_list,jumsu_list,hwdl]),
 
                     index= ["일자","상대","점수","결과"], 
                     columns=["1","2","3"]) 
-            st.dataframe(df)
+            st.dataframe(df, use_container_width=True)
             
         elif gamesu == 2:
             df = pd.DataFrame(data=np.array([hil_list,hateam_list,jumsu_list,hwdl]),
 
                     index= ["일자","상대","점수","결과"], 
                     columns=["1","2"]) 
-            st.dataframe(df)
+            st.dataframe(df, use_container_width=True)
             
         elif gamesu == 1:
             df = pd.DataFrame(data=np.array([hil_list,hateam_list,jumsu_list,hwdl]),
 
                     index= ["일자","상대","점수","결과"], 
                     columns=["1"]) 
-            st.dataframe(df)
+            st.dataframe(df, use_container_width=True)
             
         elif gamesu == 0:
             st.markdown("")
@@ -883,7 +883,7 @@ def Crawler(yearc,countc,gyungi):
 
         # DataFrame 생성
         df = pd.DataFrame(data, index=pd.Index(index, name="선수명"))
-        st.dataframe(df)
+        st.dataframe(df, use_container_width=True)
           
     team_read = read_all_txt('15',k)
     
@@ -963,7 +963,7 @@ def Crawler(yearc,countc,gyungi):
 
         # DataFrame 생성
         df = pd.DataFrame(data, index=pd.Index(index, name="선수명"))
-        st.dataframe(df)
+        st.dataframe(df, use_container_width=True)
               
     team_read = read_all_txt('16',k)
     

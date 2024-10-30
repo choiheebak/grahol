@@ -493,7 +493,7 @@ def Crawler(yearc,countc,gyungi):
             columns=["팀명","순위","승률","경기수","승","패","무","게임차","연속","타율","평균자책","득점","평균득점","실점","홈런","안타","도루",
                      "탈삼진","최근10경기","리그","지구"]) 
 
-    st.dataframe(df)
+    st.dataframe(df, use_container_width=True)
 
     colors = ['#FFA07A', '#F0E68C', '#87CEFA']
     labels = ['승','무','패']
@@ -522,7 +522,7 @@ def Crawler(yearc,countc,gyungi):
             index= ["현재"], 
             columns=["홈팀","원정팀","승","①","패","해외승","해외무","해외패","결과"]) 
 
-    st.dataframe(df)
+    st.dataframe(df, use_container_width=True)
 
     win = win.replace('%','')
     draw = draw.replace('%','')
@@ -545,7 +545,7 @@ def Crawler(yearc,countc,gyungi):
             index= ["홈팀", "원정팀"], 
             columns=["팀명","선발투수","평균자책","이닝수","승","패"]) 
 
-    st.dataframe(df)
+    st.dataframe(df, use_container_width=True)
 
     # 맞대결 전체
     team_read = read_all_txt('11',k)
@@ -649,7 +649,7 @@ def Crawler(yearc,countc,gyungi):
         index= ["일자","점수","결과"],
         columns=["1","2","3","4","5","6","7"]) 
     
-    st.dataframe(df)
+    st.dataframe(df, use_container_width=True)
     
     values = [cntw, cntd, cntl]
 
@@ -725,7 +725,7 @@ def Crawler(yearc,countc,gyungi):
         index= ["일자","상대","점수","결과"], 
         columns=["1","2","3","4","5","6","7"]) 
     
-    st.dataframe(df)   
+    st.dataframe(df, use_container_width=True)   
   
     team_read = read_all_txt('14',k)
     
@@ -771,7 +771,7 @@ def Crawler(yearc,countc,gyungi):
         index= ["일자","상대","점수","결과"], 
         columns=["1","2","3","4","5","6","7"]) 
     
-    st.dataframe(df) 
+    st.dataframe(df, use_container_width=True) 
  
     values = [cntwmh, cntdmh, cntlmh]
     fig3 = go.Figure(data=[go.Pie(labels=labels, values=values)])
@@ -825,7 +825,7 @@ def Crawler(yearc,countc,gyungi):
 
         # DataFrame 생성
         df = pd.DataFrame(data, index=pd.Index(index, name="선수명"))
-        st.dataframe(df)
+        st.dataframe(df, use_container_width=True)
             
     team_read = read_all_txt('15',k)
     
@@ -895,7 +895,7 @@ def Crawler(yearc,countc,gyungi):
 
         # DataFrame 생성
         df = pd.DataFrame(data, index=pd.Index(index, name="선수명"))
-        st.dataframe(df)
+        st.dataframe(df, use_container_width=True)
             
     team_read = read_all_txt('16',k)
     

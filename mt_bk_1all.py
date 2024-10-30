@@ -418,7 +418,7 @@ def Crawler(yearc,countc,gyungi):
             columns=["팀명","순위","승률","경기수","승","패","승차","득점","AS","리바운드","스틸","블록","3점슛","자유투","자유투성공","홈승","홈패",
                      "원정승","원정패","디비전승","디비전패","연속","리그","디비전"]) 
  
-    st.dataframe(df)
+    st.dataframe(df, use_container_width=True)
 
     colors = ['#FFA07A', '#F0E68C', '#87CEFA']
     labels = ['승','무','패']
@@ -447,7 +447,7 @@ def Crawler(yearc,countc,gyungi):
             index= ["현재"], 
             columns=["홈팀","원정팀","승","⑤","패","해외승","해외무","해외패","결과"]) 
 
-    st.dataframe(df)
+    st.dataframe(df, use_container_width=True)
 
     win = win.replace('%','')
     draw = draw.replace('%','')
@@ -564,7 +564,7 @@ def Crawler(yearc,countc,gyungi):
         index= ["일자","점수","결과"],
         columns=["1","2","3","4","5","6","7"]) 
     
-    st.dataframe(df)
+    st.dataframe(df, use_container_width=True)
     
     values = [cntw, cntd, cntl]
 
@@ -640,7 +640,7 @@ def Crawler(yearc,countc,gyungi):
         index= ["일자","상대","점수","결과"], 
         columns=["1","2","3","4","5","6","7"]) 
     
-    st.dataframe(df) 
+    st.dataframe(df, use_container_width=True) 
 
     team_read = read_all_txt('14',k)
     
@@ -686,7 +686,7 @@ def Crawler(yearc,countc,gyungi):
         index= ["일자","상대","점수","결과"], 
         columns=["1","2","3","4","5","6","7"]) 
     
-    st.dataframe(df) 
+    st.dataframe(df, use_container_width=True) 
 
     values = [cntwmh, cntdmh, cntlmh]
     fig3 = go.Figure(data=[go.Pie(labels=labels, values=values)])
@@ -750,7 +750,7 @@ def Crawler(yearc,countc,gyungi):
 
         # DataFrame 생성
         df = pd.DataFrame(data, index=pd.Index(index, name="선수명"))
-        st.dataframe(df)
+        st.dataframe(df, use_container_width=True)
             
     team_read = read_all_txt('15',k)
     
@@ -846,7 +846,7 @@ def Crawler(yearc,countc,gyungi):
         # DataFrame 생성
         df = pd.DataFrame(data, index=pd.Index(index, name="선수명"))
         # stremlit 출력
-        st.dataframe(df)
+        st.dataframe(df, use_container_width=True)
            
     team_read = read_all_txt('16',k)
     
