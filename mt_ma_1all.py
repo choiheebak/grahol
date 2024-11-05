@@ -116,9 +116,9 @@ def Crawler(yearc,countc,gubun):
 
 
         if famt[0] == "":
-            st.markdown(str(bal[0]))
+            st.markdown("발매기간 : "+str(bal[0]))
         else:
-            st.markdown(str(bal[0]))
+            st.markdown("발매기간 : "+str(bal[0]))
             if fsu[0] == "":
                 if famt[0][:1] == "-":
                     st.markdown("1등 : 0명")
@@ -257,9 +257,9 @@ def Crawler(yearc,countc,gubun):
                         jumsu.append(team_read[q][s:])
 
         if famt[0] == "":
-            st.markdown(str(bal[0]))
+            st.markdown("발매기간 : "+str(bal[0]))
         else:
-            st.markdown(str(bal[0]))
+            st.markdown("발매기간 : "+str(bal[0]))
             if fsu[0] == "":
                 if famt[0][:1] == "-":
                     st.markdown("1등 : 0명")
@@ -399,9 +399,9 @@ def Crawler(yearc,countc,gubun):
 
 
         if famt[0] == "":
-            st.markdown(str(bal[0]))
+            st.markdown("발매기간 : "+str(bal[0]))
         else:
-            st.markdown(str(bal[0]))
+            st.markdown("발매기간 : "+str(bal[0]))
             if fsu[0] == "":
                 if famt[0][:1] == "-":
                     st.markdown("1등 : 0명")
