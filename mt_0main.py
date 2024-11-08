@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+from datetime import datetime
 import mt_ma_1all
 import mt_so_1all
 import mt_bb_1all
@@ -9,6 +10,9 @@ import mt_dt_1all
 import mt_jo_1all
 from streamlit_option_menu import option_menu
 from streamlit_navigation_bar import st_navbar
+
+now = datetime.now()
+dt_now = now.strftime("%Y-%m-%d %H:%M:%S")
 
 # 1. as sidebar menu
 with st.sidebar:
@@ -29,7 +33,7 @@ if choice == "회차 조회":
 
     if pagema == "축구 승무패":
         
-        print("# hoicha inq-soccer wdl")
+        print("# hoicha inq-soccer wdl",dt_now)
         fr = open('soccer_wdl_all.txt', 'r', encoding='UTF8')
 
         rdr1 = fr.readlines()
@@ -46,7 +50,7 @@ if choice == "회차 조회":
 
     elif pagema == "야구 승1패": 
 
-        print("# hoicha inq-baseball wdl")
+        print("# hoicha inq-baseball wdl",dt_now)
         fr = open('baseball_wdl_all.txt', 'r', encoding='UTF8')
 
         rdr1 = fr.readlines()
@@ -64,7 +68,7 @@ if choice == "회차 조회":
 
     elif pagema == "농구 승5패": 
 
-        print("# hoicha inq-basketball wdl")
+        print("# hoicha inq-basketball wdl",dt_now)
         fr = open('basketball_wdl_all.txt', 'r', encoding='UTF8')
 
         rdr1 = fr.readlines()
@@ -97,7 +101,7 @@ elif choice == "축구 승무패":
     pageso = st.sidebar.radio("축구 승무패", ["1경기", "2경기", "3경기", "4경기", "5경기", "6경기", "7경기",
                                     "8경기", "9경기", "10경기", "11경기", "12경기", "13경기", "14경기"])
 
-    print("# soccer wdl-",year,count)
+    print("# soccer wdl-",year,count,dt_now)
 
     if pageso == "1경기":
         mt_so_1all.Crawler(year,count,1) 
@@ -146,7 +150,7 @@ elif choice == "야구 승1패":
                 break
     # fr.close
 
-    print("# baseball wdl-",year,count)
+    print("# baseball wdl-",year,count,dt_now)
 
     if pagebb == "1경기":
         mt_bb_1all.Crawler(year,count,1) 
@@ -193,7 +197,7 @@ elif choice == "농구 승5패":
                 count = line[j+1:]
                 break
 
-    print("# basketball wdl-",year,count)
+    print("# basketball wdl-",year,count,dt_now)
 
     if pagebk == "1경기":
         mt_bk_1all.Crawler(year,count,1) 
@@ -229,22 +233,22 @@ elif choice == "경기 통계":
                                          "승5패 경기통계", "승5패 배당통계"])
     
     if pagedt == "승무패 경기통계":
-        print("# tongye - soccer wdl")
+        print("# tongye - soccer wdl",dt_now)
         mt_dt_1all.Crawler("so1") 
     elif pagedt == "승무패 배당통계": 
-        print("# tongye - soccer hml")
+        print("# tongye - soccer hml",dt_now)
         mt_dt_1all.Crawler("so2")
     elif pagedt == "승1패 경기통계": 
-        print("# tongye - baseball wdl")
+        print("# tongye - baseball wdl",dt_now)
         mt_dt_1all.Crawler("bb1")
     elif pagedt == "승1패 배당통계": 
-        print("# tongye - baseball hml")
+        print("# tongye - baseball hml",dt_now)
         mt_dt_1all.Crawler("bb2")
     elif pagedt == "승5패 경기통계": 
-        print("# tongye - basketball wdl")
+        print("# tongye - basketball wdl",dt_now)
         mt_dt_1all.Crawler("bk1")
     elif pagedt == "승5패 배당통계": 
-        print("# tongye - basketball hml")
+        print("# tongye - basketball hml",dt_now)
         mt_dt_1all.Crawler("bk2")
         
 elif choice == "조합기": 
@@ -266,7 +270,7 @@ elif choice == "조합기":
                     count = line[j+1:]
                     break
 
-        print("# johap - soccer wdl")
+        print("# johap - soccer wdl",dt_now)
 
         mt_jo_1all.Crawler(year,count,'s') 
 
@@ -284,7 +288,7 @@ elif choice == "조합기":
                     count = line[j+1:]
                     break
 
-        print("# johap - baseball wdl")
+        print("# johap - baseball wdl",dt_now)
 
         mt_jo_1all.Crawler(year,count,'b')
 
@@ -302,7 +306,7 @@ elif choice == "조합기":
                     count = line[j+1:]
                     break
 
-        print("# johap - basketball wdl")
+        print("# johap - basketball wdl",dt_now)
 
         mt_jo_1all.Crawler(year,count,'k')
 
