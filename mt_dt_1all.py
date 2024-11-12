@@ -22,18 +22,6 @@ def Crawler(gubun):
             f = open('baseball_bb4_hmltong.txt', 'r', encoding='UTF8')
         elif g == '06':
             f = open('basketball_bk4_hmltong.txt', 'r', encoding='UTF8')
-        # if g == '01':
-        #     f = open('D:/datagithub/soccer/soccer_so4_wdltong.txt', 'r', encoding='UTF8')
-        # elif g == '02':
-        #     f = open('D:/datagithub/baseball/baseball_bb4_wdltong.txt', 'r', encoding='UTF8')
-        # elif g == '03':
-        #     f = open('D:/datagithub/basketball/basketball_bk4_wdltong.txt', 'r', encoding='UTF8')
-        # elif g == '04':
-        #     f = open('D:/datagithub/soccer/soccer_so4_hmltong.txt', 'r', encoding='UTF8')
-        # elif g == '05':
-        #     f = open('D:/datagithub/baseball/baseball_bb4_hmltong.txt', 'r', encoding='UTF8')
-        # elif g == '06':
-        #     f = open('D:/datagithub/basketball/basketball_bk4_hmltong.txt', 'r', encoding='UTF8')
 
         rdr1 = f.readlines()    
 
@@ -1172,7 +1160,7 @@ def Crawler(gubun):
                         s = r+1
                         degree30.append(team_read[q][s:])
 
-        st.markdown(":soccer: :violet[**전체 고중저 경기통계**]")
+        st.markdown(":soccer: :violet[**전체 고중저 경기통계**] :red[(고중저:득표율 기준)]")
         df = pd.DataFrame(data=np.array([tcntw,tcntd,tcntl]), 
 
                 index= ["고","중","저"], 
@@ -1341,7 +1329,7 @@ def Crawler(gubun):
                 except:
                     pass
 
-        st.markdown(":soccer: :violet[**최근 30 회차 고중저 경기통계**]")
+        st.markdown(":soccer: :violet[**최근 30 회차 고중저 경기통계**] :red[(고중저:득표율 기준)]")
         df = pd.DataFrame(data=np.array([tcntw30,tcntd30,tcntl30]), 
 
                 index= ["고","중","저"], 
@@ -1550,7 +1538,7 @@ def Crawler(gubun):
                         s = r+1
                         degree30.append(team_read[q][s:])
 
-        st.markdown(":baseball: :violet[**전체 고중저 경기통계**]")
+        st.markdown(":baseball: :violet[**전체 고중저 경기통계**] :red[(고중저:득표율 기준)]")
         df = pd.DataFrame(data=np.array([tcntw,tcntd,tcntl]), 
 
                 index= ["고","중","저"], 
@@ -1695,7 +1683,7 @@ def Crawler(gubun):
                 except:
                     pass
 
-        st.markdown(":baseball: :violet[**최근 30 회차 고중저 경기통계**]")
+        st.markdown(":baseball: :violet[**최근 30 회차 고중저 경기통계**] :red[(고중저:득표율 기준)]")
         df = pd.DataFrame(data=np.array([tcntw30,tcntd30,tcntl30]), 
 
                 index= ["고","중","저"], 
@@ -1904,7 +1892,7 @@ def Crawler(gubun):
                         s = r+1
                         degree30.append(team_read[q][s:])
 
-        st.markdown(":basketball: :violet[**전체 고중저 경기통계**]")
+        st.markdown(":basketball: :violet[**전체 고중저 경기통계**] :red[(고중저:득표율 기준)]")
         df = pd.DataFrame(data=np.array([tcntw,tcntd,tcntl]), 
 
                 index= ["고","중","저"], 
@@ -2049,7 +2037,7 @@ def Crawler(gubun):
                 except:
                     pass
 
-        st.markdown(":basketball: :violet[**최근 30 회차 고중저 경기통계**]")
+        st.markdown(":basketball: :violet[**최근 30 회차 고중저 경기통계**] :red[(고중저:득표율 기준)]")
         df = pd.DataFrame(data=np.array([tcntw30,tcntd30,tcntl30]), 
 
                 index= ["고","중","저"], 
