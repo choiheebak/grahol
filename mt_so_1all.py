@@ -6,7 +6,28 @@ from streamlit_navigation_bar import st_navbar
 import plotly.graph_objects as go
 
 def Crawler(yearc,countc,gyungi):
-    
+  
+    year = int(yearc)
+    count = int(countc)
+    i = int(gyungi)
+
+    if i < 10:
+        k = '0' + str(gyungi)
+    else:
+        k = str(gyungi)
+
+    # print(year,count,i)
+   
+    ssh = str(year) + "년 축구 승무패 " + str(count) + "회차"
+    st.subheader(ssh)
+
+    sh = str(i) + "경기"
+    st.subheader(sh)
+
+    # 오디오 출력
+    audio = 'audio_' + str(k) + '.mp3'
+    st.audio(audio, format="audio/mpeg", loop=True)
+
     home = ""
     away = ""
     hseq = ""
@@ -115,17 +136,6 @@ def Crawler(yearc,countc,gyungi):
     inq_hteam = ""
     inq_ateam = ""
 
-    year = int(yearc)
-    count = int(countc)
-    i = int(gyungi)
-
-    if i < 10:
-        k = '0' + str(gyungi)
-    else:
-        k = str(gyungi)
-
-    # print(year,count,i)
- 
     def read_txt(g,k):
         if g == '01':
             f = open('soccer_so1_teamhome.txt', 'r', encoding='UTF8')
@@ -410,12 +420,6 @@ def Crawler(yearc,countc,gyungi):
                 s = r+1
                 result = team_read[s:]
    
-    ssh = str(year) + "년 축구 승무패 " + str(count) + "회차"
-    st.subheader(ssh)
-
-    sh = str(i) + "경기"
-    st.subheader(sh)
-
     df = pd.DataFrame(data=np.array([[home,hseq,hsjum,htotal,hwin,hdraw,hlose,hduk,hsil,hcha,hpduk],
                                      [away,aseq,asjum,atotal,awin,adraw,alose,aduk,asil,acha,apduk]]), 
 
