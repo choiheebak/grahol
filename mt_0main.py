@@ -320,7 +320,7 @@ elif choice == "게시판":
 
     # 새 게시글 작성
     st.subheader('새 게시글 작성')
-    st.markdown(":red[**- 게시판은 익명 미보관용으로, 시스템 상황에 따라 수시로 삭제될 수 있습니다. 비방이나 욕설은 삼가합니다.**]")
+    st.markdown(":red[**- 게시판은 익명 미보관용으로, 시스템 상황에 따라 수시로 삭제될 수 있습니다. 비방이나 욕설은 삼가해 주세요.**]")
     title = st.text_input('제목')
     content = st.text_area('내용')
     if st.button('게시'):
