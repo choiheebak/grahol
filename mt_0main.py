@@ -16,9 +16,9 @@ dt_now = now.strftime("%Y-%m-%d %H:%M:%S")
 
 # 1. as sidebar menu
 with st.sidebar:
-    choice = option_menu("그래홀", ["축구 승무패", '야구 승1패', "농구 승5패", "조합기", "회차 조회", "경기 통계"], 
+    choice = option_menu("그래홀", ["축구 승무패", '야구 승1패', "농구 승5패", "조합기", "회차 조회", "경기 통계", "게시판"], 
         menu_icon="cast", default_index=0,
-        icons=['life-preserver', 'shadows','dribbble','fan','tablet','graph-up-arrow'], 
+        icons=['life-preserver', 'shadows','dribbble','fan','tablet','graph-up-arrow','table'], 
                          styles={
         "container": {"padding": "4!important", "background-color": "#fafafa"},
         "icon": {"color": "#A52A2A", "font-size": "25px"},
@@ -310,6 +310,40 @@ elif choice == "조합기":
 
         mt_jo_1all.Crawler(year,count,'k')
 
+elif choice == "게시판": 
+     # 게시글 데이터를 저장할 DataFrame 생성
+    if 'posts' not in st.session_state:
+        st.session_state.posts = pd.DataFrame(columns=['Title', 'Content'])
+
+    # 제목
+    st.title('게시판')
+
+    # 새 게시글 작성
+    st.subheader('새 게시글 작성')
+    st.markdown(":red[**- 게시판은 익명 미보관용으로, 시스템 상황에 따라 수시로 삭제될 수 있습니다. 비방이나 욕설은 삼가합니다.**']")
+    title = st.text_input('제목')
+    content = st.text_area('내용')
+    if st.button('게시'):
+        new_post = pd.DataFrame({'Title': [title], 'Content': [content]})
+        st.session_state.posts = pd.concat([st.session_state.posts, new_post], ignore_index=True)
+        st.success('게시글이 작성되었습니다.')
+
+    # 게시글 목록 표시
+    st.subheader('게시글 목록')
+    st.table(st.session_state.posts)
+
+    # 게시글 상세 보기
+    try:
+        post_index = st.number_input('상세히 볼 게시글 번호를 입력하세요', min_value=0, max_value=len(st.session_state.posts)-1, step=1)
+        if st.button('게시글 보기'):
+            if not st.session_state.posts.empty and post_index < len(st.session_state.posts):
+                st.subheader(st.session_state.posts.iloc[post_index]['Title'])
+                st.write(st.session_state.posts.iloc[post_index]['Content'])
+            else:
+                st.error('유효하지 않은 게시글 번호입니다.')  
+    except:
+        pass
+    
 else:
     st.write("메뉴를 선택하세요")
 

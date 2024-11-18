@@ -24,7 +24,7 @@ def Crawler(yearc,countc,gyungi):
     sh = str(i) + "경기"
     st.subheader(sh)
 
-    st.markdown(":soccer: :red[**오디오 - 데이터 예측은 데이터에 따라 수시로 변경될 수 있고, 참고용입니다. 반드시 본인이 선택하시기 바랍니다.**]")
+    st.markdown(":soccer: :red[**오디오 - 데이터 예측은 데이터에 따라 수시로 변경될 수 있고, 참고용입니다. 반드시 본인의 선택이 중요하고, 결과에 따른 책임은 본인의 몫입니다.**]")
     # 오디오 출력
     audio = 'audio_' + str(k) + '.mp3'
     st.audio(audio, format="audio/mpeg", loop=True)
