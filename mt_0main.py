@@ -4,6 +4,7 @@ import numpy as np
 from datetime import datetime
 import mt_ma_1all
 import mt_so_1all
+import mt_so_2all
 import mt_bb_1all
 import mt_bk_1all
 import mt_dt_1all
@@ -16,9 +17,9 @@ dt_now = now.strftime("%Y-%m-%d %H:%M:%S")
 
 # 1. as sidebar menu
 with st.sidebar:
-    choice = option_menu("그래홀", ["축구 승무패", '야구 승1패', "농구 승5패", "조합기", "회차 조회", "경기 통계"], 
+    choice = option_menu("그래홀", ["축구 승무패", "추이 - 순위", '야구 승1패', "농구 승5패", "조합기", "회차 조회", "경기 통계"], 
         menu_icon="cast", default_index=0,
-        icons=['life-preserver', 'shadows','dribbble','fan','tablet','graph-up-arrow'], 
+        icons=['life-preserver','arrow-bar-right', 'shadows','dribbble','fan','tablet','graph-up-arrow'], 
                          styles={
         "container": {"padding": "4!important", "background-color": "#fafafa"},
         "icon": {"color": "#A52A2A", "font-size": "25px"},
