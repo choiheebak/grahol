@@ -61,9 +61,9 @@ def Crawler(yearc,countc,gyungi):
  
     def read_all_txt(g,k):
         if g == '11':
-            f = open('D:/datagithub/soccer/soccer_so9_sseqhome.txt', 'r', encoding='UTF8')
+            f = open('soccer_so9_sseqhome.txt', 'r', encoding='UTF8')
         elif g == '12':
-            f = open('D:/datagithub/soccer/soccer_so9_sseqaway.txt', 'r', encoding='UTF8')
+            f = open('soccer_so9_sseqaway.txt', 'r', encoding='UTF8')
 
         rdr1 = f.readlines()    
 
