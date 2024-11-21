@@ -4,6 +4,7 @@ import numpy as np
 from datetime import datetime
 import mt_ma_1all
 import mt_so_1all
+import mt_so_2all
 import mt_bb_1all
 import mt_bk_1all
 import mt_dt_1all
@@ -16,9 +17,9 @@ dt_now = now.strftime("%Y-%m-%d %H:%M:%S")
 
 # 1. as sidebar menu
 with st.sidebar:
-    choice = option_menu("그래홀", ["축구 승무패", '야구 승1패', "농구 승5패", "조합기", "회차 조회", "경기 통계"], 
+    choice = option_menu("그래홀", ["축구 승무패", "추이 - 순위", '야구 승1패', "농구 승5패", "조합기", "회차 조회", "경기 통계"], 
         menu_icon="cast", default_index=0,
-        icons=['life-preserver', 'shadows','dribbble','fan','tablet','graph-up-arrow'], 
+        icons=['life-preserver','arrow-bar-right', 'shadows','dribbble','fan','tablet','graph-up-arrow'], 
                          styles={
         "container": {"padding": "4!important", "background-color": "#fafafa"},
         "icon": {"color": "#A52A2A", "font-size": "25px"},
@@ -131,7 +132,55 @@ elif choice == "축구 승무패":
         mt_so_1all.Crawler(year,count,13)
     elif pageso == "14경기": 
         mt_so_1all.Crawler(year,count,14)
+       
+elif choice == "추이 - 순위": 
+    
+    fr = open('D:/datagithub/soccer/soccer_wdl.txt', 'r', encoding='UTF8')
 
+    rdr1 = fr.readlines()
+    year = 0
+    count = 0
+    for line in rdr1:
+        for j in range(len(line)):
+            if line[j] == ";":
+                year = line[:j]  
+                count = line[j+1:]
+                break
+
+    pageso = st.sidebar.radio("축구 승무패", ["1경기", "2경기", "3경기", "4경기", "5경기", "6경기", "7경기",
+                                    "8경기", "9경기", "10경기", "11경기", "12경기", "13경기", "14경기"])
+    
+    # print("축구 승무패",year,count)
+
+    if pageso == "1경기":
+        mt_so_2all.Crawler(year,count,1) 
+    elif pageso == "2경기":   
+        mt_so_2all.Crawler(year,count,2)
+    elif pageso == "3경기": 
+        mt_so_2all.Crawler(year,count,3)
+    elif pageso == "4경기": 
+        mt_so_2all.Crawler(year,count,4)
+    elif pageso == "5경기": 
+        mt_so_2all.Crawler(year,count,5)
+    elif pageso == "6경기": 
+        mt_so_2all.Crawler(year,count,6)
+    elif pageso == "7경기": 
+        mt_so_2all.Crawler(year,count,7)
+    elif pageso == "8경기": 
+        mt_so_2all.Crawler(year,count,8)
+    elif pageso == "9경기": 
+        mt_so_2all.Crawler(year,count,9)
+    elif pageso == "10경기": 
+        mt_so_2all.Crawler(year,count,10)
+    elif pageso == "11경기": 
+        mt_so_2all.Crawler(year,count,11)
+    elif pageso == "12경기": 
+        mt_so_2all.Crawler(year,count,12)
+    elif pageso == "13경기": 
+        mt_so_2all.Crawler(year,count,13)
+    elif pageso == "14경기": 
+        mt_so_2all.Crawler(year,count,14)
+       
 elif choice == "야구 승1패":
 
     pagebb = st.sidebar.radio("야구 승1패", ["1경기", "2경기", "3경기", "4경기", "5경기", "6경기", "7경기",
