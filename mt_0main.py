@@ -135,7 +135,7 @@ elif choice == "축구 승무패":
        
 elif choice == "추이 - 순위": 
     
-    fr = open('D:/datagithub/soccer/soccer_wdl.txt', 'r', encoding='UTF8')
+    fr = open('soccer_wdl.txt', 'r', encoding='UTF8')
 
     rdr1 = fr.readlines()
     year = 0
