@@ -397,7 +397,7 @@ def basketball_allinq():
     mt_ma_1all.Crawler(year,count,'k')
      
 # 메인 콘텐츠 영역
-if st.session_state.selected_sport == "축구 승무패": 
+if selected_sport == "축구 승무패": 
 
     if submenu == "조합기":
        
@@ -419,7 +419,7 @@ if st.session_state.selected_sport == "축구 승무패":
 
         soccer_allinq()
 
-elif st.session_state.selected_sport == "야구 승1패":
+elif selected_sport == "야구 승1패":
 
     if submenu == "조합기":
 
@@ -437,7 +437,7 @@ elif st.session_state.selected_sport == "야구 승1패":
 
         baseball_allinq()
 
-elif st.session_state.selected_sport == "농구 승5패":
+elif selected_sport == "농구 승5패":
 
     if submenu == "조합기":
 
