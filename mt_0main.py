@@ -1,7 +1,5 @@
 import streamlit as st
-import pandas as pd
-import numpy as np
-from datetime import datetime
+from streamlit_option_menu import option_menu
 import mt_ma_1all
 import mt_so_1all
 import mt_so_2all
@@ -9,82 +7,117 @@ import mt_bb_1all
 import mt_bk_1all
 import mt_dt_1all
 import mt_jo_1all
-from streamlit_option_menu import option_menu
-from streamlit_navigation_bar import st_navbar
+from datetime import datetime
 
 now = datetime.now()
 dt_now = now.strftime("%Y-%m-%d %H:%M:%S")
 
-# 1. as sidebar menu
+# 세션 상태 초기화
+if 'submenu_indices' not in st.session_state:
+    st.session_state.submenu_indices = {"축구 승무패": 0, "야구 승1패": 0, "농구 승5패": 0}
+if 'selected_sport' not in st.session_state:
+    st.session_state.selected_sport = "축구 승무패"
+
+def on_sport_change(key):
+    st.session_state.selected_sport = st.session_state.sport_select
+
+def on_submenu_change(key):
+    st.session_state.submenu_indices[st.session_state.selected_sport] = submenu_options[st.session_state.selected_sport].index(st.session_state.submenu_select)
+
+# 페이지 설정
+st.set_page_config(page_title="그래홀", page_icon="🏠", layout="wide")
+
+# 사이드바
 with st.sidebar:
-    choice = option_menu("그래홀", ["축구 승무패", "추이 - 순위", '야구 승1패', "농구 승5패", "조합기", "회차 조회", "경기 통계"], 
-        menu_icon="cast", default_index=0,
-        icons=['life-preserver','arrow-bar-right', 'shadows','dribbble','fan','tablet','graph-up-arrow'], 
-                         styles={
-        "container": {"padding": "4!important", "background-color": "#fafafa"},
-        "icon": {"color": "#A52A2A", "font-size": "25px"},
-        "nav-link": {"font-size": "16px", "text-align": "left", "margin":"0px", "--hover-color": "#fafafa"},
-        "nav-link-selected": {"background-color": "#08c7b4"},
-    }
-    )    
+    st.title("🏠 그래홀")
     
-if choice == "회차 조회":
+    selected_sport = option_menu("스포츠", ["축구 승무패", "야구 승1패", "농구 승5패"],
+                                 icons=['life-preserver', 'shadows', 'dribbble'],
+                                 menu_icon="list", 
+                                 default_index=["축구 승무패", "야구 승1패", "농구 승5패"].index(st.session_state.selected_sport),
+                                 key="sport_select",
+                                 on_change=on_sport_change,
+                                 styles={
+                                     "container": {"padding": "0!important", "background-color": "#fafafa"},
+                                     "icon": {"color": "#A52A2A", "font-size": "25px"},
+                                     "nav-link": {"font-size": "16px", "font-weight": "bold", "text-align": "left", "margin":"0px", "--hover-color": "#fafafa"},
+                                     "nav-link-selected": {"background-color": "#08c7b4", "font-weight": "bold"},
+                                 })
 
-    pagema = st.sidebar.radio("회차 조회", ["축구 승무패", "야구 승1패", "농구 승5패"])
+    submenu_options = {
+        "축구 승무패": ["조합기", "경기별 분석", "경기 통계", "회차 조회", "순위추이 분석"],
+        "야구 승1패": ["조합기", "경기별 분석", "경기 통계", "회차 조회"],
+        "농구 승5패": ["조합기", "경기별 분석", "경기 통계", "회차 조회"]
+    }
+    
+    icons = ['fan', 'zoom-in', 'graph-up-arrow', 'tablet', 'tropical-storm']
+    
+    current_submenu_index = st.session_state.submenu_indices[st.session_state.selected_sport]
+    if current_submenu_index >= len(submenu_options[st.session_state.selected_sport]):
+        current_submenu_index = len(submenu_options[st.session_state.selected_sport]) - 1
+    
+    submenu = option_menu(None, submenu_options[st.session_state.selected_sport],
+                          icons=icons[:len(submenu_options[st.session_state.selected_sport])],
+                          menu_icon="list", 
+                          default_index=current_submenu_index,
+                          key="submenu_select",
+                          on_change=on_submenu_change,
+                          styles={
+                              "container": {"padding": "0!important", "background-color": "#fafafa"},
+                              "icon": {"color": "#4E342E", "font-size": "20px"}, 
+                              "nav-link": {"font-size": "14px", "font-weight": "bold", "text-align": "left", "margin":"0px", "--hover-color": "#eee"},
+                              "nav-link-selected": {"background-color": "#08c7b4", "font-weight": "bold"},
+                          })
+    
+def soccer_johap():
 
-    if pagema == "축구 승무패":
+    fr = open('soccer_wdl.txt', 'r', encoding='UTF8')
+
+    rdr1 = fr.readlines()
+    year = 0
+    count = 0
+    for line in rdr1:
+        for j in range(len(line)):
+            if line[j] == ";":
+                year = line[:j]  
+                count = line[j+1:]
+                break
+
+    mt_jo_1all.Crawler(year,count,'s') 
         
-        # print("# hoicha inq-soccer wdl",dt_now)
-        fr = open('soccer_wdl_all.txt', 'r', encoding='UTF8')
+def baseball_johap():
 
-        rdr1 = fr.readlines()
-        year = []
-        count = []
-        for line in rdr1:
-            for j in range(len(line)):
-                if line[j] == ";":
-                    year.append(line[:j])  
-                    count.append(line[j+1:])
-                    break
+    fr = open('baseball_wdl.txt', 'r', encoding='UTF8')
 
-        mt_ma_1all.Crawler(year,count,'s') 
+    rdr1 = fr.readlines()
+    year = 0
+    count = 0
+    for line in rdr1:
+        for j in range(len(line)):
+            if line[j] == ";":
+                year = line[:j]  
+                count = line[j+1:]
+                break
+    
+    mt_jo_1all.Crawler(year,count,'b')     
+   
+def basketball_johap():
 
-    elif pagema == "야구 승1패": 
+    fr = open('basketball_wdl.txt', 'r', encoding='UTF8')
 
-        # print("# hoicha inq-baseball wdl",dt_now)
-        fr = open('baseball_wdl_all.txt', 'r', encoding='UTF8')
+    rdr1 = fr.readlines()
+    year = 0
+    count = 0
+    for line in rdr1:
+        for j in range(len(line)):
+            if line[j] == ";":
+                year = line[:j]  
+                count = line[j+1:]
+                break
 
-        rdr1 = fr.readlines()
-        year = []
-        count = []
-        for line in rdr1:
-            for j in range(len(line)):
-                if line[j] == ";":
-                    year.append(line[:j])  
-                    count.append(line[j+1:])
-                    break
-
-        mt_ma_1all.Crawler(year,count,'b')
-
-
-    elif pagema == "농구 승5패": 
-
-        # print("# hoicha inq-basketball wdl",dt_now)
-        fr = open('basketball_wdl_all.txt', 'r', encoding='UTF8')
-
-        rdr1 = fr.readlines()
-        year = []
-        count = []
-        for line in rdr1:
-            for j in range(len(line)):
-                if line[j] == ";":
-                    year.append(line[:j])  
-                    count.append(line[j+1:])
-                    break
-
-        mt_ma_1all.Crawler(year,count,'k')
-
-elif choice == "축구 승무패":
+    mt_jo_1all.Crawler(year,count,'k')
+     
+def soccer_gameanalyst():
 
     fr = open('soccer_wdl.txt', 'r', encoding='UTF8')
 
@@ -99,10 +132,10 @@ elif choice == "축구 승무패":
                 break
     # fr.close
 
-    pageso = st.sidebar.radio("축구 승무패", ["1경기", "2경기", "3경기", "4경기", "5경기", "6경기", "7경기",
+    pageso = st.sidebar.radio("축구 승무패 - 경기 선택", ["1경기", "2경기", "3경기", "4경기", "5경기", "6경기", "7경기",
                                     "8경기", "9경기", "10경기", "11경기", "12경기", "13경기", "14경기"])
-
-    # print("# soccer wdl-",year,count,dt_now)
+    
+    # print("축구 승무패",year,count)
 
     if pageso == "1경기":
         mt_so_1all.Crawler(year,count,1) 
@@ -132,9 +165,107 @@ elif choice == "축구 승무패":
         mt_so_1all.Crawler(year,count,13)
     elif pageso == "14경기": 
         mt_so_1all.Crawler(year,count,14)
-       
-elif choice == "추이 - 순위": 
+
+def baseball_gameanalyst():
+
+    pagebb = st.sidebar.radio("야구 승1패 - 경기 선택", ["1경기", "2경기", "3경기", "4경기", "5경기", "6경기", "7경기",
+                                    "8경기", "9경기", "10경기", "11경기", "12경기", "13경기", "14경기"])
     
+    fr = open('baseball_wdl.txt', 'r', encoding='UTF8')
+    # fr = open('baseball_wdl.txt', 'r', encoding='UTF8')
+
+    rdr1 = fr.readlines()
+    year = 0
+    count = 0
+    for line in rdr1:
+        for j in range(len(line)):
+            if line[j] == ";":
+                year = line[:j]  
+                count = line[j+1:]
+                break
+    # fr.close
+    
+    # print("야구 승1패",year,count)
+
+    if pagebb == "1경기":
+        mt_bb_1all.Crawler(year,count,1) 
+    elif pagebb == "2경기":   
+        mt_bb_1all.Crawler(year,count,2)
+    elif pagebb == "3경기": 
+        mt_bb_1all.Crawler(year,count,3)
+    elif pagebb == "4경기": 
+        mt_bb_1all.Crawler(year,count,4)
+    elif pagebb == "5경기": 
+        mt_bb_1all.Crawler(year,count,5)
+    elif pagebb == "6경기": 
+        mt_bb_1all.Crawler(year,count,6)
+    elif pagebb == "7경기": 
+        mt_bb_1all.Crawler(year,count,7)
+    elif pagebb == "8경기": 
+        mt_bb_1all.Crawler(year,count,8)
+    elif pagebb == "9경기": 
+        mt_bb_1all.Crawler(year,count,9)
+    elif pagebb == "10경기": 
+        mt_bb_1all.Crawler(year,count,10)
+    elif pagebb == "11경기": 
+        mt_bb_1all.Crawler(year,count,11)
+    elif pagebb == "12경기": 
+        mt_bb_1all.Crawler(year,count,12)
+    elif pagebb == "13경기": 
+        mt_bb_1all.Crawler(year,count,13)
+    elif pagebb == "14경기": 
+        mt_bb_1all.Crawler(year,count,14)
+
+def basketball_gameanalyst():
+
+    pagebk = st.sidebar.radio("농구 승5패 - 경기 선택", ["1경기", "2경기", "3경기", "4경기", "5경기", "6경기", "7경기",
+                                    "8경기", "9경기", "10경기", "11경기", "12경기", "13경기", "14경기"])
+     
+    fr = open('basketball_wdl.txt', 'r', encoding='UTF8')
+
+    rdr1 = fr.readlines()
+    year = 0
+    count = 0
+    for line in rdr1:
+        for j in range(len(line)):
+            if line[j] == ";":
+                year = line[:j]  
+                count = line[j+1:]
+                break
+
+    # print("농구 승5패",year,count)
+
+    if pagebk == "1경기":
+        mt_bk_1all.Crawler(year,count,1) 
+    elif pagebk == "2경기":   
+        mt_bk_1all.Crawler(year,count,2)
+    elif pagebk == "3경기": 
+        mt_bk_1all.Crawler(year,count,3)
+    elif pagebk == "4경기": 
+        mt_bk_1all.Crawler(year,count,4)
+    elif pagebk == "5경기": 
+        mt_bk_1all.Crawler(year,count,5)
+    elif pagebk == "6경기": 
+        mt_bk_1all.Crawler(year,count,6)
+    elif pagebk == "7경기": 
+        mt_bk_1all.Crawler(year,count,7)
+    elif pagebk == "8경기": 
+        mt_bk_1all.Crawler(year,count,8)
+    elif pagebk == "9경기": 
+        mt_bk_1all.Crawler(year,count,9)
+    elif pagebk == "10경기": 
+        mt_bk_1all.Crawler(year,count,10)
+    elif pagebk == "11경기": 
+        mt_bk_1all.Crawler(year,count,11)
+    elif pagebk == "12경기": 
+        mt_bk_1all.Crawler(year,count,12)
+    elif pagebk == "13경기": 
+        mt_bk_1all.Crawler(year,count,13)
+    elif pagebk == "14경기": 
+        mt_bk_1all.Crawler(year,count,14)
+        
+def soccer_seqanalyst():
+ 
     fr = open('soccer_wdl.txt', 'r', encoding='UTF8')
 
     rdr1 = fr.readlines()
@@ -179,221 +310,147 @@ elif choice == "추이 - 순위":
     elif pageso == "13경기": 
         mt_so_2all.Crawler(year,count,13)
     elif pageso == "14경기": 
-        mt_so_2all.Crawler(year,count,14)
-       
-elif choice == "야구 승1패":
+        mt_so_2all.Crawler(year,count,14)       
 
-    pagebb = st.sidebar.radio("야구 승1패", ["1경기", "2경기", "3경기", "4경기", "5경기", "6경기", "7경기",
-                                    "8경기", "9경기", "10경기", "11경기", "12경기", "13경기", "14경기"])
-    
-    fr = open('baseball_wdl.txt', 'r', encoding='UTF8')
-
-    rdr1 = fr.readlines()
-    year = 0
-    count = 0
-    for line in rdr1:
-        for j in range(len(line)):
-            if line[j] == ";":
-                year = line[:j]  
-                count = line[j+1:]
-                break
-    # fr.close
-
-    # print("# baseball wdl-",year,count,dt_now)
-
-    if pagebb == "1경기":
-        mt_bb_1all.Crawler(year,count,1) 
-    elif pagebb == "2경기":   
-        mt_bb_1all.Crawler(year,count,2)
-    elif pagebb == "3경기": 
-        mt_bb_1all.Crawler(year,count,3)
-    elif pagebb == "4경기": 
-        mt_bb_1all.Crawler(year,count,4)
-    elif pagebb == "5경기": 
-        mt_bb_1all.Crawler(year,count,5)
-    elif pagebb == "6경기": 
-        mt_bb_1all.Crawler(year,count,6)
-    elif pagebb == "7경기": 
-        mt_bb_1all.Crawler(year,count,7)
-    elif pagebb == "8경기": 
-        mt_bb_1all.Crawler(year,count,8)
-    elif pagebb == "9경기": 
-        mt_bb_1all.Crawler(year,count,9)
-    elif pagebb == "10경기": 
-        mt_bb_1all.Crawler(year,count,10)
-    elif pagebb == "11경기": 
-        mt_bb_1all.Crawler(year,count,11)
-    elif pagebb == "12경기": 
-        mt_bb_1all.Crawler(year,count,12)
-    elif pagebb == "13경기": 
-        mt_bb_1all.Crawler(year,count,13)
-    elif pagebb == "14경기": 
-        mt_bb_1all.Crawler(year,count,14)
-        
-elif choice == "농구 승5패":
-    pagebk = st.sidebar.radio("농구 승5패", ["1경기", "2경기", "3경기", "4경기", "5경기", "6경기", "7경기",
-                                    "8경기", "9경기", "10경기", "11경기", "12경기", "13경기", "14경기"])
-     
-    fr = open('basketball_wdl.txt', 'r', encoding='UTF8')
-
-    rdr1 = fr.readlines()
-    year = 0
-    count = 0
-    for line in rdr1:
-        for j in range(len(line)):
-            if line[j] == ";":
-                year = line[:j]  
-                count = line[j+1:]
-                break
-
-    # print("# basketball wdl-",year,count,dt_now)
-
-    if pagebk == "1경기":
-        mt_bk_1all.Crawler(year,count,1) 
-    elif pagebk == "2경기":   
-        mt_bk_1all.Crawler(year,count,2)
-    elif pagebk == "3경기": 
-        mt_bk_1all.Crawler(year,count,3)
-    elif pagebk == "4경기": 
-        mt_bk_1all.Crawler(year,count,4)
-    elif pagebk == "5경기": 
-        mt_bk_1all.Crawler(year,count,5)
-    elif pagebk == "6경기": 
-        mt_bk_1all.Crawler(year,count,6)
-    elif pagebk == "7경기": 
-        mt_bk_1all.Crawler(year,count,7)
-    elif pagebk == "8경기": 
-        mt_bk_1all.Crawler(year,count,8)
-    elif pagebk == "9경기": 
-        mt_bk_1all.Crawler(year,count,9)
-    elif pagebk == "10경기": 
-        mt_bk_1all.Crawler(year,count,10)
-    elif pagebk == "11경기": 
-        mt_bk_1all.Crawler(year,count,11)
-    elif pagebk == "12경기": 
-        mt_bk_1all.Crawler(year,count,12)
-    elif pagebk == "13경기": 
-        mt_bk_1all.Crawler(year,count,13)
-    elif pagebk == "14경기": 
-        mt_bk_1all.Crawler(year,count,14)
-        
-elif choice == "경기 통계":
-    pagedt = st.sidebar.radio("경기통계", ["승무패 경기통계", "승무패 배당통계", "승1패 경기통계", "승1패 배당통계", 
-                                         "승5패 경기통계", "승5패 배당통계"])
+def soccer_states():
+ 
+    pagedt = st.sidebar.radio("경기 통계", ["승무패 경기통계", "승무패 배당통계"])    
     
     if pagedt == "승무패 경기통계":
-        # print("# tongye - soccer wdl",dt_now)
+        # print("경기 통계-승무패 경기통계")
         mt_dt_1all.Crawler("so1") 
     elif pagedt == "승무패 배당통계": 
-        # print("# tongye - soccer hml",dt_now)
-        mt_dt_1all.Crawler("so2")
-    elif pagedt == "승1패 경기통계": 
-        # print("# tongye - baseball wdl",dt_now)
+        # print("경기 통계-승무패 배당통계")  
+        mt_dt_1all.Crawler("so2")        
+
+def baseball_states():
+ 
+    pagedt = st.sidebar.radio("경기 통계", ["승1패 경기통계", "승1패 배당통계"])    
+    
+    if pagedt == "승1패 경기통계": 
+        # print("경기 통계-승1패 경기통계")
         mt_dt_1all.Crawler("bb1")
     elif pagedt == "승1패 배당통계": 
-        # print("# tongye - baseball hml",dt_now)
+        # print("경기 통계-승1패 배당통계")
         mt_dt_1all.Crawler("bb2")
-    elif pagedt == "승5패 경기통계": 
-        # print("# tongye - basketball wdl",dt_now)
+        
+
+def basketball_states():
+ 
+    pagedt = st.sidebar.radio("경기 통계", ["승5패 경기통계", "승5패 배당통계"])    
+    
+    if pagedt == "승5패 경기통계": 
+        # print("경기 통계-승5패 경기통계")
         mt_dt_1all.Crawler("bk1")
     elif pagedt == "승5패 배당통계": 
-        # print("# tongye - basketball hml",dt_now)
+        # print("경기 통계-승5패 배당통계")
         mt_dt_1all.Crawler("bk2")
-        
-elif choice == "조합기": 
 
-    pagejo = st.sidebar.radio("조합기", 
-                              ["축구 승무패", "야구 승1패","농구 승5패"])
-
-    if pagejo == "축구 승무패":
-
-        fr = open('soccer_wdl.txt', 'r', encoding='UTF8')
-
-        rdr1 = fr.readlines()
-        year = 0
-        count = 0
-        for line in rdr1:
-            for j in range(len(line)):
-                if line[j] == ";":
-                    year = line[:j]  
-                    count = line[j+1:]
-                    break
-
-        # print("# johap - soccer wdl",dt_now)
-
-        mt_jo_1all.Crawler(year,count,'s') 
-
-    elif pagejo == "야구 승1패": 
-  
-        fr = open('baseball_wdl.txt', 'r', encoding='UTF8')
-
-        rdr1 = fr.readlines()
-        year = 0
-        count = 0
-        for line in rdr1:
-            for j in range(len(line)):
-                if line[j] == ";":
-                    year = line[:j]  
-                    count = line[j+1:]
-                    break
-
-        # print("# johap - baseball wdl",dt_now)
-
-        mt_jo_1all.Crawler(year,count,'b')
-
-    elif pagejo == "농구 승5패": 
+def soccer_allinq():
  
-        fr = open('basketball_wdl.txt', 'r', encoding='UTF8')
+    # print("회차조회-축구 승무패")
+    fr = open('soccer_wdl_all.txt', 'r', encoding='UTF8')
 
-        rdr1 = fr.readlines()
-        year = 0
-        count = 0
-        for line in rdr1:
-            for j in range(len(line)):
-                if line[j] == ";":
-                    year = line[:j]  
-                    count = line[j+1:]
-                    break
+    rdr1 = fr.readlines()
+    year = []
+    count = []
+    for line in rdr1:
+        for j in range(len(line)):
+            if line[j] == ";":
+                year.append(line[:j])  
+                count.append(line[j+1:])
 
-        # print("# johap - basketball wdl",dt_now)
+    mt_ma_1all.Crawler(year,count,'s') 
 
-        mt_jo_1all.Crawler(year,count,'k')
+def baseball_allinq():
+ 
+    # print("회차조회-야구 승1패")
+    fr = open('baseball_wdl_all.txt', 'r', encoding='UTF8')
 
-# elif choice == "게시판": 
-#      # 게시글 데이터를 저장할 DataFrame 생성
-#     if 'posts' not in st.session_state:
-#         st.session_state.posts = pd.DataFrame(columns=['Title', 'Content'])
+    rdr1 = fr.readlines()
+    year = []
+    count = []
+    for line in rdr1:
+        for j in range(len(line)):
+            if line[j] == ";":
+                year.append(line[:j])  
+                count.append(line[j+1:])
+                break
 
-#     # 제목
-#     st.title('게시판')
+    mt_ma_1all.Crawler(year,count,'b')
 
-#     # 새 게시글 작성
-#     st.subheader('새 게시글 작성')
-#     st.markdown(":red[**- 게시판은 익명 미보관용으로, 시스템 상황에 따라 수시로 삭제될 수 있습니다. 비방이나 욕설은 삼가해 주세요.**]")
-#     title = st.text_input('제목')
-#     content = st.text_area('내용')
-#     if st.button('게시'):
-#         new_post = pd.DataFrame({'Title': [title], 'Content': [content]})
-#         st.session_state.posts = pd.concat([st.session_state.posts, new_post], ignore_index=True)
-#         st.success('게시글이 작성되었습니다.')
+def basketball_allinq():
+ 
+    # print("회차조회-농구승5패")
+    fr = open('basketball_wdl_all.txt', 'r', encoding='UTF8')
 
-#     # 게시글 목록 표시
-#     st.subheader('게시글 목록')
-#     st.table(st.session_state.posts)
+    rdr1 = fr.readlines()
+    year = []
+    count = []
+    for line in rdr1:
+        for j in range(len(line)):
+            if line[j] == ";":
+                year.append(line[:j])  
+                count.append(line[j+1:])
+                break
 
-#     # 게시글 상세 보기
-#     try:
-#         post_index = st.number_input('상세히 볼 게시글 번호를 입력하세요', min_value=0, max_value=len(st.session_state.posts)-1, step=1)
-#         if st.button('게시글 보기'):
-#             if not st.session_state.posts.empty and post_index < len(st.session_state.posts):
-#                 st.subheader(st.session_state.posts.iloc[post_index]['Title'])
-#                 st.write(st.session_state.posts.iloc[post_index]['Content'])
-#             else:
-#                 st.error('유효하지 않은 게시글 번호입니다.')  
-#     except:
-#         pass
-    
-else:
-    st.write("메뉴를 선택하세요")
+    mt_ma_1all.Crawler(year,count,'k')
+     
+# 메인 콘텐츠 영역
+if st.session_state.selected_sport == "축구 승무패": 
 
+    if submenu == "조합기":
+       
+        soccer_johap()
 
+    elif submenu == "경기별 분석":
+
+        soccer_gameanalyst()
+
+    elif submenu == "순위추이 분석":
+
+        soccer_seqanalyst()
+
+    elif submenu == "경기 통계":
+
+        soccer_states()
+
+    elif submenu == "회차 조회":
+
+        soccer_allinq()
+
+elif st.session_state.selected_sport == "야구 승1패":
+
+    if submenu == "조합기":
+
+        baseball_johap()
+
+    elif submenu == "경기별 분석":
+
+        baseball_gameanalyst()
+
+    elif submenu == "경기 통계":
+
+        baseball_states()
+
+    elif submenu == "회차 조회":
+
+        baseball_allinq()
+
+elif st.session_state.selected_sport == "농구 승5패":
+
+    if submenu == "조합기":
+
+        basketball_johap()
+
+    elif submenu == "경기별 분석":
+
+        basketball_gameanalyst()
+
+    elif submenu == "경기 통계":
+
+        basketball_states()
+
+    elif "회차 조회":
+
+        basketball_allinq()
