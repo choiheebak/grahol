@@ -4,6 +4,7 @@ import mt_ma_1all
 import mt_so_1all
 import mt_so_2all
 import mt_bb_1all
+import mt_bb_2all
 import mt_bk_1all
 import mt_dt_1all
 import mt_jo_1all
@@ -312,6 +313,52 @@ def soccer_seqanalyst():
     elif pageso == "14경기": 
         mt_so_2all.Crawler(year,count,14)       
 
+def baseball_seqanalyst():
+
+    pagebb = st.sidebar.radio("야구 승1패 - 경기 선택", ["1경기", "2경기", "3경기", "4경기", "5경기", "6경기", "7경기",
+                                    "8경기", "9경기", "10경기", "11경기", "12경기", "13경기", "14경기"])
+    
+    fr = open('baseball_wdl.txt', 'r', encoding='UTF8')
+
+    rdr1 = fr.readlines()
+    year = 0
+    count = 0
+    for line in rdr1:
+        for j in range(len(line)):
+            if line[j] == ";":
+                year = line[:j]  
+                count = line[j+1:]
+                break
+
+    if pagebb == "1경기":
+        mt_bb_2all.Crawler(year,count,1) 
+    elif pagebb == "2경기":   
+        mt_bb_2all.Crawler(year,count,2)
+    elif pagebb == "3경기": 
+        mt_bb_2all.Crawler(year,count,3)
+    elif pagebb == "4경기": 
+        mt_bb_2all.Crawler(year,count,4)
+    elif pagebb == "5경기": 
+        mt_bb_2all.Crawler(year,count,5)
+    elif pagebb == "6경기": 
+        mt_bb_2all.Crawler(year,count,6)
+    elif pagebb == "7경기": 
+        mt_bb_2all.Crawler(year,count,7)
+    elif pagebb == "8경기": 
+        mt_bb_2all.Crawler(year,count,8)
+    elif pagebb == "9경기": 
+        mt_bb_2all.Crawler(year,count,9)
+    elif pagebb == "10경기": 
+        mt_bb_2all.Crawler(year,count,10)
+    elif pagebb == "11경기": 
+        mt_bb_2all.Crawler(year,count,11)
+    elif pagebb == "12경기": 
+        mt_bb_2all.Crawler(year,count,12)
+    elif pagebb == "13경기": 
+        mt_bb_2all.Crawler(year,count,13)
+    elif pagebb == "14경기": 
+        mt_bb_2all.Crawler(year,count,14)
+
 def soccer_states():
  
     pagedt = st.sidebar.radio("경기 통계", ["승무패 경기통계", "승무패 배당통계"])    
@@ -407,10 +454,6 @@ if selected_sport == "축구 승무패":
 
         soccer_gameanalyst()
 
-    elif submenu == "순위추이 분석":
-
-        soccer_seqanalyst()
-
     elif submenu == "경기 통계":
 
         soccer_states()
@@ -418,6 +461,10 @@ if selected_sport == "축구 승무패":
     elif submenu == "회차 조회":
 
         soccer_allinq()
+
+    elif submenu == "순위추이 분석":
+
+        soccer_seqanalyst()
 
 elif selected_sport == "야구 승1패":
 
@@ -436,6 +483,10 @@ elif selected_sport == "야구 승1패":
     elif submenu == "회차 조회":
 
         baseball_allinq()
+
+    elif submenu == "순위추이 분석":
+
+        baseball_seqanalyst()
 
 elif selected_sport == "농구 승5패":
 
