@@ -1,14 +1,14 @@
-01;N;N;브루클린;브루클린;%브루%;Brooklyn 
-02;N;N;보스턴;보스턴;%보스%;Boston 
-03;N;N;인디애나;인디애나;%인디애나%;Indiana 
-04;N;N;애틀랜타;애틀랜타;%애틀랜타%;Atlanta 
-05;N;N;포틀랜드;포틀랜드;%포틀%;Portland 
-06;N;N;골든스테이트;골든스테이트;%골든%;Golden State 
-07;N;N;댈러스;댈러스;%댈러스%;Dallas 
-08;N;N;새크라멘토;새크라멘토;%새크라%;Sacramento 
-09;N;N;뉴욕;뉴욕닉스;%뉴욕%;New York 
-10;N;N;디트로이트;디트로이트;%디트로%;Detroit 
-11;N;N;멤피스;멤피스;%멤피%;Memphis 
-12;N;N;샬럿;샬럿;%샬럿%;Charlotte 
-13;N;N;골든스테이트;골든스테이트;%골든%;Golden State 
-14;N;N;덴버;덴버;%덴버%;Denver 
+01;N;N;시카고;시카고;%시카고%;Chicago 
+02;N;N;밀워키;밀워키;%밀워키%;Milwaukee 
+03;N;N;휴스턴;휴스턴;%휴스%;Houston 
+04;N;N;LAL;LA레이커스;%레이커스%;Los Angeles 
+05;K;K;울산 현대모비스;현대모비스;%모비스%;현대모비스
+06;K;K;서울 SK;서울 SK;%SK%;SK
+07;N;N;마이애미;마이애미;%마이애미%;Miami 
+08;N;N;포틀랜드;포틀랜드;%포틀%;Portland 
+09;N;N;시카고;시카고;%시카고%;Chicago 
+10;N;N;뉴욕;뉴욕닉스;%뉴욕%;New York 
+11;N;N;디트로이트;디트로이트;%디트로%;Detroit 
+12;N;N;새크라멘토;새크라멘토;%새크라%;Sacramento 
+13;N;N;LAL;LA레이커스;%레이커스%;Los Angeles 
+14;N;N;브루클린;브루클린;%브루%;Brooklyn 
