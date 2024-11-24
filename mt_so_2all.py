@@ -273,14 +273,7 @@ def Crawler(yearc,countc,gyungi):
    
     # plt.rcParams['font.family'] = 'NanumGothic'
     # plt.rcParams['axes.unicode_minus'] = False
-
-    if len(hilja) == 0 and len(ailja) == 0:
-        tab1, tab2 = st.tabs(["홈팀", "원정팀"])
-        with tab1:
-            pass
-        with tab2:
-            pass
-    else:
+    try: 
         tab1, tab2 = st.tabs(["홈팀", "원정팀"])
         with tab1:
             st.text(home[0])
@@ -327,3 +320,10 @@ def Crawler(yearc,countc,gyungi):
             plt.grid(axis='y', linestyle='--', alpha=0.7)
 
             st.pyplot(fig)
+
+    except:
+        tab1, tab2 = st.tabs(["홈팀", "원정팀"])
+        with tab1:
+            pass
+        with tab2:
+            pass
