@@ -322,8 +322,9 @@ def Crawler(yearc,countc,gyungi):
             st.pyplot(fig)
 
     except:
-        tab1, tab2 = st.tabs(["홈팀", "원정팀"])
-        with tab1:
-            pass
-        with tab2:
-            pass
+        # tab1, tab2 = st.tabs(["홈팀", "원정팀"])
+        # with tab1:
+        #     pass
+        # with tab2:
+        #     pass
+        pass
