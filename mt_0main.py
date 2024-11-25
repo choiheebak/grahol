@@ -6,6 +6,7 @@ import mt_so_2all
 import mt_bb_1all
 import mt_bb_2all
 import mt_bk_1all
+import mt_bk_2all
 import mt_dt_1all
 import mt_jo_1all
 from datetime import datetime
@@ -47,8 +48,8 @@ with st.sidebar:
 
     submenu_options = {
         "축구 승무패": ["조합기", "경기별 분석", "경기 통계", "회차 조회", "순위추이 분석"],
-        "야구 승1패": ["조합기", "경기별 분석", "경기 통계", "회차 조회"],
-        "농구 승5패": ["조합기", "경기별 분석", "경기 통계", "회차 조회"]
+        "야구 승1패": ["조합기", "경기별 분석", "경기 통계", "회차 조회", "순위추이 분석"],
+        "농구 승5패": ["조합기", "경기별 분석", "경기 통계", "회차 조회", "순위추이 분석"]
     }
     
     icons = ['fan', 'zoom-in', 'graph-up-arrow', 'tablet', 'tropical-storm']
@@ -359,6 +360,54 @@ def baseball_seqanalyst():
     elif pagebb == "14경기": 
         mt_bb_2all.Crawler(year,count,14)
 
+def basketball_seqanalyst():
+
+    pagebk = st.sidebar.radio("농구 승5패 - 경기 선택", ["1경기", "2경기", "3경기", "4경기", "5경기", "6경기", "7경기",
+                                    "8경기", "9경기", "10경기", "11경기", "12경기", "13경기", "14경기"])
+     
+    fr = open('basketball_wdl.txt', 'r', encoding='UTF8')
+
+    rdr1 = fr.readlines()
+    year = 0
+    count = 0
+    for line in rdr1:
+        for j in range(len(line)):
+            if line[j] == ";":
+                year = line[:j]  
+                count = line[j+1:]
+                break
+
+    # print("농구 승5패",year,count)
+
+    if pagebk == "1경기":
+        mt_bk_2all.Crawler(year,count,1) 
+    elif pagebk == "2경기":   
+        mt_bk_2all.Crawler(year,count,2)
+    elif pagebk == "3경기": 
+        mt_bk_2all.Crawler(year,count,3)
+    elif pagebk == "4경기": 
+        mt_bk_2all.Crawler(year,count,4)
+    elif pagebk == "5경기": 
+        mt_bk_2all.Crawler(year,count,5)
+    elif pagebk == "6경기": 
+        mt_bk_2all.Crawler(year,count,6)
+    elif pagebk == "7경기": 
+        mt_bk_2all.Crawler(year,count,7)
+    elif pagebk == "8경기": 
+        mt_bk_2all.Crawler(year,count,8)
+    elif pagebk == "9경기": 
+        mt_bk_2all.Crawler(year,count,9)
+    elif pagebk == "10경기": 
+        mt_bk_2all.Crawler(year,count,10)
+    elif pagebk == "11경기": 
+        mt_bk_2all.Crawler(year,count,11)
+    elif pagebk == "12경기": 
+        mt_bk_2all.Crawler(year,count,12)
+    elif pagebk == "13경기": 
+        mt_bk_2all.Crawler(year,count,13)
+    elif pagebk == "14경기": 
+        mt_bk_2all.Crawler(year,count,14)
+           
 def soccer_states():
  
     pagedt = st.sidebar.radio("경기 통계", ["승무패 경기통계", "승무패 배당통계"])    
@@ -502,6 +551,10 @@ elif selected_sport == "농구 승5패":
 
         basketball_states()
 
-    elif "회차 조회":
+    elif submenu == "회차 조회":
 
         basketball_allinq()
+
+    elif submenu == "순위추이 분석":
+
+        basketball_seqanalyst()
