@@ -1,5 +1,6 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
+import mt_pr_1all
 import mt_ma_1all
 import mt_so_1all
 import mt_so_2all
@@ -47,12 +48,12 @@ with st.sidebar:
                                  })
 
     submenu_options = {
-        "축구 승무패": ["조합기", "경기별 분석", "경기 통계", "회차 조회", "순위추이 분석"],
-        "야구 승1패": ["조합기", "경기별 분석", "경기 통계", "회차 조회", "순위추이 분석"],
-        "농구 승5패": ["조합기", "경기별 분석", "경기 통계", "회차 조회", "순위추이 분석"]
+        "축구 승무패": ["예측", "조합기", "경기별 분석", "경기 통계", "회차 조회", "순위추이 분석"],
+        "야구 승1패": ["예측", "조합기", "경기별 분석", "경기 통계", "회차 조회", "순위추이 분석"],
+        "농구 승5패": ["예측", "조합기", "경기별 분석", "경기 통계", "회차 조회", "순위추이 분석"]
     }
     
-    icons = ['fan', 'zoom-in', 'graph-up-arrow', 'tablet', 'tropical-storm']
+    icons = ['yelp', 'fan', 'zoom-in', 'graph-up-arrow', 'tablet', 'tropical-storm']
     
     current_submenu_index = st.session_state.submenu_indices[st.session_state.selected_sport]
     if current_submenu_index >= len(submenu_options[st.session_state.selected_sport]):
@@ -70,7 +71,55 @@ with st.sidebar:
                               "nav-link": {"font-size": "14px", "font-weight": "bold", "text-align": "left", "margin":"0px", "--hover-color": "#eee"},
                               "nav-link-selected": {"background-color": "#08c7b4", "font-weight": "bold"},
                           })
+       
+def soccer_predict():
+
+    fr = open('soccer_wdl.txt', 'r', encoding='UTF8')
+
+    rdr1 = fr.readlines()
+    year = 0
+    count = 0
+    for line in rdr1:
+        for j in range(len(line)):
+            if line[j] == ";":
+                year = line[:j]  
+                count = line[j+1:]
+                break
+
+    mt_pr_1all.Crawler(year,count,'s') 
+        
+def baseball_predict():
+
+    fr = open('baseball_wdl.txt', 'r', encoding='UTF8')
+
+    rdr1 = fr.readlines()
+    year = 0
+    count = 0
+    for line in rdr1:
+        for j in range(len(line)):
+            if line[j] == ";":
+                year = line[:j]  
+                count = line[j+1:]
+                break
     
+    mt_pr_1all.Crawler(year,count,'b')     
+   
+def basketball_predict():
+
+    fr = open('basketball_wdl.txt', 'r', encoding='UTF8')
+
+    rdr1 = fr.readlines()
+    year = 0
+    count = 0
+    for line in rdr1:
+        for j in range(len(line)):
+            if line[j] == ";":
+                year = line[:j]  
+                count = line[j+1:]
+                break
+
+    mt_pr_1all.Crawler(year,count,'k')
+            
 def soccer_johap():
 
     fr = open('soccer_wdl.txt', 'r', encoding='UTF8')
@@ -495,7 +544,11 @@ def basketball_allinq():
 # 메인 콘텐츠 영역
 if selected_sport == "축구 승무패": 
 
-    if submenu == "조합기":
+    if submenu == "예측":
+       
+        soccer_predict()
+
+    elif submenu == "조합기":
        
         soccer_johap()
 
@@ -517,7 +570,11 @@ if selected_sport == "축구 승무패":
 
 elif selected_sport == "야구 승1패":
 
-    if submenu == "조합기":
+    if submenu == "예측":
+       
+        baseball_predict()
+
+    elif submenu == "조합기":
 
         baseball_johap()
 
@@ -539,7 +596,11 @@ elif selected_sport == "야구 승1패":
 
 elif selected_sport == "농구 승5패":
 
-    if submenu == "조합기":
+    if submenu == "예측":
+       
+        basketball_predict()
+
+    elif submenu == "조합기":
 
         basketball_johap()
 
