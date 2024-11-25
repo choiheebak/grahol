@@ -484,40 +484,40 @@ def Crawler(yearc,countc,gyungi):
                         st.plotly_chart(figwa)
                     except:
                         st.plotly_chart(figwa, theme=None)
-    # elif l_hgubun == "X":
-    #     if wgaw == "1":
-    #         try:
-    #             df = pd.DataFrame(data=np.array([[home,whseq,whsjum,whwin,whdraw,whlose,whduk,whsil,whcha],
-    #                                             [away,waseq,wasjum,wawin,wadraw,walose,waduk,wasil,wacha]]), 
+    elif l_hgubun == "X":
+        if wgaw == "1":
+            try:
+                df = pd.DataFrame(data=np.array([[home,whseq,whsjum,whwin,whdraw,whlose,whduk,whsil,whcha],
+                                                [away,waseq,wasjum,wawin,wadraw,walose,waduk,wasil,wacha]]), 
 
-    #                     index= ["홈팀", "원정팀"], 
-    #                     columns=["팀명","순위","승점","승","무","패","득점","실점","득실차"]) 
+                        index= ["홈팀", "원정팀"], 
+                        columns=["팀명","순위","승점","승","무","패","득점","실점","득실차"]) 
 
-    #             st.dataframe(df, use_container_width=True)
+                st.dataframe(df, use_container_width=True)
 
-    #             values3 = [whwin, whdraw, whlose]
+                values3 = [whwin, whdraw, whlose]
 
-    #             figwh = go.Figure(data=[go.Pie(labels=labels, values=values3)])
-    #             figwh.update_traces(textfont_size=18,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
+                figwh = go.Figure(data=[go.Pie(labels=labels, values=values3)])
+                figwh.update_traces(textfont_size=18,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
 
-    #             values4 = [wawin, wadraw, walose]
+                values4 = [wawin, wadraw, walose]
 
-    #             figwa = go.Figure(data=[go.Pie(labels=labels, values=values4)])
-    #             figwa.update_traces(textfont_size=18,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
+                figwa = go.Figure(data=[go.Pie(labels=labels, values=values4)])
+                figwa.update_traces(textfont_size=18,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
 
-    #             if whwin == "" and whdraw == "" and whlose == "":
-    #                 pass
-    #             else:
-    #                 tab1, tab2 = st.tabs(["홈팀 전적", "원정팀 전적"])
-    #                 with tab1:
-    #                     st.plotly_chart(figwh)
-    #                 with tab2:
-    #                     try:
-    #                         st.plotly_chart(figwa)
-    #                     except:
-    #                         st.plotly_chart(figwa, theme=None)
-    #         except:
-    #             pass
+                if whwin == "" and whdraw == "" and whlose == "":
+                    pass
+                else:
+                    tab1, tab2 = st.tabs(["홈팀 전적", "원정팀 전적"])
+                    with tab1:
+                        st.plotly_chart(figwh)
+                    with tab2:
+                        try:
+                            st.plotly_chart(figwa)
+                        except:
+                            st.plotly_chart(figwa, theme=None)
+            except:
+                pass
 
     st.markdown(":soccer: :blue[**투표 현황**]")
     df = pd.DataFrame(data=np.array([[home,away,win,draw,lose,fwin,fdraw,flose,result]]), 
