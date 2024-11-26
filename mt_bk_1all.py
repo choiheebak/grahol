@@ -473,7 +473,7 @@ def Crawler(yearc,countc,gyungi):
     
         return dfh
 
-    st.markdown(":basketball: :blue[**투표 현황**]")
+    st.markdown(":basketball: :blue[**투표 현황**] (* 발매일 이전 승5패 배당은 데이터 기준 예측임)")
     dfh = baedang()
    
     st.dataframe(dfh, use_container_width=True) 

@@ -167,6 +167,8 @@ def Crawler(yearc,countc,gubun):
         styled_df = df.style.apply(highlight_cells, axis=1)
         st.table(styled_df)
 
+        st.text("* 발매일 이전 승무패 배당은 해외승무패 배당 기준 예측임")
+        
     elif gubun == 'b':
      
         st.subheader("야구 승1패 "+ str(year)+"년 "+str(count)+"회차")
@@ -472,6 +474,8 @@ def Crawler(yearc,countc,gubun):
         styled_df = df.style.apply(highlight_cells, axis=1)
         st.table(styled_df)
 
+        st.text("* 발매일 이전 승5패 배당은 데이터 기준 예측임")
+        
 def johap_def(gubun, option, biga, big):
    
     list_johap = []
