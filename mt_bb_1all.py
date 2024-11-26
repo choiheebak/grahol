@@ -515,14 +515,38 @@ def Crawler(yearc,countc,gyungi):
             st.plotly_chart(figa)
         except:
             st.plotly_chart(figa, theme=None)
-     
-    st.markdown(":baseball: :blue[**투표 현황**]")
-    df = pd.DataFrame(data=np.array([[home,away,win,draw,lose,fwin,fdraw,flose,result]]), 
+    
+    def baedang():
+  
+        index = [home]
+        원정팀 = [away]
+        승 = [win]
+        일 = [draw]
+        패 = [lose]
+        해외승 = [fwin]
+        해외패 = [flose]
+        결과 = [result]
 
-            index= ["현재"], 
-            columns=["홈팀","원정팀","승","①","패","해외승","해외무","해외패","결과"]) 
+        # 딕셔너리로 데이터 구성
+        data = {
+            "원정팀": 원정팀,
+            "승": 승,
+            "①": 일,
+            "패": 패,
+            "해외승": 해외승,
+            "해외패": 해외패,
+            "결과": 결과
+        }
 
-    st.dataframe(df, use_container_width=True)
+        # DataFrame 생성
+        dfh = pd.DataFrame(data, index=pd.Index(index, name="홈팀"))
+    
+        return dfh
+
+    st.markdown(":basketball: :blue[**투표 현황**]")
+    dfh = baedang()
+   
+    st.dataframe(dfh, use_container_width=True) 
 
     win = win.replace('%','')
     draw = draw.replace('%','')

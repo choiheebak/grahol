@@ -162,8 +162,7 @@ def Crawler(yearc,countc,gubun):
         # st.table(dfhs)
         st.dataframe(dfhs, use_container_width=True)   
 
-        st.markdown(":red[* 예측결과는 참조용입니다. 본인이 참조,선택하여 결과를 예측합니다. 모든 책임은 본인에게 있음을 공지합니다.]")
-        st.text("< 용어 설명 >")
+        st.text("< 용어 >")
         st.text("- 빅2 : 빅데이터 2픽 가중치 부여한 결과")
         st.text("- AI경기 : AI딥러닝 전체승무패를 학습시켜서 나온 결과")
         st.text("- AI배당 : AI딥러닝 전체고중저를 학습시켜서 나온 결과")
@@ -176,6 +175,8 @@ def Crawler(yearc,countc,gubun):
         st.text("- 평균득점 : 시즌 평균 득점 결과")
         st.text("- 경기확률 : 전체 대 최근30회차 승무패 확률")
         st.text("- 배당확률 : 전체 대 최근30회차 고중저(득표기준) 확률")
+
+        st.markdown(":red[* 예측결과는 참조용입니다. 본인이 참조,선택하여 결과를 예측합니다. 모든 책임은 본인에게 있음을 공지합니다.]")
 
     elif gubun == 'b':
      
@@ -330,8 +331,7 @@ def Crawler(yearc,countc,gubun):
         # st.table(dfhs)
         st.dataframe(dfhs, use_container_width=True)   
 
-        st.markdown(":red[* 예측결과는 참조용입니다. 본인이 참조,선택하여 결과를 예측합니다. 모든 책임은 본인에게 있음을 공지합니다.]")
-        st.text("< 용어 설명 >")
+        st.text("< 용어 >")
         st.text("- 빅2 : 빅데이터 2픽 가중치 부여한 결과")
         st.text("- AI경기 : AI딥러닝 전체승1패를 학습시켜서 나온 결과")
         st.text("- AI배당 : AI딥러닝 전체고중저를 학습시켜서 나온 결과")
@@ -344,6 +344,8 @@ def Crawler(yearc,countc,gubun):
         st.text("- 평균득점 : 시즌 평균 득점 결과")
         st.text("- 경기확률 : 전체 대 최근30회차 승무패 확률")
         st.text("- 배당확률 : 전체 대 최근30회차 고중저(득표기준) 확률")
+
+        st.markdown(":red[* 예측결과는 참조용입니다. 본인이 참조,선택하여 결과를 예측합니다. 모든 책임은 본인에게 있음을 공지합니다.]")
 
     elif gubun == 'k':     
         
@@ -498,8 +500,7 @@ def Crawler(yearc,countc,gubun):
         # st.table(dfhs)
         st.dataframe(dfhs, use_container_width=True)   
 
-        st.markdown(":red[* 예측결과는 참조용입니다. 본인이 참조,선택하여 결과를 예측합니다. 모든 책임은 본인에게 있음을 공지합니다.]")
-        st.text("< 용어 설명 >")
+        st.text("< 용어 >")
         st.text("- 빅2 : 빅데이터 2픽 가중치 부여한 결과")
         st.text("- AI경기 : AI딥러닝 전체승5패를 학습시켜서 나온 결과")
         st.text("- AI배당 : AI딥러닝 전체고중저를 학습시켜서 나온 결과")
@@ -512,3 +513,5 @@ def Crawler(yearc,countc,gubun):
         st.text("- 평균득점 : 시즌 평균 득점 결과")
         st.text("- 경기확률 : 전체 대 최근30회차 승무패 확률")
         st.text("- 배당확률 : 전체 대 최근30회차 고중저(득표기준) 확률")
+
+        st.markdown(":red[* 예측결과는 참조용입니다. 본인이 참조,선택하여 결과를 예측합니다. 모든 책임은 본인에게 있음을 공지합니다.]")

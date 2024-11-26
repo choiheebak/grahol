@@ -7,6 +7,26 @@ import plotly.graph_objects as go
 
 def Crawler(yearc,countc,gyungi):
     
+    year = int(yearc)
+    count = int(countc)
+    i = int(gyungi)
+
+    if i < 10:
+        k = '0' + str(gyungi)
+    else:
+        k = str(gyungi)
+ 
+    ssh = str(year) + "년 농구 승5패 " + str(count) + "회차"
+    st.subheader(ssh)
+
+    sh = str(i) + "경기"
+    st.subheader(sh)
+   
+    # st.markdown(":basketball: :red[**오디오 - 데이터 예측은 데이터에 따라 수시로 변경될 수 있고, 참고용입니다. 반드시 본인의 선택이 중요하고, 결과에 따른 책임은 본인의 몫입니다.**]")
+    # # 오디오 출력
+    # audio = 'kaudio_' + str(k) + '.mp3'
+    # st.audio(audio, format="audio/mpeg", loop=True)
+
     home = ''
     away = ''
     hseq = ''
@@ -108,15 +128,6 @@ def Crawler(yearc,countc,gyungi):
     seq1_ateam = ""
     inq_hteam = ""
     inq_ateam = ""
-
-    year = int(yearc)
-    count = int(countc)
-    i = int(gyungi)
-
-    if i < 10:
-        k = '0' + str(gyungi)
-    else:
-        k = str(gyungi)
 
     def read_txt(g,k):
         if g == '01':
@@ -400,13 +411,7 @@ def Crawler(yearc,countc,gyungi):
                 flose = team_read[s:r]
                 s = r+1
                 result = team_read[s:]   
-   
-    ssh = str(year) + "년 농구 승5패 " + str(count) + "회차"
-    st.subheader(ssh)
-
-    sh = str(i) + "경기"
-    st.subheader(sh)
-   
+  
     df = pd.DataFrame(data=np.array([[home,hseq,hsjum,htotal,hwin,hlose,hcha,hduk,has,hrebound,hsteal,
                                       hblock,htsteal,hfhrow,hfhrows,hhwin,hhlose,hawin,halose,hdwin,hdlose,hyeon,
                                       htgubun,hgigu],
@@ -440,14 +445,38 @@ def Crawler(yearc,countc,gyungi):
             st.plotly_chart(figa)
         except:
             st.plotly_chart(figa, theme=None)
-     
+      
+    def baedang():
+  
+        index = [home]
+        원정팀 = [away]
+        승 = [win]
+        오 = [draw]
+        패 = [lose]
+        해외승 = [fwin]
+        해외패 = [flose]
+        결과 = [result]
+
+        # 딕셔너리로 데이터 구성
+        data = {
+            "원정팀": 원정팀,
+            "승": 승,
+            "⑤": 오,
+            "패": 패,
+            "해외승": 해외승,
+            "해외패": 해외패,
+            "결과": 결과
+        }
+
+        # DataFrame 생성
+        dfh = pd.DataFrame(data, index=pd.Index(index, name="홈팀"))
+    
+        return dfh
+
     st.markdown(":basketball: :blue[**투표 현황**]")
-    df = pd.DataFrame(data=np.array([[home,away,win,draw,lose,fwin,fdraw,flose,result]]), 
-
-            index= ["현재"], 
-            columns=["홈팀","원정팀","승","⑤","패","해외승","해외무","해외패","결과"]) 
-
-    st.dataframe(df, use_container_width=True)
+    dfh = baedang()
+   
+    st.dataframe(dfh, use_container_width=True) 
 
     win = win.replace('%','')
     draw = draw.replace('%','')
