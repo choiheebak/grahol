@@ -185,7 +185,7 @@ def Crawler(yearc,countc,gubun):
 
         st.dataframe(dfhs, use_container_width=True)   
 
-        st.text("< 용어 >")
+        # st.text("< 용어 >")
         st.text("- 빅2 : 빅데이터 2픽 가중치 부여한 결과")
         st.text("- AI경기 : AI딥러닝 전체승무패를 학습시켜서 나온 결과")
         st.text("- AI배당 : AI딥러닝 전체고중저를 학습시켜서 나온 결과")
@@ -380,7 +380,7 @@ def Crawler(yearc,countc,gubun):
 
         st.dataframe(dfhs, use_container_width=True)   
 
-        st.text("< 용어 >")
+        # st.text("< 용어 >")
         st.text("- 빅2 : 빅데이터 2픽 가중치 부여한 결과")
         st.text("- AI경기 : AI딥러닝 전체승1패를 학습시켜서 나온 결과")
         st.text("- AI배당 : AI딥러닝 전체고중저를 학습시켜서 나온 결과")
@@ -574,7 +574,7 @@ def Crawler(yearc,countc,gubun):
 
         st.dataframe(dfhs, use_container_width=True)   
 
-        st.text("< 용어 >")
+        # st.text("< 용어 >")
         st.text("- 빅2 : 빅데이터 2픽 가중치 부여한 결과")
         st.text("- AI경기 : AI딥러닝 전체승5패를 학습시켜서 나온 결과")
         st.text("- AI배당 : AI딥러닝 전체고중저를 학습시켜서 나온 결과")
