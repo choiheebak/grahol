@@ -6,22 +6,47 @@ from PIL import Image
 
 def Crawler(yearc,countc,gubun):
    
-    year = int(yearc)
-    count = int(countc)
-
-    if gubun == 's':
-      
-        st.subheader("축구 승무패 "+ str(year)+"년 "+str(count)+"회차") 
+    if gubun == 's':        
+       
+        st.subheader("축구 승무패 ") 
   
+        ycount = []
+        for i in range(len(yearc)):
+            if int(yearc[i]) == 2023: 
+                if int(countc[i]) > 60:
+                    ycount.append(str(yearc[i])+"년 "+str(countc[i])+"회차")
+            elif int(yearc[i]) > 2023:
+                ycount.append(str(yearc[i])+"년 "+str(countc[i])+"회차")
+
+        option = st.selectbox(
+        "",
+        (ycount 
+        )
+        )
+
+        sbox = option.replace("년 ","")
+        sbox = sbox.replace("회차","")
+
+        year = int(sbox[:4])
+        count = int(sbox[4:])
+
+        i = int(count)
+
+        if i < 10:
+            k = '0' + str(count)
+        else:
+            k = str(count)
+
         f = open('soccer_so7_predict.txt', 'r', encoding='UTF8')
        
         rdr1 = f.readlines()    
 
-        team_read = []
+        team_read = [] 
         for line in rdr1:
-            l = line
-            l = l.replace("\n","")
-            team_read.append(l)
+            if int(line[:4]) == int(year) and int(line[5:7]) == int(k):
+                l = line[8:]
+                l = l.replace("\n","")
+                team_read.append(l)
 
         f.close
 
@@ -111,11 +136,10 @@ def Crawler(yearc,countc,gubun):
 
         def iljaseq_home(num_rows):
     
-            # index = [f"{i}" for i in range(1, (num_rows+1))] 
-
             index = [f"{i}경기" for i in range(1, 15)]
             홈팀 = [home[i] for i in range(num_rows)]
             원정팀 = [away[i] for i in range(num_rows)]
+            결과 = [result[i] for i in range(num_rows)]
             빅2 = [big2[i] for i in range(num_rows)]
             AI경기 = [ai[i] for i in range(num_rows)]
             AI배당 = [aihml[i] for i in range(num_rows)]
@@ -133,9 +157,9 @@ def Crawler(yearc,countc,gubun):
 
             # 딕셔너리로 데이터 구성
             data = {
-                # "선수": 선수,
                 "홈팀": 홈팀,
                 "원정팀": 원정팀,
+                "결과": 결과,
                 "빅2": 빅2,
                 "AI경기": AI경기,
                 "AI배당": AI배당,
@@ -159,7 +183,6 @@ def Crawler(yearc,countc,gubun):
    
         dfhs = iljaseq_home(len(home))
 
-        # st.table(dfhs)
         st.dataframe(dfhs, use_container_width=True)   
 
         st.text("< 용어 >")
@@ -180,17 +203,45 @@ def Crawler(yearc,countc,gubun):
 
     elif gubun == 'b':
      
-        st.subheader("야구 승1패 "+ str(year)+"년 "+str(count)+"회차") 
+        st.subheader("야구 승1패 ") 
   
+        ycount = []
+        for i in range(len(yearc)):
+            if int(yearc[i]) == 2023: 
+                if int(countc[i]) > 60:
+                    ycount.append(str(yearc[i])+"년 "+str(countc[i])+"회차")
+            elif int(yearc[i]) > 2023:
+                ycount.append(str(yearc[i])+"년 "+str(countc[i])+"회차")
+
+        option = st.selectbox(
+        "",
+        (ycount 
+        )
+        )
+
+        sbox = option.replace("년 ","")
+        sbox = sbox.replace("회차","")
+
+        year = int(sbox[:4])
+        count = int(sbox[4:])
+
+        i = int(count)
+
+        if i < 10:
+            k = '0' + str(count)
+        else:
+            k = str(count)
+
         f = open('baseball_bb7_predict.txt', 'r', encoding='UTF8')
        
         rdr1 = f.readlines()    
 
-        team_read = []
+        team_read = [] 
         for line in rdr1:
-            l = line
-            l = l.replace("\n","")
-            team_read.append(l)
+            if int(line[:4]) == int(year) and int(line[5:7]) == int(k):
+                l = line[8:]
+                l = l.replace("\n","")
+                team_read.append(l)
 
         f.close
 
@@ -280,11 +331,10 @@ def Crawler(yearc,countc,gubun):
 
         def iljaseq_home(num_rows):
     
-            # index = [f"{i}" for i in range(1, (num_rows+1))] 
-
             index = [f"{i}경기" for i in range(1, 15)]
             홈팀 = [home[i] for i in range(num_rows)]
             원정팀 = [away[i] for i in range(num_rows)]
+            결과 = [result[i] for i in range(num_rows)]
             빅2 = [big2[i] for i in range(num_rows)]
             AI경기 = [ai[i] for i in range(num_rows)]
             AI배당 = [aihml[i] for i in range(num_rows)]
@@ -302,9 +352,9 @@ def Crawler(yearc,countc,gubun):
 
             # 딕셔너리로 데이터 구성
             data = {
-                # "선수": 선수,
                 "홈팀": 홈팀,
                 "원정팀": 원정팀,
+                "결과": 결과,
                 "빅2": 빅2,
                 "AI경기": AI경기,
                 "AI배당": AI배당,
@@ -328,7 +378,6 @@ def Crawler(yearc,countc,gubun):
    
         dfhs = iljaseq_home(len(home))
 
-        # st.table(dfhs)
         st.dataframe(dfhs, use_container_width=True)   
 
         st.text("< 용어 >")
@@ -346,20 +395,47 @@ def Crawler(yearc,countc,gubun):
         st.text("- 배당확률 : 전체 대 최근30회차 고중저(득표기준) 확률")
 
         st.markdown(":red[* 예측결과는 참조용입니다. 본인이 참조,선택하여 결과를 예측합니다. 모든 책임은 본인에게 있음을 공지합니다.]")
-
     elif gubun == 'k':     
         
-        st.subheader("농구 승5패 "+ str(year)+"년 "+str(count)+"회차") 
+        st.subheader("농구 승5패 ") 
   
+        ycount = []
+        for i in range(len(yearc)):
+            if int(yearc[i]) == 2023: 
+                if int(countc[i]) > 28:
+                    ycount.append(str(yearc[i])+"년 "+str(countc[i])+"회차")
+            elif int(yearc[i]) > 2023:
+                ycount.append(str(yearc[i])+"년 "+str(countc[i])+"회차")
+
+        option = st.selectbox(
+        "",
+        (ycount 
+        )
+        )
+
+        sbox = option.replace("년 ","")
+        sbox = sbox.replace("회차","")
+
+        year = int(sbox[:4])
+        count = int(sbox[4:])
+
+        i = int(count)
+
+        if i < 10:
+            k = '0' + str(count)
+        else:
+            k = str(count)
+
         f = open('basketball_bk7_predict.txt', 'r', encoding='UTF8')
        
         rdr1 = f.readlines()    
 
-        team_read = []
+        team_read = [] 
         for line in rdr1:
-            l = line
-            l = l.replace("\n","")
-            team_read.append(l)
+            if int(line[:4]) == int(year) and int(line[5:7]) == int(k):
+                l = line[8:]
+                l = l.replace("\n","")
+                team_read.append(l)
 
         f.close
 
@@ -449,11 +525,10 @@ def Crawler(yearc,countc,gubun):
 
         def iljaseq_home(num_rows):
     
-            # index = [f"{i}" for i in range(1, (num_rows+1))] 
-
             index = [f"{i}경기" for i in range(1, 15)]
             홈팀 = [home[i] for i in range(num_rows)]
             원정팀 = [away[i] for i in range(num_rows)]
+            결과 = [result[i] for i in range(num_rows)]
             빅2 = [big2[i] for i in range(num_rows)]
             AI경기 = [ai[i] for i in range(num_rows)]
             AI배당 = [aihml[i] for i in range(num_rows)]
@@ -471,9 +546,9 @@ def Crawler(yearc,countc,gubun):
 
             # 딕셔너리로 데이터 구성
             data = {
-                # "선수": 선수,
                 "홈팀": 홈팀,
                 "원정팀": 원정팀,
+                "결과": 결과,
                 "빅2": 빅2,
                 "AI경기": AI경기,
                 "AI배당": AI배당,
@@ -497,7 +572,6 @@ def Crawler(yearc,countc,gubun):
    
         dfhs = iljaseq_home(len(home))
 
-        # st.table(dfhs)
         st.dataframe(dfhs, use_container_width=True)   
 
         st.text("< 용어 >")

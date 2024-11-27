@@ -74,49 +74,46 @@ with st.sidebar:
        
 def soccer_predict():
 
-    fr = open('soccer_wdl.txt', 'r', encoding='UTF8')
+    fr = open('soccer_wdl_all.txt', 'r', encoding='UTF8')
 
     rdr1 = fr.readlines()
-    year = 0
-    count = 0
+    year = []
+    count = []
     for line in rdr1:
         for j in range(len(line)):
             if line[j] == ";":
-                year = line[:j]  
-                count = line[j+1:]
-                break
+                year.append(line[:j])  
+                count.append(line[j+1:])
 
     mt_pr_1all.Crawler(year,count,'s') 
         
 def baseball_predict():
 
-    fr = open('baseball_wdl.txt', 'r', encoding='UTF8')
+    fr = open('baseball_wdl_all.txt', 'r', encoding='UTF8')
 
     rdr1 = fr.readlines()
-    year = 0
-    count = 0
+    year = []
+    count = []
     for line in rdr1:
         for j in range(len(line)):
             if line[j] == ";":
-                year = line[:j]  
-                count = line[j+1:]
-                break
-    
+                year.append(line[:j])  
+                count.append(line[j+1:])
+
     mt_pr_1all.Crawler(year,count,'b')     
    
 def basketball_predict():
 
-    fr = open('basketball_wdl.txt', 'r', encoding='UTF8')
+    fr = open('basketball_wdl_all.txt', 'r', encoding='UTF8')
 
     rdr1 = fr.readlines()
-    year = 0
-    count = 0
+    year = []
+    count = []
     for line in rdr1:
         for j in range(len(line)):
             if line[j] == ";":
-                year = line[:j]  
-                count = line[j+1:]
-                break
+                year.append(line[:j])  
+                count.append(line[j+1:])
 
     mt_pr_1all.Crawler(year,count,'k')
             
