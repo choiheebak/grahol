@@ -232,7 +232,7 @@ def Crawler(yearc,countc,gubun):
         # DataFrame 표시
         styled_df = df.style.apply(highlight_cells, axis=1)
 
-        st.dataframe(styled_df, use_container_width=True, height=550)   
+        st.dataframe(styled_df, use_container_width=True, height=530)   
 
         # st.text("< 용어 >")
         st.text("- 빅2 : 빅데이터 2픽 가중치 부여한 결과")
@@ -476,7 +476,7 @@ def Crawler(yearc,countc,gubun):
         # DataFrame 표시
         styled_df = df.style.apply(highlight_cells, axis=1)
 
-        st.dataframe(styled_df, use_container_width=True, height=550)  
+        st.dataframe(styled_df, use_container_width=True, height=530)  
 
         # st.text("< 용어 >")
         st.text("- 빅2 : 빅데이터 2픽 가중치 부여한 결과")
@@ -719,7 +719,7 @@ def Crawler(yearc,countc,gubun):
         # DataFrame 표시
         styled_df = df.style.apply(highlight_cells, axis=1)
 
-        st.dataframe(styled_df, use_container_width=True, height=550)  
+        st.dataframe(styled_df, use_container_width=True, height=530)  
 
         # st.text("< 용어 >")
         st.text("- 빅2 : 빅데이터 2픽 가중치 부여한 결과")
