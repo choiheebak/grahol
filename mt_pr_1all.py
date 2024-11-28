@@ -134,56 +134,105 @@ def Crawler(yearc,countc,gubun):
         st.markdown(":soccer: :blue[**AI 빅데이터 예측 결과**]")
         st.markdown("")
 
-        def iljaseq_home(num_rows):
-    
-            index = [f"{i}경기" for i in range(1, 15)]
-            홈팀 = [home[i] for i in range(num_rows)]
-            원정팀 = [away[i] for i in range(num_rows)]
-            결과 = [result[i] for i in range(num_rows)]
-            빅2 = [big2[i] for i in range(num_rows)]
-            AI경기 = [ai[i] for i in range(num_rows)]
-            AI배당 = [aihml[i] for i in range(num_rows)]
-            예측 = [tonghap[i] for i in range(num_rows)]
-            우세 = [predict[i] for i in range(num_rows)]
-            해외확률 = [hwakryul[i] for i in range(num_rows)]
-            해외배당 = [bae[i] for i in range(num_rows)]
-            순위 = [seqtg[i] for i in range(num_rows)]
-            최근 = [last[i] for i in range(num_rows)]
-            홈맞대결 = [hvsa[i] for i in range(num_rows)]
-            총전적 = [junjeok[i] for i in range(num_rows)]
-            평균득점 = [sun[i] for i in range(num_rows)]
-            경기확률 = [gyung[i] for i in range(num_rows)]
-            배당확률 = [baeh[i] for i in range(num_rows)]
+        index = [f"{i}경기" for i in range(1, 15)]
+        홈팀 = [home[i] for i in range(len(home))]
+        원정팀 = [away[i] for i in range(len(home))]
+        결과 = [result[i] for i in range(len(home))]
+        빅2 = [big2[i] for i in range(len(home))]
+        AI경기 = [ai[i] for i in range(len(home))]
+        AI배당 = [aihml[i] for i in range(len(home))]
+        예측 = [tonghap[i] for i in range(len(home))]
+        우세 = [predict[i] for i in range(len(home))]
+        해외확률 = [hwakryul[i] for i in range(len(home))]
+        해외배당 = [bae[i] for i in range(len(home))]
+        순위 = [seqtg[i] for i in range(len(home))]
+        최근 = [last[i] for i in range(len(home))]
+        홈맞대결 = [hvsa[i] for i in range(len(home))]
+        총전적 = [junjeok[i] for i in range(len(home))]
+        평균득점 = [sun[i] for i in range(len(home))]
+        경기확률 = [gyung[i] for i in range(len(home))]
+        배당확률 = [baeh[i] for i in range(len(home))]
 
-            # 딕셔너리로 데이터 구성
-            data = {
-                "홈팀": 홈팀,
-                "원정팀": 원정팀,
-                "결과": 결과,
-                "빅2": 빅2,
-                "AI경기": AI경기,
-                "AI배당": AI배당,
-                "예측": 예측,
-                "우세": 우세,
-                "해외확률": 해외확률,
-                "해외배당": 해외배당,
-                "순위": 순위,
-                "최근": 최근,
-                "홈맞대결": 홈맞대결,
-                "총전적": 총전적,
-                "평균득점": 평균득점,
-                "경기확률": 경기확률,
-                "배당확률": 배당확률
-            }
+        # 딕셔너리로 데이터 구성
+        data = {
+            "홈팀": 홈팀,
+            "원정팀": 원정팀,
+            "결과": 결과,
+            "빅2": 빅2,
+            "AI경기": AI경기,
+            "AI배당": AI배당,
+            "예측": 예측,
+            "우세": 우세,
+            "해외확률": 해외확률,
+            "해외배당": 해외배당,
+            "순위": 순위,
+            "최근": 최근,
+            "홈맞대결": 홈맞대결,
+            "총전적": 총전적,
+            "평균득점": 평균득점,
+            "경기확률": 경기확률,
+            "배당확률": 배당확률
+        }
 
-            # DataFrame 생성
-            dfhs = pd.DataFrame(data, index=pd.Index(index, name="일자"))
+        # DataFrame 생성
+        df = pd.DataFrame(data, index=index)
 
-            return dfhs
-   
-        dfhs = iljaseq_home(len(home))
+        # 스타일 적용 함수
+        def highlight_cells(row):
+            results = [''] * len(row)
+            johap_item = result[index.index(row.name)]
+            big2_item = big2[index.index(row.name)]
+            ai_item = ai[index.index(row.name)]
+            aihml_item = aihml[index.index(row.name)]
+            tonghap_item = tonghap[index.index(row.name)]
+            predict_item = predict[index.index(row.name)]
+            hwakryul_item = hwakryul[index.index(row.name)]
+            bae_item = bae[index.index(row.name)]
+            seqtg_item = seqtg[index.index(row.name)]
+            last_item = last[index.index(row.name)]
+            hvsa_item = hvsa[index.index(row.name)]
+            junjeok_item = junjeok[index.index(row.name)]
+            sun_item = sun[index.index(row.name)]
+            gyung_item = gyung[index.index(row.name)]
+            baeh_item = baeh[index.index(row.name)]
 
-        st.dataframe(dfhs, use_container_width=True)   
+            highlight_style = 'background-color: #43A047; color: white;'
+           
+            if johap_item and not johap_item.isspace():  # johap_item이 비어있지 않고 공백만으로 이루어져 있지 않은 경우에만 검사
+                if johap_item in big2_item:
+                    results[3] = highlight_style
+                if johap_item in ai_item:
+                    results[4] = highlight_style
+                if johap_item in aihml_item:
+                    results[5] = highlight_style
+                if johap_item in tonghap_item:
+                    results[6] = highlight_style
+                if johap_item in predict_item:
+                    results[7] = highlight_style
+                if johap_item in hwakryul_item:
+                    results[8] = highlight_style
+                if johap_item in bae_item:
+                    results[9] = highlight_style
+                if johap_item in seqtg_item:
+                    results[10] = highlight_style
+                if johap_item in last_item:
+                    results[11] = highlight_style
+                if johap_item in hvsa_item:
+                    results[12] = highlight_style
+                if johap_item in junjeok_item:
+                    results[13] = highlight_style
+                if johap_item in sun_item:
+                    results[14] = highlight_style
+                if johap_item in gyung_item:
+                    results[15] = highlight_style
+                if johap_item in baeh_item:
+                    results[16] = highlight_style
+            return results
+        
+        # DataFrame 표시
+        styled_df = df.style.apply(highlight_cells, axis=1)
+
+        st.dataframe(styled_df, use_container_width=True, height=550)   
 
         # st.text("< 용어 >")
         st.text("- 빅2 : 빅데이터 2픽 가중치 부여한 결과")
@@ -329,56 +378,105 @@ def Crawler(yearc,countc,gubun):
         st.markdown(":baseball: :blue[**AI 빅데이터 예측 결과**]")
         st.markdown("")
 
-        def iljaseq_home(num_rows):
-    
-            index = [f"{i}경기" for i in range(1, 15)]
-            홈팀 = [home[i] for i in range(num_rows)]
-            원정팀 = [away[i] for i in range(num_rows)]
-            결과 = [result[i] for i in range(num_rows)]
-            빅2 = [big2[i] for i in range(num_rows)]
-            AI경기 = [ai[i] for i in range(num_rows)]
-            AI배당 = [aihml[i] for i in range(num_rows)]
-            예측 = [tonghap[i] for i in range(num_rows)]
-            우세 = [predict[i] for i in range(num_rows)]
-            확률 = [hwakryul[i] for i in range(num_rows)]
-            배당 = [bae[i] for i in range(num_rows)]
-            순위 = [seqtg[i] for i in range(num_rows)]
-            최근 = [last[i] for i in range(num_rows)]
-            홈맞대결 = [hvsa[i] for i in range(num_rows)]
-            총전적 = [junjeok[i] for i in range(num_rows)]
-            평균득점 = [sun[i] for i in range(num_rows)]
-            경기확률 = [gyung[i] for i in range(num_rows)]
-            배당확률 = [baeh[i] for i in range(num_rows)]
+        index = [f"{i}경기" for i in range(1, 15)]
+        홈팀 = [home[i] for i in range(len(home))]
+        원정팀 = [away[i] for i in range(len(home))]
+        결과 = [result[i] for i in range(len(home))]
+        빅2 = [big2[i] for i in range(len(home))]
+        AI경기 = [ai[i] for i in range(len(home))]
+        AI배당 = [aihml[i] for i in range(len(home))]
+        예측 = [tonghap[i] for i in range(len(home))]
+        우세 = [predict[i] for i in range(len(home))]
+        확률 = [hwakryul[i] for i in range(len(home))]
+        배당 = [bae[i] for i in range(len(home))]
+        순위 = [seqtg[i] for i in range(len(home))]
+        최근 = [last[i] for i in range(len(home))]
+        홈맞대결 = [hvsa[i] for i in range(len(home))]
+        총전적 = [junjeok[i] for i in range(len(home))]
+        평균득점 = [sun[i] for i in range(len(home))]
+        경기확률 = [gyung[i] for i in range(len(home))]
+        배당확률 = [baeh[i] for i in range(len(home))]
 
-            # 딕셔너리로 데이터 구성
-            data = {
-                "홈팀": 홈팀,
-                "원정팀": 원정팀,
-                "결과": 결과,
-                "빅2": 빅2,
-                "AI경기": AI경기,
-                "AI배당": AI배당,
-                "예측": 예측,
-                "우세": 우세,
-                "확률": 확률,
-                "배당": 배당,
-                "순위": 순위,
-                "최근": 최근,
-                "홈맞대결": 홈맞대결,
-                "총전적": 총전적,
-                "평균득점": 평균득점,
-                "경기확률": 경기확률,
-                "배당확률": 배당확률
-            }
+        # 딕셔너리로 데이터 구성
+        data = {
+            "홈팀": 홈팀,
+            "원정팀": 원정팀,
+            "결과": 결과,
+            "빅2": 빅2,
+            "AI경기": AI경기,
+            "AI배당": AI배당,
+            "예측": 예측,
+            "우세": 우세,
+            "확률": 확률,
+            "배당": 배당,
+            "순위": 순위,
+            "최근": 최근,
+            "홈맞대결": 홈맞대결,
+            "총전적": 총전적,
+            "평균득점": 평균득점,
+            "경기확률": 경기확률,
+            "배당확률": 배당확률
+        }
 
-            # DataFrame 생성
-            dfhs = pd.DataFrame(data, index=pd.Index(index, name="일자"))
+        # DataFrame 생성
+        df = pd.DataFrame(data, index=index)
 
-            return dfhs
-   
-        dfhs = iljaseq_home(len(home))
+        # 스타일 적용 함수
+        def highlight_cells(row):
+            results = [''] * len(row)
+            johap_item = result[index.index(row.name)]
+            big2_item = big2[index.index(row.name)]
+            ai_item = ai[index.index(row.name)]
+            aihml_item = aihml[index.index(row.name)]
+            tonghap_item = tonghap[index.index(row.name)]
+            predict_item = predict[index.index(row.name)]
+            hwakryul_item = hwakryul[index.index(row.name)]
+            bae_item = bae[index.index(row.name)]
+            seqtg_item = seqtg[index.index(row.name)]
+            last_item = last[index.index(row.name)]
+            hvsa_item = hvsa[index.index(row.name)]
+            junjeok_item = junjeok[index.index(row.name)]
+            sun_item = sun[index.index(row.name)]
+            gyung_item = gyung[index.index(row.name)]
+            baeh_item = baeh[index.index(row.name)]
 
-        st.dataframe(dfhs, use_container_width=True)   
+            highlight_style = 'background-color: #43A047; color: white;'
+             
+            if johap_item and not johap_item.isspace():  # johap_item이 비어있지 않고 공백만으로 이루어져 있지 않은 경우에만 검사
+                if johap_item in big2_item:
+                    results[3] = highlight_style
+                if johap_item in ai_item:
+                    results[4] = highlight_style
+                if johap_item in aihml_item:
+                    results[5] = highlight_style
+                if johap_item in tonghap_item:
+                    results[6] = highlight_style
+                if johap_item in predict_item:
+                    results[7] = highlight_style
+                if johap_item in hwakryul_item:
+                    results[8] = highlight_style
+                if johap_item in bae_item:
+                    results[9] = highlight_style
+                if johap_item in seqtg_item:
+                    results[10] = highlight_style
+                if johap_item in last_item:
+                    results[11] = highlight_style
+                if johap_item in hvsa_item:
+                    results[12] = highlight_style
+                if johap_item in junjeok_item:
+                    results[13] = highlight_style
+                if johap_item in sun_item:
+                    results[14] = highlight_style
+                if johap_item in gyung_item:
+                    results[15] = highlight_style
+                if johap_item in baeh_item:
+                    results[16] = highlight_style
+            return results
+        
+        # DataFrame 표시
+        styled_df = df.style.apply(highlight_cells, axis=1)
+
+        st.dataframe(styled_df, use_container_width=True, height=550)  
 
         # st.text("< 용어 >")
         st.text("- 빅2 : 빅데이터 2픽 가중치 부여한 결과")
@@ -523,56 +621,105 @@ def Crawler(yearc,countc,gubun):
         st.markdown(":basketball: :blue[**AI 빅데이터 예측 결과**]")
         st.markdown("")
 
-        def iljaseq_home(num_rows):
-    
-            index = [f"{i}경기" for i in range(1, 15)]
-            홈팀 = [home[i] for i in range(num_rows)]
-            원정팀 = [away[i] for i in range(num_rows)]
-            결과 = [result[i] for i in range(num_rows)]
-            빅2 = [big2[i] for i in range(num_rows)]
-            AI경기 = [ai[i] for i in range(num_rows)]
-            AI배당 = [aihml[i] for i in range(num_rows)]
-            예측 = [tonghap[i] for i in range(num_rows)]
-            우세 = [predict[i] for i in range(num_rows)]
-            확률 = [hwakryul[i] for i in range(num_rows)]
-            배당 = [bae[i] for i in range(num_rows)]
-            순위 = [seqtg[i] for i in range(num_rows)]
-            최근 = [last[i] for i in range(num_rows)]
-            홈맞대결 = [hvsa[i] for i in range(num_rows)]
-            총전적 = [junjeok[i] for i in range(num_rows)]
-            평균득점 = [sun[i] for i in range(num_rows)]
-            경기확률 = [gyung[i] for i in range(num_rows)]
-            배당확률 = [baeh[i] for i in range(num_rows)]
+        index = [f"{i}경기" for i in range(1, 15)]
+        홈팀 = [home[i] for i in range(len(home))]
+        원정팀 = [away[i] for i in range(len(home))]
+        결과 = [result[i] for i in range(len(home))]
+        빅2 = [big2[i] for i in range(len(home))]
+        AI경기 = [ai[i] for i in range(len(home))]
+        AI배당 = [aihml[i] for i in range(len(home))]
+        예측 = [tonghap[i] for i in range(len(home))]
+        우세 = [predict[i] for i in range(len(home))]
+        확률 = [hwakryul[i] for i in range(len(home))]
+        배당 = [bae[i] for i in range(len(home))]
+        순위 = [seqtg[i] for i in range(len(home))]
+        최근 = [last[i] for i in range(len(home))]
+        홈맞대결 = [hvsa[i] for i in range(len(home))]
+        총전적 = [junjeok[i] for i in range(len(home))]
+        평균득점 = [sun[i] for i in range(len(home))]
+        경기확률 = [gyung[i] for i in range(len(home))]
+        배당확률 = [baeh[i] for i in range(len(home))]
 
-            # 딕셔너리로 데이터 구성
-            data = {
-                "홈팀": 홈팀,
-                "원정팀": 원정팀,
-                "결과": 결과,
-                "빅2": 빅2,
-                "AI경기": AI경기,
-                "AI배당": AI배당,
-                "예측": 예측,
-                "우세": 우세,
-                "확률": 확률,
-                "배당": 배당,
-                "순위": 순위,
-                "최근": 최근,
-                "홈맞대결": 홈맞대결,
-                "총전적": 총전적,
-                "평균득점": 평균득점,
-                "경기확률": 경기확률,
-                "배당확률": 배당확률
-            }
+        # 딕셔너리로 데이터 구성
+        data = {
+            "홈팀": 홈팀,
+            "원정팀": 원정팀,
+            "결과": 결과,
+            "빅2": 빅2,
+            "AI경기": AI경기,
+            "AI배당": AI배당,
+            "예측": 예측,
+            "우세": 우세,
+            "확률": 확률,
+            "배당": 배당,
+            "순위": 순위,
+            "최근": 최근,
+            "홈맞대결": 홈맞대결,
+            "총전적": 총전적,
+            "평균득점": 평균득점,
+            "경기확률": 경기확률,
+            "배당확률": 배당확률
+        }
 
-            # DataFrame 생성
-            dfhs = pd.DataFrame(data, index=pd.Index(index, name="일자"))
+        # DataFrame 생성
+        df = pd.DataFrame(data, index=index)
 
-            return dfhs
-   
-        dfhs = iljaseq_home(len(home))
+        # 스타일 적용 함수
+        def highlight_cells(row):
+            results = [''] * len(row)
+            johap_item = result[index.index(row.name)]
+            big2_item = big2[index.index(row.name)]
+            ai_item = ai[index.index(row.name)]
+            aihml_item = aihml[index.index(row.name)]
+            tonghap_item = tonghap[index.index(row.name)]
+            predict_item = predict[index.index(row.name)]
+            hwakryul_item = hwakryul[index.index(row.name)]
+            bae_item = bae[index.index(row.name)]
+            seqtg_item = seqtg[index.index(row.name)]
+            last_item = last[index.index(row.name)]
+            hvsa_item = hvsa[index.index(row.name)]
+            junjeok_item = junjeok[index.index(row.name)]
+            sun_item = sun[index.index(row.name)]
+            gyung_item = gyung[index.index(row.name)]
+            baeh_item = baeh[index.index(row.name)]
 
-        st.dataframe(dfhs, use_container_width=True)   
+            highlight_style = 'background-color: #43A047; color: white;' 
+
+            if johap_item and not johap_item.isspace():  # johap_item이 비어있지 않고 공백만으로 이루어져 있지 않은 경우에만 검사
+                if johap_item in big2_item:
+                    results[3] = highlight_style
+                if johap_item in ai_item:
+                    results[4] = highlight_style
+                if johap_item in aihml_item:
+                    results[5] = highlight_style
+                if johap_item in tonghap_item:
+                    results[6] = highlight_style
+                if johap_item in predict_item:
+                    results[7] = highlight_style
+                if johap_item in hwakryul_item:
+                    results[8] = highlight_style
+                if johap_item in bae_item:
+                    results[9] = highlight_style
+                if johap_item in seqtg_item:
+                    results[10] = highlight_style
+                if johap_item in last_item:
+                    results[11] = highlight_style
+                if johap_item in hvsa_item:
+                    results[12] = highlight_style
+                if johap_item in junjeok_item:
+                    results[13] = highlight_style
+                if johap_item in sun_item:
+                    results[14] = highlight_style
+                if johap_item in gyung_item:
+                    results[15] = highlight_style
+                if johap_item in baeh_item:
+                    results[16] = highlight_style
+            return results
+        
+        # DataFrame 표시
+        styled_df = df.style.apply(highlight_cells, axis=1)
+
+        st.dataframe(styled_df, use_container_width=True, height=550)  
 
         # st.text("< 용어 >")
         st.text("- 빅2 : 빅데이터 2픽 가중치 부여한 결과")
