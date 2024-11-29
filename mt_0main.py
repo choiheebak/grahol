@@ -10,7 +10,6 @@ import mt_bk_1all
 import mt_bk_2all
 import mt_dt_1all
 import mt_jo_1all
-import mt_zp_1all
 from datetime import datetime
 
 now = datetime.now()
@@ -49,12 +48,12 @@ with st.sidebar:
                                  })
 
     submenu_options = {
-        "축구 승무패": ["예측", "조합기", "경기별 분석", "경기 통계", "회차 조회", "순위추이 분석","게시판"],
-        "야구 승1패": ["예측", "조합기", "경기별 분석", "경기 통계", "회차 조회", "순위추이 분석","게시판"],
-        "농구 승5패": ["예측", "조합기", "경기별 분석", "경기 통계", "회차 조회", "순위추이 분석","게시판"]
+        "축구 승무패": ["예측", "조합기", "경기별 분석", "경기 통계", "회차 조회", "순위추이 분석"],
+        "야구 승1패": ["예측", "조합기", "경기별 분석", "경기 통계", "회차 조회", "순위추이 분석"],
+        "농구 승5패": ["예측", "조합기", "경기별 분석", "경기 통계", "회차 조회", "순위추이 분석"]
     }
     
-    icons = ['yelp', 'fan', 'zoom-in', 'graph-up-arrow', 'tablet', 'tropical-storm','table']
+    icons = ['yelp', 'fan', 'zoom-in', 'graph-up-arrow', 'tablet', 'tropical-storm']
     
     current_submenu_index = st.session_state.submenu_indices[st.session_state.selected_sport]
     if current_submenu_index >= len(submenu_options[st.session_state.selected_sport]):
@@ -538,19 +537,7 @@ def basketball_allinq():
                 break
 
     mt_ma_1all.Crawler(year,count,'k')
-  
-def soccer_posts():
- 
-    mt_zp_1all.Crawler('s')
-
-def baseball_posts():
- 
-    mt_zp_1all.Crawler('b')
-
-def basketball_posts():
- 
-    mt_zp_1all.Crawler('k')
-        
+         
 # 메인 콘텐츠 영역
 if selected_sport == "축구 승무패": 
 
@@ -578,10 +565,6 @@ if selected_sport == "축구 승무패":
 
         soccer_seqanalyst()
 
-    elif submenu == "게시판": 
-
-        soccer_posts()
-
 elif selected_sport == "야구 승1패":
 
     if submenu == "예측":
@@ -608,10 +591,6 @@ elif selected_sport == "야구 승1패":
 
         baseball_seqanalyst()
 
-    elif submenu == "게시판": 
-
-        baseball_posts()
-
 elif selected_sport == "농구 승5패":
 
     if submenu == "예측":
@@ -637,7 +616,3 @@ elif selected_sport == "농구 승5패":
     elif submenu == "순위추이 분석":
 
         basketball_seqanalyst()
-
-    elif submenu == "게시판": 
-
-        basketball_posts()
