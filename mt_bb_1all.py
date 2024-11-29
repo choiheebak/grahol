@@ -1099,9 +1099,9 @@ def Crawler(yearc,countc,gyungi):
     
     tab1, tab2 = st.tabs(["투수", "타자"])
     with tab1:
-        st.dataframe(dfhp, use_container_width=True)      
+        st.dataframe(dfhp, use_container_width=True, height=1000)      
     with tab2:
-        st.dataframe(dfhh, use_container_width=True)   
+        st.dataframe(dfhh, use_container_width=True, height=1000)   
 
     team_read = read_all_txt('19',k)
     
@@ -1232,6 +1232,6 @@ def Crawler(yearc,countc,gyungi):
     
     tab1, tab2 = st.tabs(["투수", "타자"])
     with tab1:
-        st.dataframe(dfap, use_container_width=True)      
+        st.dataframe(dfap, use_container_width=True, height=1000)      
     with tab2:
-        st.dataframe(dfah, use_container_width=True)   
+        st.dataframe(dfah, use_container_width=True, height=1000)   

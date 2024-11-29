@@ -1244,7 +1244,7 @@ def Crawler(yearc,countc,gyungi):
         tab1, tab2 = st.tabs(["홈팀", "원정팀"])
         with tab1:
             st.text(home)
-            st.dataframe(dfh, use_container_width=True)          
+            st.dataframe(dfh, use_container_width=True, height=1000)          
         with tab2:
             st.text(away)
-            st.dataframe(dfa, use_container_width=True)   
+            st.dataframe(dfa, use_container_width=True, height=1000)   
