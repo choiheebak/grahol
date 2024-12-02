@@ -53,7 +53,7 @@ with st.sidebar:
         "농구 승5패": ["경기별 분석", "순위추이 분석", "조합기", "예측", "조합기", "경기 통계", "회차 조회"]
     }
     
-    icons = ['yelp', 'fan', 'zoom-in', 'graph-up-arrow', 'tablet', 'tropical-storm']
+    icons = ['zoom-in', 'graph-up-arrow', 'fan', 'yelp', 'tablet', 'tropical-storm']
     
     current_submenu_index = st.session_state.submenu_indices[st.session_state.selected_sport]
     if current_submenu_index >= len(submenu_options[st.session_state.selected_sport]):
