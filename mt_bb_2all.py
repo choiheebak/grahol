@@ -355,8 +355,8 @@ def Crawler(yearc,countc,gyungi):
     
     dfas = iljaseq_away(len(ailja))
    
-    plt.rcParams['font.family'] = 'NanumGothic'
-    plt.rcParams['axes.unicode_minus'] = False
+    # plt.rcParams['font.family'] = 'NanumGothic'
+    # plt.rcParams['axes.unicode_minus'] = False
 
     if len(hilja) == 0 and len(ailja) == 0:
         tab1, tab2 = st.tabs(["홈팀", "원정팀"])
