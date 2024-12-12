@@ -437,15 +437,19 @@ def Crawler(yearc,countc,gyungi):
     figa = go.Figure(data=[go.Pie(labels=labels, values=values)])
     figa.update_traces(textfont_size=20,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
 
-    tab1, tab2 = st.tabs(["홈팀 전적", "원정팀 전적"])
-    with tab1:
-        st.plotly_chart(figh)
-    with tab2:
-        try:
-            st.plotly_chart(figa)
-        except:
-            st.plotly_chart(figa, theme=None)
+    if st.button("리그전적 그래프보기"):       
+        tab1, tab2 = st.tabs(["홈팀 전적", "원정팀 전적"])
+        with tab1:
+            st.plotly_chart(figh)
+        with tab2:
+            try:
+                st.plotly_chart(figa)
+            except:
+                st.plotly_chart(figa, theme=None)
       
+        if st.button("리그전적 그래프닫기"):  
+            pass    
+
     def baedang():
   
         index = [home]
@@ -486,10 +490,14 @@ def Crawler(yearc,countc,gyungi):
 
     fig = go.Figure(data=[go.Pie(labels=labels, values=values)])
     fig.update_traces(textfont_size=20,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
-    try:
-        st.plotly_chart(fig)
-    except:
-        st.plotly_chart(fig, theme=None)
+    if st.button("투표현황 그래프보기"):            
+        try:
+            st.plotly_chart(fig)
+        except:
+            st.plotly_chart(fig, theme=None)
+
+        if st.button("투표현황 그래프닫기"): 
+            pass           
 
     # 맞대결 전체
     team_read = read_all_txt('11',k)
@@ -605,23 +613,27 @@ def Crawler(yearc,countc,gyungi):
     fig2 = go.Figure(data=[go.Pie(labels=labels, values=values)])
     fig2.update_traces(textfont_size=20,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
 
-    tab1, tab2 = st.tabs(["맞대결 전체", "맞대결 최근7경기"])
-    with tab1:
-        try:
-            st.plotly_chart(fig1)
-        except:
+    if st.button("맞대결 그래프보기"):        
+        tab1, tab2 = st.tabs(["맞대결 전체", "맞대결 최근7경기"])
+        with tab1:
             try:
-                st.plotly_chart(fig1, theme=None)
+                st.plotly_chart(fig1)
             except:
-                pass
-    with tab2:
-        try:
-            st.plotly_chart(fig2)
-        except:
+                try:
+                    st.plotly_chart(fig1, theme=None)
+                except:
+                    pass
+        with tab2:
             try:
-                st.plotly_chart(fig2, theme=None)
+                st.plotly_chart(fig2)
             except:
-                pass
+                try:
+                    st.plotly_chart(fig2, theme=None)
+                except:
+                    pass
+
+        if st.button("맞대결 그래프닫기"): 
+            pass     
 
     # 최근 7경기
     team_read = read_all_txt('13',k)
@@ -725,23 +737,27 @@ def Crawler(yearc,countc,gyungi):
     fig4 = go.Figure(data=[go.Pie(labels=labels, values=values)])
     fig4.update_traces(textfont_size=20,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
 
-    tab1, tab2 = st.tabs(["홈팀 최근7경기", "원정팀 최근7경기"])
-    with tab1:
-        try:
-            st.plotly_chart(fig3)
-        except:
+    if st.button("최근7경기 그래프보기"):     
+        tab1, tab2 = st.tabs(["홈팀 최근7경기", "원정팀 최근7경기"])
+        with tab1:
             try:
-                st.plotly_chart(fig3, theme=None)
+                st.plotly_chart(fig3)
             except:
-                pass
-    with tab2:
-        try:
-            st.plotly_chart(fig4)
-        except:
+                try:
+                    st.plotly_chart(fig3, theme=None)
+                except:
+                    pass
+        with tab2:
             try:
-                st.plotly_chart(fig4, theme=None)
+                st.plotly_chart(fig4)
             except:
-                pass
+                try:
+                    st.plotly_chart(fig4, theme=None)
+                except:
+                    pass
+                
+        if st.button("최근7경기 그래프닫기"):     
+            pass  
 
     def gaein_home(num_rows):
   

@@ -444,14 +444,18 @@ def Crawler(yearc,countc,gyungi):
     if hwin == "" and hdraw == "" and hlose == "":
         pass
     else:
-        tab1, tab2 = st.tabs(["홈팀 전적", "원정팀 전적"])
-        with tab1:
-            st.plotly_chart(figh)
-        with tab2:
-            try:
-                st.plotly_chart(figa)
-            except:
-                st.plotly_chart(figa, theme=None)
+        if st.button("리그전적 그래프보기"):            
+            tab1, tab2 = st.tabs(["홈팀 전적", "원정팀 전적"])
+            with tab1:
+                st.plotly_chart(figh)
+            with tab2:
+                try:
+                    st.plotly_chart(figa)
+                except:
+                    st.plotly_chart(figa, theme=None)
+     
+            if st.button("리그전적 그래프닫기"):  
+                pass     
      
     if l_hgubun == "A" or l_hgubun == "W":
         if wgaw == "1":
@@ -476,14 +480,19 @@ def Crawler(yearc,countc,gyungi):
             if whwin == "" and whdraw == "" and whlose == "":
                 pass
             else:
-                tab1, tab2 = st.tabs(["홈팀 전적", "원정팀 전적"])
-                with tab1:
-                    st.plotly_chart(figwh)
-                with tab2:
-                    try:
-                        st.plotly_chart(figwa)
-                    except:
-                        st.plotly_chart(figwa, theme=None)
+                if st.button("조별순위 그래프보기"):            
+                    tab1, tab2 = st.tabs(["홈팀 전적", "원정팀 전적"])
+                    with tab1:
+                        st.plotly_chart(figwh)
+                    with tab2:
+                        try:
+                            st.plotly_chart(figwa)
+                        except:
+                            st.plotly_chart(figwa, theme=None)
+
+                    if st.button("조별순위 그래프닫기"):  
+                        pass     
+
     elif l_hgubun == "X":
         if wgaw == "1":
             try:
@@ -508,14 +517,18 @@ def Crawler(yearc,countc,gyungi):
                 if whwin == "" and whdraw == "" and whlose == "":
                     pass
                 else:
-                    tab1, tab2 = st.tabs(["홈팀 전적", "원정팀 전적"])
-                    with tab1:
-                        st.plotly_chart(figwh)
-                    with tab2:
-                        try:
-                            st.plotly_chart(figwa)
-                        except:
-                            st.plotly_chart(figwa, theme=None)
+                    if st.button("순위 그래프보기"):        
+                        tab1, tab2 = st.tabs(["홈팀 전적", "원정팀 전적"])
+                        with tab1:
+                            st.plotly_chart(figwh)
+                        with tab2:
+                            try:
+                                st.plotly_chart(figwa)
+                            except:
+                                st.plotly_chart(figwa, theme=None)
+
+                        if st.button("순위 그래프닫기"):  
+                            pass     
             except:
                 pass
 
@@ -561,12 +574,15 @@ def Crawler(yearc,countc,gyungi):
 
     fig = go.Figure(data=[go.Pie(labels=labels, values=values5)])
     fig.update_traces(textfont_size=18,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
-    try:
-        st.plotly_chart(fig)
-    except:
-        st.plotly_chart(fig, theme=None)
+    if st.button("투표현황 그래프보기"):            
+        try:
+            st.plotly_chart(fig)
+        except:
+            st.plotly_chart(fig, theme=None)
 
-    
+        if st.button("투표현황 그래프닫기"): 
+            pass 
+
     team_read = read_all_txt('11',k)
 
     hil_list = []
@@ -733,23 +749,27 @@ def Crawler(yearc,countc,gyungi):
     if cntw == 0 and cntd == 0 and cntl == 0:
         pass
     else:
-        tab1, tab2 = st.tabs(["맞대결 전체", "맞대결 최근7경기"])
-        with tab1:
-            try:
-                st.plotly_chart(fig1)
-            except:
+        if st.button("맞대결 그래프보기"):            
+            tab1, tab2 = st.tabs(["맞대결 전체", "맞대결 최근7경기"])
+            with tab1:
                 try:
-                    st.plotly_chart(fig1, theme=None)
+                    st.plotly_chart(fig1)
                 except:
-                    pass
-        with tab2:
-            try:
-                st.plotly_chart(fig2)
-            except:
+                    try:
+                        st.plotly_chart(fig1, theme=None)
+                    except:
+                        pass
+            with tab2:
                 try:
-                    st.plotly_chart(fig2, theme=None)
+                    st.plotly_chart(fig2)
                 except:
-                    pass
+                    try:
+                        st.plotly_chart(fig2, theme=None)
+                    except:
+                        pass
+
+            if st.button("맞대결 그래프닫기"): 
+                pass     
 
     # 최근 7경기
       
@@ -900,23 +920,27 @@ def Crawler(yearc,countc,gyungi):
     fig4 = go.Figure(data=[go.Pie(labels=labels, values=values9)])
     fig4.update_traces(textfont_size=18,marker=dict(colors=colors, line=dict(color='#FFFFFF', width=3)))
 
-    tab1, tab2 = st.tabs(["홈팀 최근7경기", "원정팀 최근7경기"])
-    with tab1:
-        try:
-            st.plotly_chart(fig3)
-        except:
+    if st.button("최근7경기 그래프보기"):            
+        tab1, tab2 = st.tabs(["홈팀 최근7경기", "원정팀 최근7경기"])
+        with tab1:
             try:
-                st.plotly_chart(fig3, theme=None)
+                st.plotly_chart(fig3)
             except:
-                pass
-    with tab2:
-        try:
-            st.plotly_chart(fig4)
-        except:
+                try:
+                    st.plotly_chart(fig3, theme=None)
+                except:
+                    pass
+        with tab2:
             try:
-                st.plotly_chart(fig4, theme=None)
+                st.plotly_chart(fig4)
             except:
-                pass
+                try:
+                    st.plotly_chart(fig4, theme=None)
+                except:
+                    pass
+                
+        if st.button("최근7경기 그래프닫기"):     
+            pass  
  
     def gaein_home(num_rows):
   
