@@ -37,21 +37,32 @@ def Crawler(gubun):
 
         return team_read
 
-    def all30s(arr):   
+    def all30s(arr,gubun):   
 
         n = int(arr)
         w = round((float(tcntw30[n])/float(tcntw[n]) * 100),2) 
         d = round((float(tcntd30[n])/float(tcntd[n]) * 100),2)
         l = round((float(tcntl30[n])/float(tcntl[n]) * 100),2)
 
-        data = {"승":[tcntw[n],tcntw30[n],w],
-                "무":[tcntd[n],tcntd30[n],d],
-                "패":[tcntl[n],tcntl30[n],l]}
-        
-        df = pd.DataFrame(data, 
+        if gubun == "1":
+            data = {"승":[tcntw[n],tcntw30[n],w],
+                    "무":[tcntd[n],tcntd30[n],d],
+                    "패":[tcntl[n],tcntl30[n],l]}
+            
+            df = pd.DataFrame(data, 
 
-                index = ["전체","30회차","%"],
-                columns=["승", "무", "패"]) 
+                    index = ["전체","30회차","%"],
+                    columns=["승", "무", "패"]) 
+            
+        elif gubun == "2":
+            data = {"고":[tcntw[n],tcntw30[n],w],
+                    "중":[tcntd[n],tcntd30[n],d],
+                    "저":[tcntl[n],tcntl30[n],l]}
+            
+            df = pd.DataFrame(data, 
+
+                    index = ["전체","30회차","%"],
+                    columns=["고", "중", "저"]) 
       
         # 사용자 정의 포맷팅 함수
         def custom_format(val, row_name):
@@ -104,15 +115,25 @@ def Crawler(gubun):
         df_melted = df_melted[df_melted['index'] != '%']
         df_melted.columns = ['데이터', '승무패', '횟수']
 
-        # 순서 정의
-        order = ['승', '무', '패']
+        # 순서 정의        
+        if gubun == "1":
+            order = ['승', '무', '패']
+        elif gubun == "2":
+            order = ['고', '중', '저']
 
-        # 기본 차트 정의
-        base = alt.Chart(df_melted).encode(
-            x=alt.X('데이터:N', axis=alt.Axis(title=None)),  # x축 레이블 각도 0도 (수직)
-            y=alt.Y('횟수:Q', axis=alt.Axis(title='총횟수', titleAngle=0, labelAngle=0)),  # y축 제목과 레이블 각도 0도 (수직)
-            color=alt.Color('데이터:N', scale=alt.Scale(domain=['전체', '30회차'], range=['#FBC02D', '#E65100']))
-        )
+        # 기본 차트 정의      
+        if gubun == "1":
+            base = alt.Chart(df_melted).encode(
+                x=alt.X('데이터:N', axis=alt.Axis(title=None)),  # x축 레이블 각도 0도 (수직)
+                y=alt.Y('횟수:Q', axis=alt.Axis(title='총횟수', titleAngle=0, labelAngle=0)),  # y축 제목과 레이블 각도 0도 (수직)
+                color=alt.Color('데이터:N', scale=alt.Scale(domain=['전체', '30회차'], range=['#FBC02D', '#E65100']))
+            )
+        elif gubun == "2":
+            base = alt.Chart(df_melted).encode(
+                x=alt.X('데이터:N', axis=alt.Axis(title=None)),  # x축 레이블 각도 0도 (수직)
+                y=alt.Y('횟수:Q', axis=alt.Axis(title='총횟수', titleAngle=0, labelAngle=0)),  # y축 제목과 레이블 각도 0도 (수직)
+                color=alt.Color('데이터:N', scale=alt.Scale(domain=['전체', '30회차'], range=['#78909C', '#E65100']))
+            )
 
         # 막대 차트와 텍스트 레이어 생성
         bars = base.mark_bar(width=20)
@@ -132,21 +153,32 @@ def Crawler(gubun):
         # Streamlit에 차트 표시
         st.altair_chart(chart, use_container_width=True)
     
-    def all30b(arr):   
+    def all30b(arr,gubun):   
 
         n = int(arr)
         w = round((float(tcntw30[n])/float(tcntw[n]) * 100),2) 
         d = round((float(tcntd30[n])/float(tcntd[n]) * 100),2)
         l = round((float(tcntl30[n])/float(tcntl[n]) * 100),2)
 
-        data = {"승":[tcntw[n],tcntw30[n],w],
-                "①":[tcntd[n],tcntd30[n],d],
-                "패":[tcntl[n],tcntl30[n],l]}
-        
-        df = pd.DataFrame(data, 
+        if gubun == "1":
+            data = {"승":[tcntw[n],tcntw30[n],w],
+                    "①":[tcntd[n],tcntd30[n],d],
+                    "패":[tcntl[n],tcntl30[n],l]}
+            
+            df = pd.DataFrame(data, 
 
-                index = ["전체","30회차","%"],
-                columns=["승", "①", "패"]) 
+                    index = ["전체","30회차","%"],
+                    columns=["승", "①", "패"]) 
+            
+        elif gubun == "2":
+            data = {"고":[tcntw[n],tcntw30[n],w],
+                    "중":[tcntd[n],tcntd30[n],d],
+                    "저":[tcntl[n],tcntl30[n],l]}
+            
+            df = pd.DataFrame(data, 
+
+                    index = ["전체","30회차","%"],
+                    columns=["고", "중", "저"]) 
       
         # 사용자 정의 포맷팅 함수
         def custom_format(val, row_name):
@@ -199,15 +231,25 @@ def Crawler(gubun):
         df_melted = df_melted[df_melted['index'] != '%']
         df_melted.columns = ['데이터', '승1패', '횟수']
 
-        # 순서 정의
-        order = ['승', '①', '패']
+        # 순서 정의     
+        if gubun == "1":
+            order = ['승', '①', '패']
+        elif gubun == "2":
+            order = ['고', '중', '저']
 
-        # 기본 차트 정의
-        base = alt.Chart(df_melted).encode(
-            x=alt.X('데이터:N', axis=alt.Axis(title=None)),  # x축 레이블 각도 0도 (수직)
-            y=alt.Y('횟수:Q', axis=alt.Axis(title='총횟수', titleAngle=0, labelAngle=0)),  # y축 제목과 레이블 각도 0도 (수직)
-            color=alt.Color('데이터:N', scale=alt.Scale(domain=['전체', '30회차'], range=['#FBC02D', '#E65100']))
-        )
+        # 기본 차트 정의      
+        if gubun == "1":
+            base = alt.Chart(df_melted).encode(
+                x=alt.X('데이터:N', axis=alt.Axis(title=None)),  # x축 레이블 각도 0도 (수직)
+                y=alt.Y('횟수:Q', axis=alt.Axis(title='총횟수', titleAngle=0, labelAngle=0)),  # y축 제목과 레이블 각도 0도 (수직)
+                color=alt.Color('데이터:N', scale=alt.Scale(domain=['전체', '30회차'], range=['#FBC02D', '#E65100']))
+            )
+        elif gubun == "2":
+            base = alt.Chart(df_melted).encode(
+                x=alt.X('데이터:N', axis=alt.Axis(title=None)),  # x축 레이블 각도 0도 (수직)
+                y=alt.Y('횟수:Q', axis=alt.Axis(title='총횟수', titleAngle=0, labelAngle=0)),  # y축 제목과 레이블 각도 0도 (수직)
+                color=alt.Color('데이터:N', scale=alt.Scale(domain=['전체', '30회차'], range=['#78909C', '#E65100']))
+            )
 
         # 막대 차트와 텍스트 레이어 생성
         bars = base.mark_bar(width=20)
@@ -227,22 +269,33 @@ def Crawler(gubun):
         # Streamlit에 차트 표시
         st.altair_chart(chart, use_container_width=True)
     
-    def all30k(arr):   
+    def all30k(arr,gubun):   
 
         n = int(arr)
         w = round((float(tcntw30[n])/float(tcntw[n]) * 100),2) 
         d = round((float(tcntd30[n])/float(tcntd[n]) * 100),2)
         l = round((float(tcntl30[n])/float(tcntl[n]) * 100),2)
 
-        data = {"승":[tcntw[n],tcntw30[n],w],
-                "⑤":[tcntd[n],tcntd30[n],d],
-                "패":[tcntl[n],tcntl30[n],l]}
-        
-        df = pd.DataFrame(data, 
+        if gubun == "1":
+            data = {"승":[tcntw[n],tcntw30[n],w],
+                    "⑤":[tcntd[n],tcntd30[n],d],
+                    "패":[tcntl[n],tcntl30[n],l]}
+            
+            df = pd.DataFrame(data, 
 
-                index = ["전체","30회차","%"],
-                columns=["승", "⑤", "패"]) 
-      
+                    index = ["전체","30회차","%"],
+                    columns=["승", "⑤", "패"]) 
+            
+        elif gubun == "2":
+            data = {"고":[tcntw[n],tcntw30[n],w],
+                    "중":[tcntd[n],tcntd30[n],d],
+                    "저":[tcntl[n],tcntl30[n],l]}
+            
+            df = pd.DataFrame(data, 
+
+                    index = ["전체","30회차","%"],
+                    columns=["고", "중", "저"]) 
+            
         # 사용자 정의 포맷팅 함수
         def custom_format(val, row_name):
             try:
@@ -294,15 +347,25 @@ def Crawler(gubun):
         df_melted = df_melted[df_melted['index'] != '%']
         df_melted.columns = ['데이터', '승5패', '횟수']
 
-        # 순서 정의
-        order = ['승', '⑤', '패']
+        # 순서 정의    
+        if gubun == "1":
+            order = ['승', '⑤', '패']
+        elif gubun == "2":
+            order = ['고', '중', '저']
 
-        # 기본 차트 정의
-        base = alt.Chart(df_melted).encode(
-            x=alt.X('데이터:N', axis=alt.Axis(title=None)),  # x축 레이블 각도 0도 (수직)
-            y=alt.Y('횟수:Q', axis=alt.Axis(title='총횟수', titleAngle=0, labelAngle=0)),  # y축 제목과 레이블 각도 0도 (수직)
-            color=alt.Color('데이터:N', scale=alt.Scale(domain=['전체', '30회차'], range=['#FBC02D', '#E65100']))
-        )
+        # 기본 차트 정의      
+        if gubun == "1":
+            base = alt.Chart(df_melted).encode(
+                x=alt.X('데이터:N', axis=alt.Axis(title=None)),  # x축 레이블 각도 0도 (수직)
+                y=alt.Y('횟수:Q', axis=alt.Axis(title='총횟수', titleAngle=0, labelAngle=0)),  # y축 제목과 레이블 각도 0도 (수직)
+                color=alt.Color('데이터:N', scale=alt.Scale(domain=['전체', '30회차'], range=['#FBC02D', '#E65100']))
+            )
+        elif gubun == "2":
+            base = alt.Chart(df_melted).encode(
+                x=alt.X('데이터:N', axis=alt.Axis(title=None)),  # x축 레이블 각도 0도 (수직)
+                y=alt.Y('횟수:Q', axis=alt.Axis(title='총횟수', titleAngle=0, labelAngle=0)),  # y축 제목과 레이블 각도 0도 (수직)
+                color=alt.Color('데이터:N', scale=alt.Scale(domain=['전체', '30회차'], range=['#78909C', '#E65100']))
+            )
 
         # 막대 차트와 텍스트 레이어 생성
         bars = base.mark_bar(width=20)
@@ -386,33 +449,33 @@ def Crawler(gubun):
         tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10, tab11, tab12, tab13, tab14 \
            = st.tabs(["1경기","2경기","3경기","4경기","5경기","6경기","7경기","8경기","9경기","10경기","11경기","12경기","13경기","14경기"])
         with tab1:
-            all30s(0) 
+            all30s(0,"1") 
         with tab2:
-            all30s(1) 
+            all30s(1,"1") 
         with tab3:
-            all30s(2) 
+            all30s(2,"1") 
         with tab4:
-            all30s(3) 
+            all30s(3,"1") 
         with tab5:
-            all30s(4) 
+            all30s(4,"1") 
         with tab6:
-            all30s(5) 
+            all30s(5,"1") 
         with tab7:
-            all30s(6) 
+            all30s(6,"1") 
         with tab8:
-            all30s(7) 
+            all30s(7,"1") 
         with tab9:
-            all30s(8) 
+            all30s(8,"1") 
         with tab10:
-            all30s(9) 
+            all30s(9,"1") 
         with tab11:
-            all30s(10) 
+            all30s(10,"1") 
         with tab12:
-            all30s(11) 
+            all30s(11,"1") 
         with tab13:
-            all30s(12) 
+            all30s(12,"1") 
         with tab14:
-            all30s(13) 
+            all30s(13,"1") 
 
         st.markdown(":soccer: :violet[**전체 승무패 경기통계**]")
         df = pd.DataFrame(data=np.array([tcntw,tcntd,tcntl]), 
@@ -770,33 +833,33 @@ def Crawler(gubun):
         tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10, tab11, tab12, tab13, tab14 \
            = st.tabs(["1경기","2경기","3경기","4경기","5경기","6경기","7경기","8경기","9경기","10경기","11경기","12경기","13경기","14경기"])
         with tab1:
-            all30b(0) 
+            all30b(0,"1") 
         with tab2:
-            all30b(1) 
+            all30b(1,"1") 
         with tab3:
-            all30b(2) 
+            all30b(2,"1") 
         with tab4:
-            all30b(3) 
+            all30b(3,"1") 
         with tab5:
-            all30b(4) 
+            all30b(4,"1") 
         with tab6:
-            all30b(5) 
+            all30b(5,"1") 
         with tab7:
-            all30b(6) 
+            all30b(6,"1") 
         with tab8:
-            all30b(7) 
+            all30b(7,"1") 
         with tab9:
-            all30b(8) 
+            all30b(8,"1") 
         with tab10:
-            all30b(9) 
+            all30b(9,"1") 
         with tab11:
-            all30b(10) 
+            all30b(10,"1") 
         with tab12:
-            all30b(11) 
+            all30b(11,"1") 
         with tab13:
-            all30b(12) 
+            all30b(12,"1") 
         with tab14:
-            all30b(13) 
+            all30b(13,"1") 
 
         st.markdown(":baseball: :violet[**전체 승①패 경기통계**]")
         df = pd.DataFrame(data=np.array([tcntw,tcntd,tcntl]), 
@@ -1159,33 +1222,33 @@ def Crawler(gubun):
         tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10, tab11, tab12, tab13, tab14 \
            = st.tabs(["1경기","2경기","3경기","4경기","5경기","6경기","7경기","8경기","9경기","10경기","11경기","12경기","13경기","14경기"])    
         with tab1:
-            all30k(0) 
+            all30k(0,"1") 
         with tab2:
-            all30k(1) 
+            all30k(1,"1") 
         with tab3:
-            all30k(2) 
+            all30k(2,"1") 
         with tab4:
-            all30k(3) 
+            all30k(3,"1") 
         with tab5:
-            all30k(4) 
+            all30k(4,"1") 
         with tab6:
-            all30k(5) 
+            all30k(5,"1") 
         with tab7:
-            all30k(6) 
+            all30k(6,"1") 
         with tab8:
-            all30k(7) 
+            all30k(7,"1") 
         with tab9:
-            all30k(8) 
+            all30k(8,"1") 
         with tab10:
-            all30k(9) 
+            all30k(9,"1") 
         with tab11:
-            all30k(10) 
+            all30k(10,"1") 
         with tab12:
-            all30k(11) 
+            all30k(11,"1") 
         with tab13:
-            all30k(12) 
+            all30k(12,"1") 
         with tab14:
-            all30k(13) 
+            all30k(13,"1") 
 
         st.markdown(":basketball: :violet[**전체 승⑤패 경기통계**]")
         df = pd.DataFrame(data=np.array([tcntw,tcntd,tcntl]), 
@@ -1544,6 +1607,39 @@ def Crawler(gubun):
                         result30.append(team_read[q][:r]) 
                         s = r+1
                         degree30.append(team_read[q][s:])
+
+        st.markdown(":soccer: :violet[**고중저 : 전체 vs 최근30회차**]")
+
+        tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10, tab11, tab12, tab13, tab14 \
+           = st.tabs(["1경기","2경기","3경기","4경기","5경기","6경기","7경기","8경기","9경기","10경기","11경기","12경기","13경기","14경기"])
+        with tab1:
+            all30s(0,"2") 
+        with tab2:
+            all30s(1,"2") 
+        with tab3:
+            all30s(2,"2") 
+        with tab4:
+            all30s(3,"2") 
+        with tab5:
+            all30s(4,"2") 
+        with tab6:
+            all30s(5,"2") 
+        with tab7:
+            all30s(6,"2") 
+        with tab8:
+            all30s(7,"2") 
+        with tab9:
+            all30s(8,"2") 
+        with tab10:
+            all30s(9,"2") 
+        with tab11:
+            all30s(10,"2") 
+        with tab12:
+            all30s(11,"2") 
+        with tab13:
+            all30s(12,"2") 
+        with tab14:
+            all30s(13,"2") 
 
         st.markdown(":soccer: :violet[**전체 고중저 경기통계**] :red[(고중저:득표율 기준)]")
         df = pd.DataFrame(data=np.array([tcntw,tcntd,tcntl]), 
@@ -1923,6 +2019,39 @@ def Crawler(gubun):
                         s = r+1
                         degree30.append(team_read[q][s:])
 
+        st.markdown(":baseball: :violet[**고중저 : 전체 vs 최근30회차**]")
+
+        tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10, tab11, tab12, tab13, tab14 \
+           = st.tabs(["1경기","2경기","3경기","4경기","5경기","6경기","7경기","8경기","9경기","10경기","11경기","12경기","13경기","14경기"])
+        with tab1:
+            all30b(0,"2") 
+        with tab2:
+            all30b(1,"2") 
+        with tab3:
+            all30b(2,"2") 
+        with tab4:
+            all30b(3,"2") 
+        with tab5:
+            all30b(4,"2") 
+        with tab6:
+            all30b(5,"2") 
+        with tab7:
+            all30b(6,"2") 
+        with tab8:
+            all30b(7,"2") 
+        with tab9:
+            all30b(8,"2") 
+        with tab10:
+            all30b(9,"2") 
+        with tab11:
+            all30b(10,"2") 
+        with tab12:
+            all30b(11,"2") 
+        with tab13:
+            all30b(12,"2") 
+        with tab14:
+            all30b(13,"2") 
+
         st.markdown(":baseball: :violet[**전체 고중저 경기통계**] :red[(고중저:득표율 기준)]")
         df = pd.DataFrame(data=np.array([tcntw,tcntd,tcntl]), 
 
@@ -2276,6 +2405,39 @@ def Crawler(gubun):
                         result30.append(team_read[q][:r]) 
                         s = r+1
                         degree30.append(team_read[q][s:])
+
+        st.markdown(":basketball: :violet[**고중저 : 전체 vs 최근30회차**]")
+
+        tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10, tab11, tab12, tab13, tab14 \
+           = st.tabs(["1경기","2경기","3경기","4경기","5경기","6경기","7경기","8경기","9경기","10경기","11경기","12경기","13경기","14경기"])    
+        with tab1:
+            all30k(0,"2") 
+        with tab2:
+            all30k(1,"2") 
+        with tab3:
+            all30k(2,"2") 
+        with tab4:
+            all30k(3,"2") 
+        with tab5:
+            all30k(4,"2") 
+        with tab6:
+            all30k(5,"2") 
+        with tab7:
+            all30k(6,"2") 
+        with tab8:
+            all30k(7,"2") 
+        with tab9:
+            all30k(8,"2") 
+        with tab10:
+            all30k(9,"2") 
+        with tab11:
+            all30k(10,"2") 
+        with tab12:
+            all30k(11,"2") 
+        with tab13:
+            all30k(12,"2") 
+        with tab14:
+            all30k(13,"2") 
 
         st.markdown(":basketball: :violet[**전체 고중저 경기통계**] :red[(고중저:득표율 기준)]")
         df = pd.DataFrame(data=np.array([tcntw,tcntd,tcntl]), 
