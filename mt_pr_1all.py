@@ -197,8 +197,10 @@ def Crawler(yearc,countc,gubun):
             baeh_item = baeh[index.index(row.name)]
 
             highlight_style = 'background-color: #43A047; color: white;'
+            result_style = 'background-color: white; color: red;'
            
             if johap_item and not johap_item.isspace():  # johap_item이 비어있지 않고 공백만으로 이루어져 있지 않은 경우에만 검사
+                results[2] = result_style
                 if johap_item in big2_item:
                     results[3] = highlight_style
                 if johap_item in ai_item:
@@ -441,8 +443,10 @@ def Crawler(yearc,countc,gubun):
             baeh_item = baeh[index.index(row.name)]
 
             highlight_style = 'background-color: #43A047; color: white;'
+            result_style = 'background-color: white; color: red;'
              
             if johap_item and not johap_item.isspace():  # johap_item이 비어있지 않고 공백만으로 이루어져 있지 않은 경우에만 검사
+                results[2] = result_style
                 if johap_item in big2_item:
                     results[3] = highlight_style
                 if johap_item in ai_item:
@@ -684,8 +688,10 @@ def Crawler(yearc,countc,gubun):
             baeh_item = baeh[index.index(row.name)]
 
             highlight_style = 'background-color: #43A047; color: white;' 
+            result_style = 'background-color: white; color: red;'
 
             if johap_item and not johap_item.isspace():  # johap_item이 비어있지 않고 공백만으로 이루어져 있지 않은 경우에만 검사
+                results[2] = result_style
                 if johap_item in big2_item:
                     results[3] = highlight_style
                 if johap_item in ai_item:
