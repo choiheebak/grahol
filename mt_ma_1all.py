@@ -113,30 +113,40 @@ def Crawler(yearc,countc,gubun):
                         bal.append(team_read[q][s:r])
                         s = r+1
                         jumsu.append(team_read[q][s:])
+  
+        # 발매기간 표시
+        st.info(f"발매기간 : {bal[0]}")
 
-
+        # 데이터 준비
         if famt[0] == "":
-            st.markdown("발매기간 : "+str(bal[0]))
+            pass
         else:
-            st.markdown("발매기간 : "+str(bal[0]))
-            if fsu[0] == "":
-                if famt[0][:1] == "-":
-                    st.markdown("1등 : 0명")
-                else:
-                    st.markdown(famt[0])
-            else:
-                st.markdown("1등 : "+fsu[0]+"명 "+ famt[0]+"원")
-            if f2su[0] == "":
-                st.markdown("2등 : 0명")
-            else:
-                st.markdown("2등 : "+f2su[0]+"명 "+ f2amt[0]+"원")
-            if f3su[0] == "":
-                st.markdown("3등 : 0명")
-            else:
-                st.markdown("3등 : "+f3su[0]+"명 "+ f3amt[0]+"원")
-            st.markdown("4등 : "+f4su[0]+"명 "+ f4amt[0]+"원")
-        
+            data = {
+                '구분': ['1등', '2등', '3등', '4등'],
+                '적중투표수': [fsu[0] if fsu[0] != "" else "0", 
+                    f2su[0] if f2su[0] != "" else "0", 
+                    f3su[0] if f3su[0] != "" else "0", 
+                    f4su[0]] if f4su[0] != "" else "0",
+                '개별당첨금액': [famt[0] if famt[0][:1] != "-" else "0", 
+                        f2amt[0], f3amt[0], f4amt[0]]
+            }
 
+            # DataFrame 생성 시 index 설정하지 않음
+            df = pd.DataFrame(data)
+
+            # 스타일 적용
+            styled_df = df.style.set_properties(**{
+                'text-align': 'center',
+                'font-weight': 'bold'
+            }).set_properties(subset=['적중투표수', '개별당첨금액'], **{
+                'text-align': 'right'
+            }).set_table_styles([
+                {'selector': 'th', 'props': [('text-align', 'center'), ('font-weight', 'bold'), ('background-color', '#FFEBEE')]}
+            ])
+
+            # 스타일이 적용된 데이터프레임 표시 (index 제외)
+            st.write(styled_df.hide(axis="index").to_html(), unsafe_allow_html=True)
+ 
         data = {"홈팀":[home[0],home[1],home[2],home[3],home[4],home[5],home[6],home[7],home[8],home[9],home[10],home[11],home[12],home[13]],
                 "원정팀":[away[0],away[1],away[2],away[3],away[4],away[5],away[6],away[7],away[8],away[9],away[10],away[11],away[12],away[13]],
                 "승":[win[0],win[1],win[2],win[3],win[4],win[5],win[6],win[7],win[8],win[9],win[10],win[11],win[12],win[13]],
@@ -150,8 +160,20 @@ def Crawler(yearc,countc,gubun):
                 index = ["1경기","2경기","3경기","4경기","5경기","6경기","7경기","8경기","9경기","10경기","11경기","12경기","13경기","14경기"],
                 columns=["홈팀", "원정팀","승","무","패","결과","점수"]) 
 
-        st.table(df)
-         
+        def highlight_result(row):
+            result = row['결과']
+            return ['background-color:#A5D6A7' if col == result else '' for col in row.index]
+        
+        styled_df = df.style.set_properties(**{
+            'text-align': 'center',
+            'vertical-align': 'middle'
+        }).set_table_styles([{
+            'selector': 'th',
+            'props': [('text-align', 'center'), ('background-color', '#FFFDE7')]
+        }]).apply(highlight_result, axis=1)
+
+        st.write(styled_df.to_html(escape=False), unsafe_allow_html=True)
+       
     elif gubun == 'b':
      
         st.subheader("야구 승1패")
@@ -255,28 +277,40 @@ def Crawler(yearc,countc,gubun):
                         bal.append(team_read[q][s:r])
                         s = r+1
                         jumsu.append(team_read[q][s:])
+  
+        # 발매기간 표시
+        st.info(f"발매기간 : {bal[0]}")
 
+        # 데이터 준비
         if famt[0] == "":
-            st.markdown("발매기간 : "+str(bal[0]))
+            pass
         else:
-            st.markdown("발매기간 : "+str(bal[0]))
-            if fsu[0] == "":
-                if famt[0][:1] == "-":
-                    st.markdown("1등 : 0명")
-                else:
-                    st.markdown(famt[0])
-            else:
-                st.markdown("1등 : "+fsu[0]+"명 "+ famt[0]+"원")
-            if f2su[0] == "":
-                st.markdown("2등 : 0명")
-            else:
-                st.markdown("2등 : "+f2su[0]+"명 "+ f2amt[0]+"원")
-            if f3su[0] == "":
-                st.markdown("3등 : 0명")
-            else:
-                st.markdown("3등 : "+f3su[0]+"명 "+ f3amt[0]+"원")
-            st.markdown("4등 : "+f4su[0]+"명 "+ f4amt[0]+"원")
-          
+            data = {
+                '구분': ['1등', '2등', '3등', '4등'],
+                '적중투표수': [fsu[0] if fsu[0] != "" else "0", 
+                    f2su[0] if f2su[0] != "" else "0", 
+                    f3su[0] if f3su[0] != "" else "0", 
+                    f4su[0]] if f4su[0] != "" else "0",
+                '개별당첨금액': [famt[0] if famt[0][:1] != "-" else "0", 
+                        f2amt[0], f3amt[0], f4amt[0]]
+            }
+
+            # DataFrame 생성 시 index 설정하지 않음
+            df = pd.DataFrame(data)
+
+            # 스타일 적용
+            styled_df = df.style.set_properties(**{
+                'text-align': 'center',
+                'font-weight': 'bold'
+            }).set_properties(subset=['적중투표수', '개별당첨금액'], **{
+                'text-align': 'right'
+            }).set_table_styles([
+                {'selector': 'th', 'props': [('text-align', 'center'), ('font-weight', 'bold'), ('background-color', '#FFEBEE')]}
+            ])
+
+            # 스타일이 적용된 데이터프레임 표시 (index 제외)
+            st.write(styled_df.hide(axis="index").to_html(), unsafe_allow_html=True)
+ 
         data = {"홈팀":[home[0],home[1],home[2],home[3],home[4],home[5],home[6],home[7],home[8],home[9],home[10],home[11],home[12],home[13]],
                 "원정팀":[away[0],away[1],away[2],away[3],away[4],away[5],away[6],away[7],away[8],away[9],away[10],away[11],away[12],away[13]],
                 "승":[win[0],win[1],win[2],win[3],win[4],win[5],win[6],win[7],win[8],win[9],win[10],win[11],win[12],win[13]],
@@ -290,8 +324,19 @@ def Crawler(yearc,countc,gubun):
                 index = ["1경기","2경기","3경기","4경기","5경기","6경기","7경기","8경기","9경기","10경기","11경기","12경기","13경기","14경기"],
                 columns=["홈팀", "원정팀","승","1","패","결과","점수"]) 
 
+        def highlight_result(row):
+            result = row['결과']
+            return ['background-color:#A5D6A7' if col == result else '' for col in row.index]
+        
+        styled_df = df.style.set_properties(**{
+            'text-align': 'center',
+            'vertical-align': 'middle'
+        }).set_table_styles([{
+            'selector': 'th',
+            'props': [('text-align', 'center'), ('background-color', '#FFFDE7')]
+        }]).apply(highlight_result, axis=1)
 
-        st.table(df)
+        st.write(styled_df.to_html(escape=False), unsafe_allow_html=True)       
          
     elif gubun == 'k':
      
@@ -396,29 +441,40 @@ def Crawler(yearc,countc,gubun):
                         bal.append(team_read[q][s:r])
                         s = r+1
                         jumsu.append(team_read[q][s:])
+  
+        # 발매기간 표시
+        st.info(f"발매기간 : {bal[0]}")
 
-
+        # 데이터 준비
         if famt[0] == "":
-            st.markdown("발매기간 : "+str(bal[0]))
+            pass
         else:
-            st.markdown("발매기간 : "+str(bal[0]))
-            if fsu[0] == "":
-                if famt[0][:1] == "-":
-                    st.markdown("1등 : 0명")
-                else:
-                    st.markdown(famt[0])
-            else:
-                st.markdown("1등 : "+fsu[0]+"명 "+ famt[0]+"원")
-            if f2su[0] == "":
-                st.markdown("2등 : 0명")
-            else:
-                st.markdown("2등 : "+f2su[0]+"명 "+ f2amt[0]+"원")
-            if f3su[0] == "":
-                st.markdown("3등 : 0명")
-            else:
-                st.markdown("3등 : "+f3su[0]+"명 "+ f3amt[0]+"원")
-            st.markdown("4등 : "+f4su[0]+"명 "+ f4amt[0]+"원")
-          
+            data = {
+                '구분': ['1등', '2등', '3등', '4등'],
+                '적중투표수': [fsu[0] if fsu[0] != "" else "0", 
+                    f2su[0] if f2su[0] != "" else "0", 
+                    f3su[0] if f3su[0] != "" else "0", 
+                    f4su[0]] if f4su[0] != "" else "0",
+                '개별당첨금액': [famt[0] if famt[0][:1] != "-" else "0", 
+                        f2amt[0], f3amt[0], f4amt[0]]
+            }
+
+            # DataFrame 생성 시 index 설정하지 않음
+            df = pd.DataFrame(data)
+
+            # 스타일 적용
+            styled_df = df.style.set_properties(**{
+                'text-align': 'center',
+                'font-weight': 'bold'
+            }).set_properties(subset=['적중투표수', '개별당첨금액'], **{
+                'text-align': 'right'
+            }).set_table_styles([
+                {'selector': 'th', 'props': [('text-align', 'center'), ('font-weight', 'bold'), ('background-color', '#FFEBEE')]}
+            ])
+
+            # 스타일이 적용된 데이터프레임 표시 (index 제외)
+            st.write(styled_df.hide(axis="index").to_html(), unsafe_allow_html=True)
+ 
         data = {"홈팀":[home[0],home[1],home[2],home[3],home[4],home[5],home[6],home[7],home[8],home[9],home[10],home[11],home[12],home[13]],
                 "원정팀":[away[0],away[1],away[2],away[3],away[4],away[5],away[6],away[7],away[8],away[9],away[10],away[11],away[12],away[13]],
                 "승":[win[0],win[1],win[2],win[3],win[4],win[5],win[6],win[7],win[8],win[9],win[10],win[11],win[12],win[13]],
@@ -432,7 +488,16 @@ def Crawler(yearc,countc,gubun):
                 index = ["1경기","2경기","3경기","4경기","5경기","6경기","7경기","8경기","9경기","10경기","11경기","12경기","13경기","14경기"],
                 columns=["홈팀", "원정팀","승","5","패","결과","점수"]) 
 
+        def highlight_result(row):
+            result = row['결과']
+            return ['background-color:#A5D6A7' if col == result else '' for col in row.index]
+        
+        styled_df = df.style.set_properties(**{
+            'text-align': 'center',
+            'vertical-align': 'middle'
+        }).set_table_styles([{
+            'selector': 'th',
+            'props': [('text-align', 'center'), ('background-color', '#FFFDE7')]
+        }]).apply(highlight_result, axis=1)
 
-        st.table(df)
-
-
+        st.write(styled_df.to_html(escape=False), unsafe_allow_html=True)  
