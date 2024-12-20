@@ -154,7 +154,7 @@ def Crawler(yearc,countc,gubun):
         def highlight_cells(row):
             result = [''] * len(row)
             johap_item = johap[index.index(row.name)]
-            highlight_style = 'background-color: #2E8B57; color: white;'
+            highlight_style = 'background-color: #1565C0; color: white;'
             if '승' in johap_item:
                 result[2] = highlight_style
             if '무' in johap_item:
@@ -162,9 +162,17 @@ def Crawler(yearc,countc,gubun):
             if '패' in johap_item:
                 result[4] = highlight_style
             return result
-        # DataFrame 표시
-        styled_df = df.style.apply(highlight_cells, axis=1)
-        st.table(styled_df)
+        
+        # DataFrame 표시        
+        styled_df = df.style.set_properties(**{
+            'text-align': 'center',
+            'vertical-align': 'middle'
+        }).set_table_styles([{
+            'selector': 'th',
+            'props': [('text-align', 'center'), ('background-color', '#E3F2FD')]
+        }]).apply(highlight_cells, axis=1)
+
+        st.write(styled_df.to_html(escape=False), unsafe_allow_html=True)
 
         st.text("* 발매일 이전 승무패 배당은 해외승무패 배당 기준 예측임")
         
@@ -308,7 +316,7 @@ def Crawler(yearc,countc,gubun):
         def highlight_cells(row):
             result = [''] * len(row)
             johap_item = johap[index.index(row.name)]
-            highlight_style = 'background-color: #2E8B57; color: white;'
+            highlight_style = 'background-color: #1565C0; color: white;'
             if '승' in johap_item:
                 result[2] = highlight_style
             if '1' in johap_item:
@@ -316,9 +324,17 @@ def Crawler(yearc,countc,gubun):
             if '패' in johap_item:
                 result[4] = highlight_style
             return result
-        # DataFrame 표시
-        styled_df = df.style.apply(highlight_cells, axis=1)
-        st.table(styled_df)
+        
+        # DataFrame 표시       
+        styled_df = df.style.set_properties(**{
+            'text-align': 'center',
+            'vertical-align': 'middle'
+        }).set_table_styles([{
+            'selector': 'th',
+            'props': [('text-align', 'center'), ('background-color', '#E3F2FD')]
+        }]).apply(highlight_cells, axis=1)
+
+        st.write(styled_df.to_html(escape=False), unsafe_allow_html=True)
 
     elif gubun == 'k':
      
@@ -459,7 +475,7 @@ def Crawler(yearc,countc,gubun):
         def highlight_cells(row):
             result = [''] * len(row)
             johap_item = johap[index.index(row.name)]
-            highlight_style = 'background-color: #2E8B57; color: white;'
+            highlight_style = 'background-color: #1565C0; color: white;'
             if '승' in johap_item:
                 result[2] = highlight_style
             if '5' in johap_item:
@@ -467,9 +483,17 @@ def Crawler(yearc,countc,gubun):
             if '패' in johap_item:
                 result[4] = highlight_style
             return result
-        # DataFrame 표시
-        styled_df = df.style.apply(highlight_cells, axis=1)
-        st.table(styled_df)
+        
+        # DataFrame 표시       
+        styled_df = df.style.set_properties(**{
+            'text-align': 'center',
+            'vertical-align': 'middle'
+        }).set_table_styles([{
+            'selector': 'th',
+            'props': [('text-align', 'center'), ('background-color', '#E3F2FD')]
+        }]).apply(highlight_cells, axis=1)
+
+        st.write(styled_df.to_html(escape=False), unsafe_allow_html=True)
 
         st.text("* 발매일 이전 승5패 배당은 데이터 기준 예측임")
         
