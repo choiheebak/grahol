@@ -771,6 +771,12 @@ def johap_def(gubun, option, biga, big):
                 a = random.sample(big[i],1)
                 
             list_johap.append(a)
+                   
+    else: 
+        for i in range(14):
+            a = biga[i][:1]   
+                
+            list_johap.append(a)
 
     list_j = [''.join(item) for item in list_johap]
 
