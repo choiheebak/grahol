@@ -42,6 +42,9 @@ def Crawler(yearc,countc,gubun):
         win = []
         draw = []
         lose = []
+        fwin = []
+        fdraw = []
+        flose = []
         result = []
         big2 = []
         ai2 = []
@@ -67,12 +70,22 @@ def Crawler(yearc,countc,gubun):
                         lose.append(team_read[q][s:r])
                         s = r+1
                     elif rcnt == 6:
-                        result.append(team_read[q][s:r])
+                        fwin.append(team_read[q][s:r]) 
                         s = r+1
                     elif rcnt == 7:
+                        fdraw.append(team_read[q][s:r])
+                        s = r+1
+                    elif rcnt == 8:
+                        flose.append(team_read[q][s:r])
+                        s = r+1
+                    elif rcnt == 9:
+                        result.append(team_read[q][s:r])
+                        s = r+1
+                    elif rcnt == 10:
                         big2.append(team_read[q][s:r])
                         s = r+1
                         ai2.append(team_read[q][s:])
+
 
         biga = []  
         for b in range(14):
@@ -132,11 +145,14 @@ def Crawler(yearc,countc,gubun):
 
         johap = johap_def('s',option,biga,big)
 
-        home = [home[0],home[1],home[2],home[3],home[4],home[5],home[6],home[7],home[8],home[9],home[10],home[11],home[12],home[13]]
-        away = [away[0],away[1],away[2],away[3],away[4],away[5],away[6],away[7],away[8],away[9],away[10],away[11],away[12],away[13]]
-        win = [win[0],win[1],win[2],win[3],win[4],win[5],win[6],win[7],win[8],win[9],win[10],win[11],win[12],win[13]]
-        draw = [draw[0],draw[1],draw[2],draw[3],draw[4],draw[5],draw[6],draw[7],draw[8],draw[9],draw[10],draw[11],draw[12],draw[13]] 
-        lose = [lose[0],lose[1],lose[2],lose[3],lose[4],lose[5],lose[6],lose[7],lose[8],lose[9],lose[10],lose[11],lose[12],lose[13]] 
+        home = home
+        away = away
+        win = win
+        draw = draw
+        lose = lose
+        fwin = fwin
+        fdraw = fdraw
+        flose = flose
 
         # index 생성
         index = [f"{i}경기" for i in range(1, 15)]
@@ -147,7 +163,10 @@ def Crawler(yearc,countc,gubun):
             '원정팀': away,
             '승': win,
             '무': draw,
-            '패': lose
+            '패': lose,
+            '해외승': fwin,
+            '해외무': fdraw,
+            '해외패': flose
         }, index=index)
         
         # 스타일 적용 함수
@@ -203,6 +222,9 @@ def Crawler(yearc,countc,gubun):
         win = []
         draw = []
         lose = []
+        fwin = []
+        fdraw = []
+        flose = []
         result = []
         big2 = []
         ai2 = []
@@ -228,12 +250,22 @@ def Crawler(yearc,countc,gubun):
                         lose.append(team_read[q][s:r])
                         s = r+1
                     elif rcnt == 6:
-                        result.append(team_read[q][s:r])
+                        fwin.append(team_read[q][s:r]) 
                         s = r+1
                     elif rcnt == 7:
+                        fdraw.append(team_read[q][s:r])
+                        s = r+1
+                    elif rcnt == 8:
+                        flose.append(team_read[q][s:r])
+                        s = r+1
+                    elif rcnt == 9:
+                        result.append(team_read[q][s:r])
+                        s = r+1
+                    elif rcnt == 10:
                         big2.append(team_read[q][s:r])
                         s = r+1
                         ai2.append(team_read[q][s:])
+
 
         biga = []  
         for b in range(14):
@@ -292,13 +324,14 @@ def Crawler(yearc,countc,gubun):
                 big.append(bigai[b])
 
         johap = johap_def('b',option,biga,big)
-
-       
-        home = [home[0],home[1],home[2],home[3],home[4],home[5],home[6],home[7],home[8],home[9],home[10],home[11],home[12],home[13]]
-        away = [away[0],away[1],away[2],away[3],away[4],away[5],away[6],away[7],away[8],away[9],away[10],away[11],away[12],away[13]]
-        win = [win[0],win[1],win[2],win[3],win[4],win[5],win[6],win[7],win[8],win[9],win[10],win[11],win[12],win[13]]
-        draw = [draw[0],draw[1],draw[2],draw[3],draw[4],draw[5],draw[6],draw[7],draw[8],draw[9],draw[10],draw[11],draw[12],draw[13]] 
-        lose = [lose[0],lose[1],lose[2],lose[3],lose[4],lose[5],lose[6],lose[7],lose[8],lose[9],lose[10],lose[11],lose[12],lose[13]] 
+      
+        home = home
+        away = away
+        win = win
+        draw = draw
+        lose = lose
+        fwin = fwin
+        flose = flose
 
         # index 생성
         index = [f"{i}경기" for i in range(1, 15)]
@@ -309,7 +342,9 @@ def Crawler(yearc,countc,gubun):
             '원정팀': away,
             '승': win,
             '1': draw,
-            '패': lose
+            '패': lose,
+            '해외승': fwin,
+            '해외패': flose
         }, index=index)
         
         # 스타일 적용 함수
@@ -363,6 +398,9 @@ def Crawler(yearc,countc,gubun):
         win = []
         draw = []
         lose = []
+        fwin = []
+        fdraw = []
+        flose = []
         result = []
         big2 = []
         ai2 = []
@@ -388,9 +426,18 @@ def Crawler(yearc,countc,gubun):
                         lose.append(team_read[q][s:r])
                         s = r+1
                     elif rcnt == 6:
-                        result.append(team_read[q][s:r])
+                        fwin.append(team_read[q][s:r]) 
                         s = r+1
                     elif rcnt == 7:
+                        fdraw.append(team_read[q][s:r])
+                        s = r+1
+                    elif rcnt == 8:
+                        flose.append(team_read[q][s:r])
+                        s = r+1
+                    elif rcnt == 9:
+                        result.append(team_read[q][s:r])
+                        s = r+1
+                    elif rcnt == 10:
                         big2.append(team_read[q][s:r])
                         s = r+1
                         ai2.append(team_read[q][s:])
@@ -453,11 +500,13 @@ def Crawler(yearc,countc,gubun):
 
         johap = johap_def('k',option,biga,big)
 
-        home = [home[0],home[1],home[2],home[3],home[4],home[5],home[6],home[7],home[8],home[9],home[10],home[11],home[12],home[13]]
-        away = [away[0],away[1],away[2],away[3],away[4],away[5],away[6],away[7],away[8],away[9],away[10],away[11],away[12],away[13]]
-        win = [win[0],win[1],win[2],win[3],win[4],win[5],win[6],win[7],win[8],win[9],win[10],win[11],win[12],win[13]]
-        draw = [draw[0],draw[1],draw[2],draw[3],draw[4],draw[5],draw[6],draw[7],draw[8],draw[9],draw[10],draw[11],draw[12],draw[13]] 
-        lose = [lose[0],lose[1],lose[2],lose[3],lose[4],lose[5],lose[6],lose[7],lose[8],lose[9],lose[10],lose[11],lose[12],lose[13]] 
+        home = home
+        away = away
+        win = win
+        draw = draw
+        lose = lose
+        fwin = fwin
+        flose = flose
 
         # index 생성
         index = [f"{i}경기" for i in range(1, 15)]
@@ -468,7 +517,9 @@ def Crawler(yearc,countc,gubun):
             '원정팀': away,
             '승': win,
             '5': draw,
-            '패': lose
+            '패': lose,
+            '해외승': fwin,
+            '해외패': flose
         }, index=index)
         
         # 스타일 적용 함수
