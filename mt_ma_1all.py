@@ -162,14 +162,15 @@ def Crawler(yearc,countc,gubun):
 
         def highlight_result(row):
             result = row['결과']
-            return ['background-color:#A5D6A7' if col == result else '' for col in row.index]
+            highlight_style = 'background-color: #43A047; color: white;'
+            return [highlight_style if col == result else '' for col in row.index]
         
         styled_df = df.style.set_properties(**{
             'text-align': 'center',
             'vertical-align': 'middle'
         }).set_table_styles([{
             'selector': 'th',
-            'props': [('text-align', 'center'), ('background-color', '#FFFDE7')]
+            'props': [('text-align', 'center'), ('background-color', '#E8F5E9')]
         }]).apply(highlight_result, axis=1)
 
         st.write(styled_df.to_html(escape=False), unsafe_allow_html=True)
@@ -326,14 +327,15 @@ def Crawler(yearc,countc,gubun):
 
         def highlight_result(row):
             result = row['결과']
-            return ['background-color:#A5D6A7' if col == result else '' for col in row.index]
+            highlight_style = 'background-color: #43A047; color: white;'
+            return [highlight_style if col == result else '' for col in row.index]
         
         styled_df = df.style.set_properties(**{
             'text-align': 'center',
             'vertical-align': 'middle'
         }).set_table_styles([{
             'selector': 'th',
-            'props': [('text-align', 'center'), ('background-color', '#FFFDE7')]
+            'props': [('text-align', 'center'), ('background-color', '#E8F5E9')]
         }]).apply(highlight_result, axis=1)
 
         st.write(styled_df.to_html(escape=False), unsafe_allow_html=True)       
@@ -490,14 +492,15 @@ def Crawler(yearc,countc,gubun):
 
         def highlight_result(row):
             result = row['결과']
-            return ['background-color:#A5D6A7' if col == result else '' for col in row.index]
+            highlight_style = 'background-color: #43A047; color: white;'
+            return [highlight_style if col == result else '' for col in row.index]
         
         styled_df = df.style.set_properties(**{
             'text-align': 'center',
             'vertical-align': 'middle'
         }).set_table_styles([{
             'selector': 'th',
-            'props': [('text-align', 'center'), ('background-color', '#FFFDE7')]
+            'props': [('text-align', 'center'), ('background-color', '#E8F5E9')]
         }]).apply(highlight_result, axis=1)
 
         st.write(styled_df.to_html(escape=False), unsafe_allow_html=True)  
