@@ -1186,8 +1186,6 @@ def Crawler(yearc,countc,gyungi):
                     s = r+1
                     saoffside.append(team_read[q][s:])
 
-    st.markdown(":soccer: :blue[**선수**]")
-
     def player_home(num_rows):
   
         index = [shplay[i] for i in range(num_rows)]
@@ -1259,12 +1257,10 @@ def Crawler(yearc,countc,gyungi):
     dfa = player_away(len(saplay))
         
     if len(shplay) == 0 and len(saplay) == 0:
-        tab1, tab2 = st.tabs(["홈팀", "원정팀"])
-        with tab1:
-            pass
-        with tab2:
-            pass
+        pass
     else:
+        st.markdown(":soccer: :blue[**선수**]")
+
         tab1, tab2 = st.tabs(["홈팀", "원정팀"])
         with tab1:
             st.text(home)
