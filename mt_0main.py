@@ -583,9 +583,9 @@ if selected_sport == "축구 승무패":
 
         soccer_seqanalyst()
 
-    elif submenu == "게시판": 
+    # elif submenu == "게시판": 
 
-        soccer_posts()
+    #     soccer_posts()
 
 elif selected_sport == "야구 승1패":
 
@@ -613,9 +613,9 @@ elif selected_sport == "야구 승1패":
 
         baseball_seqanalyst()
 
-    elif submenu == "게시판": 
+    # elif submenu == "게시판": 
 
-        baseball_posts()
+    #     baseball_posts()
 
 elif selected_sport == "농구 승5패":
 
@@ -643,6 +643,6 @@ elif selected_sport == "농구 승5패":
 
         basketball_seqanalyst()
 
-    elif submenu == "게시판": 
+    # elif submenu == "게시판": 
 
-        basketball_posts()
+    #     basketball_posts()
