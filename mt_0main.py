@@ -10,7 +10,7 @@ import mt_bk_1all
 import mt_bk_2all
 import mt_dt_1all
 import mt_jo_1all
-import mt_zp_1all
+# import mt_zp_1all
 from datetime import datetime
 
 now = datetime.now()
@@ -59,7 +59,8 @@ with st.sidebar:
         "농구 승5패": ["경기별 분석", "순위추이 분석", "조합기", "예측", "경기 통계", "회차 조회"]
     }
     
-    icons = ['zoom-in', 'tropical-storm', 'fan', 'yelp', 'graph-up-arrow', 'tablet', 'table']
+    # icons = ['zoom-in', 'tropical-storm', 'fan', 'yelp', 'graph-up-arrow', 'tablet', 'table']
+    icons = ['zoom-in', 'tropical-storm', 'fan', 'yelp', 'graph-up-arrow', 'tablet']
     
     current_submenu_index = st.session_state.submenu_indices[st.session_state.selected_sport]
     if current_submenu_index >= len(submenu_options[st.session_state.selected_sport]):
@@ -544,17 +545,17 @@ def basketball_allinq():
 
     mt_ma_1all.Crawler(year,count,'k')
     
-def soccer_posts():
+# def soccer_posts():
  
-    mt_zp_1all.Crawler('s')
+#     mt_zp_1all.Crawler('s')
 
-def baseball_posts():
+# def baseball_posts():
  
-    mt_zp_1all.Crawler('b')
+#     mt_zp_1all.Crawler('b')
 
-def basketball_posts():
+# def basketball_posts():
  
-    mt_zp_1all.Crawler('k')
+#     mt_zp_1all.Crawler('k')
                
 # 메인 콘텐츠 영역
 if selected_sport == "축구 승무패": 
