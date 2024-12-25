@@ -10,6 +10,7 @@ import mt_bk_1all
 import mt_bk_2all
 import mt_dt_1all
 import mt_jo_1all
+import mt_zp_1all
 from datetime import datetime
 
 now = datetime.now()
@@ -28,7 +29,7 @@ def on_submenu_change(key):
     st.session_state.submenu_indices[st.session_state.selected_sport] = submenu_options[st.session_state.selected_sport].index(st.session_state.submenu_select)
 
 # 페이지 설정
-# st.set_page_config(page_title="그래홀", page_icon="🏠", layout="wide")
+st.set_page_config(page_title="그래홀", page_icon="🏠", layout="wide")
 
 # 사이드바
 with st.sidebar:
@@ -48,12 +49,12 @@ with st.sidebar:
                                  })
 
     submenu_options = {
-        "축구 승무패": ["경기별 분석", "순위추이 분석", "조합기", "예측", "경기 통계", "회차 조회"],
-        "야구 승1패": ["경기별 분석", "순위추이 분석", "조합기", "예측", "조합기", "경기 통계", "회차 조회"],
-        "농구 승5패": ["경기별 분석", "순위추이 분석", "조합기", "예측", "조합기", "경기 통계", "회차 조회"]
+        "축구 승무패": ["경기별 분석", "순위추이 분석", "조합기", "예측", "경기 통계", "회차 조회","게시판"],
+        "야구 승1패": ["경기별 분석", "순위추이 분석", "조합기", "예측", "경기 통계", "회차 조회","게시판"],
+        "농구 승5패": ["경기별 분석", "순위추이 분석", "조합기", "예측", "경기 통계", "회차 조회","게시판"]
     }
     
-    icons = ['zoom-in', 'tropical-storm', 'fan', 'yelp', 'graph-up-arrow', 'tablet']
+    icons = ['zoom-in', 'tropical-storm', 'fan', 'yelp', 'graph-up-arrow', 'tablet', 'table']
     
     current_submenu_index = st.session_state.submenu_indices[st.session_state.selected_sport]
     if current_submenu_index >= len(submenu_options[st.session_state.selected_sport]):
@@ -537,7 +538,19 @@ def basketball_allinq():
                 break
 
     mt_ma_1all.Crawler(year,count,'k')
-         
+    
+def soccer_posts():
+ 
+    mt_zp_1all.Crawler('s')
+
+def baseball_posts():
+ 
+    mt_zp_1all.Crawler('b')
+
+def basketball_posts():
+ 
+    mt_zp_1all.Crawler('k')
+               
 # 메인 콘텐츠 영역
 if selected_sport == "축구 승무패": 
 
@@ -565,6 +578,10 @@ if selected_sport == "축구 승무패":
 
         soccer_seqanalyst()
 
+    elif submenu == "게시판": 
+
+        soccer_posts()
+
 elif selected_sport == "야구 승1패":
 
     if submenu == "예측":
@@ -591,6 +608,10 @@ elif selected_sport == "야구 승1패":
 
         baseball_seqanalyst()
 
+    elif submenu == "게시판": 
+
+        baseball_posts()
+
 elif selected_sport == "농구 승5패":
 
     if submenu == "예측":
@@ -616,3 +637,7 @@ elif selected_sport == "농구 승5패":
     elif submenu == "순위추이 분석":
 
         basketball_seqanalyst()
+
+    elif submenu == "게시판": 
+
+        basketball_posts()
