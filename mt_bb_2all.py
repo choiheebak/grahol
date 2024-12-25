@@ -345,7 +345,7 @@ def Crawler(yearc,countc,gyungi):
         return dfas
 
 
-    st.markdown(":baseball: :blue[**일별 순위 추이**]")
+    st.markdown(":baseball: :blue[**일별 순위 추이**] (최대 10경기 기준)")
   
     # st.markdown("홈팀 : "+home[0])
    
