@@ -282,10 +282,10 @@ def Crawler(yearc,countc,gyungi):
             fig, ax = plt.subplots(figsize=(12, 6))
             sns.lineplot(x='일자', y='순위', data=dfhs, marker='o', color='red',linewidth=3, markersize=10)
             plt.title('', fontsize=20)
-            plt.xlabel('DATE', fontsize=12)
-            plt.ylabel('SEQ', fontsize=12, rotation=360)
-            plt.xticks(rotation=45, fontsize=12)
-            plt.yticks(fontsize=12)
+            plt.xlabel('DATE', fontsize=10)
+            plt.ylabel('SEQ', fontsize=10, rotation=360)
+            plt.xticks(rotation=45, fontsize=10)
+            plt.yticks(fontsize=10)
 
             # y축 설정
             y_min = dfhs['순위'].min()
@@ -305,10 +305,10 @@ def Crawler(yearc,countc,gyungi):
             fig, ax = plt.subplots(figsize=(12, 6))
             sns.lineplot(x='일자', y='순위', data=dfas, marker='o',color='blue',linewidth=3, markersize=10)
             plt.title('', fontsize=20)
-            plt.xlabel('DATE', fontsize=12)
-            plt.ylabel('SEQ', fontsize=12, rotation=360)
-            plt.xticks(rotation=45, fontsize=12)
-            plt.yticks(fontsize=12)
+            plt.xlabel('DATE', fontsize=10)
+            plt.ylabel('SEQ', fontsize=10, rotation=360)
+            plt.xticks(rotation=45, fontsize=10)
+            plt.yticks(fontsize=10)
 
             # y축 설정
             y_min = dfas['순위'].min()
