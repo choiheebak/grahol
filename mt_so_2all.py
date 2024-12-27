@@ -290,7 +290,7 @@ def Crawler(yearc,countc,gyungi):
             # y축 설정
             y_min = dfhs['순위'].min()
             y_max = dfhs['순위'].max()
-            plt.yticks(range(0, 21, 1))  # 1부터 10까지 1씩 증가
+            plt.yticks(range(0, 25, 1))  # 1부터 10까지 1씩 증가
             plt.gca().invert_yaxis()  # 순위 축 반전 (1이 가장 위로)
 
             # 그리드 추가
@@ -313,7 +313,7 @@ def Crawler(yearc,countc,gyungi):
             # y축 설정
             y_min = dfas['순위'].min()
             y_max = dfas['순위'].max()
-            plt.yticks(range(0, 21, 1))  # 1부터 10까지 1씩 증가
+            plt.yticks(range(0, 25, 1))  # 1부터 10까지 1씩 증가
             plt.gca().invert_yaxis()  # 순위 축 반전 (1이 가장 위로)
 
             # 그리드 추가
