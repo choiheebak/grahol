@@ -411,17 +411,35 @@ def Crawler(yearc,countc,gyungi):
                 flose = team_read[s:r]
                 s = r+1
                 result = team_read[s:]   
-  
-    df = pd.DataFrame(data=np.array([[home,hseq,hsjum,htotal,hwin,hlose,hcha,hduk,has,hrebound,hsteal,
-                                      hblock,htsteal,hfhrow,hfhrows,hhwin,hhlose,hawin,halose,hdwin,hdlose,hyeon,
-                                      htgubun,hgigu],
-                                     [away,aseq,asjum,atotal,awin,alose,acha,aduk,aas,arebound,asteal,
-                                      ablock,atsteal,afhrow,afhrows,ahwin,ahlose,aawin,aalose,adwin,adlose,ayeon,
-                                      atgubun,agigu]]), 
+   
+    if has == "":
+        df = pd.DataFrame(data=np.array([[home,hseq,hsjum,htotal,hwin,hlose,hcha,hduk,hhwin,hhlose,hawin,halose,hdwin,hdlose,hyeon,
+                                        htgubun,hgigu],
+                                        [away,aseq,asjum,atotal,awin,alose,acha,aduk,ahwin,ahlose,aawin,aalose,adwin,adlose,ayeon,
+                                        atgubun,agigu]]), 
 
-            index= ["홈팀", "원정팀"], 
-            columns=["팀명","순위","승률","경기수","승","패","승차","득점","AS","리바운드","스틸","블록","3점슛","자유투","자유투성공","홈승","홈패",
-                     "원정승","원정패","디비전승","디비전패","연속","리그","디비전"]) 
+                index= ["홈팀", "원정팀"], 
+                columns=["팀명","순위","승률","경기수","승","패","승차","득점","홈승","홈패",
+                        "원정승","원정패","디비전승","디비전패","연속","리그","디비전"]) 
+    else:
+        df = pd.DataFrame(data=np.array([[home,hseq,hsjum,htotal,hwin,hlose,hcha,hduk,has,hrebound,hsteal,
+                                        hblock,htsteal,hfhrow,hfhrows],
+                                        [away,aseq,asjum,atotal,awin,alose,acha,aduk,aas,arebound,asteal,
+                                        ablock,atsteal,afhrow,afhrows]]), 
+
+                index= ["홈팀", "원정팀"], 
+                columns=["팀명","순위","승률","경기수","승","패","승차","득점","AS","리바운드","스틸","블록","3점슛","자유투","자유투성공"]) 
+ 
+    # df = pd.DataFrame(data=np.array([[home,hseq,hsjum,htotal,hwin,hlose,hcha,hduk,has,hrebound,hsteal,
+    #                                   hblock,htsteal,hfhrow,hfhrows,hhwin,hhlose,hawin,halose,hdwin,hdlose,hyeon,
+    #                                   htgubun,hgigu],
+    #                                  [away,aseq,asjum,atotal,awin,alose,acha,aduk,aas,arebound,asteal,
+    #                                   ablock,atsteal,afhrow,afhrows,ahwin,ahlose,aawin,aalose,adwin,adlose,ayeon,
+    #                                   atgubun,agigu]]), 
+
+    #         index= ["홈팀", "원정팀"], 
+    #         columns=["팀명","순위","승률","경기수","승","패","승차","득점","AS","리바운드","스틸","블록","3점슛","자유투","자유투성공","홈승","홈패",
+    #                  "원정승","원정패","디비전승","디비전패","연속","리그","디비전"]) 
  
     st.dataframe(df, use_container_width=True)
 

@@ -271,7 +271,7 @@ def Crawler(yearc,countc,gyungi):
                     s = r+1
                     ailja.append(team_read[q][s:])
     
-    def iljaseq_home(num_rows):
+    def iljaseq_home_nba(num_rows):
   
         # index = [f"{i}" for i in range(1, (num_rows+1))] 
 
@@ -283,13 +283,6 @@ def Crawler(yearc,countc,gyungi):
         패 = [hlose[i] for i in range(num_rows)]
         승차 = [hcha[i] for i in range(num_rows)]
         득점 = [hduk[i] for i in range(num_rows)]
-        AS = [has[i] for i in range(num_rows)]
-        리바운드 = [hrebound[i] for i in range(num_rows)]
-        스틸 = [hsteal[i] for i in range(num_rows)]
-        블록 = [hblock[i] for i in range(num_rows)]
-        삼점슛 = [htsteal[i] for i in range(num_rows)]
-        자유투 = [hfhrow[i] for i in range(num_rows)]
-        자유투성공 = [hfhrows[i] for i in range(num_rows)]
         홈승 = [hhwin[i] for i in range(num_rows)]
         홈패 = [hhlose[i] for i in range(num_rows)]
         원정승 = [hawin[i] for i in range(num_rows)]
@@ -310,13 +303,6 @@ def Crawler(yearc,countc,gyungi):
             "패": 패,
             "승차": 승차,
             "득점": 득점,
-            "AS": AS,
-            "리바운드": 리바운드,
-            "스틸": 스틸,
-            "블록": 블록,
-            "삼점슛": 삼점슛,
-            "자유투": 자유투,
-            "자유투성공": 자유투성공,
             "홈승": 홈승,
             "홈패": 홈패,
             "원정승": 원정승,
@@ -332,8 +318,52 @@ def Crawler(yearc,countc,gyungi):
         dfhs = pd.DataFrame(data, index=pd.Index(index, name="일자"))
 
         return dfhs
+    
+    def iljaseq_home_kbl(num_rows):
+  
+        # index = [f"{i}" for i in range(1, (num_rows+1))] 
 
-    def iljaseq_away(num_rows):
+        index = [hilja[i] for i in range(num_rows)]
+        순위 = [int(hseq[i]) for i in range(num_rows)]
+        경기수 = [htotal[i] for i in range(num_rows)]
+        승률 = [hsjum[i] for i in range(num_rows)]
+        승 = [hwin[i] for i in range(num_rows)]
+        패 = [hlose[i] for i in range(num_rows)]
+        승차 = [hcha[i] for i in range(num_rows)]
+        득점 = [hduk[i] for i in range(num_rows)]
+        AS = [has[i] for i in range(num_rows)]
+        리바운드 = [hrebound[i] for i in range(num_rows)]
+        스틸 = [hsteal[i] for i in range(num_rows)]
+        블록 = [hblock[i] for i in range(num_rows)]
+        삼점슛 = [htsteal[i] for i in range(num_rows)]
+        자유투 = [hfhrow[i] for i in range(num_rows)]
+        자유투성공 = [hfhrows[i] for i in range(num_rows)]
+
+        # 딕셔너리로 데이터 구성
+        data = {
+            # "선수": 선수,
+            "순위": 순위,
+            "경기수": 경기수,
+            "승률": 승률,
+            "승": 승,
+            "패": 패,
+            "승차": 승차,
+            "득점": 득점,
+            "AS": AS,
+            "리바운드": 리바운드,
+            "스틸": 스틸,
+            "블록": 블록,
+            "삼점슛": 삼점슛,
+            "자유투": 자유투,
+            "자유투성공": 자유투성공,
+        }
+
+        # DataFrame 생성
+        dfhs = pd.DataFrame(data, index=pd.Index(index, name="일자"))
+
+        return dfhs
+
+    def iljaseq_away_nba(num_rows):
   
         # index = [f"{i}" for i in range(1, (num_rows+1))] 
 
@@ -345,13 +375,6 @@ def Crawler(yearc,countc,gyungi):
         패 = [alose[i] for i in range(num_rows)]
         승차 = [acha[i] for i in range(num_rows)]
         득점 = [aduk[i] for i in range(num_rows)]
-        AS = [aas[i] for i in range(num_rows)]
-        리바운드 = [arebound[i] for i in range(num_rows)]
-        스틸 = [asteal[i] for i in range(num_rows)]
-        블록 = [ablock[i] for i in range(num_rows)]
-        삼점슛 = [atsteal[i] for i in range(num_rows)]
-        자유투 = [afhrow[i] for i in range(num_rows)]
-        자유투성공 = [afhrows[i] for i in range(num_rows)]
         홈승 = [ahwin[i] for i in range(num_rows)]
         홈패 = [ahlose[i] for i in range(num_rows)]
         원정승 = [aawin[i] for i in range(num_rows)]
@@ -372,13 +395,6 @@ def Crawler(yearc,countc,gyungi):
             "패": 패,
             "승차": 승차,
             "득점": 득점,
-            "AS": AS,
-            "리바운드": 리바운드,
-            "스틸": 스틸,
-            "블록": 블록,
-            "삼점슛": 삼점슛,
-            "자유투": 자유투,
-            "자유투성공": 자유투성공,
             "홈승": 홈승,
             "홈패": 홈패,
             "원정승": 원정승,
@@ -395,17 +411,63 @@ def Crawler(yearc,countc,gyungi):
 
         return dfas
 
+    def iljaseq_away_kbl(num_rows):
+  
+        # index = [f"{i}" for i in range(1, (num_rows+1))] 
+
+        index = [ailja[i] for i in range(num_rows)]
+        순위 = [int(aseq[i]) for i in range(num_rows)]
+        경기수 = [atotal[i] for i in range(num_rows)]
+        승률 = [asjum[i] for i in range(num_rows)]
+        승 = [awin[i] for i in range(num_rows)]
+        패 = [alose[i] for i in range(num_rows)]
+        승차 = [acha[i] for i in range(num_rows)]
+        득점 = [aduk[i] for i in range(num_rows)]
+        AS = [aas[i] for i in range(num_rows)]
+        리바운드 = [arebound[i] for i in range(num_rows)]
+        스틸 = [asteal[i] for i in range(num_rows)]
+        블록 = [ablock[i] for i in range(num_rows)]
+        삼점슛 = [atsteal[i] for i in range(num_rows)]
+        자유투 = [afhrow[i] for i in range(num_rows)]
+        자유투성공 = [afhrows[i] for i in range(num_rows)]
+
+        # 딕셔너리로 데이터 구성
+        data = {
+            # "선수": 선수,
+            "순위": 순위,
+            "경기수": 경기수,
+            "승률": 승률,
+            "승": 승,
+            "패": 패,
+            "승차": 승차,
+            "득점": 득점,
+            "AS": AS,
+            "리바운드": 리바운드,
+            "스틸": 스틸,
+            "블록": 블록,
+            "삼점슛": 삼점슛,
+            "자유투": 자유투,
+            "자유투성공": 자유투성공,
+        }
+
+        # DataFrame 생성
+        dfas = pd.DataFrame(data, index=pd.Index(index, name="일자"))
+
+        return dfas
 
     st.markdown(":basketball: :blue[**일별 순위 추이**] (최대 10경기 기준)")
   
     # st.markdown("홈팀 : "+home[0])
    
-    dfhs = iljaseq_home(len(hilja))
+    if has[0] == "":
+        dfhs = iljaseq_home_nba(len(hilja))
+        dfas = iljaseq_away_nba(len(ailja))
+    else:
+        dfhs = iljaseq_home_kbl(len(hilja))
+        dfas = iljaseq_away_kbl(len(ailja))
 
     # st.markdown("원정팀 : "+away[0])
     
-    dfas = iljaseq_away(len(ailja))
-   
     # plt.rcParams['font.family'] = 'NanumGothic'
     # plt.rcParams['axes.unicode_minus'] = False
 
