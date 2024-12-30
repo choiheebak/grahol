@@ -187,8 +187,10 @@ def soccer_gameanalyst():
                 break
     # fr.close
 
-    pageso = st.sidebar.radio("축구 승무패 - 경기 선택", ["1경기", "2경기", "3경기", "4경기", "5경기", "6경기", "7경기",
-                                    "8경기", "9경기", "10경기", "11경기", "12경기", "13경기", "14경기"])
+    selection = ["1경기", "2경기", "3경기", "4경기", "5경기", "6경기", "7경기", "8경기", "9경기", "10경기", "11경기", "12경기", "13경기", "14경기"]
+    pageso = st.pills("축구 승무패 경기별 분석 - 경기 선택", selection, default="1경기")
+    # pageso = st.sidebar.radio("축구 승무패 - 경기 선택", ["1경기", "2경기", "3경기", "4경기", "5경기", "6경기", "7경기",
+    #                                 "8경기", "9경기", "10경기", "11경기", "12경기", "13경기", "14경기"])
     
     # print("축구 승무패",year,count)
 
@@ -223,8 +225,10 @@ def soccer_gameanalyst():
 
 def baseball_gameanalyst():
 
-    pagebb = st.sidebar.radio("야구 승1패 - 경기 선택", ["1경기", "2경기", "3경기", "4경기", "5경기", "6경기", "7경기",
-                                    "8경기", "9경기", "10경기", "11경기", "12경기", "13경기", "14경기"])
+    selection = ["1경기", "2경기", "3경기", "4경기", "5경기", "6경기", "7경기", "8경기", "9경기", "10경기", "11경기", "12경기", "13경기", "14경기"]
+    pagebb = st.pills("야구 승1패 경기별 분석 - 경기 선택", selection, default="1경기")
+    # pagebb = st.sidebar.radio("야구 승1패 - 경기 선택", ["1경기", "2경기", "3경기", "4경기", "5경기", "6경기", "7경기",
+    #                                 "8경기", "9경기", "10경기", "11경기", "12경기", "13경기", "14경기"])
     
     fr = open('baseball_wdl.txt', 'r', encoding='UTF8')
     # fr = open('baseball_wdl.txt', 'r', encoding='UTF8')
@@ -273,8 +277,10 @@ def baseball_gameanalyst():
 
 def basketball_gameanalyst():
 
-    pagebk = st.sidebar.radio("농구 승5패 - 경기 선택", ["1경기", "2경기", "3경기", "4경기", "5경기", "6경기", "7경기",
-                                    "8경기", "9경기", "10경기", "11경기", "12경기", "13경기", "14경기"])
+    selection = ["1경기", "2경기", "3경기", "4경기", "5경기", "6경기", "7경기", "8경기", "9경기", "10경기", "11경기", "12경기", "13경기", "14경기"]
+    pagebk = st.pills("농구 승5패 경기별 분석 - 경기 선택", selection, default="1경기")
+    # pagebk = st.sidebar.radio("농구 승5패 - 경기 선택", ["1경기", "2경기", "3경기", "4경기", "5경기", "6경기", "7경기",
+    #                                 "8경기", "9경기", "10경기", "11경기", "12경기", "13경기", "14경기"])
      
     fr = open('basketball_wdl.txt', 'r', encoding='UTF8')
 
@@ -333,8 +339,10 @@ def soccer_seqanalyst():
                 count = line[j+1:]
                 break
 
-    pageso = st.sidebar.radio("축구 승무패", ["1경기", "2경기", "3경기", "4경기", "5경기", "6경기", "7경기",
-                                    "8경기", "9경기", "10경기", "11경기", "12경기", "13경기", "14경기"])
+    selection = ["1경기", "2경기", "3경기", "4경기", "5경기", "6경기", "7경기", "8경기", "9경기", "10경기", "11경기", "12경기", "13경기", "14경기"]
+    pageso = st.pills("축구 승무패 순위 추이 분석 - 경기 선택", selection, default="1경기")
+    # pageso = st.sidebar.radio("축구 승무패", ["1경기", "2경기", "3경기", "4경기", "5경기", "6경기", "7경기",
+    #                                 "8경기", "9경기", "10경기", "11경기", "12경기", "13경기", "14경기"])
     
     # print("축구 승무패",year,count)
 
@@ -368,9 +376,11 @@ def soccer_seqanalyst():
         mt_so_2all.Crawler(year,count,14)       
 
 def baseball_seqanalyst():
-
-    pagebb = st.sidebar.radio("야구 승1패 - 경기 선택", ["1경기", "2경기", "3경기", "4경기", "5경기", "6경기", "7경기",
-                                    "8경기", "9경기", "10경기", "11경기", "12경기", "13경기", "14경기"])
+     
+    selection = ["1경기", "2경기", "3경기", "4경기", "5경기", "6경기", "7경기", "8경기", "9경기", "10경기", "11경기", "12경기", "13경기", "14경기"]
+    pagebb = st.pills("야구 승1패 순위 추이 분석 - 경기 선택", selection, default="1경기")
+    # pagebb = st.sidebar.radio("야구 승1패 - 경기 선택", ["1경기", "2경기", "3경기", "4경기", "5경기", "6경기", "7경기",
+    #                                 "8경기", "9경기", "10경기", "11경기", "12경기", "13경기", "14경기"])
     
     fr = open('baseball_wdl.txt', 'r', encoding='UTF8')
 
@@ -414,9 +424,11 @@ def baseball_seqanalyst():
         mt_bb_2all.Crawler(year,count,14)
 
 def basketball_seqanalyst():
-
-    pagebk = st.sidebar.radio("농구 승5패 - 경기 선택", ["1경기", "2경기", "3경기", "4경기", "5경기", "6경기", "7경기",
-                                    "8경기", "9경기", "10경기", "11경기", "12경기", "13경기", "14경기"])
+  
+    selection = ["1경기", "2경기", "3경기", "4경기", "5경기", "6경기", "7경기", "8경기", "9경기", "10경기", "11경기", "12경기", "13경기", "14경기"]
+    pagebk = st.pills("농구 승5패 순위 추이 분석 - 경기 선택", selection, default="1경기")
+    # pagebk = st.sidebar.radio("농구 승5패 - 경기 선택", ["1경기", "2경기", "3경기", "4경기", "5경기", "6경기", "7경기",
+    #                                 "8경기", "9경기", "10경기", "11경기", "12경기", "13경기", "14경기"])
      
     fr = open('basketball_wdl.txt', 'r', encoding='UTF8')
 
@@ -463,7 +475,9 @@ def basketball_seqanalyst():
            
 def soccer_states():
  
-    pagedt = st.sidebar.radio("경기 통계", ["승무패 경기통계", "승무패 배당통계"])    
+    selection = ["승무패 경기통계", "승무패 배당통계"]
+    pagedt = st.pills("통계 선택", selection, default="승무패 경기통계")
+    # pagedt = st.sidebar.radio("경기 통계", ["승무패 경기통계", "승무패 배당통계"])    
     
     if pagedt == "승무패 경기통계":
         # print("경기 통계-승무패 경기통계")
@@ -474,7 +488,9 @@ def soccer_states():
 
 def baseball_states():
  
-    pagedt = st.sidebar.radio("경기 통계", ["승1패 경기통계", "승1패 배당통계"])    
+    selection = ["승1패 경기통계", "승1패 배당통계"]
+    pagedt = st.pills("통계 선택", selection, default="승1패 경기통계")
+    # pagedt = st.sidebar.radio("경기 통계", ["승1패 경기통계", "승1패 배당통계"])    
     
     if pagedt == "승1패 경기통계": 
         # print("경기 통계-승1패 경기통계")
@@ -486,7 +502,9 @@ def baseball_states():
 
 def basketball_states():
  
-    pagedt = st.sidebar.radio("경기 통계", ["승5패 경기통계", "승5패 배당통계"])    
+    selection = ["승5패 경기통계", "승5패 배당통계"]
+    pagedt = st.pills("통계 선택", selection, default="승5패 경기통계")
+    # pagedt = st.sidebar.radio("경기 통계", ["승5패 경기통계", "승5패 배당통계"])    
     
     if pagedt == "승5패 경기통계": 
         # print("경기 통계-승5패 경기통계")
