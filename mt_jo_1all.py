@@ -20,7 +20,11 @@ def Crawler(yearc,countc,gubun):
         selection = ["다득표","1000원", "2000원", "3000원", "4000원", "6000원", "8000원", "9000원", "12000원", "16000원", "18000원", "24000원",  
         "27000원", "32000원", "36000원", "48000원", "54000원", "64000원", "72000원", "81000원", "96000원"]
         option = st.pills("조합 선택", selection, default="다득표")
-        st.markdown(f"조합 : {option}")
+        if option in selection:
+            st.markdown(f"조합 : {option}")
+        else:
+            opt = "다득표"
+            st.markdown(f"조합 : {opt}")
  
         if st.button("재조합"):            
             pass 
@@ -202,7 +206,11 @@ def Crawler(yearc,countc,gubun):
         selection = ["다득표","1000원", "2000원", "3000원", "4000원", "6000원", "8000원", "9000원", "12000원", "16000원", "18000원", "24000원",  
         "27000원", "32000원", "36000원", "48000원", "54000원", "64000원", "72000원", "81000원", "96000원"]
         option = st.pills("조합 선택", selection, default="다득표")
-        st.markdown(f"조합 : {option}")
+        if option in selection:
+            st.markdown(f"조합 : {option}")
+        else:
+            opt = "다득표"
+            st.markdown(f"조합 : {opt}")
 
         if st.button("재조합"):            
             pass 
@@ -378,7 +386,11 @@ def Crawler(yearc,countc,gubun):
         selection = ["다득표","1000원", "2000원", "3000원", "4000원", "6000원", "8000원", "9000원", "12000원", "16000원", "18000원", "24000원",  
         "27000원", "32000원", "36000원", "48000원", "54000원", "64000원", "72000원", "81000원", "96000원"]
         option = st.pills("조합 선택", selection, default="다득표")
-        st.markdown(f"조합 : {option}")
+        if option in selection:
+            st.markdown(f"조합 : {option}")
+        else:
+            opt = "다득표"
+            st.markdown(f"조합 : {opt}")
  
         if st.button("재조합"):            
             pass 
