@@ -138,10 +138,10 @@ def Crawler(yearc,countc,gubun):
         홈팀 = [home[i] for i in range(len(home))]
         원정팀 = [away[i] for i in range(len(home))]
         결과 = [result[i] for i in range(len(home))]
+        예측 = [tonghap[i] for i in range(len(home))]
         빅2 = [big2[i] for i in range(len(home))]
         AI경기 = [ai[i] for i in range(len(home))]
         AI배당 = [aihml[i] for i in range(len(home))]
-        예측 = [tonghap[i] for i in range(len(home))]
         우세 = [predict[i] for i in range(len(home))]
         해외확률 = [hwakryul[i] for i in range(len(home))]
         해외배당 = [bae[i] for i in range(len(home))]
@@ -158,10 +158,10 @@ def Crawler(yearc,countc,gubun):
             "홈팀": 홈팀,
             "원정팀": 원정팀,
             "결과": 결과,
+            "예측": 예측,
             "빅2": 빅2,
             "AI경기": AI경기,
             "AI배당": AI배당,
-            "예측": 예측,
             "우세": 우세,
             "해외확률": 해외확률,
             "해외배당": 해외배당,
@@ -181,10 +181,10 @@ def Crawler(yearc,countc,gubun):
         def highlight_cells(row):
             results = [''] * len(row)
             johap_item = result[index.index(row.name)]
+            tonghap_item = tonghap[index.index(row.name)]
             big2_item = big2[index.index(row.name)]
             ai_item = ai[index.index(row.name)]
             aihml_item = aihml[index.index(row.name)]
-            tonghap_item = tonghap[index.index(row.name)]
             predict_item = predict[index.index(row.name)]
             hwakryul_item = hwakryul[index.index(row.name)]
             bae_item = bae[index.index(row.name)]
@@ -201,13 +201,13 @@ def Crawler(yearc,countc,gubun):
            
             if johap_item and not johap_item.isspace():  # johap_item이 비어있지 않고 공백만으로 이루어져 있지 않은 경우에만 검사
                 results[2] = result_style
-                if johap_item in big2_item:
-                    results[3] = highlight_style
-                if johap_item in ai_item:
-                    results[4] = highlight_style
-                if johap_item in aihml_item:
-                    results[5] = highlight_style
                 if johap_item in tonghap_item:
+                    results[3] = highlight_style
+                if johap_item in big2_item:
+                    results[4] = highlight_style
+                if johap_item in ai_item:
+                    results[5] = highlight_style
+                if johap_item in aihml_item:
                     results[6] = highlight_style
                 if johap_item in predict_item:
                     results[7] = highlight_style
@@ -384,10 +384,10 @@ def Crawler(yearc,countc,gubun):
         홈팀 = [home[i] for i in range(len(home))]
         원정팀 = [away[i] for i in range(len(home))]
         결과 = [result[i] for i in range(len(home))]
+        예측 = [tonghap[i] for i in range(len(home))]
         빅2 = [big2[i] for i in range(len(home))]
         AI경기 = [ai[i] for i in range(len(home))]
         AI배당 = [aihml[i] for i in range(len(home))]
-        예측 = [tonghap[i] for i in range(len(home))]
         우세 = [predict[i] for i in range(len(home))]
         확률 = [hwakryul[i] for i in range(len(home))]
         배당 = [bae[i] for i in range(len(home))]
@@ -404,10 +404,10 @@ def Crawler(yearc,countc,gubun):
             "홈팀": 홈팀,
             "원정팀": 원정팀,
             "결과": 결과,
+            "예측": 예측,
             "빅2": 빅2,
             "AI경기": AI경기,
             "AI배당": AI배당,
-            "예측": 예측,
             "우세": 우세,
             "확률": 확률,
             "배당": 배당,
@@ -427,10 +427,10 @@ def Crawler(yearc,countc,gubun):
         def highlight_cells(row):
             results = [''] * len(row)
             johap_item = result[index.index(row.name)]
+            tonghap_item = tonghap[index.index(row.name)]
             big2_item = big2[index.index(row.name)]
             ai_item = ai[index.index(row.name)]
             aihml_item = aihml[index.index(row.name)]
-            tonghap_item = tonghap[index.index(row.name)]
             predict_item = predict[index.index(row.name)]
             hwakryul_item = hwakryul[index.index(row.name)]
             bae_item = bae[index.index(row.name)]
@@ -447,13 +447,13 @@ def Crawler(yearc,countc,gubun):
              
             if johap_item and not johap_item.isspace():  # johap_item이 비어있지 않고 공백만으로 이루어져 있지 않은 경우에만 검사
                 results[2] = result_style
-                if johap_item in big2_item:
-                    results[3] = highlight_style
-                if johap_item in ai_item:
-                    results[4] = highlight_style
-                if johap_item in aihml_item:
-                    results[5] = highlight_style
                 if johap_item in tonghap_item:
+                    results[3] = highlight_style
+                if johap_item in big2_item:
+                    results[4] = highlight_style
+                if johap_item in ai_item:
+                    results[5] = highlight_style
+                if johap_item in aihml_item:
                     results[6] = highlight_style
                 if johap_item in predict_item:
                     results[7] = highlight_style
@@ -629,10 +629,10 @@ def Crawler(yearc,countc,gubun):
         홈팀 = [home[i] for i in range(len(home))]
         원정팀 = [away[i] for i in range(len(home))]
         결과 = [result[i] for i in range(len(home))]
+        예측 = [tonghap[i] for i in range(len(home))]
         빅2 = [big2[i] for i in range(len(home))]
         AI경기 = [ai[i] for i in range(len(home))]
         AI배당 = [aihml[i] for i in range(len(home))]
-        예측 = [tonghap[i] for i in range(len(home))]
         우세 = [predict[i] for i in range(len(home))]
         확률 = [hwakryul[i] for i in range(len(home))]
         배당 = [bae[i] for i in range(len(home))]
@@ -649,10 +649,10 @@ def Crawler(yearc,countc,gubun):
             "홈팀": 홈팀,
             "원정팀": 원정팀,
             "결과": 결과,
+            "예측": 예측,
             "빅2": 빅2,
             "AI경기": AI경기,
             "AI배당": AI배당,
-            "예측": 예측,
             "우세": 우세,
             "확률": 확률,
             "배당": 배당,
@@ -672,10 +672,10 @@ def Crawler(yearc,countc,gubun):
         def highlight_cells(row):
             results = [''] * len(row)
             johap_item = result[index.index(row.name)]
+            tonghap_item = tonghap[index.index(row.name)]
             big2_item = big2[index.index(row.name)]
             ai_item = ai[index.index(row.name)]
             aihml_item = aihml[index.index(row.name)]
-            tonghap_item = tonghap[index.index(row.name)]
             predict_item = predict[index.index(row.name)]
             hwakryul_item = hwakryul[index.index(row.name)]
             bae_item = bae[index.index(row.name)]
@@ -692,13 +692,13 @@ def Crawler(yearc,countc,gubun):
 
             if johap_item and not johap_item.isspace():  # johap_item이 비어있지 않고 공백만으로 이루어져 있지 않은 경우에만 검사
                 results[2] = result_style
-                if johap_item in big2_item:
-                    results[3] = highlight_style
-                if johap_item in ai_item:
-                    results[4] = highlight_style
-                if johap_item in aihml_item:
-                    results[5] = highlight_style
                 if johap_item in tonghap_item:
+                    results[3] = highlight_style
+                if johap_item in big2_item:
+                    results[4] = highlight_style
+                if johap_item in ai_item:
+                    results[5] = highlight_style
+                if johap_item in aihml_item:
                     results[6] = highlight_style
                 if johap_item in predict_item:
                     results[7] = highlight_style
