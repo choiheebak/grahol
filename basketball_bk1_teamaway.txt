@@ -1,14 +1,14 @@
-01;N;N;골든스테이트;골든스테이트;%골든%;Golden State 
-02;N;N;밀워키;밀워키;%밀워키%;Milwaukee 
-03;N;N;뉴올리언스;뉴올리언스;%뉴올리%;New Orleans 
-04;N;N;새크라멘토;새크라멘토;%새크라%;Sacramento 
-05;N;N;오클라호마시티;오클라호마시티;%오클%;Oklahoma City 
-06;N;N;워싱턴;워싱턴;%워싱턴%;Washington 
-07;N;N;브루클린;브루클린;%브루%;Brooklyn 
-08;K;K;서울 삼성;서울 삼성;%삼성%;삼성
-09;K;K;창원 LG;창원 LG;%LG%;LG
-10;K;K;부산 KCC;부산 KCC;%KCC%;KCC
-11;N;N;유타;유타재즈;%유타%;Utah 
-12;N;N;토론토;토론토;%토론%;Toronto 
-13;N;N;샌안토니오;샌안토니오;%샌안토%;San Antonio 
-14;N;N;샬럿;샬럿;%샬럿%;Charlotte 
+01;N;N;피닉스;피닉스;%피닉%;Phoenix 
+02;N;N;뉴올리언스;뉴올리언스;%뉴올리%;New Orleans 
+03;N;N;새크라멘토;새크라멘토;%새크라%;Sacramento 
+04;N;N;덴버;덴버;%덴버%;Denver 
+05;N;N;브루클린;브루클린;%브루%;Brooklyn 
+06;K;K;서울 삼성;서울 삼성;%삼성%;삼성
+07;K;K;울산 현대모비스;현대모비스;%모비스%;현대모비스
+08;N;N;애틀랜타;애틀랜타;%애틀랜타%;Atlanta 
+09;N;N;올랜도;올랜도;%올랜도%;Orlando 
+10;N;N;골든스테이트;골든스테이트;%골든%;Golden State 
+11;N;N;휴스턴;휴스턴;%휴스%;Houston 
+12;N;N;샬럿;샬럿;%샬럿%;Charlotte 
+13;N;N;뉴욕;뉴욕닉스;%뉴욕%;New York 
+14;N;N;보스턴;보스턴;%보스%;Boston 
