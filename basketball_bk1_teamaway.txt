@@ -4,7 +4,7 @@
 04;N;N;토론토;토론토;%토론%;Toronto 
 05;N;N;유타;유타재즈;%유타%;Utah 
 06;N;N;샬럿;샬럿;%샬럿%;Charlotte 
-07;N;N;오클라호마시티;오클라호마시티;%오클%;Oklahoma City 
+07;N;N;오클라호마 시티;오클라호마시티;%오클%;Oklahoma City 
 08;N;N;멤피스;멤피스;%멤피%;Memphis 
 09;N;N;브루클린;브루클린;%브루%;Brooklyn 
 10;N;N;피닉스;피닉스;%피닉%;Phoenix 
