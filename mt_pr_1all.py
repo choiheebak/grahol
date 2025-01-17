@@ -52,6 +52,9 @@ def Crawler(yearc,countc,gubun):
 
         home = []
         away = []
+        win = []
+        draw = []
+        lose = []
         seq = []
         result = []
         ai2 = []
@@ -129,7 +132,16 @@ def Crawler(yearc,countc,gubun):
                     elif rcnt == 18:
                         baeh.append(team_read[q][s:r])
                         s = r+1
-                        tonghap.append(team_read[q][s:])
+                    elif rcnt == 19:
+                        tonghap.append(team_read[q][s:r])
+                        s = r+1
+                    elif rcnt == 20:
+                        win.append(team_read[q][s:r])
+                        s = r+1
+                    elif rcnt == 21:
+                        draw.append(team_read[q][s:r])
+                        s = r+1
+                        lose.append(team_read[q][s:])
 
         st.markdown(":soccer: :blue[**AI 빅데이터 예측 결과**]")
         st.markdown("")
@@ -137,6 +149,9 @@ def Crawler(yearc,countc,gubun):
         index = [f"{i}경기" for i in range(1, 15)]
         홈팀 = [home[i] for i in range(len(home))]
         원정팀 = [away[i] for i in range(len(home))]
+        승 = [win[i] for i in range(len(home))]
+        무 = [draw[i] for i in range(len(home))]
+        패 = [lose[i] for i in range(len(home))]
         결과 = [result[i] for i in range(len(home))]
         예측 = [tonghap[i] for i in range(len(home))]
         빅2 = [big2[i] for i in range(len(home))]
@@ -157,6 +172,9 @@ def Crawler(yearc,countc,gubun):
         data = {
             "홈팀": 홈팀,
             "원정팀": 원정팀,
+            "승": 승,
+            "무": 무,
+            "패": 패,
             "결과": 결과,
             "예측": 예측,
             "빅2": 빅2,
@@ -180,6 +198,9 @@ def Crawler(yearc,countc,gubun):
         # 스타일 적용 함수
         def highlight_cells(row):
             results = [''] * len(row)
+            win_item = win[index.index(row.name)]
+            draw_item = draw[index.index(row.name)]
+            lose_item = lose[index.index(row.name)]
             johap_item = result[index.index(row.name)]
             tonghap_item = tonghap[index.index(row.name)]
             big2_item = big2[index.index(row.name)]
@@ -198,37 +219,44 @@ def Crawler(yearc,countc,gubun):
 
             highlight_style = 'background-color: #43A047; color: white;'
             result_style = 'background-color: white; color: red;'
+            percent_style = 'background-color: #eb5534; color: white;'
            
             if johap_item and not johap_item.isspace():  # johap_item이 비어있지 않고 공백만으로 이루어져 있지 않은 경우에만 검사
-                results[2] = result_style
+                results[5] = result_style
+                if johap_item == "승":
+                    results[2] = percent_style
+                if johap_item == "무":
+                    results[3] = percent_style
+                if johap_item == "패":
+                    results[4] = percent_style
                 if johap_item in tonghap_item:
-                    results[3] = highlight_style
-                if johap_item in big2_item:
-                    results[4] = highlight_style
-                if johap_item in ai_item:
-                    results[5] = highlight_style
-                if johap_item in aihml_item:
                     results[6] = highlight_style
-                if johap_item in predict_item:
+                if johap_item in big2_item:
                     results[7] = highlight_style
-                if johap_item in hwakryul_item:
+                if johap_item in ai_item:
                     results[8] = highlight_style
-                if johap_item in bae_item:
+                if johap_item in aihml_item:
                     results[9] = highlight_style
-                if johap_item in seqtg_item:
+                if johap_item in predict_item:
                     results[10] = highlight_style
-                if johap_item in last_item:
+                if johap_item in hwakryul_item:
                     results[11] = highlight_style
-                if johap_item in hvsa_item:
+                if johap_item in bae_item:
                     results[12] = highlight_style
-                if johap_item in junjeok_item:
+                if johap_item in seqtg_item:
                     results[13] = highlight_style
-                if johap_item in sun_item:
+                if johap_item in last_item:
                     results[14] = highlight_style
-                if johap_item in gyung_item:
+                if johap_item in hvsa_item:
                     results[15] = highlight_style
-                if johap_item in baeh_item:
+                if johap_item in junjeok_item:
                     results[16] = highlight_style
+                if johap_item in sun_item:
+                    results[17] = highlight_style
+                if johap_item in gyung_item:
+                    results[18] = highlight_style
+                if johap_item in baeh_item:
+                    results[19] = highlight_style
             return results
         
         # DataFrame 표시
@@ -298,6 +326,9 @@ def Crawler(yearc,countc,gubun):
 
         home = []
         away = []
+        win = []
+        draw = []
+        lose = []
         seq = []
         result = []
         ai2 = []
@@ -375,7 +406,16 @@ def Crawler(yearc,countc,gubun):
                     elif rcnt == 18:
                         baeh.append(team_read[q][s:r])
                         s = r+1
-                        tonghap.append(team_read[q][s:])
+                    elif rcnt == 19:
+                        tonghap.append(team_read[q][s:r])
+                        s = r+1
+                    elif rcnt == 20:
+                        win.append(team_read[q][s:r])
+                        s = r+1
+                    elif rcnt == 21:
+                        draw.append(team_read[q][s:r])
+                        s = r+1
+                        lose.append(team_read[q][s:])
 
         st.markdown(":baseball: :blue[**AI 빅데이터 예측 결과**]")
         st.markdown("")
@@ -383,6 +423,9 @@ def Crawler(yearc,countc,gubun):
         index = [f"{i}경기" for i in range(1, 15)]
         홈팀 = [home[i] for i in range(len(home))]
         원정팀 = [away[i] for i in range(len(home))]
+        승 = [win[i] for i in range(len(home))]
+        무 = [draw[i] for i in range(len(home))]
+        패 = [lose[i] for i in range(len(home))]
         결과 = [result[i] for i in range(len(home))]
         예측 = [tonghap[i] for i in range(len(home))]
         빅2 = [big2[i] for i in range(len(home))]
@@ -403,6 +446,9 @@ def Crawler(yearc,countc,gubun):
         data = {
             "홈팀": 홈팀,
             "원정팀": 원정팀,
+            "승": 승,
+            "1": 무,
+            "패": 패,
             "결과": 결과,
             "예측": 예측,
             "빅2": 빅2,
@@ -426,6 +472,9 @@ def Crawler(yearc,countc,gubun):
         # 스타일 적용 함수
         def highlight_cells(row):
             results = [''] * len(row)
+            win_item = win[index.index(row.name)]
+            draw_item = draw[index.index(row.name)]
+            lose_item = lose[index.index(row.name)]
             johap_item = result[index.index(row.name)]
             tonghap_item = tonghap[index.index(row.name)]
             big2_item = big2[index.index(row.name)]
@@ -443,38 +492,45 @@ def Crawler(yearc,countc,gubun):
             baeh_item = baeh[index.index(row.name)]
 
             highlight_style = 'background-color: #43A047; color: white;'
-            result_style = 'background-color: white; color: red;'
-             
+            result_style = 'background-color: white; color: red;'          
+            percent_style = 'background-color: #eb5534; color: white;'
+           
             if johap_item and not johap_item.isspace():  # johap_item이 비어있지 않고 공백만으로 이루어져 있지 않은 경우에만 검사
-                results[2] = result_style
+                results[5] = result_style
+                if johap_item == "승":
+                    results[2] = percent_style
+                if johap_item == "1":
+                    results[3] = percent_style
+                if johap_item == "패":
+                    results[4] = percent_style
                 if johap_item in tonghap_item:
-                    results[3] = highlight_style
-                if johap_item in big2_item:
-                    results[4] = highlight_style
-                if johap_item in ai_item:
-                    results[5] = highlight_style
-                if johap_item in aihml_item:
                     results[6] = highlight_style
-                if johap_item in predict_item:
+                if johap_item in big2_item:
                     results[7] = highlight_style
-                if johap_item in hwakryul_item:
+                if johap_item in ai_item:
                     results[8] = highlight_style
-                if johap_item in bae_item:
+                if johap_item in aihml_item:
                     results[9] = highlight_style
-                if johap_item in seqtg_item:
+                if johap_item in predict_item:
                     results[10] = highlight_style
-                if johap_item in last_item:
+                if johap_item in hwakryul_item:
                     results[11] = highlight_style
-                if johap_item in hvsa_item:
+                if johap_item in bae_item:
                     results[12] = highlight_style
-                if johap_item in junjeok_item:
+                if johap_item in seqtg_item:
                     results[13] = highlight_style
-                if johap_item in sun_item:
+                if johap_item in last_item:
                     results[14] = highlight_style
-                if johap_item in gyung_item:
+                if johap_item in hvsa_item:
                     results[15] = highlight_style
-                if johap_item in baeh_item:
+                if johap_item in junjeok_item:
                     results[16] = highlight_style
+                if johap_item in sun_item:
+                    results[17] = highlight_style
+                if johap_item in gyung_item:
+                    results[18] = highlight_style
+                if johap_item in baeh_item:
+                    results[19] = highlight_style
             return results
         
         # DataFrame 표시
@@ -543,6 +599,9 @@ def Crawler(yearc,countc,gubun):
 
         home = []
         away = []
+        win = []
+        draw = []
+        lose = []
         seq = []
         result = []
         ai2 = []
@@ -620,7 +679,16 @@ def Crawler(yearc,countc,gubun):
                     elif rcnt == 18:
                         baeh.append(team_read[q][s:r])
                         s = r+1
-                        tonghap.append(team_read[q][s:])
+                    elif rcnt == 19:
+                        tonghap.append(team_read[q][s:r])
+                        s = r+1
+                    elif rcnt == 20:
+                        win.append(team_read[q][s:r])
+                        s = r+1
+                    elif rcnt == 21:
+                        draw.append(team_read[q][s:r])
+                        s = r+1
+                        lose.append(team_read[q][s:])
 
         st.markdown(":basketball: :blue[**AI 빅데이터 예측 결과**]")
         st.markdown("")
@@ -628,6 +696,9 @@ def Crawler(yearc,countc,gubun):
         index = [f"{i}경기" for i in range(1, 15)]
         홈팀 = [home[i] for i in range(len(home))]
         원정팀 = [away[i] for i in range(len(home))]
+        승 = [win[i] for i in range(len(home))]
+        무 = [draw[i] for i in range(len(home))]
+        패 = [lose[i] for i in range(len(home))]
         결과 = [result[i] for i in range(len(home))]
         예측 = [tonghap[i] for i in range(len(home))]
         빅2 = [big2[i] for i in range(len(home))]
@@ -648,6 +719,9 @@ def Crawler(yearc,countc,gubun):
         data = {
             "홈팀": 홈팀,
             "원정팀": 원정팀,
+            "승": 승,
+            "5": 무,
+            "패": 패,
             "결과": 결과,
             "예측": 예측,
             "빅2": 빅2,
@@ -671,6 +745,9 @@ def Crawler(yearc,countc,gubun):
         # 스타일 적용 함수
         def highlight_cells(row):
             results = [''] * len(row)
+            win_item = win[index.index(row.name)]
+            draw_item = draw[index.index(row.name)]
+            lose_item = lose[index.index(row.name)]
             johap_item = result[index.index(row.name)]
             tonghap_item = tonghap[index.index(row.name)]
             big2_item = big2[index.index(row.name)]
@@ -689,37 +766,44 @@ def Crawler(yearc,countc,gubun):
 
             highlight_style = 'background-color: #43A047; color: white;' 
             result_style = 'background-color: white; color: red;'
-
+            percent_style = 'background-color: #eb5534; color: white;'
+           
             if johap_item and not johap_item.isspace():  # johap_item이 비어있지 않고 공백만으로 이루어져 있지 않은 경우에만 검사
-                results[2] = result_style
+                results[5] = result_style
+                if johap_item == "승":
+                    results[2] = percent_style
+                if johap_item == "5":
+                    results[3] = percent_style
+                if johap_item == "패":
+                    results[4] = percent_style
                 if johap_item in tonghap_item:
-                    results[3] = highlight_style
-                if johap_item in big2_item:
-                    results[4] = highlight_style
-                if johap_item in ai_item:
-                    results[5] = highlight_style
-                if johap_item in aihml_item:
                     results[6] = highlight_style
-                if johap_item in predict_item:
+                if johap_item in big2_item:
                     results[7] = highlight_style
-                if johap_item in hwakryul_item:
+                if johap_item in ai_item:
                     results[8] = highlight_style
-                if johap_item in bae_item:
+                if johap_item in aihml_item:
                     results[9] = highlight_style
-                if johap_item in seqtg_item:
+                if johap_item in predict_item:
                     results[10] = highlight_style
-                if johap_item in last_item:
+                if johap_item in hwakryul_item:
                     results[11] = highlight_style
-                if johap_item in hvsa_item:
+                if johap_item in bae_item:
                     results[12] = highlight_style
-                if johap_item in junjeok_item:
+                if johap_item in seqtg_item:
                     results[13] = highlight_style
-                if johap_item in sun_item:
+                if johap_item in last_item:
                     results[14] = highlight_style
-                if johap_item in gyung_item:
+                if johap_item in hvsa_item:
                     results[15] = highlight_style
-                if johap_item in baeh_item:
+                if johap_item in junjeok_item:
                     results[16] = highlight_style
+                if johap_item in sun_item:
+                    results[17] = highlight_style
+                if johap_item in gyung_item:
+                    results[18] = highlight_style
+                if johap_item in baeh_item:
+                    results[19] = highlight_style
             return results
         
         # DataFrame 표시
