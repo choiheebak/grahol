@@ -423,12 +423,12 @@ def Crawler(yearc,countc,gyungi):
                         "원정승","원정패","디비전승","디비전패","연속","리그","디비전"]) 
     else:
         df = pd.DataFrame(data=np.array([[home,hseq,hsjum,htotal,hwin,hlose,hcha,hduk,has,hrebound,hsteal,
-                                        hblock,htsteal,hfhrow,hfhrows],
+                                        hblock,htsteal,hfhrow,hfhrows,hyeon],
                                         [away,aseq,asjum,atotal,awin,alose,acha,aduk,aas,arebound,asteal,
-                                        ablock,atsteal,afhrow,afhrows]]), 
+                                        ablock,atsteal,afhrow,afhrows,ayeon]]), 
 
                 index= ["홈팀", "원정팀"], 
-                columns=["팀명","순위","승률","경기수","승","패","승차","득점","AS","리바운드","스틸","블록","3점슛","자유투","자유투성공"]) 
+                columns=["팀명","순위","승률","경기수","승","패","승차","득점","AS","리바운드","스틸","블록","3점슛","자유투","자유투성공","연속"]) 
  
     # df = pd.DataFrame(data=np.array([[home,hseq,hsjum,htotal,hwin,hlose,hcha,hduk,has,hrebound,hsteal,
     #                                   hblock,htsteal,hfhrow,hfhrows,hhwin,hhlose,hawin,halose,hdwin,hdlose,hyeon,
