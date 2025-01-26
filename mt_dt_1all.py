@@ -547,32 +547,50 @@ def Crawler(gubun):
             try:
                 st.plotly_chart(fig2)
             except:
-                st.plotly_chart(fig2, theme=None)
+                try:
+                    st.plotly_chart(fig2, theme=None)
+                except:
+                    pass
         with tab4:
             try:
                 st.plotly_chart(fig3)
             except:
-                st.plotly_chart(fig3, theme=None)
+                try:
+                    st.plotly_chart(fig3, theme=None)
+                except:
+                    pass
         with tab5:
             try:
                 st.plotly_chart(fig4)
             except:
-                st.plotly_chart(fig4, theme=None)
+                try:
+                    st.plotly_chart(fig4, theme=None)
+                except:
+                    pass
         with tab6:
             try:
                 st.plotly_chart(fig5)
             except:
-                st.plotly_chart(fig5, theme=None)
+                try:
+                    st.plotly_chart(fig5, theme=None)
+                except:
+                    pass
         with tab7:
             try:
                 st.plotly_chart(fig6)
             except:
-                st.plotly_chart(fig6, theme=None)
+                try:
+                    st.plotly_chart(fig6, theme=None)
+                except:
+                    pass
         with tab8:
             try:
                 st.plotly_chart(fig7)
             except:
-                st.plotly_chart(fig7, theme=None)
+                try:
+                    st.plotly_chart(fig7, theme=None)
+                except:
+                    pass
         with tab9:
             try:
                 st.plotly_chart(fig8)
@@ -690,32 +708,50 @@ def Crawler(gubun):
             try:
                 st.plotly_chart(fig2)
             except:
-                st.plotly_chart(fig2, theme=None)
+                try:
+                    st.plotly_chart(fig2, theme=None)
+                except:
+                    pass         
         with tab4:
             try:
                 st.plotly_chart(fig3)
             except:
-                st.plotly_chart(fig3, theme=None)
+                try:
+                    st.plotly_chart(fig3, theme=None)
+                except:
+                    pass         
         with tab5:
             try:
                 st.plotly_chart(fig4)
             except:
-                st.plotly_chart(fig4, theme=None)
+                try:
+                    st.plotly_chart(fig4, theme=None)
+                except:
+                    pass         
         with tab6:
             try:
                 st.plotly_chart(fig5)
             except:
-                st.plotly_chart(fig5, theme=None)
+                try:
+                    st.plotly_chart(fig5, theme=None)
+                except:
+                    pass         
         with tab7:
             try:
                 st.plotly_chart(fig6)
             except:
-                st.plotly_chart(fig6, theme=None)
+                try:
+                    st.plotly_chart(fig6, theme=None)
+                except:
+                    pass
         with tab8:
             try:
                 st.plotly_chart(fig7)
             except:
-                st.plotly_chart(fig7, theme=None)
+                try:
+                    st.plotly_chart(fig7, theme=None)
+                except:
+                    pass
         with tab9:
             try:
                 st.plotly_chart(fig8)
@@ -931,32 +967,50 @@ def Crawler(gubun):
             try:
                 st.plotly_chart(fig2)
             except:
-                st.plotly_chart(fig2, theme=None)
+                try:
+                    st.plotly_chart(fig2, theme=None)
+                except:
+                    pass
         with tab4:
             try:
                 st.plotly_chart(fig3)
             except:
-                st.plotly_chart(fig3, theme=None)
+                try:
+                    st.plotly_chart(fig3, theme=None)
+                except:
+                    pass
         with tab5:
             try:
                 st.plotly_chart(fig4)
             except:
-                st.plotly_chart(fig4, theme=None)
+                try:
+                    st.plotly_chart(fig4, theme=None)
+                except:
+                    pass
         with tab6:
             try:
                 st.plotly_chart(fig5)
             except:
-                st.plotly_chart(fig5, theme=None)
+                try:
+                    st.plotly_chart(fig5, theme=None)
+                except:
+                    pass
         with tab7:
             try:
                 st.plotly_chart(fig6)
             except:
-                st.plotly_chart(fig6, theme=None)
+                try:
+                    st.plotly_chart(fig6, theme=None)
+                except:
+                    pass
         with tab8:
             try:
                 st.plotly_chart(fig7)
             except:
-                st.plotly_chart(fig7, theme=None)
+                try:
+                    st.plotly_chart(fig7, theme=None)
+                except:
+                    pass
         with tab9:
             try:
                 st.plotly_chart(fig8)
@@ -1075,32 +1129,50 @@ def Crawler(gubun):
             try:
                 st.plotly_chart(fig2)
             except:
-                st.plotly_chart(fig2, theme=None)
+                try:
+                    st.plotly_chart(fig2, theme=None)
+                except:
+                    pass
         with tab4:
             try:
                 st.plotly_chart(fig3)
             except:
-                st.plotly_chart(fig3, theme=None)
+                try:
+                    st.plotly_chart(fig3, theme=None)
+                except:
+                    pass
         with tab5:
             try:
                 st.plotly_chart(fig4)
             except:
-                st.plotly_chart(fig4, theme=None)
+                try:
+                    st.plotly_chart(fig4, theme=None)
+                except:
+                    pass
         with tab6:
             try:
                 st.plotly_chart(fig5)
             except:
-                st.plotly_chart(fig5, theme=None)
+                try:
+                    st.plotly_chart(fig5, theme=None)
+                except:
+                    pass
         with tab7:
             try:
                 st.plotly_chart(fig6)
             except:
-                st.plotly_chart(fig6, theme=None)
+                try:
+                    st.plotly_chart(fig6, theme=None)
+                except:
+                    pass
         with tab8:
             try:
                 st.plotly_chart(fig7)
             except:
-                st.plotly_chart(fig7, theme=None)
+                try:
+                    st.plotly_chart(fig7, theme=None)
+                except:
+                    pass
         with tab9:
             try:
                 st.plotly_chart(fig8)
@@ -1320,32 +1392,50 @@ def Crawler(gubun):
             try:
                 st.plotly_chart(fig2)
             except:
-                st.plotly_chart(fig2, theme=None)
+                try:
+                    st.plotly_chart(fig2, theme=None)
+                except:
+                    pass
         with tab4:
             try:
                 st.plotly_chart(fig3)
             except:
-                st.plotly_chart(fig3, theme=None)
+                try:
+                    st.plotly_chart(fig3, theme=None)
+                except:
+                    pass
         with tab5:
             try:
                 st.plotly_chart(fig4)
             except:
-                st.plotly_chart(fig4, theme=None)
+                try:
+                    st.plotly_chart(fig4, theme=None)
+                except:
+                    pass
         with tab6:
             try:
                 st.plotly_chart(fig5)
             except:
-                st.plotly_chart(fig5, theme=None)
+                try:
+                    st.plotly_chart(fig5, theme=None)
+                except:
+                    pass
         with tab7:
             try:
                 st.plotly_chart(fig6)
             except:
-                st.plotly_chart(fig6, theme=None)
+                try:
+                    st.plotly_chart(fig6, theme=None)
+                except:
+                    pass
         with tab8:
             try:
                 st.plotly_chart(fig7)
             except:
-                st.plotly_chart(fig7, theme=None)
+                try:
+                    st.plotly_chart(fig7, theme=None)
+                except:
+                    pass
         with tab9:
             try:
                 st.plotly_chart(fig8)
@@ -1463,32 +1553,50 @@ def Crawler(gubun):
             try:
                 st.plotly_chart(fig2)
             except:
-                st.plotly_chart(fig2, theme=None)
+                try:
+                    st.plotly_chart(fig2, theme=None)
+                except:
+                    pass
         with tab4:
             try:
                 st.plotly_chart(fig3)
             except:
-                st.plotly_chart(fig3, theme=None)
+                try:
+                    st.plotly_chart(fig3, theme=None)
+                except:
+                    pass
         with tab5:
             try:
                 st.plotly_chart(fig4)
             except:
-                st.plotly_chart(fig4, theme=None)
+                try:
+                    st.plotly_chart(fig4, theme=None)
+                except:
+                    pass
         with tab6:
             try:
                 st.plotly_chart(fig5)
             except:
-                st.plotly_chart(fig5, theme=None)
+                try:
+                    st.plotly_chart(fig5, theme=None)
+                except:
+                    pass
         with tab7:
             try:
                 st.plotly_chart(fig6)
             except:
-                st.plotly_chart(fig6, theme=None)
+                try:
+                    st.plotly_chart(fig6, theme=None)
+                except:
+                    pass
         with tab8:
             try:
                 st.plotly_chart(fig7)
             except:
-                st.plotly_chart(fig7, theme=None)
+                try:
+                    st.plotly_chart(fig7, theme=None)
+                except:
+                    pass
         with tab9:
             try:
                 st.plotly_chart(fig8)
@@ -1720,7 +1828,7 @@ def Crawler(gubun):
                 try:
                     st.plotly_chart(fig2, theme=None)
                 except:
-                    st.plotly_chart(fig2)
+                    pass
         with tab4:
             try:
                 st.plotly_chart(fig3)
@@ -1728,7 +1836,7 @@ def Crawler(gubun):
                 try:
                     st.plotly_chart(fig3, theme=None)
                 except:
-                    st.plotly_chart(fig3)
+                    pass
         with tab5:
             try:
                 st.plotly_chart(fig4)
@@ -1736,7 +1844,7 @@ def Crawler(gubun):
                 try:
                     st.plotly_chart(fig4, theme=None)
                 except:
-                    st.plotly_chart(fig4)
+                    pass
         with tab6:
             try:
                 st.plotly_chart(fig5)
@@ -1744,7 +1852,7 @@ def Crawler(gubun):
                 try:
                     st.plotly_chart(fig5, theme=None)
                 except:
-                    st.plotly_chart(fig5)
+                    pass
         with tab7:
             try:
                 st.plotly_chart(fig6)
@@ -1752,7 +1860,7 @@ def Crawler(gubun):
                 try:
                     st.plotly_chart(fig6, theme=None)
                 except:
-                    st.plotly_chart(fig6)
+                    pass
         with tab8:
             try:
                 st.plotly_chart(fig7)
@@ -1760,7 +1868,7 @@ def Crawler(gubun):
                 try:
                     st.plotly_chart(fig7, theme=None)
                 except:
-                    st.plotly_chart(fig7)
+                    pass
         with tab9:
             try:
                 st.plotly_chart(fig8)
@@ -1878,32 +1986,50 @@ def Crawler(gubun):
             try:
                 st.plotly_chart(fig2)
             except:
-                st.plotly_chart(fig2, theme=None)
+                try:
+                    st.plotly_chart(fig2, theme=None)
+                except:
+                    pass
         with tab4:
             try:
                 st.plotly_chart(fig3)
             except:
-                st.plotly_chart(fig3, theme=None)
+                try:
+                    st.plotly_chart(fig3, theme=None)
+                except:
+                    pass
         with tab5:
             try:
                 st.plotly_chart(fig4)
             except:
-                st.plotly_chart(fig4, theme=None)
+                try:
+                    st.plotly_chart(fig4, theme=None)
+                except:
+                    pass
         with tab6:
             try:
                 st.plotly_chart(fig5)
             except:
-                st.plotly_chart(fig5, theme=None)
+                try:
+                    st.plotly_chart(fig5, theme=None)
+                except:
+                    pass
         with tab7:
             try:
                 st.plotly_chart(fig6)
             except:
-                st.plotly_chart(fig6, theme=None)
+                try:
+                    st.plotly_chart(fig6, theme=None)
+                except:
+                    pass
         with tab8:
             try:
                 st.plotly_chart(fig7)
             except:
-                st.plotly_chart(fig7, theme=None)
+                try:
+                    st.plotly_chart(fig7, theme=None)
+                except:
+                    pass
         with tab9:
             try:
                 st.plotly_chart(fig8)
@@ -2122,32 +2248,50 @@ def Crawler(gubun):
             try:
                 st.plotly_chart(fig2)
             except:
-                st.plotly_chart(fig2, theme=None)
+                try:
+                    st.plotly_chart(fig2, theme=None)
+                except:
+                    pass
         with tab4:
             try:
                 st.plotly_chart(fig3)
             except:
-                st.plotly_chart(fig3, theme=None)
+                try:
+                    st.plotly_chart(fig3, theme=None)
+                except:
+                    pass
         with tab5:
             try:
                 st.plotly_chart(fig4)
             except:
-                st.plotly_chart(fig4, theme=None)
+                try:
+                    st.plotly_chart(fig4, theme=None)
+                except:
+                    pass
         with tab6:
             try:
                 st.plotly_chart(fig5)
             except:
-                st.plotly_chart(fig5, theme=None)
+                try:
+                    st.plotly_chart(fig5, theme=None)
+                except:
+                    pass
         with tab7:
             try:
                 st.plotly_chart(fig6)
             except:
-                st.plotly_chart(fig6, theme=None)
+                try:
+                    st.plotly_chart(fig6, theme=None)
+                except:
+                    pass
         with tab8:
             try:
                 st.plotly_chart(fig7)
             except:
-                st.plotly_chart(fig7, theme=None)
+                try:
+                    st.plotly_chart(fig7, theme=None)
+                except:
+                    pass
         with tab9:
             try:
                 st.plotly_chart(fig8)
@@ -2265,32 +2409,50 @@ def Crawler(gubun):
             try:
                 st.plotly_chart(fig2)
             except:
-                st.plotly_chart(fig2, theme=None)
+                try:
+                    st.plotly_chart(fig2, theme=None)
+                except:
+                    pass
         with tab4:
             try:
                 st.plotly_chart(fig3)
             except:
-                st.plotly_chart(fig3, theme=None)
+                try:
+                    st.plotly_chart(fig3, theme=None)
+                except:
+                    pass
         with tab5:
             try:
                 st.plotly_chart(fig4)
             except:
-                st.plotly_chart(fig4, theme=None)
+                try:
+                    st.plotly_chart(fig4, theme=None)
+                except:
+                    pass
         with tab6:
             try:
                 st.plotly_chart(fig5)
             except:
-                st.plotly_chart(fig5, theme=None)
+                try:
+                    st.plotly_chart(fig5, theme=None)
+                except:
+                    pass
         with tab7:
             try:
                 st.plotly_chart(fig6)
             except:
-                st.plotly_chart(fig6, theme=None)
+                try:
+                    st.plotly_chart(fig6, theme=None)
+                except:
+                    pass
         with tab8:
             try:
                 st.plotly_chart(fig7)
             except:
-                st.plotly_chart(fig7, theme=None)
+                try:
+                    st.plotly_chart(fig7, theme=None)
+                except:
+                    pass
         with tab9:
             try:
                 st.plotly_chart(fig8)
@@ -2509,32 +2671,50 @@ def Crawler(gubun):
             try:
                 st.plotly_chart(fig2)
             except:
-                st.plotly_chart(fig2, theme=None)
+                try:
+                    st.plotly_chart(fig2, theme=None)
+                except:
+                    pass
         with tab4:
             try:
                 st.plotly_chart(fig3)
             except:
-                st.plotly_chart(fig3, theme=None)
+                try:
+                    st.plotly_chart(fig3, theme=None)
+                except:
+                    pass
         with tab5:
             try:
                 st.plotly_chart(fig4)
             except:
-                st.plotly_chart(fig4, theme=None)
+                try:
+                    st.plotly_chart(fig4, theme=None)
+                except:
+                    pass
         with tab6:
             try:
                 st.plotly_chart(fig5)
             except:
-                st.plotly_chart(fig5, theme=None)
+                try:
+                    st.plotly_chart(fig5, theme=None)
+                except:
+                    pass
         with tab7:
             try:
                 st.plotly_chart(fig6)
             except:
-                st.plotly_chart(fig6, theme=None)
+                try:
+                    st.plotly_chart(fig6, theme=None)
+                except:
+                    pass
         with tab8:
             try:
                 st.plotly_chart(fig7)
             except:
-                st.plotly_chart(fig7, theme=None)
+                try:
+                    st.plotly_chart(fig7, theme=None)
+                except:
+                    pass
         with tab9:
             try:
                 st.plotly_chart(fig8)
@@ -2652,32 +2832,50 @@ def Crawler(gubun):
             try:
                 st.plotly_chart(fig2)
             except:
-                st.plotly_chart(fig2, theme=None)
+                try:
+                    st.plotly_chart(fig2, theme=None)
+                except:
+                    pass
         with tab4:
             try:
                 st.plotly_chart(fig3)
             except:
-                st.plotly_chart(fig3, theme=None)
+                try:
+                    st.plotly_chart(fig3, theme=None)
+                except:
+                    pass
         with tab5:
             try:
                 st.plotly_chart(fig4)
             except:
-                st.plotly_chart(fig4, theme=None)
+                try:
+                    st.plotly_chart(fig4, theme=None)
+                except:
+                    pass
         with tab6:
             try:
                 st.plotly_chart(fig5)
             except:
-                st.plotly_chart(fig5, theme=None)
+                try:
+                    st.plotly_chart(fig5, theme=None)
+                except:
+                    pass
         with tab7:
             try:
                 st.plotly_chart(fig6)
             except:
-                st.plotly_chart(fig6, theme=None)
+                try:
+                    st.plotly_chart(fig6, theme=None)
+                except:
+                    pass
         with tab8:
             try:
                 st.plotly_chart(fig7)
             except:
-                st.plotly_chart(fig7, theme=None)
+                try:
+                    st.plotly_chart(fig7, theme=None)
+                except:
+                    pass
         with tab9:
             try:
                 st.plotly_chart(fig8)
