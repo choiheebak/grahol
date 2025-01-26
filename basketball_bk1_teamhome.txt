@@ -1,14 +1,14 @@
-01;N;N;샬럿;샬럿;%샬럿%;Charlotte 
+01;N;N;애틀랜타;애틀랜타;%애틀랜타%;Atlanta 
 02;N;N;필라델피아;필라델피아;%필라델%;Philadelphia 
-03;N;N;멤피스;멤피스;%멤피%;Memphis 
-04;K;K;부산 KCC;부산 KCC;%KCC%;KCC
-05;K;K;창원 LG;창원 LG;%LG%;LG
-06;K;K;고양 소노;고양 소노;%고양%;고양소노
-07;N;N;샌안토니오;샌안토니오;%샌안토%;San Antonio 
-08;N;N;미네소타;미네소타;%미네%;Minnesota 
-09;N;N;댈러스;댈러스;%댈러스%;Dallas 
-10;N;N;샬럿;샬럿;%샬럿%;Charlotte 
-11;N;N;올랜도;올랜도;%올랜도%;Orlando 
-12;N;N;클리블랜드;클리블랜드;%클리블%;Cleveland 
-13;N;N;뉴욕;뉴욕닉스;%뉴욕%;New York 
-14;N;N;시카고;시카고;%시카고%;Chicago 
+03;N;N;골든스테이트;골든스테이트;%골든%;Golden State 
+04;N;N;포틀랜드;포틀랜드;%포틀%;Portland 
+05;K;K;서울 삼성;서울 삼성;%삼성%;삼성
+06;K;K;원주 DB;원주 DB;%원주%;DB
+07;N;N;샬럿;샬럿;%샬럿%;Charlotte 
+08;N;N;인디애나;인디애나;%인디애나%;Indiana 
+09;N;N;워싱턴;워싱턴;%워싱턴%;Washington 
+10;N;N;마이애미;마이애미;%마이애미%;Miami 
+11;N;N;뉴욕;뉴욕닉스;%뉴욕%;New York 
+12;N;N;필라델피아;필라델피아;%필라델%;Philadelphia 
+13;N;N;샌안토니오;샌안토니오;%샌안토%;San Antonio 
+14;N;N;피닉스;피닉스;%피닉%;Phoenix 
