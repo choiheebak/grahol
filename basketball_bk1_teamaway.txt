@@ -1,14 +1,14 @@
-01;N;N;휴스턴;휴스턴;%휴스%;Houston 
-02;N;N;LA레이커스;LA레이커스;%레이커스%;Los Angeles 
-03;N;N;유타;유타재즈;%유타%;Utah 
-04;N;N;밀워키;밀워키;%밀워키%;Milwaukee 
-05;K;K;서울 SK;서울 SK;%SK%;SK
-06;K;K;수원 KT;KT 소닉붐;%KT%;KT
-07;N;N;브루클린;브루클린;%브루%;Brooklyn 
-08;N;N;디트로이트;디트로이트;%디트로%;Detroit 
-09;N;N;토론토;토론토;%토론%;Toronto 
-10;N;N;클리블랜드;클리블랜드;%클리블%;Cleveland 
-11;N;N;덴버;덴버;%덴버%;Denver 
-12;N;N;새크라멘토;새크라멘토;%새크라%;Sacramento 
-13;N;N;LA클리퍼스;LA클리퍼스;%클리퍼스%;LA 
-14;N;N;미네소타;미네소타;%미네%;Minnesota 
+01;N;N;LA클리퍼스;LA클리퍼스;%클리퍼스%;LA 
+02;N;N;댈러스;댈러스;%댈러스%;Dallas 
+03;N;N;덴버;덴버;%덴버%;Denver 
+04;N;N;시카고;시카고;%시카고%;Chicago 
+05;N;N;보스턴;보스턴;%보스%;Boston 
+06;N;N;밀워키;밀워키;%밀워키%;Milwaukee 
+07;N;N;피닉스;피닉스;%피닉%;Phoenix 
+08;K;K;창원 LG;창원 LG;%LG%;LG
+09;K;K;서울 SK;서울 SK;%SK%;SK
+10;K;K;울산 현대모비스;현대모비스;%모비스%;현대모비스
+11;N;N;애틀랜타;애틀랜타;%애틀랜타%;Atlanta 
+12;N;N;올랜도;올랜도;%올랜도%;Orlando 
+13;N;N;새크라멘토;새크라멘토;%새크라%;Sacramento 
+14;N;N;마이애미;마이애미;%마이애미%;Miami 
