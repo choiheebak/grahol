@@ -1,14 +1,14 @@
-01;N;N;토론토;토론토;%토론%;Toronto 
-02;N;N;뉴욕;뉴욕닉스;%뉴욕%;New York 
-03;N;N;디트로이트;디트로이트;%디트로%;Detroit 
-04;N;N;멤피스;멤피스;%멤피%;Memphis 
-05;K;K;창원 LG;창원 LG;%LG%;LG
-06;N;N;샌안토니오;샌안토니오;%샌안토%;San Antonio 
-07;N;N;샬럿;샬럿;%샬럿%;Charlotte 
-08;N;N;필라델피아;필라델피아;%필라델%;Philadelphia 
-09;N;N;애틀랜타;애틀랜타;%애틀랜타%;Atlanta 
-10;N;N;밀워키;밀워키;%밀워키%;Milwaukee 
-11;N;N;마이애미;마이애미;%마이애미%;Miami 
-12;N;N;피닉스;피닉스;%피닉%;Phoenix 
-13;N;N;골든스테이트;골든스테이트;%골든%;Golden State 
-14;N;N;멤피스;멤피스;%멤피%;Memphis 
+01;N;N;뉴욕;뉴욕닉스;%뉴욕%;New York 
+02;N;N;멤피스;멤피스;%멤피%;Memphis 
+03;N;N;밀워키;밀워키;%밀워키%;Milwaukee 
+04;N;N;마이애미;마이애미;%마이애미%;Miami 
+05;N;N;디트로이트;디트로이트;%디트로%;Detroit 
+06;N;N;뉴올리언즈;뉴올리언스;%뉴올리%;New Orleans 
+07;N;N;미네소타;미네소타;%미네%;Minnesota 
+08;N;N;오클라호마 시티;오클라호마시티;%오클%;Oklahoma City 
+09;N;N;골든스테이트;골든스테이트;%골든%;Golden State 
+10;N;N;피닉스;피닉스;%피닉%;Phoenix 
+11;N;N;브루클린;브루클린;%브루%;Brooklyn 
+12;N;N;LA레이커스;LA레이커스;%레이커스%;Los Angeles 
+13;N;N;휴스턴;휴스턴;%휴스%;Houston 
+14;N;N;샬럿;샬럿;%샬럿%;Charlotte 
